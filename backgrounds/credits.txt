@@ -1,0 +1,53 @@
+Unsplash Photo Credits — category-bg backgrounds
+All photos are free to use under the Unsplash License (https://unsplash.com/license).
+Attribution is not legally required but is listed below for provenance/record-keeping.
+
+1. earnings.jpg
+   Photographer: Jakub Żerdzicki
+   Photo page: https://unsplash.com/photos/office-desk-with-smartphone-and-financial-charts-heiYgqp0Tsk
+   Description: Office desk with smartphone and financial charts
+
+2. ai.jpg
+   Photographer: BoliviaInteligente
+   Photo page: https://unsplash.com/photos/a-close-up-of-a-processor-chip-on-a-printed-circuit-board-y7H332i6R9s
+   Description: Close-up of a processor chip on a printed circuit board
+
+3. tech-product.jpg
+   Photographer: Matúš Gocman
+   Photo page: https://unsplash.com/photos/a-modern-desk-setup-with-a-computer-and-chair-yLYLIgt2ZyY
+   Description: Modern desk setup with a computer and chair
+
+4. funding.jpg
+   Photographer: Amari Shutters
+   Photo page: https://unsplash.com/photos/two-businessmen-shaking-hands-across-a-desk-9h8Nhj8fy_E
+   Description: Two businessmen shaking hands across a desk
+
+5. business-tech.jpg
+   Photographer: Linus Belanger
+   Photo page: https://unsplash.com/photos/modern-office-building-with-glass-and-brick-facade-z-XlxM2vAPY
+   Description: Modern office building with glass and brick facade
+
+6. investment.jpg
+   Photographer: lonely blue
+   Photo page: https://unsplash.com/photos/a-computer-screen-displaying-a-stock-market-chart-n37BD6BFbRQ
+   Description: Computer screen displaying a stock market chart
+
+7. investment-ideas.jpg
+   Photographer: Jakub Żerdzicki
+   Photo page: https://unsplash.com/photos/trading-charts-displayed-on-multiple-screens-and-tablet-vKNRKjSNbTo
+   Description: Trading charts displayed on multiple screens and tablet
+
+8. mutual-funds.jpg
+   Photographer: Giorgio Tomassetti
+   Photo page: https://unsplash.com/photos/someone-is-calculating-their-finances-with-documents-EHcBh4JdTgQ
+   Description: Someone calculating their finances with documents
+
+9. layoffs.jpg
+   Photographer: Alex Tyson
+   Photo page: https://unsplash.com/photos/an-empty-office-with-a-desk-and-chairs-GGWYYHbfi2s
+   Description: An empty office with a desk and chairs (respectful, no identifiable distressed person)
+
+10. ipo.jpg
+    Photographer: Maxim Klimashin
+    Photo page: https://unsplash.com/photos/new-york-stock-exchange-building-with-american-flags-HpYTYo_jF2Y
+    Description: New York Stock Exchange building with American flags
