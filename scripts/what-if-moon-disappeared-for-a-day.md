@@ -5,23 +5,23 @@
 
 | Time | Visual | Voiceover | On-screen text |
 |---|---|---|---|
-| 0–4s **(Hook)** | Full Moon. It shatters/blinks out. Sky goes black. | "The Moon just disappeared… and Earth starts falling apart." | THE MOON IS GONE 🌑 |
-| 4–11s | City and forest at night go pitch black. Owl, migrating birds, lion's eyes. | "First, the nights go pitch black. The Moon is a giant mirror reflecting sunlight. Without it, predators, migrating birds and breeding cycles lose their light." | Pitch-black nights 🌌 |
-| 11–21s | *Whoosh.* Beach timelapse: the tide line pulls way back. Crabs, mussels, dry wetlands. | "Then the oceans shrink back. Tides are mostly the Moon's pull. The Sun alone makes them about a third as big. Crabs, mussels and coastal wetlands that live by the tide start dying out." | Tides shrink to ⅓ 🌊 |
-| 21–23s | *Glitch* + beat drop. Empty sky. | "And if it never comes back…" | IF IT NEVER COMES BACK… |
-| 23–32s | Earth's tilted axis wobbling wildly. Split screen: glaciers vs scorching desert. | "Earth loses its anchor. The Moon holds our 23.5° tilt steady. Without it, the tilt could swing wildly over millions of years, bringing brutal ice ages and scorching heatwaves." | Climate chaos 🥶🔥 |
-| 32–41s | Earth spinning fast. Clock showing a 6-hour day, then slowing to 24h. | "And the craziest part: the Moon has been braking Earth's spin for billions of years. Early Earth's day was only about 6 hours long. Lose the Moon, and that brake is gone forever." | A day used to be ~6 hours ⏱️ |
-| 41–45s **(CTA)** | Moon rising back over the horizon. | "So next time you see the Moon, thank it. Follow for more What Ifs." | Follow 👆 |
+| 0–4s **(Hook)** | Full Moon. It blinks out. The sky goes black. | "What if the Moon just… disappeared? Here's what would happen to Earth." | THE MOON IS GONE 🌑 |
+| 4–11s | City and forest go dark at night. Owl, birds, a lion's eyes. | "First, nights get very dark. The Moon doesn't make its own light. It reflects light from the Sun. No Moon, no night light. Animals that hunt or travel at night get confused." | Super dark nights 🌌 |
+| 11–21s | *Whoosh.* Beach: the water stays far back. Crabs and shells on dry sand. | "Next, the sea changes. The Moon pulls the ocean, and that makes tides. Without the Moon, tides become about three times smaller. Crabs and sea animals that need tides start to die." | Tides 3x smaller 🌊 |
+| 21–23s | *Glitch* + beat drop. Empty sky. | "And if the Moon never comes back…" | IF IT NEVER COMES BACK… |
+| 23–32s | Earth's tilted axis shaking. Split screen: ice vs desert. | "Earth starts to wobble. The Moon keeps Earth's tilt steady. Without it, over millions of years, Earth could tip a lot. That means crazy weather: big ice ages and extreme heat." | Earth wobbles 🥶🔥 |
+| 32–41s | Earth spinning fast. Clock showing a 6-hour day. | "And here's the crazy part. Long ago, one day on Earth was only about 6 hours. The Moon slowly slowed Earth down to 24 hours. Without the Moon, nothing slows Earth anymore." | A day was once 6 hours ⏱️ |
+| 41–45s **(CTA)** | Moon rising again. | "So next time you see the Moon, say thank you. Follow for more What Ifs!" | Follow 👆 |
 
-## Voiceover only (~130 words, ~45s)
+## Voiceover only (~125 words, ~45s)
 
-The Moon just disappeared… and Earth starts falling apart.
-First, the nights go pitch black. The Moon is a giant mirror reflecting sunlight. Without it, predators, migrating birds and breeding cycles lose their light.
-Then the oceans shrink back. Tides are mostly the Moon's pull. The Sun alone makes them about a third as big. Crabs, mussels and coastal wetlands that live by the tide start dying out.
-And if it never comes back…
-Earth loses its anchor. The Moon holds our 23.5° tilt steady. Without it, the tilt could swing wildly over millions of years, bringing brutal ice ages and scorching heatwaves.
-And the craziest part: the Moon has been braking Earth's spin for billions of years. Early Earth's day was only about 6 hours long. Lose the Moon, and that brake is gone forever.
-So next time you see the Moon, thank it.
+What if the Moon just… disappeared? Here's what would happen to Earth.
+First, nights get very dark. The Moon doesn't make its own light. It reflects light from the Sun. No Moon, no night light. Animals that hunt or travel at night get confused.
+Next, the sea changes. The Moon pulls the ocean, and that makes tides. Without the Moon, tides become about three times smaller. Crabs and sea animals that need tides start to die.
+And if the Moon never comes back…
+Earth starts to wobble. The Moon keeps Earth's tilt steady. Without it, over millions of years, Earth could tip a lot. That means crazy weather: big ice ages and extreme heat.
+And here's the crazy part. Long ago, one day on Earth was only about 6 hours. The Moon slowly slowed Earth down to 24 hours. Without the Moon, nothing slows Earth anymore.
+So next time you see the Moon, say thank you.
 
 ## Science notes (for comments)
 - **Tides:** The Sun's tidal effect is ~0.46× the Moon's. Combined, Sun + Moon = 1.46, so Sun-only tides are about ⅓ of today's.
