@@ -56,6 +56,7 @@ VARIANTS = [
     dict(root=43, bpm=118, prog=3, pulse=2, stab=2, harm=3),
     dict(root=51, bpm=126, prog=0, pulse=3, stab=3, harm=8),
     dict(root=46, bpm=114, prog=2, pulse=0, stab=1, harm=4),
+    dict(root=49, bpm=130, prog=1, pulse=2, stab=2, harm=6),
 ]
 
 def triad(root, quality):
