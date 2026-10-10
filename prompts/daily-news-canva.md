@@ -55,9 +55,9 @@ For each story, produce:
 
    Follow @incbusiness.official for daily business news, simplified.
 
-   #Business #AI #Tech #Today #News #Finance #StartupIndia #IndianEconomy + 7 story-specific tags
+   #startups #business #incbusiness #tech #AI #news + 12 story-specific tags
    ```
-   Keep the 3 bullets under 50 words in total. That makes exactly 15 hashtags: the 8 fixed ones plus 7 for the story (company, sector, investor, category, and so on).
+   Keep the 3 bullets under 50 words in total. Use 18 hashtags in total: the 6 fixed ones (`#startups #business #incbusiness #tech #AI #news`) plus 12 for the story (company, sector, investors, category and so on). Never use fewer than 15 or more than 20.
 
 ## Step 4: Pick the hero image for each card
 The image must be relevant to the story. Use the first option that's available:
@@ -131,3 +131,4 @@ Canva's AI generator does not reproduce this layout exactly. For pixel-exact car
    - `pillText` (the company name as text) together with a `background`
 2. Run `node generator/render.js daily/YYYY-MM-DD/stories.json daily/YYYY-MM-DD/cards` to get 1080×1440 PNGs.
 3. Upload the PNGs to Canva with `create-upload-url` and an HTTP POST, then write the captions to `daily/YYYY-MM-DD/posts.md`.
+4. Canva's Instagram publish panel caption can't be filled through the API, so add each card's full caption as a comment on its Canva design (`comment-on-design`). The person then copies it from the comment into the Caption box.

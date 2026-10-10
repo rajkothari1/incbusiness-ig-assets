@@ -58,7 +58,7 @@ Note: Goodreturns reports the standalone profit of ₹804 crore. The card uses t
 
 Follow @incbusiness.official for daily business news, simplified.
 
-#Business #AI #Tech #Today #News #Finance #StartupIndia #IndianEconomy #DMart #AvenueSupermarts #Q2Results #Retail #QuickCommerce #EarningsSeason #StockMarketIndia
+#startups #business #incbusiness #tech #AI #news #DMart #AvenueSupermarts #Q2Results #EarningsSeason #Retail #RetailIndia #QuickCommerce #StockMarketIndia #Nifty #IndianEconomy #Finance #BusinessNews
 ```
 
 ---
@@ -86,7 +86,7 @@ Not investment advice.
 
 Follow @incbusiness.official for daily business news, simplified.
 
-#Business #AI #Tech #Today #News #Finance #StartupIndia #IndianEconomy #TCS #TargetPrice #BrokerageCall #ITStocks #Nomura #Jefferies #StockMarketIndia
+#startups #business #incbusiness #tech #AI #news #TCS #TargetPrice #BrokerageCall #ITStocks #Nomura #Jefferies #MotilalOswal #StockMarketIndia #Q2Results #InvestmentIdeas #Sensex #Finance
 ```
 
 ---
@@ -109,7 +109,7 @@ Follow @incbusiness.official for daily business news, simplified.
 
 Follow @incbusiness.official for daily business news, simplified.
 
-#Business #AI #Tech #Today #News #Finance #StartupIndia #IndianEconomy #OpenAI #Anthropic #AISafety #ArtificialIntelligence #TechPolicy #GenAI #AIRegulation
+#startups #business #incbusiness #tech #AI #news #OpenAI #Anthropic #AISafety #ArtificialIntelligence #GenAI #AIRegulation #TechPolicy #AIRisk #FutureOfWork #TechNews #Innovation #BusinessNews
 ```
 
 ---
@@ -137,7 +137,7 @@ Note: Puck estimates about 850 jobs and Variety about 800, so the card shows onl
 
 Follow @incbusiness.official for daily business news, simplified.
 
-#Business #AI #Tech #Today #News #Finance #StartupIndia #IndianEconomy #Netflix #Layoffs #TechLayoffs #Streaming #JobCuts #Restructuring #MediaNews
+#startups #business #incbusiness #tech #AI #news #Netflix #Layoffs #TechLayoffs #JobCuts #Streaming #Restructuring #MediaNews #OTT #Hiring #CareerNews #GlobalBusiness #TechNews
 ```
 
 ---
@@ -165,7 +165,7 @@ Follow @incbusiness.official for daily business news, simplified.
 
 Follow @incbusiness.official for daily business news, simplified.
 
-#Business #AI #Tech #Today #News #Finance #StartupIndia #IndianEconomy #NatHabit #D2CBrand #SeriesC #StartupFunding #Ayurveda #PersonalCare #TridentGrowthPartners
+#startups #business #incbusiness #tech #AI #news #NatHabit #StartupFunding #SeriesC #D2CBrand #Ayurveda #PersonalCare #TridentGrowthPartners #StartupIndia #Funding #BeautyIndustry #IndianStartups #Founders
 ```
 
 ---
@@ -191,7 +191,7 @@ Follow @incbusiness.official for daily business news, simplified.
 
 Follow @incbusiness.official for daily business news, simplified.
 
-#Business #AI #Tech #Today #News #Finance #StartupIndia #IndianEconomy #AnandRathi #WealthManagement #AUM #Q2Results #Dividend #HNI #StockMarketIndia
+#startups #business #incbusiness #tech #AI #news #AnandRathi #WealthManagement #AUM #Q2Results #Dividend #HNI #StockMarketIndia #EarningsSeason #Finance #Investing #WealthTech #IndianEconomy
 ```
 
 ---
@@ -214,7 +214,7 @@ Follow @incbusiness.official for daily business news, simplified.
 
 Follow @incbusiness.official for daily business news, simplified.
 
-#Business #AI #Tech #Today #News #Finance #StartupIndia #IndianEconomy #PeakXV #Awfis #BulkDeal #StakeSale #Coworking #VentureCapital #StockMarketIndia
+#startups #business #incbusiness #tech #AI #news #PeakXV #Awfis #BulkDeal #StakeSale #VentureCapital #Coworking #FlexSpace #StockMarketIndia #VC #Exit #IndianStartups #Finance
 ```
 
 ---
@@ -237,7 +237,7 @@ Follow @incbusiness.official for daily business news, simplified.
 
 Follow @incbusiness.official for daily business news, simplified.
 
-#Business #AI #Tech #Today #News #Finance #StartupIndia #IndianEconomy #NeoGrowth #MSME #SmallBusiness #Fintech #DigitalLending #FMO #LeapFrog
+#startups #business #incbusiness #tech #AI #news #NeoGrowth #MSME #SmallBusiness #Fintech #DigitalLending #FMO #LeapFrog #Investment #SMEIndia #Credit #StartupIndia #Finance
 ```
 
 ---
@@ -262,7 +262,7 @@ Follow @incbusiness.official for daily business news, simplified.
 
 Follow @incbusiness.official for daily business news, simplified.
 
-#Business #AI #Tech #Today #News #Finance #StartupIndia #IndianEconomy #AxisMutualFund #SIF #MutualFunds #SEBI #HNI #WealthCreation #InvestingIndia
+#startups #business #incbusiness #tech #AI #news #AxisMutualFund #SIF #MutualFunds #SEBI #HNI #WealthCreation #InvestingIndia #AMC #PortfolioManagement #Finance #Investing #PersonalFinance
 ```
 
 ---
