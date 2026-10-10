@@ -1,6 +1,6 @@
 ---
 name: daily-news-reels
-description: Daily incbusiness run. Finds up to 10 fact-checked Indian business news stories from the last 24h IST, builds 9:16 reels with news music, and schedules them as Instagram Reels on Metricool for the same day. Use when asked for the daily news, daily reels, or the incbusiness daily run.
+description: Daily incbusiness run. Finds up to 10 fact-checked Indian business news stories from the last 24h IST, builds 9:16 reels with news music, schedules them as Instagram Reels on Metricool for the same day, and emails a summary. Use when asked for the daily news, daily reels, or the incbusiness daily run.
 ---
 
 # Daily news → reels → Metricool
@@ -71,3 +71,19 @@ End with a short Hinglish summary covering:
 - any problem that needs the person, for example a Metricool error or fewer than 3 stories qualifying
 
 If Metricool fails, leave the reels pushed and say so plainly. Never report a post as scheduled unless `getScheduledPosts` shows it.
+
+## 7. Email the summary
+Send one email with the Gmail connector (`send_message`) to `raj.kothari90@gmail.com` at the end of every run, including runs that fail or stop early. Use an HTML body.
+
+- **Subject:** `incbusiness reels <DAY>: <N> scheduled`. If the run stopped early, use `incbusiness reels <DAY>: already scheduled` or `incbusiness reels <DAY>: needs attention` instead.
+- **Body:**
+  1. A one-line status: how many reels are scheduled out of how many stories were found.
+  2. A table with one row per reel. Columns: time (IST), category, headline, a reel link (the raw.githubusercontent.com MP4 URL), and the Metricool post id.
+  3. The full caption of each reel, so wrong facts can be spotted before the reel goes live.
+  4. Fact check: the number of claims checked, plus any claim dropped for having one source.
+  5. Dropped stories, each with its reason.
+  6. Errors or anything that needs the person, for example a Metricool failure, a missing image, or a reel that didn't schedule.
+  7. A link to `posts.md` on GitHub: `https://github.com/rajkothari1/incbusiness-ig-assets/blob/claude/nice-ptolemy-9ilnvh/daily/<DAY>/posts.md`.
+  8. A reminder that posts auto-publish, and that a wrong post can be edited or deleted in Metricool before its time.
+
+Write the email in simple Hinglish, the same as the chat summary.
