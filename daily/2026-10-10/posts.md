@@ -374,3 +374,23 @@ The files are in `reels/`. They were also imported into Canva, where they appear
 | 7 | Peak XV and Awfis | https://www.canva.com/d/OJtwcu-72tlnfW6 |
 | 8 | NeoGrowth | https://www.canva.com/d/Zd5K5cdQDZ-WWlx |
 | 9 | Axis SIF | https://www.canva.com/d/X3Tw-d66_VURHOb |
+
+---
+
+## Metricool schedule (Instagram Reels, auto-publish, Sun 11 Oct 2026 IST)
+
+The time slots come from Metricool's best-time-to-post scores for the account.
+
+| Time (IST) | Reel | Metricool post id |
+|---|---|---|
+| 09:00 | Anand Rathi Wealth | 392930620 |
+| 10:00 | DMart | 392930386 |
+| 11:00 | Nat Habit | 392930580 |
+| 12:00 | TCS | 392930492 |
+| 13:00 | NeoGrowth | 392930672 |
+| 15:00 | Axis SIF | 392930721 |
+| 17:00 | Peak XV and Awfis | 392930644 |
+| 18:00 | AI (OpenAI, Anthropic) | 392930515 |
+| 19:00 | Netflix | 392930546 |
+
+Planner: https://app.metricool.com/planner/calendar?blogId=6752944

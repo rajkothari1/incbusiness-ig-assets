@@ -143,3 +143,15 @@ Canva's AI generator does not reproduce this layout exactly. For pixel-exact car
    - a "Follow @incbusiness.official" line
    - a silent audio track (add music in the Instagram app)
 3. Push the reels, then import each MP4 into Canva with `upload-asset-from-url`, using its raw.githubusercontent.com URL (the repo is public). The direct `create-upload-url` route rejects MP4. Then make a 1080×1920 Reel design, `insert_fill` the video at full frame, and add the caption as a comment.
+
+## Scheduling on Metricool
+- **Brand:** incbusiness.official (blogId `6752944`, timezone Asia/Calcutta, Instagram connected).
+- **Times:** call `getBestTimeToPostByNetwork` for Instagram for the posting day, then put the highest-ranked story in the best slot.
+- **Each post:** call `createScheduledPost` with these settings:
+  - `providers`: instagram
+  - `instagramData.type`: REEL
+  - `media`: the raw.githubusercontent.com URL of the MP4
+  - `videoCoverMilliseconds`: 3000
+  - `text`: the fact-checked caption, without the `**` bold markers
+  - `autoPublish`: true
+- **Check:** call `getScheduledPosts` to confirm all posts, then record the post ids in `posts.md`.
