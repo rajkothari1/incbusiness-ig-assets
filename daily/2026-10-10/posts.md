@@ -342,3 +342,35 @@ Follow @incbusiness.official for daily business news, simplified.
 - Awfis share price −59% over the year
 
 **Corrected:** The Peak XV sale was ₹29.8 crore on NSE only. The full sale across NSE and BSE was ₹47 crore.
+
+---
+
+## Reels (9:16 MP4)
+
+The files are in `reels/`. They were also imported into Canva, where they appear under **Uploads → Videos**:
+
+| # | Canva video asset |
+|---|---|
+| 1 | Reel 01 Earnings DMart (VAHXo00PxdI) |
+| 2 | Reel 02 Investment Ideas TCS (VAHXo6V-R3A) |
+| 3 | Reel 03 AI OpenAI Anthropic (VAHXo_DhuLk) |
+| 4 | Reel 04 Layoffs Netflix (VAHXo_LApbU) |
+| 5 | Reel 05 Funding Nat Habit (VAHXo-WEy5E) |
+| 6 | Reel 06 Earnings Anand Rathi (VAHXo7vCyxY) |
+| 7 | Reel 07 Business Tech Peak XV Awfis (VAHXo6Gol98) |
+| 8 | Reel 08 Investment NeoGrowth (VAHXoxNRvPk) |
+| 9 | Reel 09 Mutual Funds Axis SIF (VAHXoyDXW_8) |
+
+### Reel designs in Canva (ready to publish; caption is in each design's comments)
+
+| # | Reel | Canva link |
+|---|---|---|
+| 1 | DMart | https://canva.link/f4w4vxlvd0myvcw |
+| 2 | TCS | https://www.canva.com/d/BWdFCmoECCJq_gh |
+| 3 | AI | https://www.canva.com/d/uK9aap-3N9KDy0v |
+| 4 | Netflix | https://www.canva.com/d/nFxuYo5rZUdFWdY |
+| 5 | Nat Habit | https://www.canva.com/d/pXGG_c6g5FvV90A |
+| 6 | Anand Rathi | https://www.canva.com/d/XkykW_EwsMK1qJX |
+| 7 | Peak XV and Awfis | https://www.canva.com/d/OJtwcu-72tlnfW6 |
+| 8 | NeoGrowth | https://www.canva.com/d/Zd5K5cdQDZ-WWlx |
+| 9 | Axis SIF | https://www.canva.com/d/X3Tw-d66_VURHOb |

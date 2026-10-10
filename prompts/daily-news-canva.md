@@ -142,4 +142,4 @@ Canva's AI generator does not reproduce this layout exactly. For pixel-exact car
    - the card sliding in, then floating gently
    - a "Follow @incbusiness.official" line
    - a silent audio track (add music in the Instagram app)
-3. The Canva upload tool rejects MP4, so post the reels directly in Instagram, or upload them to Canva by hand.
+3. Push the reels, then import each MP4 into Canva with `upload-asset-from-url`, using its raw.githubusercontent.com URL (the repo is public). The direct `create-upload-url` route rejects MP4. Then make a 1080×1920 Reel design, `insert_fill` the video at full frame, and add the caption as a comment.
