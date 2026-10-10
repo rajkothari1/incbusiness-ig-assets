@@ -154,4 +154,5 @@ Canva's AI generator does not reproduce this layout exactly. For pixel-exact car
   - `videoCoverMilliseconds`: 3000
   - `text`: the fact-checked caption, without the `**` bold markers
   - `autoPublish`: true
+- **Music:** first run `python3 generator/make-music.py generator/assets/reel-bed.wav 8`, then mux it into each MP4 with `ffmpeg -i reel.mp4 -i reel-bed.wav -map 0:v -map 1:a -c:v copy -c:a aac -shortest`. Instagram's own audio catalog is blocked for this account.
 - **Check:** call `getScheduledPosts` to confirm all posts, then record the post ids in `posts.md`.

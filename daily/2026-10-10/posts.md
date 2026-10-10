@@ -383,14 +383,16 @@ The time slots come from Metricool's best-time-to-post scores for the account.
 
 | Time (IST) | Reel | Metricool post id |
 |---|---|---|
-| 09:00 | Anand Rathi Wealth | 392930620 |
-| 10:00 | DMart | 392930386 |
-| 11:00 | Nat Habit | 392930580 |
-| 12:00 | TCS | 392930492 |
-| 13:00 | NeoGrowth | 392930672 |
-| 15:00 | Axis SIF | 392930721 |
-| 17:00 | Peak XV and Awfis | 392930644 |
-| 18:00 | AI (OpenAI, Anthropic) | 392930515 |
-| 19:00 | Netflix | 392930546 |
+| 09:00 | Anand Rathi Wealth | 392931695 |
+| 10:00 | DMart | 392931455 |
+| 11:00 | Nat Habit | 392931673 |
+| 12:00 | TCS | 392931491 |
+| 13:00 | NeoGrowth | 392931733 |
+| 15:00 | Axis SIF | 392931753 |
+| 17:00 | Peak XV and Awfis | 392931719 |
+| 18:00 | AI (OpenAI, Anthropic) | 392931511 |
+| 19:00 | Netflix | 392931534 |
+
+All posts use the `reels-music/` versions, which add a royalty-free synthesized instrumental made with `generator/make-music.py`. Instagram's own music library is not available for this account (Metricool returned HTTP 403), because it is not a Business account linked to a Facebook Page.
 
 Planner: https://app.metricool.com/planner/calendar?blogId=6752944
