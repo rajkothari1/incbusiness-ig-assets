@@ -16,6 +16,23 @@
 
 "Name pill" means the company name is typed in bold black text on the white pill. It is not the official logo. Swap in the official logo PNG from the company's press kit in Canva before posting if you want one.
 
+## Editable Canva designs
+
+Every element in these designs is a separate layer: headline lines, category tag, logo pill and photo. Click any of them to edit.
+
+| # | Card | Canva link |
+|---|---|---|
+| 1 | Earnings: DMart | https://www.canva.com/d/Oh4aMIvoth83fey |
+| 2 | Investment Ideas: TCS | https://www.canva.com/d/j2bP9ehwCjvmAQM |
+| 3 | AI: OpenAI and Anthropic | https://www.canva.com/d/NZO4gY955IM5TgA |
+| 4 | Layoffs: Netflix | https://www.canva.com/d/spQyvXKjvu7suuy |
+| 5 | Funding: Nat Habit | https://www.canva.com/d/8PUSor6JLRy_UF_ |
+| 6 | Earnings: Anand Rathi | https://www.canva.com/d/eCtYN7Y9IBOpLw- |
+| 7 | Business & Tech: Peak XV and Awfis | https://www.canva.com/d/0oLq68djuvhEG92 |
+| 8 | Investment: NeoGrowth | https://www.canva.com/d/YJ0gvurhRwIJjE8 |
+| 9 | Mutual Funds: Axis SIF | https://www.canva.com/d/oZc-GYHrPa0Kpo3 |
+| Template | For tomorrow, copy this one | https://www.canva.com/d/8yUQOyO91iZOSwV |
+
 ---
 
 ## #1 · Earnings
