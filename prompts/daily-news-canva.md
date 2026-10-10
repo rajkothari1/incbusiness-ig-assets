@@ -31,6 +31,7 @@ Search several outlets: ET, Moneycontrol, Mint, Business Standard, Inc42, Entrac
 
 ## Step 2: Check and rank
 - **Verify:** check every number (amount, %, valuation, price target, date) against **2 or more independent outlets**. If only one outlet has it, keep the story but mark it **single-sourced**. If outlets disagree, use the company or filing figure and note the gap.
+- **Caption fact-check (mandatory):** before writing the caption, list every factual claim in it, including each number, %, name, date and the "what's next" point. Confirm each claim in 2 or more independent outlets. Syndicated copies of the same wire story (for example IANS reprints) count as one source. Drop or rewrite any claim found in only one outlet. Watch for partial numbers: for example, a bulk deal reported on NSE only can miss the BSE leg. Add a fact-check table to `posts.md` showing each claim and its 2 sources.
 - **Rank up to 10 stories by importance, not by how recent they are.** Score each one on:
   1. how big the number is,
   2. how widely it's covered,
