@@ -7,6 +7,8 @@ const { chromium } = require('playwright');
 const ROOT = path.resolve(__dirname, '..');
 const [, , storiesFile, outDir] = process.argv;
 const stories = JSON.parse(fs.readFileSync(storiesFile, 'utf8'));
+// REEL=1 renders only the card on a transparent background (for video compositing)
+const REEL = process.env.REEL === '1';
 fs.mkdirSync(outDir, { recursive: true });
 
 const fileUrl = (p) => 'file://' + path.resolve(ROOT, p);
@@ -30,8 +32,8 @@ const page = (s) => `<!doctype html><html><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;0,700;0,800;1,800&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{width:1080px;height:1440px;font-family:Poppins,sans-serif;position:relative;overflow:hidden;
-  background:#F4F4F2;background-image:linear-gradient(#e9e9e4 1px,transparent 1px),linear-gradient(90deg,#e9e9e4 1px,transparent 1px);background-size:44px 44px}
+body{width:1080px;height:1440px;${REEL ? 'background:transparent!important;' : ''}font-family:Poppins,sans-serif;position:relative;overflow:hidden;
+  ${REEL ? '' : 'background:#F4F4F2;background-image:linear-gradient(#e9e9e4 1px,transparent 1px),linear-gradient(90deg,#e9e9e4 1px,transparent 1px);background-size:44px 44px;'}}
 .brand{position:absolute;top:34px;left:50%;transform:translateX(-50%);width:400px;mix-blend-mode:multiply}
 .card{position:absolute;left:66px;right:66px;top:128px;bottom:76px;background:#fff;border-radius:28px;box-shadow:0 18px 40px rgba(0,0,0,.12)}
 .hero{position:absolute;left:26px;right:26px;top:30px;height:548px;border-radius:24px;overflow:hidden;background:#0a1640}
@@ -56,7 +58,7 @@ body{width:1080px;height:1440px;font-family:Poppins,sans-serif;position:relative
 .social{position:absolute;right:38px;bottom:34px;display:flex;gap:28px}
 .social svg{width:66px;height:66px}
 </style></head><body>
-<img class="brand" src="${fileUrl('generator/assets/incbusiness-logo.png')}">
+${REEL ? '' : `<img class="brand" src="${fileUrl('generator/assets/incbusiness-logo.png')}">`}
 <div class="card">
   ${hero(s)}
   <div class="tag">${esc(s.category)}</div>
@@ -95,7 +97,13 @@ body{width:1080px;height:1440px;font-family:Poppins,sans-serif;position:relative
       let size = 76;
       while (n.scrollWidth > 700 && size > 36) { size -= 2; n.style.fontSize = size + 'px'; }
     });
-    await p.screenshot({ path: path.join(outDir, `${s.slug}.png`) });
+    if (REEL) {
+      // card sits at left 66, top 128, right 66, bottom 76; keep 40px for the shadow
+      await p.screenshot({ path: path.join(outDir, `${s.slug}.png`), omitBackground: true,
+        clip: { x: 26, y: 88, width: 1028, height: 1316 } });
+    } else {
+      await p.screenshot({ path: path.join(outDir, `${s.slug}.png`) });
+    }
     fs.unlinkSync(htmlPath);
     await p.close();
     console.log('rendered', s.slug);

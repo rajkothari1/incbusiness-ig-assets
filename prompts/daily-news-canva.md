@@ -133,3 +133,13 @@ Canva's AI generator does not reproduce this layout exactly. For pixel-exact car
 2. Run `node generator/render.js daily/YYYY-MM-DD/stories.json daily/YYYY-MM-DD/cards` to get 1080×1440 PNGs.
 3. Upload the PNGs to Canva with `create-upload-url` and an HTTP POST, then write the captions to `daily/YYYY-MM-DD/posts.md`.
 4. Canva's Instagram publish panel caption can't be filled through the API, so add each card's full caption as a comment on its Canva design (`comment-on-design`). The person then copies it from the comment into the Caption box.
+
+## Reels (optional, 9:16 video)
+1. `REEL=1 node generator/render.js daily/YYYY-MM-DD/stories.json daily/YYYY-MM-DD/reels/cards` renders each card on a transparent background.
+2. `python3 generator/make-reels.py daily/YYYY-MM-DD/stories.json daily/YYYY-MM-DD/reels` makes one 8-second, 1080×1920 MP4 per story. Each reel has:
+   - a moving brand-gradient background with the story's blurred photo panning behind it
+   - a white incbusiness logo
+   - the card sliding in, then floating gently
+   - a "Follow @incbusiness.official" line
+   - a silent audio track (add music in the Instagram app)
+3. The Canva upload tool rejects MP4, so post the reels directly in Instagram, or upload them to Canva by hand.
