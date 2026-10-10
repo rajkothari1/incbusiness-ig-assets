@@ -122,3 +122,12 @@ Then export each card as PNG (`export-design`).
 - No dashes in headlines or on cards.
 - Every number on a card must match the verified figure exactly, including the currency (₹ or $) and the unit (crore, million, billion).
 - Investment Ideas must name the brokerage, the date of the call, and the target price, and include "Not investment advice." in the caption.
+
+## Pixel-exact fallback: local renderer
+Canva's AI generator does not reproduce this layout exactly. For pixel-exact cards, use the renderer in this repo:
+1. Write `daily/YYYY-MM-DD/stories.json`. Each story needs `slug`, `category` and `cardHeadline` (with `[[red words]]`), plus **one** of these:
+   - `heroPhoto` for a founder or product photo
+   - `logos` (one or two logo files) together with a `background`
+   - `pillText` (the company name as text) together with a `background`
+2. Run `node generator/render.js daily/YYYY-MM-DD/stories.json daily/YYYY-MM-DD/cards` to get 1080×1440 PNGs.
+3. Upload the PNGs to Canva with `create-upload-url` and an HTTP POST, then write the captions to `daily/YYYY-MM-DD/posts.md`.

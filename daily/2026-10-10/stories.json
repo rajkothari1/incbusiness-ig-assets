@@ -1,0 +1,71 @@
+[
+ {
+  "slug": "01-earnings-dmart",
+  "category": "Earnings",
+  "cardHeadline": "[[DMart]] Q2 Profit Rises [[8.5%]] to [[₹743 Crore]]",
+  "pillText": "DMart",
+  "background": "backgrounds/earnings.jpg"
+ },
+ {
+  "slug": "02-investment-ideas-tcs",
+  "category": "Investment Ideas",
+  "cardHeadline": "[[TCS]] Targets Range From [[₹1,800]] to [[₹2,630]]",
+  "logos": [
+   "generator/assets/tcs.svg"
+  ],
+  "background": "backgrounds/investment-ideas.jpg"
+ },
+ {
+  "slug": "03-ai-openai-anthropic",
+  "category": "AI",
+  "cardHeadline": "[[OpenAI]], Anthropic Brace for AI Crisis Within [[12 Months]]",
+  "logos": [
+   "generator/assets/openai.svg",
+   "generator/assets/anthropic.svg"
+  ],
+  "background": "backgrounds/ai.jpg"
+ },
+ {
+  "slug": "04-layoffs-netflix",
+  "category": "Layoffs",
+  "cardHeadline": "[[Netflix]] Plans to Cut About [[5%]] of Its Staff",
+  "logos": [
+   "generator/assets/netflix.svg"
+  ],
+  "background": "backgrounds/layoffs.jpg"
+ },
+ {
+  "slug": "05-funding-nat-habit",
+  "category": "Funding",
+  "cardHeadline": "[[Nat Habit]] Raises [[₹142 Crore]] Led by Trident",
+  "heroPhoto": "generator/assets/nathabit.jpg"
+ },
+ {
+  "slug": "06-earnings-anand-rathi",
+  "category": "Earnings",
+  "cardHeadline": "[[Anand Rathi Wealth]] AUM Crosses [[₹1.08 Lakh Crore]]",
+  "pillText": "Anand Rathi Wealth",
+  "background": "backgrounds/investment.jpg"
+ },
+ {
+  "slug": "07-business-tech-peak-xv-awfis",
+  "category": "Business & Tech",
+  "cardHeadline": "[[Peak XV]] Sells [[₹29.8 Crore]] of Awfis Shares",
+  "pillText": "Peak XV × Awfis",
+  "background": "backgrounds/business-tech.jpg"
+ },
+ {
+  "slug": "08-investment-neogrowth",
+  "category": "Investment",
+  "cardHeadline": "[[NeoGrowth]] Raises [[₹85 Crore]] for MSME Loans",
+  "pillText": "NeoGrowth",
+  "background": "backgrounds/funding.jpg"
+ },
+ {
+  "slug": "09-mutual-funds-axis-sif",
+  "category": "Mutual Funds",
+  "cardHeadline": "[[Axis AMC]] Launches Accelerate SIF With [[₹10 Lakh]] Minimum",
+  "background": "backgrounds/mutual-funds.jpg",
+  "pillText": "Axis Mutual Fund"
+ }
+]
