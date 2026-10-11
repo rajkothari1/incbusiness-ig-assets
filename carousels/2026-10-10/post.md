@@ -6,7 +6,7 @@ Every fact comes from the fact-checked `daily/2026-10-10/posts.md` on `claude/ni
 
 Re-render: `NODE_PATH=$(npm root -g) node carousel/render-carousel.js carousels/2026-10-10/slides.json carousels/2026-10-10`
 
-Hero background: AI image (Higgsfield gpt_image_2_5, fictional people, no logos), saved as `hero-bg.jpg`.
+Hero: a "news wall" of the 9 stories, each tile showing the story photo, the company logo (or name) and its key number. No AI images. Logos for Axis MF, Anand Rathi and NeoGrowth come from the companies' own websites.
 
 ## Caption
 

@@ -30,12 +30,33 @@ const header = (dark) => `
 const progress = (cur) => `<div class="prog">${Array.from({ length: N }, (_, i) =>
   `<i class="${i + 1 === cur ? 'on' : i + 1 < cur ? 'done' : ''}"></i>`).join('')}</div>`;
 
+// One tile of the hero news wall: the story's real photo, its real logo (or name) and its key number
+function wallTile(t) {
+  const s = stories[t.story - 1];
+  let mark;
+  if (t.darkLogo) mark = `<img class="dlogo" src="${fileUrl(t.darkLogo)}">`;
+  else if (t.logo || (s.logos && !t.name)) {
+    const logos = t.logo ? [t.logo] : s.logos;
+    mark = `<div class="wpill${logos.length > 1 ? ' two' : ''}">${logos.map((l) => `<img src="${fileUrl(l)}">`).join('<i></i>')}</div>`;
+  } else if (t.name || s.pill) {
+    mark = `<div class="wpill${(t.name || s.pill).length > 10 ? ' long' : ''}"><b style="color:${t.nameColor || '#111'}">${esc(t.name || s.pill)}</b></div>`;
+  } else mark = '';
+  const arrow = { up: '▲', down: '▼', warn: '!' }[t.dir] || '';
+  return `<div class="wt${t.big ? ' big' : ''}">
+    <img class="wphoto${s.fullPhoto ? ' full' : ''}" src="${fileUrl(s.photo)}">
+    ${mark}
+    <div class="wstat ${t.dir}"><span>${arrow}</span>${esc(t.stat)}</div>
+    <div class="wnum">#${t.story}</div>
+  </div>`;
+}
+
 function hero() {
   const h = data.hero;
   const lines = h.headline.map((l) => /^\[\[.*\]\]$/.test(l)
     ? `<div class="hlbox">${esc(l.slice(2, -2))}</div>` : `<div>${hl(l)}</div>`).join('');
   return `<section class="slide hero" style="left:0">
-    <img class="scene" src="${fileUrl(h.image)}">
+    <div class="glow"></div>
+    <div class="wall">${h.wall.map(wallTile).join('')}</div>
     <div class="shade"></div>
     <img class="brand" src="${fileUrl('carousel/assets/incbusiness-logo-white.png')}">
     <div class="counter">1/${SLIDES}</div>
@@ -112,9 +133,29 @@ body{width:${SLIDES * W}px;height:${H}px;font-family:Poppins,sans-serif;position
 
 /* ---------- hero ---------- */
 .hero{background:#000}
-.scene{position:absolute;left:0;top:-40px;width:100%;height:1350px;object-fit:cover;object-position:center top;z-index:0}
-.shade{position:absolute;inset:0;z-index:1;
-  background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 14%,rgba(0,0,0,0) 52%,rgba(0,0,0,.85) 68%,#000 76%)}
+.glow{position:absolute;left:-200px;right:-200px;top:120px;height:760px;z-index:0;
+  background:radial-gradient(closest-side,rgba(224,49,49,.55),rgba(224,49,49,.12) 60%,transparent)}
+.wall{position:absolute;left:50%;top:70px;width:960px;margin-left:-480px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;z-index:0;
+  transform:perspective(1600px) rotateX(14deg) rotateZ(-4deg);transform-origin:50% 40%}
+.wt{position:relative;height:250px;border-radius:22px;overflow:hidden;background:#111;box-shadow:0 18px 40px rgba(0,0,0,.6);border:2px solid rgba(255,255,255,.12)}
+.wt.big{transform:scale(1.14);z-index:2;border:4px solid #E03131;box-shadow:0 0 0 6px rgba(224,49,49,.25),0 24px 60px rgba(0,0,0,.8)}
+.wphoto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.5) saturate(1.2)}
+.wphoto.full{filter:brightness(.9)}
+.wpill{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);background:#fff;border-radius:18px;height:84px;padding:0 24px;
+  display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(0,0,0,.4);white-space:nowrap}
+.wpill img{height:52px;max-width:220px;object-fit:contain}
+.wpill.two{padding:0 16px}.wpill.two img{height:30px;max-width:120px}
+.wpill.long b{font-size:28px}
+.wpill i{width:2px;height:44px;background:#ddd;margin:0 14px}
+.wpill b{font-weight:800;font-size:38px;letter-spacing:-.5px}
+.dlogo{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);max-width:240px;max-height:70px;filter:drop-shadow(0 4px 12px rgba(0,0,0,.6))}
+.wstat{position:absolute;left:14px;bottom:14px;background:#fff;color:#111;font-weight:800;font-size:30px;border-radius:12px;padding:4px 14px;display:flex;align-items:center;gap:8px}
+.wstat span{font-size:20px}
+.wstat.up span{color:#12a150}.wstat.down span,.wstat.warn span{color:#E03131}
+.wstat.down,.wstat.warn{background:#E03131;color:#fff}.wstat.down span,.wstat.warn span{color:#fff}
+.wnum{position:absolute;right:12px;top:10px;color:#fff;font-weight:800;font-size:24px;opacity:.85}
+.shade{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,0) 12%,rgba(0,0,0,0) 50%,rgba(0,0,0,.88) 64%,#000 72%)}
 .counter{position:absolute;top:52px;right:52px;z-index:3;height:60px;padding:0 24px;border-radius:30px;background:rgba(20,20,30,.6);
   color:#fff;font-weight:600;font-size:26px;display:flex;align-items:center;backdrop-filter:blur(6px)}
 .headline{position:absolute;left:40px;right:40px;bottom:250px;z-index:3;text-align:center;color:#fff;font-weight:800;font-size:76px;

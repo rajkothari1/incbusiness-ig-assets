@@ -1,13 +1,66 @@
 {
   "date": "10 OCT 2026",
   "hero": {
-    "image": "carousels/2026-10-10/hero-bg.jpg",
     "headline": [
       "9 Stories That Shook",
       "[[India's Business World]]",
       "Today"
     ],
-    "nudge": "Netflix job cuts, an AI warning & more inside"
+    "nudge": "Netflix job cuts, an AI warning & more inside",
+    "wall": [
+      {
+        "story": 3,
+        "stat": "12 months",
+        "dir": "warn"
+      },
+      {
+        "story": 1,
+        "stat": "₹743 Cr",
+        "dir": "up",
+        "name": "DMart",
+        "nameColor": "#0B7A3E"
+      },
+      {
+        "story": 5,
+        "stat": "₹142 Cr",
+        "dir": "up"
+      },
+      {
+        "story": 2,
+        "stat": "₹2,630",
+        "dir": "up"
+      },
+      {
+        "story": 4,
+        "stat": "~800 jobs",
+        "dir": "down",
+        "big": true
+      },
+      {
+        "story": 6,
+        "stat": "₹1.08 L Cr",
+        "dir": "up",
+        "darkLogo": "carousel/assets/anandrathi-white.png"
+      },
+      {
+        "story": 7,
+        "stat": "₹47 Cr",
+        "dir": "down",
+        "name": "Peak XV × Awfis"
+      },
+      {
+        "story": 8,
+        "stat": "₹85 Cr",
+        "dir": "up",
+        "logo": "carousel/assets/neogrowth.png"
+      },
+      {
+        "story": 9,
+        "stat": "₹10 L min",
+        "dir": "up",
+        "darkLogo": "carousel/assets/axis-mf-white.svg"
+      }
+    ]
   },
   "stories": [
     {
