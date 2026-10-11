@@ -39,7 +39,7 @@ i=0; for f in daily/$DAY/reels/*.mp4; do s=$(basename $f .mp4)
   i=$((i+1)); done
 ```
 - Each reel gets its own music variant (0–9), so no two reels in a day share a tune.
-- Make one snapshot per reel for the email: `mkdir -p daily/$DAY/reels-final/snaps && for f in daily/$DAY/reels-final/*.mp4; do ffmpeg -y -loglevel error -ss 3 -i $f -frames:v 1 -vf scale=540:-2 -q:v 4 daily/$DAY/reels-final/snaps/$(basename $f .mp4).jpg; done`.
+- Optionally make one snapshot per reel for posts.md (not used in the email): `mkdir -p daily/$DAY/reels-final/snaps && for f in daily/$DAY/reels-final/*.mp4; do ffmpeg -y -loglevel error -ss 3 -i $f -frames:v 1 -vf scale=540:-2 -q:v 4 daily/$DAY/reels-final/snaps/$(basename $f .mp4).jpg; done`.
 - QA: grab a frame from 2 or 3 reels with `ffmpeg -ss 3 -i <mp4> -frames:v 1 /tmp/f.png` and look at it. Check that the text is spelled correctly, the numbers match the fact check, there are no dashes, nothing overflows, and the logo isn't stretched. Fix any problem and re-render.
 
 ## 4. Write up and push
@@ -83,8 +83,13 @@ Send one email with the Gmail connector (`send_message`) to `raj.kothari90@gmail
      - The link must play on a phone. Use the jsDelivr URL, which serves the file as `video/mp4`: `https://cdn.jsdelivr.net/gh/rajkothari1/incbusiness-ig-assets@claude/nice-ptolemy-9ilnvh/daily/<DAY>/reels-final/<slug>.mp4`.
      - Don't use the raw.githubusercontent.com URL here. It downloads on mobile instead of playing.
      - Check each link with `curl -sI` before sending; it should return 200 with `content-type: video/mp4`.
-  3. **Reel snapshots, one below the other** (the person checks reels from these without clicking). For each reel in time order, add a bold line `<time> · <category>: <headline>`. Under it, put the snapshot as `<img src="https://cdn.jsdelivr.net/gh/rajkothari1/incbusiness-ig-assets@claude/nice-ptolemy-9ilnvh/daily/<DAY>/reels-final/snaps/<slug>.jpg" width="320" style="display:block;border-radius:12px">`, wrapped in a link to the reel's jsDelivr MP4. Check that each image URL returns `content-type: image/jpeg` before sending.
-  4. The full caption of each reel, so wrong facts can be spotted before the reel goes live.
+  3. **Reel cards, one below the other, inside the email.** The person checks reels from these without clicking anything.
+     - The Gmail connector strips `<img>` tags that point outside the email.
+     - Image attachments need base64 copied by hand, which corrupts the data, so don't use images.
+     - Instead, write `/tmp/schedule.json` as `[{"slug","time","caption"}]` in time order, using the full caption without `**`.
+     - Run `python3 generator/email-cards.py daily/$DAY/stories.json /tmp/schedule.json /tmp/cards.html`. It draws each card in HTML (brand pill, red category tag, headline with red keywords, READ MORE banner) and puts the caption under it.
+     - Paste the contents of `/tmp/cards.html` into the email body.
+     - Steps 3 and 4 are covered by these cards.
   5. Fact check: the number of claims checked, plus any claim dropped for having one source.
   6. Dropped stories, each with its reason.
   7. Errors or anything that needs the person, for example a Metricool failure, a missing image, or a reel that didn't schedule.
