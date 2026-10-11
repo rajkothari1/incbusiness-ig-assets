@@ -127,6 +127,37 @@ class Reel:
         self.chrome = self.make_chrome()
         self.intro_frames = self.extract_intro()
         self.talking_pip = self.make_talking_pip()
+        self.lip_clips = self.extract_lipsync()
+
+    def extract_lipsync(self):
+        """Lip-synced clips covering the whole voice track, listed in <day>/lipsync/clips.json as
+        [{"file": "chunk1.mp4", "start": 10.05, "face": [x0, y0, x1, y1]}]. "start" is where the
+        clip's audio begins in voice.mp3; "face" is the crop (in 1080x1920 space) for the corner circle."""
+        meta = self.day / "lipsync" / "clips.json"
+        if not meta.exists():
+            return []
+        clips = []
+        for k, c in enumerate(json.loads(meta.read_text())):
+            out = self.day / "build" / f"lip_{k}"
+            out.mkdir(parents=True, exist_ok=True)
+            for old in out.glob("*.jpg"):
+                old.unlink()
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(self.day / "lipsync" / c["file"]), "-vf",
+                            f"fps={FPS},scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H}",
+                            "-q:v", "2", str(out / "%05d.jpg")], check=True)
+            clips.append({"start": c["start"], "face": tuple(c.get("face", (240, 480, 840, 1080))),
+                          "frames": sorted(out.glob("*.jpg"))})
+        return clips
+
+    def lip_frame(self, t):
+        """(frame path, face box) of the lip-synced clip covering voice time t, or None."""
+        for c in reversed(self.lip_clips):
+            if t >= c["start"]:
+                idx = int((t - c["start"]) * FPS)
+                if idx < len(c["frames"]):
+                    return c["frames"][idx], c["face"]
+                return None
+        return None
 
     def make_talking_pip(self):
         """Animate the corner anchor with faces from the lip-synced intro clip.
@@ -309,6 +340,19 @@ class Reel:
         return frame, local
 
     def pip_at(self, t):
+        hit = self.lip_frame(t) if self.lip_clips else None
+        if hit:
+            path, box = hit
+            size = self.pip.width - 16
+            if not hasattr(self, "_pip_mask"):
+                m = Image.new("L", (size * 4, size * 4), 0)
+                ImageDraw.Draw(m).ellipse([0, 0, size * 4, size * 4], fill=255)
+                self._pip_mask = m.resize((size, size), Image.LANCZOS)
+            face = Image.open(path).convert("RGB").crop(box).resize((size, size), Image.LANCZOS)
+            pip = Image.new("RGBA", self.pip.size, (0, 0, 0, 0))
+            ImageDraw.Draw(pip).ellipse([0, 0, self.pip.width - 1, self.pip.height - 1], fill=ACCENT)
+            pip.paste(face, (8, 8), self._pip_mask)
+            return pip
         if not self.talking_pip:
             return self.pip
         faces, seq = self.talking_pip
@@ -344,6 +388,8 @@ class Reel:
         if seg is self.data["intro"] and self.intro_frames:
             idx = min(int(local * FPS), len(self.intro_frames) - 1)
             frame = Image.open(self.intro_frames[idx]).convert("RGBA")
+        elif self.lip_clips and self.lip_frame(t):
+            frame = Image.open(self.lip_frame(t)[0]).convert("RGBA")
         elif self.talking_pip:
             # Outro: same voice-driven trick as the corner face, full screen.
             _, seq = self.talking_pip
@@ -378,46 +424,22 @@ class Reel:
         return [it["start"] for it in self.data["items"]] + [self.data["outro"]["start"]]
 
     def make_audio(self, path):
+        """News-style music bed (make_music.py, royalty-free synth) plus a whoosh on every cut."""
         n = int((self.dur + 0.5) * SR)
-        t = np.arange(n) / SR
-        music = np.zeros(n)
-        bpm = 112
-        beat = 60 / bpm
         rng = np.random.default_rng(7)
-        # Kick on every beat, hi-hat on off-beats.
-        kick_len = int(0.25 * SR)
-        kt = np.arange(kick_len) / SR
-        kick = np.sin(2 * np.pi * (50 + 90 * np.exp(-kt * 30)) * kt) * np.exp(-kt * 14)
-        hat_len = int(0.05 * SR)
-        hat = rng.standard_normal(hat_len) * np.exp(-np.arange(hat_len) / SR * 90)
-        hat = np.diff(hat, prepend=0)
-        b = 0
-        while b * beat < self.dur:
-            s = int(b * beat * SR)
-            e = min(n, s + kick_len)
-            music[s:e] += 0.9 * kick[: e - s]
-            hs = int((b + 0.5) * beat * SR)
-            he = min(n, hs + hat_len)
-            if hs < n:
-                music[hs:he] += 0.25 * hat[: he - hs]
-            b += 1
-        # Bass + soft pad following an Am-F-C-G loop, one chord per bar.
-        roots = [110.0, 87.31, 130.81, 98.0]
-        bar = 4 * beat
-        for k in range(int(self.dur / bar) + 1):
-            s, e = int(k * bar * SR), min(n, int((k + 1) * bar * SR))
-            if s >= n:
-                break
-            tt = t[s:e] - t[s]
-            f = roots[k % 4]
-            env = np.minimum(1, tt * 8) * np.exp(-tt * 0.4)
-            music[s:e] += 0.35 * np.sin(2 * np.pi * f * tt) * env
-            for mult in (2, 2.5, 3):
-                music[s:e] += 0.07 * np.sin(2 * np.pi * f * mult * tt) * np.minimum(1, tt * 2)
-        music /= np.max(np.abs(music)) + 1e-9
-        music *= 0.11
-        fade = int(1.5 * SR)
-        music[-fade:] *= np.linspace(1, 0, fade)
+        bed = self.day / "build" / "news_music.wav"
+        variant = self.data.get("music_variant", sum(map(ord, self.data["date"])) % 10)
+        subprocess.run([sys.executable, str(Path(__file__).with_name("make_music.py")), str(bed),
+                        f"{self.dur + 0.5:.2f}", "news", str(variant)], check=True)
+        with wave.open(str(bed)) as wf:
+            frames = np.frombuffer(wf.readframes(wf.getnframes()), np.int16)
+            if wf.getnchannels() == 2:
+                frames = frames.reshape(-1, 2).mean(1)
+            if wf.getframerate() != SR:
+                raise SystemExit("make_music.py sample rate changed")
+        music = np.zeros(n)
+        music[:min(n, len(frames))] = frames[:n] / 32768.0
+        music *= 0.5 / (np.max(np.abs(music)) + 1e-9)
         # Whoosh: band-swept noise on every cut.
         wl = int(0.45 * SR)
         wt = np.arange(wl) / SR
@@ -452,7 +474,8 @@ class Reel:
             ["ffmpeg", "-y", "-loglevel", "error",
              "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
              "-i", str(self.voice), "-i", str(bed),
-             "-filter_complex", "[1:a]volume=1.0[v];[2:a]volume=1.0[m];[v][m]amix=inputs=2:duration=first:normalize=0[a]",
+             "-filter_complex", "[1:a]asplit=2[v][key];[2:a][key]sidechaincompress=threshold=0.03:ratio=6:attack=20:release=350[m];"
+             "[v][m]amix=inputs=2:duration=first:normalize=0,alimiter=limit=0.95[a]",
              "-map", "0:v", "-map", "[a]", "-t", f"{self.dur:.2f}",
              "-c:v", "libx264", "-pix_fmt", "yuv420p", "-preset", "medium", "-crf", "20",
              "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", str(out)],
