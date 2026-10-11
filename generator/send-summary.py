@@ -1,7 +1,8 @@
 """Emails the daily reel summary with each reel's real snapshot embedded in the email.
 
 The Gmail connector strips outside images and cannot take binary attachments reliably,
-so this sends through the Resend HTTPS API (key in the RESEND_API_KEY environment variable).
+so this sends through the Resend HTTPS API. The key comes from the RESEND_API_KEY environment variable,
+or, when that is unset, from a network secret for api.resend.com that the environment's proxy adds to the request.
 Snapshots go in as inline attachments (cid), so they show inside the email with nothing to click.
 
 Usage: python3 generator/send-summary.py <stories.json> <schedule.json> <snaps_dir> "<subject>" "<status line>" [extra_html_file]
@@ -48,6 +49,6 @@ body = f'''<div style="font-family:Arial,sans-serif;font-size:14px;color:#111;ma
 req = urllib.request.Request('https://api.resend.com/emails', method='POST', data=json.dumps({
     'from': os.environ.get('SUMMARY_FROM', 'incbusiness reels <onboarding@resend.dev>'),
     'to': [TO], 'subject': subject, 'html': body, 'attachments': attachments}).encode(),
-    headers={'Authorization': f"Bearer {os.environ['RESEND_API_KEY']}", 'Content-Type': 'application/json',
-             'User-Agent': 'incbusiness-reels/1.0'})
+    headers={'Content-Type': 'application/json', 'User-Agent': 'incbusiness-reels/1.0',
+             **({'Authorization': f"Bearer {os.environ['RESEND_API_KEY']}"} if os.environ.get('RESEND_API_KEY') else {})})
 print(urllib.request.urlopen(req).read().decode())

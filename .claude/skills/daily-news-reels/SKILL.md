@@ -74,7 +74,7 @@ End with a short Hinglish summary covering:
 If Metricool fails, leave the reels pushed and say so plainly. Never report a post as scheduled unless `getScheduledPosts` shows it.
 
 ## 7. Email the summary
-**Preferred: real reel snapshots inside the email.** If the `RESEND_API_KEY` environment variable is set, take these steps and skip the Gmail steps below.
+**Preferred: real reel snapshots inside the email.** Resend works when the `RESEND_API_KEY` environment variable is set, or when an api.resend.com network secret exists. To check, run `curl -s -o /dev/null -w '%{http_code}' https://api.resend.com/domains`: 200 means the key is available. If it is, take these steps and skip the Gmail steps below.
 - Make the snapshots (step 3) and write `/tmp/schedule.json` as `[{"slug","time","caption"}]` in time order.
 - Run `python3 generator/send-summary.py daily/$DAY/stories.json /tmp/schedule.json daily/$DAY/reels-final/snaps "incbusiness reels <DAY>: <N> scheduled" "<status line>" [extra.html]`.
 - `extra.html` can hold the dropped stories, any errors and the posts.md link.
