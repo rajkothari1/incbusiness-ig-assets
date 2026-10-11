@@ -388,13 +388,15 @@ The time slots come from Metricool's best-time-to-post scores for the account.
 | 11:00 | Nat Habit | 392934483 |
 | 12:00 | TCS | 393108175 |
 | 13:00 | NeoGrowth | 393108186 |
-| 15:00 | Axis SIF | 393108208 |
-| 17:00 | Peak XV and Awfis | 393108232 |
-| 18:00 | AI (OpenAI, Anthropic) | 393108250 |
-| 19:00 | Netflix | 393108276 |
+| 15:00 | Axis SIF | 393142451 |
+| 17:00 | Peak XV and Awfis | 393142465 |
+| 18:00 | AI (OpenAI, Anthropic) | 393142490 |
+| 19:00 | Netflix | 393142507 |
 
 All posts use the `reels-final/` versions. Each reel has its own royalty-free, news-style instrumental with a different key, tempo, chord order and rhythm, made with `generator/make-music.py <out.wav> 8 news N` (variant N = 0 to 8, in slug order). Instagram's own music library is not available for this account (Metricool returned HTTP 403), because it is not a Business account linked to a Facebook Page.
 
 Planner: https://app.metricool.com/planner/calendar?blogId=6752944
 
 **Tag fix (11 Oct, 11:13 IST):** the red category tag now sits centred on the photo's bottom edge (`generator/render.js`, `.tag` top 532px). The reels were rebuilt with this fix and the 6 posts not yet published (12:00 to 19:00) were updated to use the new videos. The 09:00, 10:00 and 11:00 reels were already live with the old tag position.
+
+**Grid-safe layout and colours (11 Oct, 13:08 IST):** the reels were rebuilt with the logo, card and CTA inside the centre 3:4 band, so the profile grid no longer cuts the logo, and each reel has its own background palette. The 15:00 to 19:00 posts were updated to use these versions; the 12:00 and 13:00 reels had already been published.
