@@ -1,0 +1,233 @@
+// Renders a connected incbusiness news carousel (1080x1350 slides) from a slides.json file.
+// All slides are laid out side by side on one long canvas, so the swipe pill and the track
+// line run across every seam, then each slide is cut out with its own red frame.
+// Usage: node carousel/render-carousel.js carousels/<date>/slides.json carousels/<date>
+const fs = require('fs');
+const path = require('path');
+const { chromium } = require('playwright');
+
+const ROOT = path.resolve(__dirname, '..');
+const [, , dataFile, outDir] = process.argv;
+const data = JSON.parse(fs.readFileSync(dataFile, 'utf8'));
+fs.mkdirSync(outDir, { recursive: true });
+
+const W = 1080, H = 1350, FRAME = 18;
+const stories = data.stories;
+const N = stories.length;
+const SLIDES = N + 2; // hero + stories + recap
+const pad = (n) => String(n).padStart(2, '0');
+const fileUrl = (p) => 'file://' + path.resolve(ROOT, p);
+const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+// [[word]] -> red highlight
+const hl = (s) => esc(s).replace(/\[\[(.+?)\]\]/g, '<span class="hl">$1</span>');
+
+const ARROW = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 5l7 7-7 7"/></svg>`;
+
+const header = (dark) => `
+  <img class="brand" src="${fileUrl(`carousel/assets/incbusiness-logo${dark ? '-white' : ''}.png`)}">
+  <div class="date${dark ? ' dark' : ''}">${esc(data.date)}</div>`;
+
+const progress = (cur) => `<div class="prog">${Array.from({ length: N }, (_, i) =>
+  `<i class="${i + 1 === cur ? 'on' : i + 1 < cur ? 'done' : ''}"></i>`).join('')}</div>`;
+
+function hero() {
+  const photos = stories.concat(stories.slice(0, 3)).map((s) =>
+    `<div class="tile"><img src="${fileUrl(s.photo)}"></div>`).join('');
+  const teasers = data.hero.teasers.map((t) =>
+    `<div class="teaser"><b>#${t.num}</b><span>${esc(t.text)}</span></div>`).join('');
+  return `<section class="slide hero" style="left:0">
+    <div class="mosaic">${photos}</div>
+    <div class="shade"></div>
+    ${header(true)}
+    <div class="kicker"><i></i>${esc(data.hero.kicker)}</div>
+    <div class="big">
+      <div class="l1">AAJ KI</div>
+      <div class="l2">TOP <span>${N}</span></div>
+      <div class="l3">BUSINESS KHABREIN</div>
+      <div class="l4">2 minute mein poora din, simple bhasha mein</div>
+    </div>
+    <div class="teasers">${teasers}</div>
+    <div class="start">Number 4 miss mat karna</div>
+  </section>`;
+}
+
+function storySlide(s, i) {
+  const num = i + 1;
+  let media;
+  if (s.fullPhoto) {
+    media = `<img class="photo" src="${fileUrl(s.photo)}">`;
+  } else {
+    const inner = s.logos
+      ? s.logos.map((l) => `<img class="logo" src="${fileUrl(l)}">`).join('<span class="sep"></span>')
+      : `<span class="name">${esc(s.pill)}</span>`;
+    media = `<img class="photo dim" src="${fileUrl(s.photo)}">
+      <div class="pill${s.logos && s.logos.length > 1 ? ' two' : ''}">${inner}</div>`;
+  }
+  return `<section class="slide story" style="left:${num * W}px">
+    ${header(false)}
+    <div class="ghost">${pad(num)}</div>
+    <div class="media">${media}
+      <div class="badge">${pad(num)}<small>/${pad(N)}</small></div>
+    </div>
+    <div class="tag">${esc(s.category)}</div>
+    <div class="titlebox"><h1 class="fit">${hl(s.title)}</h1></div>
+    <p class="line">${esc(s.line)}${s.note ? `<em>${esc(s.note)}</em>` : ''}</p>
+    <div class="count">${pad(num)} <span>/ ${pad(N)}</span></div>
+    ${progress(num)}
+  </section>`;
+}
+
+function recap() {
+  const rows = data.recap.map((r, i) => `<li><b>${i + 1}</b><span>${esc(r)}</span></li>`).join('');
+  return `<section class="slide recap" style="left:${(N + 1) * W}px">
+    ${header(false)}
+    <h2>Aaj ka <span class="hl">Recap</span></h2>
+    <div class="sub">Save karo, baad mein kaam aayega</div>
+    <ol>${rows}</ol>
+    <div class="cta">
+      <div class="handle">@incbusiness.official</div>
+      <div class="ctasub">Roz ki top business khabrein, simple bhasha mein</div>
+      <div class="acts"><span>SAVE</span><span>SHARE</span><span class="red">FOLLOW</span></div>
+    </div>
+    <div class="follow">KAL KI ${N} KE LIYE FOLLOW KARO ${ARROW}</div>
+  </section>`;
+}
+
+// Swipe pill sits across every seam: "SWIPE ->" on the right edge of slide k,
+// its tail continues into the left edge of slide k+1.
+const seams = Array.from({ length: SLIDES - 1 }, (_, k) =>
+  `<div class="seam${k === 0 ? ' first' : ''}" style="left:${(k + 1) * W}px"><span>${k === 0 ? 'SWIPE KARO' : 'SWIPE'}</span>${ARROW}</div>`).join('');
+const frames = Array.from({ length: SLIDES }, (_, k) => `<div class="frame" style="left:${k * W}px"></div>`).join('');
+
+const html = `<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;0,800;0,900;1,800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--red:#E03131;--red2:#D92B2B;--navy:#0B1257;--ink:#111}
+body{width:${SLIDES * W}px;height:${H}px;font-family:Poppins,sans-serif;position:relative;overflow:hidden;background:#F4F4F2}
+.slide{position:absolute;top:0;width:${W}px;height:${H}px;overflow:hidden;
+  background:#F4F4F2;background-image:linear-gradient(#e9e9e4 1px,transparent 1px),linear-gradient(90deg,#e9e9e4 1px,transparent 1px);background-size:44px 44px}
+.brand{position:absolute;top:58px;left:64px;height:44px;mix-blend-mode:multiply;z-index:3}
+.hero .brand{mix-blend-mode:normal}
+.date{position:absolute;top:52px;right:64px;height:56px;padding:0 26px;border-radius:28px;background:var(--navy);color:#fff;
+  font-weight:700;font-size:24px;letter-spacing:1px;display:flex;align-items:center;z-index:3}
+.date.dark{background:var(--red)}
+.hl{color:var(--red)}
+
+/* track line: one continuous line through every slide */
+.track{position:absolute;left:0;right:0;top:1229px;height:4px;background:repeating-linear-gradient(90deg,var(--red) 0 18px,transparent 18px 30px);z-index:4;opacity:.55}
+
+/* ---------- hero ---------- */
+.hero{background:#070a24}
+.mosaic{position:absolute;left:-260px;top:-240px;width:1600px;display:grid;grid-template-columns:repeat(4,380px);gap:16px;transform:rotate(-12deg);z-index:0}
+.tile{height:270px;border-radius:22px;overflow:hidden}
+.tile img{width:100%;height:100%;object-fit:cover;filter:brightness(.62) saturate(1.15)}
+.shade{position:absolute;inset:0;z-index:1;
+  background:radial-gradient(900px 520px at 18% 30%,rgba(224,49,49,.38),transparent 70%),
+             linear-gradient(180deg,rgba(7,10,36,.30) 0%,rgba(7,10,36,.55) 30%,rgba(7,10,36,.93) 56%,#070a24 74%)}
+.kicker{position:absolute;top:150px;left:64px;z-index:3;display:flex;align-items:center;gap:14px;color:#fff;font-weight:700;font-size:26px;letter-spacing:3px;
+  background:rgba(255,255,255,.10);border:1.5px solid rgba(255,255,255,.25);padding:12px 26px;border-radius:40px;backdrop-filter:blur(6px)}
+.kicker i{width:16px;height:16px;border-radius:50%;background:var(--red);box-shadow:0 0 0 6px rgba(224,49,49,.35)}
+.big{position:absolute;left:58px;right:58px;top:250px;z-index:3;color:#fff}
+.big .l1{font-weight:800;font-size:78px;letter-spacing:2px;line-height:1;text-shadow:0 6px 30px rgba(0,0,0,.5)}
+.big .l2{font-weight:900;font-size:300px;line-height:.86;letter-spacing:-12px;margin-left:-10px;text-shadow:0 14px 50px rgba(0,0,0,.55)}
+.big .l2 span{color:var(--red);-webkit-text-stroke:0}
+.big .l3{font-weight:800;font-size:82px;line-height:1.02;letter-spacing:-1px;margin-top:8px}
+.big .l4{font-weight:500;font-size:32px;color:#c9cdf2;margin-top:18px}
+.teasers{position:absolute;left:64px;right:64px;top:850px;z-index:3;display:flex;flex-direction:column;gap:16px}
+.teaser{display:flex;align-items:center;gap:22px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.14);border-left:8px solid var(--red);
+  border-radius:18px;padding:16px 24px;color:#fff;font-weight:600;font-size:31px;line-height:1.2}
+.teaser b{flex:none;width:74px;height:58px;border-radius:14px;background:var(--red);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:30px}
+.start{position:absolute;left:64px;top:1206px;z-index:5;color:#fff;font-weight:700;font-size:30px;background:#070a24;padding-right:18px;line-height:50px}
+
+/* ---------- story ---------- */
+.ghost{position:absolute;right:30px;top:640px;font-weight:900;font-size:420px;line-height:1;color:rgba(11,18,87,.045);letter-spacing:-20px;z-index:0}
+.media{position:absolute;left:64px;right:64px;top:140px;height:540px;border-radius:30px;overflow:hidden;background:#0a1640;box-shadow:0 22px 44px rgba(0,0,0,.18);z-index:1}
+.photo{width:100%;height:100%;object-fit:cover;display:block}
+.dim{filter:brightness(.55) saturate(1.2)}
+.pill{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:#fff;border-radius:40px;min-width:480px;height:160px;max-width:820px;
+  padding:0 54px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.logo{height:112px;width:auto;max-width:540px;object-fit:contain}
+.pill.two .logo{height:64px;max-width:290px}
+.sep{width:2px;height:76px;background:#ddd;margin:0 32px}
+.name{font-weight:800;font-size:76px;color:var(--ink);letter-spacing:-1px;white-space:nowrap}
+.badge{position:absolute;left:26px;top:26px;background:var(--red);color:#fff;font-weight:800;font-size:46px;line-height:1;border-radius:20px;padding:16px 22px 14px;
+  box-shadow:0 8px 20px rgba(0,0,0,.3)}
+.badge small{font-size:24px;font-weight:700;opacity:.8;margin-left:2px}
+.tag{position:absolute;top:640px;left:50%;transform:translateX(-50%);background:var(--red2);color:#fff;font-weight:700;font-size:34px;white-space:nowrap;
+  height:84px;padding:0 62px;display:flex;align-items:center;clip-path:polygon(9% 0,91% 0,100% 50%,91% 100%,9% 100%,0 50%);z-index:2}
+.titlebox{position:absolute;left:64px;right:64px;top:752px;height:258px;display:flex;align-items:center;z-index:1}
+.titlebox h1{font-weight:800;line-height:1.07;color:var(--ink);letter-spacing:-1.5px}
+.line{position:absolute;left:64px;right:64px;top:1026px;border-left:8px solid var(--red);padding:4px 0 4px 26px;font-weight:500;font-size:32px;line-height:1.35;color:#3a3a46;z-index:1}
+.line em{display:block;font-style:normal;font-size:22px;color:#8a8a96;margin-top:6px}
+.count{position:absolute;left:150px;top:1205px;z-index:5;font-weight:800;font-size:40px;color:var(--navy);line-height:50px;background:#F4F4F2;padding:0 16px}
+.count span{color:#9a9aa8;font-size:28px}
+.prog{position:absolute;left:330px;top:1217px;z-index:5;display:flex;gap:10px;background:#F4F4F2;padding:0 14px}
+.prog i{width:26px;height:26px;border-radius:50%;background:#d8d8de;display:block}
+.prog i.done{background:#f1a5a5}
+.prog i.on{background:var(--red);box-shadow:0 0 0 5px rgba(224,49,49,.22)}
+
+/* ---------- recap ---------- */
+.recap h2{position:absolute;left:64px;top:150px;font-weight:800;font-size:96px;letter-spacing:-2px;color:var(--ink);line-height:1}
+.recap .sub{position:absolute;left:66px;top:262px;font-weight:600;font-size:30px;color:#6a6a78}
+.recap ol{position:absolute;left:64px;right:64px;top:318px;list-style:none;background:#fff;border-radius:28px;padding:20px 34px;box-shadow:0 18px 40px rgba(0,0,0,.10)}
+.recap li{display:flex;align-items:center;gap:22px;height:60px;border-bottom:1.5px dashed #e3e3e8;font-weight:600;font-size:30px;color:var(--ink)}
+.recap li:last-child{border-bottom:0}
+.recap li b{flex:none;width:46px;height:46px;border-radius:50%;background:var(--red);color:#fff;font-size:24px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.cta{position:absolute;left:64px;right:64px;top:918px;height:240px;border-radius:28px;background:var(--navy);color:#fff;padding:28px 36px}
+.handle{font-weight:800;font-size:46px;letter-spacing:-.5px}
+.ctasub{font-weight:500;font-size:26px;color:#c9cdf2;margin-top:2px}
+.acts{display:flex;gap:16px;margin-top:20px}
+.acts span{font-weight:800;font-size:24px;letter-spacing:2px;border:2px solid rgba(255,255,255,.5);border-radius:30px;padding:6px 24px}
+.acts span.red{background:var(--red);border-color:var(--red)}
+
+.follow{position:absolute;right:${FRAME}px;top:1196px;height:70px;padding:0 34px 0 40px;border-radius:35px 0 0 35px;background:var(--red);color:#fff;z-index:6;
+  display:flex;align-items:center;gap:14px;font-weight:800;font-size:28px;letter-spacing:2px;box-shadow:0 10px 24px rgba(224,49,49,.35)}
+.follow svg{width:38px;height:38px}
+/* ---------- connectors + frames ---------- */
+.seam{position:absolute;top:1196px;height:70px;width:420px;margin-left:-300px;border-radius:35px;background:var(--red);color:#fff;z-index:6;
+  display:flex;align-items:center;padding-left:36px;gap:14px;font-weight:800;font-size:30px;letter-spacing:2px;box-shadow:0 10px 24px rgba(224,49,49,.35)}
+.seam.first{width:470px;margin-left:-350px}
+.seam svg{width:40px;height:40px}
+.frame{position:absolute;top:0;width:${W}px;height:${H}px;border:${FRAME}px solid var(--red);z-index:10;pointer-events:none}
+</style></head><body>
+${hero()}
+${stories.map(storySlide).join('')}
+${recap()}
+<div class="track"></div>
+${seams}
+${frames}
+</body></html>`;
+
+(async () => {
+  const browser = await chromium.launch();
+  const page = await browser.newPage({ viewport: { width: SLIDES * W, height: H } });
+  const htmlPath = path.join(outDir, 'carousel.html');
+  fs.writeFileSync(htmlPath, html);
+  await page.goto('file://' + path.resolve(htmlPath), { waitUntil: 'networkidle' });
+  await page.evaluate(() => document.fonts.ready);
+  // Shrink each title until it fits its box
+  await page.evaluate(() => {
+    for (const h of document.querySelectorAll('h1.fit')) {
+      const box = h.parentElement;
+      let size = 86;
+      h.style.fontSize = size + 'px';
+      while ((h.scrollHeight > box.clientHeight || h.scrollWidth > box.clientWidth) && size > 48) {
+        size -= 2; h.style.fontSize = size + 'px';
+      }
+    }
+    for (const n of document.querySelectorAll('.name')) {
+      let size = 76;
+      while (n.scrollWidth > 680 && size > 36) { size -= 2; n.style.fontSize = size + 'px'; }
+    }
+  });
+  const slidesDir = path.join(outDir, 'slides');
+  fs.mkdirSync(slidesDir, { recursive: true });
+  for (let k = 0; k < SLIDES; k++) {
+    const file = path.join(slidesDir, `${pad(k + 1)}.png`);
+    await page.screenshot({ path: file, clip: { x: k * W, y: 0, width: W, height: H } });
+    console.log('rendered', file);
+  }
+  fs.unlinkSync(htmlPath);
+  await browser.close();
+})();
