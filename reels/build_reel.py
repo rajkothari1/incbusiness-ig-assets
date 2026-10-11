@@ -125,6 +125,21 @@ class Reel:
                 item["bg_img"] = self.bgs[item["bg"]]
         self.prepare_cards()
         self.chrome = self.make_chrome()
+        self.intro_frames = self.extract_intro()
+
+    def extract_intro(self):
+        """Optional lip-synced anchor clip (<day>/intro.mp4) played during the intro line."""
+        clip = self.day / "intro.mp4"
+        if not clip.exists():
+            return []
+        out = self.day / "build" / "intro_frames"
+        out.mkdir(parents=True, exist_ok=True)
+        for old in out.glob("*.jpg"):
+            old.unlink()
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(clip), "-vf",
+                        f"fps={FPS},scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H}",
+                        "-q:v", "2", str(out / "%05d.jpg")], check=True)
+        return sorted(out.glob("*.jpg"))
 
     def make_pip(self, anchor):
         size = 230
@@ -284,7 +299,11 @@ class Reel:
     def render_bookend(self, seg, t):
         local = t - seg["start"]
         p = local / (seg["end"] - seg["start"])
-        frame = ken_burns(self.anchor_full, p, zoom=0.12, drift=(0, -40)).convert("RGBA")
+        if seg is self.data["intro"] and self.intro_frames:
+            idx = min(int(local * FPS), len(self.intro_frames) - 1)
+            frame = Image.open(self.intro_frames[idx]).convert("RGBA")
+        else:
+            frame = ken_burns(self.anchor_full, p, zoom=0.12, drift=(0, -40)).convert("RGBA")
         panel = Image.new("RGBA", (W, 640), (*NAVY, 0))
         pd = ImageDraw.Draw(panel)
         for yy in range(640):

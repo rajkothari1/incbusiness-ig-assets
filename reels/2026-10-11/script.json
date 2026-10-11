@@ -2,7 +2,7 @@
   "date": "11 OCT 2026",
   "source": "Stories from the daily routine run (daily/2026-10-10 on claude/nice-ptolemy-9ilnvh)",
   "intro": {
-    "say": "नमस्ते! आज की टॉप नाइन बिज़नेस न्यूज़, सिर्फ एक मिनट में।",
+    "say": "नमस्ते! आज की टॉप नाइन बिज़नेस न्यूज़, सिर्फ एक मिनट में!",
     "title": "TOP 9",
     "subtitle": "BUSINESS NEWS",
     "tagline": "in 60 seconds"
@@ -10,54 +10,55 @@
   "items": [
     {
       "card": "01-earnings-dmart.png",
-      "say": "वन. DMart का प्रॉफिट साढ़े आठ परसेंट बढ़कर सात सौ तैंतालीस करोड़।",
+      "say": "वन! DMart का प्रॉफिट साढ़े आठ परसेंट बढ़कर सात सौ तैंतालीस करोड़!",
       "caption": "DMart ka profit 8.5% badhkar ₹743 crore"
     },
     {
       "card": "02-investment-ideas-tcs.png",
-      "say": "टू. TCS पर ब्रोकरेज बंटे, टारगेट अठारह सौ से छब्बीस सौ तीस तक।",
+      "say": "टू! TCS पर ब्रोकरेज बंटे, टारगेट अठारह सौ से छब्बीस सौ तीस तक!",
       "caption": "TCS par brokerages bante, target ₹1,800 se ₹2,630"
     },
     {
       "card": "03-ai-openai-anthropic.png",
-      "say": "थ्री. OpenAI और Anthropic के इनसाइडर्स को बारह महीने में AI क्राइसिस का डर।",
+      "say": "थ्री! OpenAI और Anthropic के इनसाइडर्स को बारह महीने में AI क्राइसिस का डर!",
       "caption": "OpenAI, Anthropic insiders ko 12 mahine mein AI crisis ka darr"
     },
     {
       "card": "04-layoffs-netflix.png",
-      "say": "फोर. Netflix करीब पाँच परसेंट, यानी आठ सौ नौकरियाँ कम कर सकता है।",
+      "say": "फोर! Netflix करीब पाँच परसेंट, यानी आठ सौ नौकरियाँ कम कर सकता है!",
       "caption": "Netflix 5% staff, yaani ~800 naukriyan kam kar sakta hai"
     },
     {
       "card": "05-funding-nat-habit.png",
-      "say": "फाइव. Nat Habit ने एक सौ बयालीस करोड़ रेज़ किए।",
+      "say": "फाइव! Nat Habit ने एक सौ बयालीस करोड़ रेज़ किए!",
       "caption": "Nat Habit ne ₹142 crore raise kiye"
     },
     {
       "card": "06-earnings-anand-rathi.png",
-      "say": "सिक्स. Anand Rathi Wealth का AUM एक लाख आठ हज़ार करोड़ के पार।",
+      "say": "सिक्स! Anand Rathi Wealth का AUM एक लाख आठ हज़ार करोड़ के पार!",
       "caption": "Anand Rathi Wealth ka AUM ₹1.08 lakh crore ke paar"
     },
     {
       "card": "07-business-tech-peak-xv-awfis.png",
-      "say": "सेवन. Peak XV ने Awfis के सैंतालीस करोड़ के शेयर बेचे।",
+      "say": "सेवन! Peak XV ने Awfis के सैंतालीस करोड़ के शेयर बेचे!",
       "caption": "Peak XV ne Awfis ke ₹47 crore ke shares beche"
     },
     {
       "card": "08-investment-neogrowth.png",
-      "say": "एट. MSME लेंडर NeoGrowth ने पचासी करोड़ जुटाए।",
+      "say": "एट! MSME लेंडर NeoGrowth ने पचासी करोड़ जुटाए!",
       "caption": "MSME lender NeoGrowth ne ₹85 crore jutaye"
     },
     {
       "card": "09-mutual-funds-axis-sif.png",
-      "say": "नाइन. Axis AMC का नया SIF, मिनिमम निवेश दस लाख रुपये।",
+      "say": "नाइन! Axis AMC का नया SIF, मिनिमम निवेश दस लाख रुपये!",
       "caption": "Axis AMC ka naya SIF, minimum ₹10 lakh"
     }
   ],
   "outro": {
-    "say": "रोज़ की न्यूज़ के लिए फॉलो करो incbusiness!",
+    "say": "ऐसी ही न्यूज़ के लिए फॉलो कीजिए, और शेयर करना मत भूलिए!",
     "title": "FOLLOW",
-    "subtitle": "@incbusiness.official",
-    "tagline": "Daily business news, simplified"
-  }
+    "subtitle": "& SHARE",
+    "tagline": "@incbusiness.official"
+  },
+  "voice": "Higgsfield elevenlabs_v4, preset Anika (4b2dc8f3-5e8b-59a9-9a5c-85620e44c033), stability 0.3, [excited]/[energetic] tags"
 }
