@@ -39,7 +39,7 @@ i=0; for f in daily/$DAY/reels/*.mp4; do s=$(basename $f .mp4)
   i=$((i+1)); done
 ```
 - Each reel gets its own music variant (0–9), so no two reels in a day share a tune.
-- Optionally make one snapshot per reel for posts.md (not used in the email): `mkdir -p daily/$DAY/reels-final/snaps && for f in daily/$DAY/reels-final/*.mp4; do ffmpeg -y -loglevel error -ss 3 -i $f -frames:v 1 -vf scale=540:-2 -q:v 4 daily/$DAY/reels-final/snaps/$(basename $f .mp4).jpg; done`.
+- Make one snapshot per reel (used by the summary email): `mkdir -p daily/$DAY/reels-final/snaps && for f in daily/$DAY/reels-final/*.mp4; do ffmpeg -y -loglevel error -ss 3 -i $f -frames:v 1 -vf scale=540:-2 -q:v 4 daily/$DAY/reels-final/snaps/$(basename $f .mp4).jpg; done`.
 - QA: grab a frame from 2 or 3 reels with `ffmpeg -ss 3 -i <mp4> -frames:v 1 /tmp/f.png` and look at it. Check that the text is spelled correctly, the numbers match the fact check, there are no dashes, nothing overflows, and the logo isn't stretched. Fix any problem and re-render.
 
 ## 4. Write up and push
@@ -74,6 +74,14 @@ End with a short Hinglish summary covering:
 If Metricool fails, leave the reels pushed and say so plainly. Never report a post as scheduled unless `getScheduledPosts` shows it.
 
 ## 7. Email the summary
+**Preferred: real reel snapshots inside the email.** If the `RESEND_API_KEY` environment variable is set, take these steps and skip the Gmail steps below.
+- Make the snapshots (step 3) and write `/tmp/schedule.json` as `[{"slug","time","caption"}]` in time order.
+- Run `python3 generator/send-summary.py daily/$DAY/stories.json /tmp/schedule.json daily/$DAY/reels-final/snaps "incbusiness reels <DAY>: <N> scheduled" "<status line>" [extra.html]`.
+- `extra.html` can hold the dropped stories, any errors and the posts.md link.
+- The script embeds each real snapshot as an inline image, one below the other, with its caption under it.
+- Check that it prints an id. If it fails, fall back to the Gmail method below.
+
+**Fallback (no key):**
 Send one email with the Gmail connector (`send_message`) to `raj.kothari90@gmail.com` at the end of every run, including runs that fail or stop early. Use an HTML body.
 
 - **Subject:** `incbusiness reels <DAY>: <N> scheduled`. If the run stopped early, use `incbusiness reels <DAY>: already scheduled` or `incbusiness reels <DAY>: needs attention` instead.
