@@ -1,17 +1,85 @@
 {
   "date": "11 OCT 2026",
+  "source": "Stories from the daily routine run (daily/2026-10-10 on claude/nice-ptolemy-9ilnvh)",
+  "intro": {
+    "say": "नमस्ते! आज की टॉप नाइन बिज़नेस न्यूज़, सिर्फ एक मिनट में।",
+    "title": "TOP 9",
+    "subtitle": "BUSINESS NEWS",
+    "tagline": "in 60 seconds",
+    "start": 0.0,
+    "end": 5.556
+  },
   "items": [
-    {"start": 0, "end": 6.71, "text": "This week's Top 10 business & startup news in 60 seconds"},
-    {"start": 6.71, "end": 13.07, "text": "TCS Q2 profit up 4% to ₹13,884 Cr"},
-    {"start": 13.07, "end": 18.93, "text": "Jio Platforms IPO may open Oct 21, size ~₹31,000 Cr"},
-    {"start": 18.93, "end": 23.84, "text": "Zetwerk plans IPO of up to $525 Mn"},
-    {"start": 23.84, "end": 29.12, "text": "~₹50,000 Cr of IPOs lined up before Diwali"},
-    {"start": 29.12, "end": 33.48, "text": "Startup funding falls 47% this week to $123 Mn"},
-    {"start": 33.48, "end": 37.66, "text": "DailyObjects raises $34.3 Mn Series C"},
-    {"start": 37.66, "end": 42.96, "text": "Marico raises Plix stake to 84% for ₹1,012 Cr"},
-    {"start": 42.96, "end": 47.35, "text": "Amazon lays off 100+ employees in India"},
-    {"start": 47.35, "end": 52.79, "text": "NABVENTURES Fund II first close at ₹450 Cr"},
-    {"start": 52.79, "end": 57.75, "text": "Snapdeal parent AceVector lists at 11.6% discount"},
-    {"start": 57.75, "end": 62, "text": "Follow @incbusiness for daily business news"}
-  ]
+    {
+      "card": "01-earnings-dmart.png",
+      "say": "वन. DMart का प्रॉफिट साढ़े आठ परसेंट बढ़कर सात सौ तैंतालीस करोड़।",
+      "caption": "DMart ka profit 8.5% badhkar ₹743 crore",
+      "start": 5.556,
+      "end": 11.544
+    },
+    {
+      "card": "02-investment-ideas-tcs.png",
+      "say": "टू. TCS पर ब्रोकरेज बंटे, टारगेट अठारह सौ से छब्बीस सौ तीस तक।",
+      "caption": "TCS par brokerages bante, target ₹1,800 se ₹2,630",
+      "start": 11.544,
+      "end": 17.076
+    },
+    {
+      "card": "03-ai-openai-anthropic.png",
+      "say": "थ्री. OpenAI और Anthropic के इनसाइडर्स को बारह महीने में AI क्राइसिस का डर।",
+      "caption": "OpenAI, Anthropic insiders ko 12 mahine mein AI crisis ka darr",
+      "start": 17.076,
+      "end": 22.656
+    },
+    {
+      "card": "04-layoffs-netflix.png",
+      "say": "फोर. Netflix करीब पाँच परसेंट, यानी आठ सौ नौकरियाँ कम कर सकता है।",
+      "caption": "Netflix 5% staff, yaani ~800 naukriyan kam kar sakta hai",
+      "start": 22.656,
+      "end": 28.812
+    },
+    {
+      "card": "05-funding-nat-habit.png",
+      "say": "फाइव. Nat Habit ने एक सौ बयालीस करोड़ रेज़ किए।",
+      "caption": "Nat Habit ne ₹142 crore raise kiye",
+      "start": 28.812,
+      "end": 33.624
+    },
+    {
+      "card": "06-earnings-anand-rathi.png",
+      "say": "सिक्स. Anand Rathi Wealth का AUM एक लाख आठ हज़ार करोड़ के पार।",
+      "caption": "Anand Rathi Wealth ka AUM ₹1.08 lakh crore ke paar",
+      "start": 33.624,
+      "end": 38.484
+    },
+    {
+      "card": "07-business-tech-peak-xv-awfis.png",
+      "say": "सेवन. Peak XV ने Awfis के सैंतालीस करोड़ के शेयर बेचे।",
+      "caption": "Peak XV ne Awfis ke ₹47 crore ke shares beche",
+      "start": 38.484,
+      "end": 43.944
+    },
+    {
+      "card": "08-investment-neogrowth.png",
+      "say": "एट. MSME लेंडर NeoGrowth ने पचासी करोड़ जुटाए।",
+      "caption": "MSME lender NeoGrowth ne ₹85 crore jutaye",
+      "start": 43.944,
+      "end": 48.852
+    },
+    {
+      "card": "09-mutual-funds-axis-sif.png",
+      "say": "नाइन. Axis AMC का नया SIF, मिनिमम निवेश दस लाख रुपये।",
+      "caption": "Axis AMC ka naya SIF, minimum ₹10 lakh",
+      "start": 48.852,
+      "end": 54.96
+    }
+  ],
+  "outro": {
+    "say": "रोज़ की न्यूज़ के लिए फॉलो करो incbusiness!",
+    "title": "FOLLOW",
+    "subtitle": "@incbusiness.official",
+    "tagline": "Daily business news, simplified",
+    "start": 54.96,
+    "end": 59.524
+  }
 }
