@@ -1,12 +1,12 @@
-"""Build a 9:16 "Top 10 news in 60s" reel: anchor intro/outro, one photo card per story,
-punch-zoom cuts, word-by-word captions, synthesized music bed and whoosh SFX.
+"""Build a 9:16 "Top N news in 60s" reel: anchor intro/outro, one card per story,
+punch-zoom cuts, word-by-word captions, news music bed (ducked under the voice) and whooshes.
 
 Usage: python3 reels/build_reel.py reels/2026-10-11
-The day folder needs voice.mp3 and segments.json (see reels/2026-10-11/segments.json).
-Everything here is free: Unsplash backgrounds from backgrounds/, audio is generated in code.
+The day folder needs voice.mp3 and segments.json (from make_voice.py). Optional intro.mp4 and
+outro.mp4 are lip-synced anchor clips (Higgsfield MiniMax H3) played for the first and last line;
+without them the anchor photo gets a slow push-in.
 """
 import json
-import math
 import subprocess
 import sys
 import wave
@@ -14,6 +14,8 @@ from pathlib import Path
 
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
+
+from check_sync import MIN_MATCH, find_offset
 
 ROOT = Path(__file__).resolve().parent.parent
 W, H = 1080, 1920
@@ -108,7 +110,6 @@ class Reel:
         # Drop the bottom strip so the image generator's corner watermark never shows.
         anchor = anchor.crop((0, 0, anchor.width, int(anchor.height * 0.88)))
         self.anchor_full = cover(anchor, int(W * 1.12), int(H * 1.12))
-        self.pip = self.make_pip(anchor)
         self.shade = gradient_overlay()
         self.bgs = {}
         for item in self.data["items"]:
@@ -125,99 +126,30 @@ class Reel:
                 item["bg_img"] = self.bgs[item["bg"]]
         self.prepare_cards()
         self.chrome = self.make_chrome()
-        self.intro_frames = self.extract_intro()
-        self.talking_pip = self.make_talking_pip()
-        self.lip_clips = self.extract_lipsync()
+        self.intro_frames = self.extract_clip("intro.mp4", "intro_frames", self.data["intro"])
+        self.outro_frames = self.extract_clip("outro.mp4", "outro_frames", self.data["outro"])
 
-    def extract_lipsync(self):
-        """Lip-synced clips covering the whole voice track, listed in <day>/lipsync/clips.json as
-        [{"file": "chunk1.mp4", "start": 10.05, "face": [x0, y0, x1, y1]}]. "start" is where the
-        clip's audio begins in voice.mp3; "face" is the crop (in 1080x1920 space) for the corner circle."""
-        meta = self.day / "lipsync" / "clips.json"
-        if not meta.exists():
-            return []
-        clips = []
-        for k, c in enumerate(json.loads(meta.read_text())):
-            out = self.day / "build" / f"lip_{k}"
-            out.mkdir(parents=True, exist_ok=True)
-            for old in out.glob("*.jpg"):
-                old.unlink()
-            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(self.day / "lipsync" / c["file"]), "-vf",
-                            f"fps={FPS},scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H}",
-                            "-q:v", "2", str(out / "%05d.jpg")], check=True)
-            clips.append({"start": c["start"], "face": tuple(c.get("face", (240, 480, 840, 1080))),
-                          "frames": sorted(out.glob("*.jpg"))})
-        return clips
+    def extract_clip(self, name, folder, seg):
+        """Optional lip-synced anchor clip (<day>/intro.mp4 or outro.mp4) for the matching line.
 
-    def lip_frame(self, t):
-        """(frame path, face box) of the lip-synced clip covering voice time t, or None."""
-        for c in reversed(self.lip_clips):
-            if t >= c["start"]:
-                idx = int((t - c["start"]) * FPS)
-                if idx < len(c["frames"]):
-                    return c["frames"][idx], c["face"]
-                return None
-        return None
-
-    def make_talking_pip(self):
-        """Animate the corner anchor with faces from the lip-synced intro clip.
-
-        The clip only advances while the voice track is loud, so the mouth moves when she
-        talks and rests in the pauses between stories. Free: reuses the intro clip.
+        The clip's own audio is matched against our voice line so any silent lead-in the
+        generator added is skipped; a clip that is not speaking our line stops the build.
         """
-        if not self.intro_frames:
-            return None
-        size = self.pip.width - 16
-        mask = Image.new("L", (size * 4, size * 4), 0)
-        ImageDraw.Draw(mask).ellipse([0, 0, size * 4, size * 4], fill=255)
-        mask = mask.resize((size, size), Image.LANCZOS)
-        faces = []
-        for f in self.intro_frames:
-            face = Image.open(f).convert("RGB").crop((240, 480, 840, 1080)).resize((size, size), Image.LANCZOS)
-            pip = Image.new("RGBA", self.pip.size, (0, 0, 0, 0))
-            ImageDraw.Draw(pip).ellipse([0, 0, self.pip.width - 1, self.pip.height - 1], fill=ACCENT)
-            pip.paste(face, (8, 8), mask)
-            faces.append(pip)
-        raw = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", str(self.voice), "-ac", "1", "-ar", "16000",
-                              "-f", "s16le", "-"], capture_output=True, check=True).stdout
-        pcm = np.abs(np.frombuffer(raw, np.int16).astype(np.float32))
-        hop = 16000 // FPS
-        env = np.array([pcm[i * hop:(i + 1) * hop].mean() for i in range(len(pcm) // hop)])
-        talking = env > max(env.max() * 0.08, 1)
-        seq, pos, step = [], 0, 1
-        for flag in talking:
-            if flag:  # ping-pong through the clip so there is never a jump cut
-                pos += step
-                if pos >= len(faces) - 1 or pos <= 0:
-                    step = -step
-                    pos = min(max(pos, 0), len(faces) - 1)
-            seq.append(pos)
-        return faces, seq
-
-    def extract_intro(self):
-        """Optional lip-synced anchor clip (<day>/intro.mp4) played during the intro line."""
-        clip = self.day / "intro.mp4"
+        clip = self.day / name
         if not clip.exists():
             return []
-        out = self.day / "build" / "intro_frames"
+        lead, match = find_offset(clip, self.voice, seg["start"], min(seg["end"], self.dur))
+        if lead is None or match < MIN_MATCH:
+            raise SystemExit(f"{name}: lips do not match our voice line (match {match:.2f}); regenerate it")
+        print(f"{name}: skipping {lead:.2f}s lead-in, match {match:.2f}")
+        out = self.day / "build" / folder
         out.mkdir(parents=True, exist_ok=True)
         for old in out.glob("*.jpg"):
             old.unlink()
-        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(clip), "-vf",
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{max(lead, 0):.3f}", "-i", str(clip), "-vf",
                         f"fps={FPS},scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H}",
                         "-q:v", "2", str(out / "%05d.jpg")], check=True)
         return sorted(out.glob("*.jpg"))
-
-    def make_pip(self, anchor):
-        size = 230
-        face = anchor.crop((300, 520, 820, 1040)).resize((size, size), Image.LANCZOS)
-        mask = Image.new("L", (size * 4, size * 4), 0)
-        ImageDraw.Draw(mask).ellipse([0, 0, size * 4, size * 4], fill=255)
-        mask = mask.resize((size, size), Image.LANCZOS)
-        pip = Image.new("RGBA", (size + 16, size + 16), (0, 0, 0, 0))
-        ImageDraw.Draw(pip).ellipse([0, 0, size + 15, size + 15], fill=ACCENT)
-        pip.paste(face, (8, 8), mask)
-        return pip
 
     def make_badge(self, n):
         size = 150
@@ -335,28 +267,7 @@ class Reel:
         frame.paste(card.resize((cw, ch), Image.BILINEAR), (round(W / 2 - cw / 2), round(cy - ch / 2)))
         paste_scaled(frame, item["badge_img"], 110, 230, ease_back((local - 0.1) / 0.35))
         self.draw_caption(frame, item, t, y=1490)
-        bob = math.sin(t * 2.2) * 4
-        frame.alpha_composite(self.pip_at(t), (W - self.pip.width - 30, 160 + round(bob)))
         return frame, local
-
-    def pip_at(self, t):
-        hit = self.lip_frame(t) if self.lip_clips else None
-        if hit:
-            path, box = hit
-            size = self.pip.width - 16
-            if not hasattr(self, "_pip_mask"):
-                m = Image.new("L", (size * 4, size * 4), 0)
-                ImageDraw.Draw(m).ellipse([0, 0, size * 4, size * 4], fill=255)
-                self._pip_mask = m.resize((size, size), Image.LANCZOS)
-            face = Image.open(path).convert("RGB").crop(box).resize((size, size), Image.LANCZOS)
-            pip = Image.new("RGBA", self.pip.size, (0, 0, 0, 0))
-            ImageDraw.Draw(pip).ellipse([0, 0, self.pip.width - 1, self.pip.height - 1], fill=ACCENT)
-            pip.paste(face, (8, 8), self._pip_mask)
-            return pip
-        if not self.talking_pip:
-            return self.pip
-        faces, seq = self.talking_pip
-        return faces[seq[min(int(t * FPS), len(seq) - 1)]]
 
     def render_item(self, item, t):
         if "card" in item:
@@ -377,23 +288,14 @@ class Reel:
         bar = ease_out((local - 0.3) / 0.4)
         d.rectangle([W / 2 - 180 * bar, 1050, W / 2 + 180 * bar, 1058], fill=ACCENT)
         self.draw_caption(frame, item, t)
-        # Anchor stays on screen as a picture-in-picture.
-        bob = math.sin(t * 2.2) * 4
-        frame.alpha_composite(self.pip_at(t), (W - self.pip.width - 40, 170 + round(bob)))
         return frame, local
 
     def render_bookend(self, seg, t):
         local = t - seg["start"]
         p = local / (seg["end"] - seg["start"])
-        if seg is self.data["intro"] and self.intro_frames:
-            idx = min(int(local * FPS), len(self.intro_frames) - 1)
-            frame = Image.open(self.intro_frames[idx]).convert("RGBA")
-        elif self.lip_clips and self.lip_frame(t):
-            frame = Image.open(self.lip_frame(t)[0]).convert("RGBA")
-        elif self.talking_pip:
-            # Outro: same voice-driven trick as the corner face, full screen.
-            _, seq = self.talking_pip
-            frame = Image.open(self.intro_frames[seq[min(int(t * FPS), len(seq) - 1)]]).convert("RGBA")
+        clip = self.intro_frames if seg is self.data["intro"] else self.outro_frames
+        if clip:
+            frame = Image.open(clip[min(int(local * FPS), len(clip) - 1)]).convert("RGBA")
         else:
             frame = ken_burns(self.anchor_full, p, zoom=0.12, drift=(0, -40)).convert("RGBA")
         panel = Image.new("RGBA", (W, 640), (*NAVY, 0))
