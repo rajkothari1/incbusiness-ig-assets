@@ -126,6 +126,42 @@ class Reel:
         self.prepare_cards()
         self.chrome = self.make_chrome()
         self.intro_frames = self.extract_intro()
+        self.talking_pip = self.make_talking_pip()
+
+    def make_talking_pip(self):
+        """Animate the corner anchor with faces from the lip-synced intro clip.
+
+        The clip only advances while the voice track is loud, so the mouth moves when she
+        talks and rests in the pauses between stories. Free: reuses the intro clip.
+        """
+        if not self.intro_frames:
+            return None
+        size = self.pip.width - 16
+        mask = Image.new("L", (size * 4, size * 4), 0)
+        ImageDraw.Draw(mask).ellipse([0, 0, size * 4, size * 4], fill=255)
+        mask = mask.resize((size, size), Image.LANCZOS)
+        faces = []
+        for f in self.intro_frames:
+            face = Image.open(f).convert("RGB").crop((240, 480, 840, 1080)).resize((size, size), Image.LANCZOS)
+            pip = Image.new("RGBA", self.pip.size, (0, 0, 0, 0))
+            ImageDraw.Draw(pip).ellipse([0, 0, self.pip.width - 1, self.pip.height - 1], fill=ACCENT)
+            pip.paste(face, (8, 8), mask)
+            faces.append(pip)
+        raw = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", str(self.voice), "-ac", "1", "-ar", "16000",
+                              "-f", "s16le", "-"], capture_output=True, check=True).stdout
+        pcm = np.abs(np.frombuffer(raw, np.int16).astype(np.float32))
+        hop = 16000 // FPS
+        env = np.array([pcm[i * hop:(i + 1) * hop].mean() for i in range(len(pcm) // hop)])
+        talking = env > max(env.max() * 0.08, 1)
+        seq, pos, step = [], 0, 1
+        for flag in talking:
+            if flag:  # ping-pong through the clip so there is never a jump cut
+                pos += step
+                if pos >= len(faces) - 1 or pos <= 0:
+                    step = -step
+                    pos = min(max(pos, 0), len(faces) - 1)
+            seq.append(pos)
+        return faces, seq
 
     def extract_intro(self):
         """Optional lip-synced anchor clip (<day>/intro.mp4) played during the intro line."""
@@ -269,8 +305,14 @@ class Reel:
         paste_scaled(frame, item["badge_img"], 110, 230, ease_back((local - 0.1) / 0.35))
         self.draw_caption(frame, item, t, y=1490)
         bob = math.sin(t * 2.2) * 4
-        frame.alpha_composite(self.pip, (W - self.pip.width - 30, 160 + round(bob)))
+        frame.alpha_composite(self.pip_at(t), (W - self.pip.width - 30, 160 + round(bob)))
         return frame, local
+
+    def pip_at(self, t):
+        if not self.talking_pip:
+            return self.pip
+        faces, seq = self.talking_pip
+        return faces[seq[min(int(t * FPS), len(seq) - 1)]]
 
     def render_item(self, item, t):
         if "card" in item:
@@ -293,7 +335,7 @@ class Reel:
         self.draw_caption(frame, item, t)
         # Anchor stays on screen as a picture-in-picture.
         bob = math.sin(t * 2.2) * 4
-        frame.alpha_composite(self.pip, (W - self.pip.width - 40, 170 + round(bob)))
+        frame.alpha_composite(self.pip_at(t), (W - self.pip.width - 40, 170 + round(bob)))
         return frame, local
 
     def render_bookend(self, seg, t):
@@ -302,6 +344,10 @@ class Reel:
         if seg is self.data["intro"] and self.intro_frames:
             idx = min(int(local * FPS), len(self.intro_frames) - 1)
             frame = Image.open(self.intro_frames[idx]).convert("RGBA")
+        elif self.talking_pip:
+            # Outro: same voice-driven trick as the corner face, full screen.
+            _, seq = self.talking_pip
+            frame = Image.open(self.intro_frames[seq[min(int(t * FPS), len(seq) - 1)]]).convert("RGBA")
         else:
             frame = ken_burns(self.anchor_full, p, zoom=0.12, drift=(0, -40)).convert("RGBA")
         panel = Image.new("RGBA", (W, 640), (*NAVY, 0))
