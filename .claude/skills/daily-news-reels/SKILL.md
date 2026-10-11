@@ -39,6 +39,7 @@ i=0; for f in daily/$DAY/reels/*.mp4; do s=$(basename $f .mp4)
   i=$((i+1)); done
 ```
 - Each reel gets its own music variant (0–9), so no two reels in a day share a tune.
+- `make-reels.py` gives each reel its own background palette, and keeps the logo, card and CTA inside the centre 3:4 band so the profile grid never crops them. The red category tag is centred on the photo's bottom edge (`render.js`). Don't change these layouts without being asked.
 - Make one snapshot per reel (used by the summary email): `mkdir -p daily/$DAY/reels-final/snaps && for f in daily/$DAY/reels-final/*.mp4; do ffmpeg -y -loglevel error -ss 3 -i $f -frames:v 1 -vf scale=540:-2 -q:v 4 daily/$DAY/reels-final/snaps/$(basename $f .mp4).jpg; done`.
 - QA: grab a frame from 2 or 3 reels with `ffmpeg -ss 3 -i <mp4> -frames:v 1 /tmp/f.png` and look at it. Check that the text is spelled correctly, the numbers match the fact check, there are no dashes, nothing overflows, and the logo isn't stretched. Fix any problem and re-render.
 
