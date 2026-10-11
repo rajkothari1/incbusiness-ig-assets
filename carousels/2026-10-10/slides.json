@@ -1,12 +1,13 @@
 {
   "date": "10 OCT 2026",
   "hero": {
-    "kicker": "DAILY BUSINESS BRIEF",
-    "teasers": [
-      { "num": 4, "text": "Netflix ~800 naukriyan kaatne ki taiyari mein" },
-      { "num": 3, "text": "AI crisis sirf 12 mahine door?" },
-      { "num": 1, "text": "DMart ka profit ₹743 Cr pahuncha" }
-    ]
+    "image": "carousels/2026-10-10/hero-bg.jpg",
+    "headline": [
+      "9 Stories That Shook",
+      "[[India's Business World]]",
+      "Today"
+    ],
+    "nudge": "Netflix job cuts, an AI warning & more inside"
   },
   "stories": [
     {
@@ -14,64 +15,71 @@
       "photo": "backgrounds/earnings.jpg",
       "pill": "DMart",
       "title": "DMart Q2 Profit Rises [[8.5%]] to [[₹743 Cr]]",
-      "line": "Revenue 17.8% badhkar ₹19,644 Cr, par margin 7.3% se 7.1% pe phisla."
+      "line": "Revenue grew 17.8% to ₹19,644 Cr, but the margin slipped from 7.3% to 7.1%."
     },
     {
       "category": "Investment Ideas",
       "photo": "backgrounds/investment-ideas.jpg",
-      "logos": ["carousel/assets/tcs.svg"],
+      "logos": [
+        "carousel/assets/tcs.svg"
+      ],
       "title": "Brokerages Split on TCS: [[₹1,800]] to [[₹2,630]]",
-      "line": "Nomura bola Buy @ ₹2,630, Jefferies bola Underperform @ ₹1,800. Share 5%+ uchla.",
+      "line": "Nomura says Buy at ₹2,630. Jefferies says Underperform at ₹1,800. The stock jumped over 5%.",
       "note": "Not investment advice."
     },
     {
       "category": "AI",
       "photo": "backgrounds/ai.jpg",
-      "logos": ["carousel/assets/openai.svg", "carousel/assets/anthropic.svg"],
+      "logos": [
+        "carousel/assets/openai.svg",
+        "carousel/assets/anthropic.svg"
+      ],
       "title": "OpenAI, Anthropic Brace for an [[AI Crisis]] Within [[12 Months]]",
-      "line": "Axios: insiders ko 6 se 12 mahine mein bade AI incident ka darr. Banks, internet, power top worry."
+      "line": "Axios says insiders fear a major AI incident in 6 to 12 months. Banks, internet and power are the top worry."
     },
     {
       "category": "Layoffs",
       "photo": "backgrounds/layoffs.jpg",
-      "logos": ["carousel/assets/netflix.svg"],
+      "logos": [
+        "carousel/assets/netflix.svg"
+      ],
       "title": "Netflix May Cut [[~5%]] of Staff, Nearly [[800 Jobs]]",
-      "line": "~16,000 mein se ~800 naukriyan. Netflix ne abhi tak confirm nahi kiya."
+      "line": "Around 800 of its ~16,000 employees could be hit. Netflix has not confirmed it yet."
     },
     {
       "category": "Funding",
       "photo": "carousel/assets/nathabit.jpg",
       "fullPhoto": true,
       "title": "Nat Habit Raises [[₹142 Cr]] in Series C",
-      "line": "Trident Growth Partners ne lead kiya. Plan: 3 saal mein 20,000 se 2 lakh stores."
+      "line": "Trident Growth Partners led the round. The plan: grow from 20,000 to 2 lakh stores in 3 years."
     },
     {
       "category": "Earnings",
       "photo": "backgrounds/investment.jpg",
       "pill": "Anand Rathi",
       "title": "Anand Rathi AUM Crosses [[₹1.08 Lakh Cr]]",
-      "line": "AUM 18% up, adjusted profit 22% badhkar ₹121.9 Cr. ₹4 dividend bhi."
+      "line": "AUM grew 18%. Adjusted profit rose 22% to ₹121.9 Cr, plus a ₹4 dividend."
     },
     {
       "category": "Business & Tech",
       "photo": "backgrounds/business-tech.jpg",
       "pill": "Peak XV × Awfis",
       "title": "Peak XV Sells [[₹47 Cr]] of Awfis Shares",
-      "line": "19.2 lakh shares @ ₹245 bech diye: 3.24% stake mein se 2.68% nikal liya."
+      "line": "It sold 19.2 lakh shares at ₹245 each, or 2.68% of Awfis out of its 3.24% stake."
     },
     {
       "category": "Investment",
       "photo": "backgrounds/funding.jpg",
       "pill": "NeoGrowth",
       "title": "NeoGrowth Raises [[₹85 Cr]] for MSME Loans",
-      "line": "FMO aur LeapFrog se paisa aaya. Target: loan book ~₹3,000 Cr tak."
+      "line": "The money comes from FMO and LeapFrog. The goal: a loan book of about ₹3,000 Cr."
     },
     {
       "category": "Mutual Funds",
       "photo": "backgrounds/mutual-funds.jpg",
       "pill": "Axis AMC",
       "title": "Axis AMC Launches SIF With [[₹10 Lakh]] Minimum",
-      "line": "Accelerate SIF: mutual fund aur PMS ke beech ki nayi category, bade investors ke liye."
+      "line": "SIFs sit between mutual funds and PMS, made for investors with bigger money."
     }
   ],
   "recap": [
@@ -84,5 +92,7 @@
     "Peak XV sells ₹47 Cr Awfis stake",
     "NeoGrowth raises ₹85 Cr",
     "Axis SIF, ₹10 lakh minimum"
-  ]
+  ],
+  "recapTitle": "Today's [[Recap]]",
+  "recapSub": "Save this post for later"
 }

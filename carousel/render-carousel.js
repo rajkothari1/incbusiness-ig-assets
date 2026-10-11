@@ -11,7 +11,7 @@ const [, , dataFile, outDir] = process.argv;
 const data = JSON.parse(fs.readFileSync(dataFile, 'utf8'));
 fs.mkdirSync(outDir, { recursive: true });
 
-const W = 1080, H = 1350, FRAME = 18;
+const W = 1080, H = 1350, FRAME = 6;
 const stories = data.stories;
 const N = stories.length;
 const SLIDES = N + 2; // hero + stories + recap
@@ -31,23 +31,16 @@ const progress = (cur) => `<div class="prog">${Array.from({ length: N }, (_, i) 
   `<i class="${i + 1 === cur ? 'on' : i + 1 < cur ? 'done' : ''}"></i>`).join('')}</div>`;
 
 function hero() {
-  const photos = stories.concat(stories.slice(0, 3)).map((s) =>
-    `<div class="tile"><img src="${fileUrl(s.photo)}"></div>`).join('');
-  const teasers = data.hero.teasers.map((t) =>
-    `<div class="teaser"><b>#${t.num}</b><span>${esc(t.text)}</span></div>`).join('');
+  const h = data.hero;
+  const lines = h.headline.map((l) => /^\[\[.*\]\]$/.test(l)
+    ? `<div class="hlbox">${esc(l.slice(2, -2))}</div>` : `<div>${hl(l)}</div>`).join('');
   return `<section class="slide hero" style="left:0">
-    <div class="mosaic">${photos}</div>
+    <img class="scene" src="${fileUrl(h.image)}">
     <div class="shade"></div>
-    ${header(true)}
-    <div class="kicker"><i></i>${esc(data.hero.kicker)}</div>
-    <div class="big">
-      <div class="l1">AAJ KI</div>
-      <div class="l2">TOP <span>${N}</span></div>
-      <div class="l3">BUSINESS KHABREIN</div>
-      <div class="l4">2 minute mein poora din, simple bhasha mein</div>
-    </div>
-    <div class="teasers">${teasers}</div>
-    <div class="start">Number 4 miss mat karna</div>
+    <img class="brand" src="${fileUrl('carousel/assets/incbusiness-logo-white.png')}">
+    <div class="counter">1/${SLIDES}</div>
+    <div class="headline">${lines}</div>
+    <div class="nudge">${esc(h.nudge)}</div>
   </section>`;
 }
 
@@ -81,22 +74,22 @@ function recap() {
   const rows = data.recap.map((r, i) => `<li><b>${i + 1}</b><span>${esc(r)}</span></li>`).join('');
   return `<section class="slide recap" style="left:${(N + 1) * W}px">
     ${header(false)}
-    <h2>Aaj ka <span class="hl">Recap</span></h2>
-    <div class="sub">Save karo, baad mein kaam aayega</div>
+    <h2>${hl(data.recapTitle)}</h2>
+    <div class="sub">${esc(data.recapSub)}</div>
     <ol>${rows}</ol>
     <div class="cta">
       <div class="handle">@incbusiness.official</div>
-      <div class="ctasub">Roz ki top business khabrein, simple bhasha mein</div>
+      <div class="ctasub">Top business news every day, in simple words</div>
       <div class="acts"><span>SAVE</span><span>SHARE</span><span class="red">FOLLOW</span></div>
     </div>
-    <div class="follow">KAL KI ${N} KE LIYE FOLLOW KARO ${ARROW}</div>
+    <div class="follow">FOLLOW FOR TOMORROW'S ${N} ${ARROW}</div>
   </section>`;
 }
 
 // Swipe pill sits across every seam: "SWIPE ->" on the right edge of slide k,
 // its tail continues into the left edge of slide k+1.
 const seams = Array.from({ length: SLIDES - 1 }, (_, k) =>
-  `<div class="seam${k === 0 ? ' first' : ''}" style="left:${(k + 1) * W}px"><span>${k === 0 ? 'SWIPE KARO' : 'SWIPE'}</span>${ARROW}</div>`).join('');
+  `<div class="seam${k === 0 ? ' first' : ''}" style="left:${(k + 1) * W}px"><span>${k === 0 ? 'SWIPE NOW' : 'NEXT STORY'}</span>${ARROW}</div>`).join('');
 const frames = Array.from({ length: SLIDES }, (_, k) => `<div class="frame" style="left:${k * W}px"></div>`).join('');
 
 const html = `<!doctype html><html><head><meta charset="utf-8">
@@ -118,28 +111,17 @@ body{width:${SLIDES * W}px;height:${H}px;font-family:Poppins,sans-serif;position
 .track{position:absolute;left:0;right:0;top:1229px;height:4px;background:repeating-linear-gradient(90deg,var(--red) 0 18px,transparent 18px 30px);z-index:4;opacity:.55}
 
 /* ---------- hero ---------- */
-.hero{background:#070a24}
-.mosaic{position:absolute;left:-260px;top:-240px;width:1600px;display:grid;grid-template-columns:repeat(4,380px);gap:16px;transform:rotate(-12deg);z-index:0}
-.tile{height:270px;border-radius:22px;overflow:hidden}
-.tile img{width:100%;height:100%;object-fit:cover;filter:brightness(.62) saturate(1.15)}
+.hero{background:#000}
+.scene{position:absolute;left:0;top:-40px;width:100%;height:1350px;object-fit:cover;object-position:center top;z-index:0}
 .shade{position:absolute;inset:0;z-index:1;
-  background:radial-gradient(900px 520px at 18% 30%,rgba(224,49,49,.38),transparent 70%),
-             linear-gradient(180deg,rgba(7,10,36,.30) 0%,rgba(7,10,36,.55) 30%,rgba(7,10,36,.93) 56%,#070a24 74%)}
-.kicker{position:absolute;top:150px;left:64px;z-index:3;display:flex;align-items:center;gap:14px;color:#fff;font-weight:700;font-size:26px;letter-spacing:3px;
-  background:rgba(255,255,255,.10);border:1.5px solid rgba(255,255,255,.25);padding:12px 26px;border-radius:40px;backdrop-filter:blur(6px)}
-.kicker i{width:16px;height:16px;border-radius:50%;background:var(--red);box-shadow:0 0 0 6px rgba(224,49,49,.35)}
-.big{position:absolute;left:58px;right:58px;top:250px;z-index:3;color:#fff}
-.big .l1{font-weight:800;font-size:78px;letter-spacing:2px;line-height:1;text-shadow:0 6px 30px rgba(0,0,0,.5)}
-.big .l2{font-weight:900;font-size:300px;line-height:.86;letter-spacing:-12px;margin-left:-10px;text-shadow:0 14px 50px rgba(0,0,0,.55)}
-.big .l2 span{color:var(--red);-webkit-text-stroke:0}
-.big .l3{font-weight:800;font-size:82px;line-height:1.02;letter-spacing:-1px;margin-top:8px}
-.big .l4{font-weight:500;font-size:32px;color:#c9cdf2;margin-top:18px}
-.teasers{position:absolute;left:64px;right:64px;top:850px;z-index:3;display:flex;flex-direction:column;gap:16px}
-.teaser{display:flex;align-items:center;gap:22px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.14);border-left:8px solid var(--red);
-  border-radius:18px;padding:16px 24px;color:#fff;font-weight:600;font-size:31px;line-height:1.2}
-.teaser b{flex:none;width:74px;height:58px;border-radius:14px;background:var(--red);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:30px}
-.start{position:absolute;left:64px;top:1206px;z-index:5;color:#fff;font-weight:700;font-size:30px;background:#070a24;padding-right:18px;line-height:50px}
-
+  background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 14%,rgba(0,0,0,0) 52%,rgba(0,0,0,.85) 68%,#000 76%)}
+.counter{position:absolute;top:52px;right:52px;z-index:3;height:60px;padding:0 24px;border-radius:30px;background:rgba(20,20,30,.6);
+  color:#fff;font-weight:600;font-size:26px;display:flex;align-items:center;backdrop-filter:blur(6px)}
+.headline{position:absolute;left:40px;right:40px;bottom:250px;z-index:3;text-align:center;color:#fff;font-weight:800;font-size:76px;
+  line-height:1.12;letter-spacing:-2.5px;text-shadow:0 6px 24px rgba(0,0,0,.6)}
+.headline .hlbox{display:inline-block;background:linear-gradient(90deg,#E03131 0%,#B3122A 70%,rgba(140,10,30,.85) 100%);
+  border-radius:12px;padding:0 22px 6px;margin:8px 0;text-shadow:none}
+.nudge{position:absolute;left:0;right:0;top:1128px;z-index:3;text-align:center;color:#e6e6ee;font-weight:500;font-size:30px}
 /* ---------- story ---------- */
 .ghost{position:absolute;right:30px;top:640px;font-weight:900;font-size:420px;line-height:1;color:rgba(11,18,87,.045);letter-spacing:-20px;z-index:0}
 .media{position:absolute;left:64px;right:64px;top:140px;height:540px;border-radius:30px;overflow:hidden;background:#0a1640;box-shadow:0 22px 44px rgba(0,0,0,.18);z-index:1}
@@ -162,8 +144,8 @@ body{width:${SLIDES * W}px;height:${H}px;font-family:Poppins,sans-serif;position
 .line em{display:block;font-style:normal;font-size:22px;color:#8a8a96;margin-top:6px}
 .count{position:absolute;left:150px;top:1205px;z-index:5;font-weight:800;font-size:40px;color:var(--navy);line-height:50px;background:#F4F4F2;padding:0 16px}
 .count span{color:#9a9aa8;font-size:28px}
-.prog{position:absolute;left:330px;top:1217px;z-index:5;display:flex;gap:10px;background:#F4F4F2;padding:0 14px}
-.prog i{width:26px;height:26px;border-radius:50%;background:#d8d8de;display:block}
+.prog{position:absolute;left:316px;top:1220px;z-index:5;display:flex;gap:8px;background:#F4F4F2;padding:0 14px}
+.prog i{width:20px;height:20px;border-radius:50%;background:#d8d8de;display:block}
 .prog i.done{background:#f1a5a5}
 .prog i.on{background:var(--red);box-shadow:0 0 0 5px rgba(224,49,49,.22)}
 
@@ -185,9 +167,9 @@ body{width:${SLIDES * W}px;height:${H}px;font-family:Poppins,sans-serif;position
   display:flex;align-items:center;gap:14px;font-weight:800;font-size:28px;letter-spacing:2px;box-shadow:0 10px 24px rgba(224,49,49,.35)}
 .follow svg{width:38px;height:38px}
 /* ---------- connectors + frames ---------- */
-.seam{position:absolute;top:1196px;height:70px;width:420px;margin-left:-300px;border-radius:35px;background:var(--red);color:#fff;z-index:6;
+.seam{position:absolute;top:1196px;height:70px;width:520px;margin-left:-400px;border-radius:35px;background:var(--red);color:#fff;z-index:6;
   display:flex;align-items:center;padding-left:36px;gap:14px;font-weight:800;font-size:30px;letter-spacing:2px;box-shadow:0 10px 24px rgba(224,49,49,.35)}
-.seam.first{width:470px;margin-left:-350px}
+.seam.first{width:500px;margin-left:-380px}
 .seam svg{width:40px;height:40px}
 .frame{position:absolute;top:0;width:${W}px;height:${H}px;border:${FRAME}px solid var(--red);z-index:10;pointer-events:none}
 </style></head><body>

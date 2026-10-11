@@ -6,23 +6,25 @@ Every fact comes from the fact-checked `daily/2026-10-10/posts.md` on `claude/ni
 
 Re-render: `NODE_PATH=$(npm root -g) node carousel/render-carousel.js carousels/2026-10-10/slides.json carousels/2026-10-10`
 
+Hero background: AI image (Higgsfield gpt_image_2_5, fictional people, no logos), saved as `hero-bg.jpg`.
+
 ## Caption
 
 ```
-Aaj ki Top 9 Business News, ek swipe mein 👉
+9 business stories that shook India today 👉
 
-1️⃣ DMart ka Q2 profit 8.5% badhkar ₹743 crore
-2️⃣ TCS par brokerages bante: target ₹1,800 se ₹2,630
-3️⃣ OpenAI, Anthropic insiders ko 12 mahine mein AI crisis ka darr
-4️⃣ Netflix ~5% staff, yaani ~800 naukriyan kam kar sakta hai
-5️⃣ Nat Habit ne ₹142 crore Series C raise kiya
-6️⃣ Anand Rathi Wealth ka AUM ₹1.08 lakh crore ke paar
-7️⃣ Peak XV ne Awfis ke ₹47 crore ke shares beche
-8️⃣ NeoGrowth ne MSME loans ke liye ₹85 crore jutaye
-9️⃣ Axis AMC ka naya SIF, minimum ₹10 lakh
+1️⃣ DMart's Q2 profit rose 8.5% to ₹743 crore
+2️⃣ Brokerages split on TCS: targets from ₹1,800 to ₹2,630
+3️⃣ OpenAI and Anthropic insiders fear an AI crisis within 12 months
+4️⃣ Netflix may cut about 5% of staff, nearly 800 jobs
+5️⃣ Nat Habit raised ₹142 crore in Series C
+6️⃣ Anand Rathi Wealth's AUM crossed ₹1.08 lakh crore
+7️⃣ Peak XV sold ₹47 crore of Awfis shares
+8️⃣ NeoGrowth raised ₹85 crore for MSME loans
+9️⃣ Axis AMC launched a SIF with a ₹10 lakh minimum
 
-Kaunsi news sabse badi lagi? Comment karo 💬
-Save karo, baad mein kaam aayega 📌
+Which story surprised you the most? Tell us in the comments 💬
+Save this post for later 📌
 
 Not investment advice.
 
