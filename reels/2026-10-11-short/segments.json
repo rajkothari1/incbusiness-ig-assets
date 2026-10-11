@@ -1,0 +1,55 @@
+{
+  "date": "11 OCT 2026",
+  "source": "Stories from the daily routine run (daily/2026-10-10 on claude/nice-ptolemy-9ilnvh)",
+  "voice": "Higgsfield elevenlabs_v4, preset Anika (4b2dc8f3-5e8b-59a9-9a5c-85620e44c033), stability 0.3",
+  "intro": {
+    "say": "Netflix आठ सौ नौकरियाँ काट सकता है! और चार बड़ी खबरें!",
+    "title": "800 JOBS",
+    "subtitle": "NETFLIX MEIN CHHATNI?",
+    "tagline": "+ 4 aur badi khabrein",
+    "start": 0.0,
+    "end": 4.313
+  },
+  "items": [
+    {
+      "num": 4,
+      "card": "05-funding-nat-habit.png",
+      "say": "फोर! आयुर्वेदिक ब्रांड Nat Habit ने एक सौ बयालीस करोड़ जुटाए!",
+      "caption": "Nat Habit ne ₹142 crore jutaye",
+      "start": 4.313,
+      "end": 8.727
+    },
+    {
+      "num": 3,
+      "card": "07-business-tech-peak-xv-awfis.png",
+      "say": "थ्री! Peak XV ने Awfis के सैंतालीस करोड़ के शेयर बेचे!",
+      "caption": "Peak XV ne Awfis ke ₹47 crore ke shares beche",
+      "start": 8.727,
+      "end": 12.888
+    },
+    {
+      "num": 2,
+      "card": "02-investment-ideas-tcs.png",
+      "say": "टू! TCS पर ब्रोकरेज बंटे, टारगेट अठारह सौ से छब्बीस सौ तीस!",
+      "caption": "TCS target ₹1,800 se ₹2,630",
+      "start": 12.888,
+      "end": 17.921
+    },
+    {
+      "num": 1,
+      "card": "01-earnings-dmart.png",
+      "say": "और नंबर वन! DMart का प्रॉफिट साढ़े आठ परसेंट बढ़कर सात सौ तैंतालीस करोड़!",
+      "caption": "DMart profit 8.5% badhkar ₹743 crore",
+      "start": 17.921,
+      "end": 23.697
+    }
+  ],
+  "outro": {
+    "say": "रोज़ ऐसी ही न्यूज़ के लिए फॉलो कीजिए!",
+    "title": "FOLLOW",
+    "subtitle": "& SHARE",
+    "tagline": "@incbusiness.official",
+    "start": 23.697,
+    "end": 27.151
+  }
+}

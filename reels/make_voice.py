@@ -1,6 +1,7 @@
 """Turn a day's script.json into voice.mp3 + segments.json (with exact per-line timings).
 
-Usage: python3 reels/make_voice.py reels/2026-10-11 [--rate +15%]
+Usage: python3 reels/make_voice.py reels/2026-10-11 [--rate +15%] [--tempo 1.12]
+--tempo speeds every line up (pitch kept) to fit a shorter reel.
 Lines already generated elsewhere (e.g. Higgsfield ElevenLabs) can be dropped into
 <day>/voice-lines/line_XX.mp3 and are used as-is; any missing line falls back to Microsoft
 Edge's free neural TTS (hi-IN-SwaraNeural). One clip per line keeps every card in sync.
@@ -36,6 +37,7 @@ async def synth(text, out, rate):
 def main():
     day = Path(sys.argv[1]).resolve()
     rate = sys.argv[sys.argv.index("--rate") + 1] if "--rate" in sys.argv else "+15%"
+    tempo = float(sys.argv[sys.argv.index("--tempo") + 1]) if "--tempo" in sys.argv else 1.0
     script = json.loads((day / "script.json").read_text())
     build = day / "build"
     build.mkdir(exist_ok=True)
@@ -52,7 +54,7 @@ def main():
         trim = "silenceremove=start_periods=1:start_threshold=-45dB,areverse," \
                "silenceremove=start_periods=1:start_threshold=-45dB,areverse"
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(mp3), "-af",
-                        f"{trim},apad=pad_dur={GAP}", "-ar", "44100", "-ac", "1", str(wav)], check=True)
+                        f"{trim},atempo={tempo},apad=pad_dur={GAP}", "-ar", "44100", "-ac", "1", str(wav)], check=True)
         d = duration(wav)
         line["start"], line["end"] = round(t, 3), round(t + d, 3)
         t += d

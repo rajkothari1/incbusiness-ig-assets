@@ -24,7 +24,13 @@ SR = 44100
 ACCENT = (255, 184, 28)
 NAVY = (12, 20, 46)
 WHITE = (255, 255, 255)
-CARD_W = 920
+CARD_W = 760
+# Instagram draws the username/"AI content" label over the top ~150 px and the caption, buttons
+# and audio row over the bottom ~440 px (plus the right-hand button column), so everything we
+# need people to read stays between these lines.
+SAFE_TOP = 170
+SAFE_BOTTOM = H - 440
+SAFE_SIDE = 150
 FONT_DIR = Path("/usr/share/fonts/opentype/inter")
 _fonts = {}
 
@@ -125,7 +131,6 @@ class Reel:
                     self.bgs[item["bg"]] = cover(img, int(W * 1.14), int(H * 1.14))
                 item["bg_img"] = self.bgs[item["bg"]]
         self.prepare_cards()
-        self.chrome = self.make_chrome()
         self.intro_frames = self.extract_clip("intro.mp4", "intro_frames", self.data["intro"])
         self.outro_frames = self.extract_clip("outro.mp4", "outro_frames", self.data["outro"])
 
@@ -161,24 +166,10 @@ class Reel:
         d.text(((size - tw) / 2, 18), str(n), font=f, fill=NAVY)
         return img
 
-    def make_chrome(self):
-        img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-        d = ImageDraw.Draw(img)
-        d.rectangle([0, 0, W, 132], fill=(*NAVY, 225))
-        d.rectangle([0, 132, W, 138], fill=ACCENT)
-        d.text((44, 30), f"TOP {len(self.data['items'])} BUSINESS NEWS", font=font("ExtraBold", 42), fill=WHITE)
-        d.text((44, 84), f"{self.data['date']}  ·  @incbusiness.official", font=font("SemiBold", 28), fill=ACCENT)
-        # Instagram asks creators to label realistic AI media; keep a visible tag on screen.
-        tag, f = "AI ANCHOR", font("SemiBold", 22)
-        tw = d.textlength(tag, font=f)
-        d.rounded_rectangle([W - tw - 76, 46, W - 40, 90], radius=10, outline=WHITE, width=2)
-        d.text((W - tw - 58, 54), tag, font=f, fill=WHITE)
-        return img
-
     def prepare_cards(self):
         for i, item in enumerate(self.data["items"]):
             item["num_img"] = text_image(f"#{i + 1}", font("Black", 150), ACCENT)
-            item["badge_img"] = self.make_badge(i + 1)
+            item["badge_img"] = self.make_badge(item.get("num", i + 1))
             item["words"] = item["caption"].split()
             if "card" in item:
                 continue
@@ -187,9 +178,9 @@ class Reel:
             item["label_img"] = text_image(item["label"], fit_font(item["label"], "SemiBold", 52, W - 120), WHITE)
         for key in ("intro", "outro"):
             seg = self.data[key]
-            seg["title_img"] = text_image(seg["title"], font("Black", 230), ACCENT)
-            seg["sub_img"] = text_image(seg["subtitle"], fit_font(seg["subtitle"], "Black", 110, W - 100), WHITE)
-            seg["tag_img"] = text_image(seg["tagline"], font("SemiBold", 54), WHITE)
+            seg["title_img"] = text_image(seg["title"], fit_font(seg["title"], "Black", 200, W - 2 * SAFE_SIDE), ACCENT)
+            seg["sub_img"] = text_image(seg["subtitle"], fit_font(seg["subtitle"], "Black", 96, W - 2 * SAFE_SIDE), WHITE)
+            seg["tag_img"] = text_image(seg["tagline"], fit_font(seg["tagline"], "SemiBold", 50, W - 2 * SAFE_SIDE), WHITE)
 
     # ---- frame rendering ----
     def segment_at(self, t):
@@ -203,7 +194,7 @@ class Reel:
     def draw_progress(self, frame, t):
         d = ImageDraw.Draw(frame)
         n = len(self.data["items"])
-        gap, x0, y = 8, 40, H - 40
+        gap, x0, y = 8, SAFE_SIDE - 60, SAFE_TOP - 30
         seg_w = (W - 2 * x0 - gap * (n - 1)) / n
         for i, item in enumerate(self.data["items"]):
             x = x0 + i * (seg_w + gap)
@@ -223,12 +214,12 @@ class Reel:
         if shown == 0:
             return
         d = ImageDraw.Draw(frame)
-        f = font("ExtraBold", 66)
+        f = font("ExtraBold", 56)
         lines, cur, cur_w = [], [], 0
         space = d.textlength(" ", font=f)
         for idx, w in enumerate(words):
             ww = d.textlength(w, font=f)
-            if cur and cur_w + space + ww > W - 140:
+            if cur and cur_w + space + ww > W - 2 * SAFE_SIDE:
                 lines.append(cur)
                 cur, cur_w = [], 0
             cur.append((idx, w, ww))
@@ -241,7 +232,7 @@ class Reel:
                 if idx < shown:
                     pop = ease_back((t - (t0 + idx * reveal / len(words))) / 0.18)
                     if idx == shown - 1:
-                        d.rounded_rectangle([x - 12, y - 6, x + ww + 12, y + 84], radius=14, fill=ACCENT)
+                        d.rounded_rectangle([x - 10, y - 6, x + ww + 10, y + 72], radius=12, fill=ACCENT)
                         colour = NAVY
                     else:
                         colour = WHITE
@@ -249,7 +240,7 @@ class Reel:
                     d.text((x, y + dy), w, font=f, fill=colour, stroke_width=0 if colour == NAVY else 3,
                            stroke_fill=(0, 0, 0))
                 x += ww + space
-            y += 100
+            y += 84
 
     def render_card(self, item, t):
         local = t - item["start"]
@@ -258,15 +249,16 @@ class Reel:
         card = item["card_img"]
         # Card slides up and punches in on the cut, then keeps a slow push-in.
         scale = (1 + 0.10 * (1 - ease_out(local / 0.35))) * (1 + 0.035 * p)
-        cy = 170 + card.height / 2 + 140 * (1 - ease_out(local / 0.35))
+        cy = SAFE_TOP + 70 + card.height / 2 + 140 * (1 - ease_out(local / 0.35))
         cw, ch = round(card.width * scale), round(card.height * scale)
         shadow = Image.new("RGBA", (cw + 80, ch + 80), (0, 0, 0, 0))
         ImageDraw.Draw(shadow).rounded_rectangle([40, 50, cw + 40, ch + 50], radius=30, fill=(0, 0, 0, 150))
         shadow = shadow.filter(ImageFilter.GaussianBlur(22))
         frame.alpha_composite(shadow, (round(W / 2 - cw / 2 - 40), round(cy - ch / 2 - 40)))
         frame.paste(card.resize((cw, ch), Image.BILINEAR), (round(W / 2 - cw / 2), round(cy - ch / 2)))
-        paste_scaled(frame, item["badge_img"], 110, 230, ease_back((local - 0.1) / 0.35))
-        self.draw_caption(frame, item, t, y=1490)
+        paste_scaled(frame, item["badge_img"], W / 2 - card.width / 2 + 20, SAFE_TOP + 90,
+                     0.8 * ease_back((local - 0.1) / 0.35))
+        self.draw_caption(frame, item, t, y=SAFE_TOP + 70 + card.height + 40)
         return frame, local
 
     def render_item(self, item, t):
@@ -298,14 +290,16 @@ class Reel:
             frame = Image.open(clip[min(int(local * FPS), len(clip) - 1)]).convert("RGBA")
         else:
             frame = ken_burns(self.anchor_full, p, zoom=0.12, drift=(0, -40)).convert("RGBA")
-        panel = Image.new("RGBA", (W, 640), (*NAVY, 0))
+        top = SAFE_BOTTOM - 440
+        panel = Image.new("RGBA", (W, H - top), (*NAVY, 0))
         pd = ImageDraw.Draw(panel)
-        for yy in range(640):
-            pd.line([(0, yy), (W, yy)], fill=(*NAVY, min(235, int(yy * 0.9))))
-        frame.alpha_composite(panel, (0, H - 640))
-        paste_scaled(frame, seg["title_img"], W / 2, 1460, ease_back(local / 0.45))
-        paste_scaled(frame, seg["sub_img"], W / 2, 1640, 1.0, ease_out((local - 0.35) / 0.3))
-        paste_scaled(frame, seg["tag_img"], W / 2, 1760, 1.0, ease_out((local - 0.7) / 0.3))
+        for yy in range(H - top):
+            pd.line([(0, yy), (W, yy)], fill=(*NAVY, min(225, int(yy * 0.9))))
+        frame.alpha_composite(panel, (0, top))
+        # Big hook text lands in the first frames so a scrolling viewer sees it instantly.
+        paste_scaled(frame, seg["title_img"], W / 2, SAFE_BOTTOM - 270, ease_back(local / 0.25 + 0.4))
+        paste_scaled(frame, seg["sub_img"], W / 2, SAFE_BOTTOM - 130, 1.0, ease_out((local - 0.15) / 0.25))
+        paste_scaled(frame, seg["tag_img"], W / 2, SAFE_BOTTOM - 50, 1.0, ease_out((local - 0.4) / 0.3))
         return frame, local
 
     def frame_at(self, t):
@@ -314,7 +308,6 @@ class Reel:
             frame, local = self.render_item(seg, t)
         else:
             frame, local = self.render_bookend(seg, t)
-        frame.alpha_composite(self.chrome)
         self.draw_progress(frame, t)
         if local < 0.12 and t > 0.1:
             flash = Image.new("RGBA", (W, H), (255, 255, 255, int(200 * (1 - local / 0.12))))
