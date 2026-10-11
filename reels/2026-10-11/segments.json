@@ -1,0 +1,17 @@
+{
+  "date": "11 OCT 2026",
+  "items": [
+    {"start": 0, "end": 6.71, "text": "This week's Top 10 business & startup news in 60 seconds"},
+    {"start": 6.71, "end": 13.07, "text": "TCS Q2 profit up 4% to ₹13,884 Cr"},
+    {"start": 13.07, "end": 18.93, "text": "Jio Platforms IPO may open Oct 21, size ~₹31,000 Cr"},
+    {"start": 18.93, "end": 23.84, "text": "Zetwerk plans IPO of up to $525 Mn"},
+    {"start": 23.84, "end": 29.12, "text": "~₹50,000 Cr of IPOs lined up before Diwali"},
+    {"start": 29.12, "end": 33.48, "text": "Startup funding falls 47% this week to $123 Mn"},
+    {"start": 33.48, "end": 37.66, "text": "DailyObjects raises $34.3 Mn Series C"},
+    {"start": 37.66, "end": 42.96, "text": "Marico raises Plix stake to 84% for ₹1,012 Cr"},
+    {"start": 42.96, "end": 47.35, "text": "Amazon lays off 100+ employees in India"},
+    {"start": 47.35, "end": 52.79, "text": "NABVENTURES Fund II first close at ₹450 Cr"},
+    {"start": 52.79, "end": 57.75, "text": "Snapdeal parent AceVector lists at 11.6% discount"},
+    {"start": 57.75, "end": 62, "text": "Follow @incbusiness for daily business news"}
+  ]
+}
