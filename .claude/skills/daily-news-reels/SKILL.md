@@ -78,7 +78,10 @@ Send one email with the Gmail connector (`send_message`) to `raj.kothari90@gmail
 - **Subject:** `incbusiness reels <DAY>: <N> scheduled`. If the run stopped early, use `incbusiness reels <DAY>: already scheduled` or `incbusiness reels <DAY>: needs attention` instead.
 - **Body:**
   1. A one-line status: how many reels are scheduled out of how many stories were found.
-  2. A table with one row per reel. Columns: time (IST), category, headline, a reel link (the raw.githubusercontent.com MP4 URL), and the Metricool post id.
+  2. A table with one row per reel. Columns: time (IST), category, headline, a **▶ Reel dekho** link, and the Metricool post id.
+     - The link must play on a phone. Use the jsDelivr URL, which serves the file as `video/mp4`: `https://cdn.jsdelivr.net/gh/rajkothari1/incbusiness-ig-assets@claude/nice-ptolemy-9ilnvh/daily/<DAY>/reels-final/<slug>.mp4`.
+     - Don't use the raw.githubusercontent.com URL here. It downloads on mobile instead of playing.
+     - Check each link with `curl -sI` before sending; it should return 200 with `content-type: video/mp4`.
   3. The full caption of each reel, so wrong facts can be spotted before the reel goes live.
   4. Fact check: the number of claims checked, plus any claim dropped for having one source.
   5. Dropped stories, each with its reason.
