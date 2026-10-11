@@ -45,7 +45,7 @@ body{width:1080px;height:1440px;${REEL ? 'background:transparent!important;' : '
 .pill.two .logo{height:70px;max-width:300px}
 .sep{width:2px;height:80px;background:#ddd;margin:0 34px}
 .name{font-weight:800;font-size:76px;color:#111;letter-spacing:-1px;white-space:nowrap}
-.tag{position:absolute;top:546px;left:50%;transform:translateX(-50%);background:#D92B2B;color:#fff;font-weight:700;font-size:38px;
+.tag{position:absolute;top:532px;left:50%;transform:translateX(-50%);background:#D92B2B;color:#fff;font-weight:700;font-size:38px;
   height:92px;padding:0 64px;display:flex;align-items:center;clip-path:polygon(9% 0,91% 0,100% 50%,91% 100%,9% 100%,0 50%)}
 .dots{position:absolute;top:620px;display:grid;grid-template-columns:repeat(4,14px);gap:18px 18px}
 .dots i{width:14px;height:14px;border-radius:50%;background:#9a9a9a;display:block}
