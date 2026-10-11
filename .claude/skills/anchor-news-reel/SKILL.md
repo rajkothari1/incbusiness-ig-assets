@@ -89,7 +89,20 @@ Commit `$OUT` (not `$OUT/build`, which the `.gitignore` covers; add `daily/*/anc
 - `createScheduledPost` with blogId `6752944` and the same `info` JSON as the daily-news-reels skill (step 5), except:
   - `"media": ["<raw mp4 url>"]`, `"videoCoverMilliseconds": 2000`
   - `"instagramData": {"type": "REEL", "collaborators": [], "showReelOnFeed": true, "isAiGenerated": true}`. The anchor is AI-generated, so this label must be on.
-  - `text`: first line `Aaj ki Top <N> business news, sirf 60 seconds mein 👇`, then one line per story `<n>. <caption>`, then `Follow @incbusiness.official for daily business news, simplified.`, then hashtags: `#Business #AI #Tech #Today #News #Finance #StartupIndia #IndianEconomy #BusinessNews #NewsIn60Seconds #HindiNews #MarketNews #Startups #IndiaBusiness #Reels`.
+  - `text` (no dashes anywhere), in this shape:
+    ```
+    Aaj ki Top <N> Business News, sirf 60 seconds mein 👇
+
+    1️⃣ <story 1 in Roman Hinglish with its key number, one line>
+    2️⃣ <story 2> … one line per story, keycap emojis 1️⃣ to 🔟
+
+    Kaunsi news sabse badi lagi? Comment karo 💬
+
+    Follow @incbusiness.official for daily business news, simplified.
+
+    <18 hashtags>
+    ```
+    Hashtags: the 7 fixed ones `#startups #business #incbusiness #tech #AI #news #Today`, then `#BusinessNews #NewsIn60Seconds #HindiNews`, then 8 picked from the day's stories (biggest company names and topics, e.g. `#TCS #Netflix #StockMarketIndia #StartupIndia #IndianEconomy`). 18 in total. Every number in the caption must match the fact-checked `posts.md`.
 - Confirm with `getScheduledPosts`. Never report the reel as scheduled unless it shows there. Write `$OUT/post.md` with the time, post id and Higgsfield credits used and left, then commit and push.
 
 ## 7. Email and report
