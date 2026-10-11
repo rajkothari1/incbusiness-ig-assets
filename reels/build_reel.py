@@ -7,6 +7,8 @@ outro.mp4 are lip-synced anchor clips (Higgsfield MiniMax H3) played for the fir
 without them the anchor photo gets a slow push-in.
 """
 import json
+import math
+import re
 import subprocess
 import sys
 import wave
@@ -23,6 +25,7 @@ FPS = 30
 SR = 44100
 ACCENT = (255, 184, 28)
 NAVY = (12, 20, 46)
+RED = (220, 38, 38)
 WHITE = (255, 255, 255)
 CARD_W = 760
 # Instagram draws the username/"AI content" label over the top ~150 px and the caption, buttons
@@ -297,10 +300,57 @@ class Reel:
             pd.line([(0, yy), (W, yy)], fill=(*NAVY, min(225, int(yy * 0.9))))
         frame.alpha_composite(panel, (0, top))
         # Big hook text lands in the first frames so a scrolling viewer sees it instantly.
-        paste_scaled(frame, seg["title_img"], W / 2, SAFE_BOTTOM - 270, ease_back(local / 0.25 + 0.4))
+        if seg is self.data["intro"]:
+            self.draw_breaking(frame, local)
+            title = self.counting_title(seg, local)
+            shake = 10 * math.sin(local * 60) * max(0.0, 1 - abs(local - 0.75) / 0.2) if 0.55 < local < 0.95 else 0
+            paste_scaled(frame, title, W / 2 + shake, SAFE_BOTTOM - 270, ease_back(local / 0.25 + 0.4))
+        else:
+            paste_scaled(frame, seg["title_img"], W / 2, SAFE_BOTTOM - 270, ease_back(local / 0.25 + 0.4))
         paste_scaled(frame, seg["sub_img"], W / 2, SAFE_BOTTOM - 130, 1.0, ease_out((local - 0.15) / 0.25))
         paste_scaled(frame, seg["tag_img"], W / 2, SAFE_BOTTOM - 50, 1.0, ease_out((local - 0.4) / 0.3))
         return frame, local
+
+    def draw_breaking(self, frame, local):
+        """Red BREAKING banner with a blinking live dot that slides in at the top of the safe area."""
+        d = ImageDraw.Draw(frame)
+        f = font("Black", 46)
+        label = "BREAKING NEWS"
+        tw = d.textlength(label, font=f)
+        bw, bh = tw + 120, 78
+        x = SAFE_SIDE - 90 - (1 - ease_out(local / 0.3)) * (bw + 200)
+        y = SAFE_TOP + 20
+        d.rounded_rectangle([x, y, x + bw, y + bh], radius=16, fill=RED)
+        if int(local * 4) % 2 == 0:
+            d.ellipse([x + 26, y + 27, x + 50, y + 51], fill=WHITE)
+        d.text((x + 70, y + 12), label, font=f, fill=WHITE)
+
+    def counting_title(self, seg, local):
+        """Hook number counts up from 0 (e.g. "0 JOBS" -> "800 JOBS") over the first 0.6 s."""
+        m = re.match(r"^(\D*)([\d,]+(?:\.\d+)?)(.*)$", seg["title"])
+        if not m or local >= 0.6:
+            return seg["title_img"]
+        pre, num, post = m.groups()
+        target = float(num.replace(",", ""))
+        val = target * ease_out(local / 0.6)
+        txt = f"{pre}{val:,.0f}{post}" if "." not in num else f"{pre}{val:,.1f}{post}"
+        if "," not in num:
+            txt = txt.replace(",", "")
+        return text_image(txt, fit_font(seg["title"], "Black", 200, W - 2 * SAFE_SIDE), ACCENT)
+
+    def draw_timer(self, frame, t):
+        """Countdown ring in the top-right corner: seconds left in the reel."""
+        left = max(0.0, self.dur - t)
+        r, cx, cy = 52, W - SAFE_SIDE + 30, SAFE_TOP + 60
+        d = ImageDraw.Draw(frame)
+        d.ellipse([cx - r - 8, cy - r - 8, cx + r + 8, cy + r + 8], fill=(*NAVY, 200))
+        d.arc([cx - r, cy - r, cx + r, cy + r], 0, 360, fill=(255, 255, 255, 70), width=10)
+        frac = left / self.dur
+        d.arc([cx - r, cy - r, cx + r, cy + r], -90, -90 + 360 * frac, fill=RED if left < 5 else ACCENT, width=10)
+        txt = str(int(round(left)))
+        f = font("Black", 44)
+        tw = d.textlength(txt, font=f)
+        d.text((cx - tw / 2, cy - 28), txt, font=f, fill=WHITE)
 
     def frame_at(self, t):
         kind, seg = self.segment_at(t)
@@ -309,6 +359,7 @@ class Reel:
         else:
             frame, local = self.render_bookend(seg, t)
         self.draw_progress(frame, t)
+        self.draw_timer(frame, t)
         if local < 0.12 and t > 0.1:
             flash = Image.new("RGBA", (W, H), (255, 255, 255, int(200 * (1 - local / 0.12))))
             frame.alpha_composite(flash)
