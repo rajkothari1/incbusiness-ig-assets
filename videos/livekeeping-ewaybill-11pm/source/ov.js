@@ -5,10 +5,12 @@ const items={
  t3:'<div class="title" style="font-size:72px">पर मैनेजर के पास है<br><b>Livekeeping</b> 📱</div>',
  t4:'<div class="title"><div class="tag g">✅ 11:03 PM</div><br>बिल तैयार,<br>टेंशन ख़त्म! 👍</div>',
  t5:'<div class="title">ट्रक रवाना! 🚚💨</div>',
- s1:'<div class="sub"><span><i>रामू:</i> साहब! रात के 11 बज गए…<br>ट्रक तैयार है, पर ई-वे बिल नहीं बना!</span></div>',
- s2:'<div class="sub"><span><i>रामू:</i> ऑफिस बंद है, टैली वाला कंप्यूटर<br>भी वहीं है… अब क्या करें?</span></div>',
- s3:'<div class="sub"><span><i>शर्मा जी:</i> अरे रामू, टेंशन मत लो।<br>फ़ोन है ना!</span></div>',
- s5:'<div class="sub"><span><i>रामू:</i> वाह साहब! बिल आ गया!<br>चलो, निकलता हूँ!</span></div>',
+ lg:'<div class="badge"><img src="logo_full.png"></div>',
+ s1:'<div class="sub"><span><i>Ramu:</i> Sir! It\'s 11 PM… the truck is ready,<br>but the E-Way Bill isn\'t made!</span></div>',
+ s2:'<div class="sub"><span><i>Ramu:</i> The office is closed, and the Tally<br>computer is there too… what now?</span></div>',
+ s3:'<div class="sub"><span><i>Sharma ji:</i> Relax, Ramu.<br>I have my phone!</span></div>',
+ s5:'<div class="sub"><span><i>Ramu:</i> Wow sir, the bill is here!<br>I\'m off!</span></div>',
+ s6:'<div class="sub"><span>Download Livekeeping —<br>E-Way Bill in just 1 second!</span></div>',
 };
 (async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1080,height:1920}});
 await p.goto('file://'+process.cwd()+'/ov.html');

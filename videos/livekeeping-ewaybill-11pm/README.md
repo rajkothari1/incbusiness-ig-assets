@@ -14,3 +14,10 @@ Final: `livekeeping_ewaybill_11pm.mp4` (1080x1920, 30fps, ~30s)
 
 All GSTINs, names, invoice and EWB numbers are dummy data.
 Visuals: Higgsfield (Nano Banana Pro stills, Kling 3.0 Pro animation). Voices: Higgsfield TTS (ElevenLabs). App screens, captions, end card, music & SFX: built in `source/`.
+
+## v2 — `livekeeping_ewaybill_11pm_v2.mp4`
+- Livekeeping logo badge from the first frame + full logo sting before the app screens
+- Real Livekeeping app screenshots (eWay Bill Details, Part B) with zoom/pan, highlights, vehicle-number typing, SAVE tap
+- Scene 2: manager stands still; Scene 3: friendlier manager
+- English subtitles (Hindi voice + Hindi headline text kept)
+- Success screen is designed in the app's style (no real success screenshot was available)

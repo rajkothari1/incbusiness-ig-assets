@@ -1,5 +1,5 @@
 import numpy as np, wave
-SR=44100; D=30.0; N=int(SR*D)
+SR=44100; D=30.1; N=int(SR*D)
 mus=np.zeros(N); sfx=np.zeros(N)
 def add(buf,t,sig,g=1.0):
     i=int(t*SR); j=min(N,i+len(sig)); buf[i:j]+=g*sig[:j-i]
@@ -37,20 +37,21 @@ for i in range(int((D-t0)/b)):
 # riser into UI + whoosh
 n=int(.6*SR);tt=np.arange(n)/SR;ris=np.random.randn(n)*(tt/.6)**2
 add(sfx,10.9,ris,0.25)
-for t in [4.7,8.8,11.5,21.0,23.8,26.5]:
+for t in [4.7,8.8,11.5,21.1,23.9,26.6]:
     n=int(.35*SR);tt=np.arange(n)/SR;w=np.random.randn(n)*np.sin(np.pi*tt/.35)**2
     add(sfx,t-0.15,w,0.18)
 # UI taps / typing / ding
 U=11.5
-for t in [1.0,2.25,6.95,8.85]: add(sfx,U+t,tone(1800,.05,.001,.015,(1,)),0.45); add(sfx,U+t,noise(.02,.004),0.2)
-for k in range(13): add(sfx,U+5.95+k*0.065,noise(.02,.005),0.18)
-for f,dt in [(1318.5,0),(1975.5,0.09),(2637,0.18)]: add(sfx,U+7.45+dt,tone(f,1.2,.002,.35,(1,.3)),0.22)
+for t in [6.9,8.9]: add(sfx,U+t,tone(1800,.05,.001,.015,(1,)),0.45); add(sfx,U+t,noise(.02,.004),0.2)
+for k in range(11): add(sfx,U+5.4+k*0.06,noise(.02,.005),0.18)
+for f,dt in [(784,0),(1046.5,0.1),(1568,0.2)]: add(sfx,U+0.05+dt,tone(f,1.0,.002,.4,(1,.3)),0.2)
+for f,dt in [(1318.5,0),(1975.5,0.09),(2637,0.18)]: add(sfx,U+7.5+dt,tone(f,1.2,.002,.35,(1,.3)),0.22)
 # truck engine for S5
 n=int(2.9*SR);tt=np.arange(n)/SR
 eng=(np.sin(2*np.pi*38*tt)+.6*np.sign(np.sin(2*np.pi*19*tt))*.3+.2*np.random.randn(n))*np.minimum(1,tt/.3)*np.minimum(1,(2.9-tt)/.6)
-add(sfx,23.7,eng,0.25)
+add(sfx,23.8,eng,0.25)
 # horn
-add(sfx,24.3,tone(330,.45,.02,.5,(1,.6,.4,.3)),0.12); add(sfx,24.3,tone(415,.45,.02,.5,(1,.6,.4,.3)),0.1)
+add(sfx,24.4,tone(330,.45,.02,.5,(1,.6,.4,.3)),0.12); add(sfx,24.4,tone(415,.45,.02,.5,(1,.6,.4,.3)),0.1)
 # final fade
 fo=int(1.2*SR); mus[-fo:]*=np.linspace(1,0,fo)
 for name,buf in [('music.wav',mus),('sfx.wav',sfx)]:
