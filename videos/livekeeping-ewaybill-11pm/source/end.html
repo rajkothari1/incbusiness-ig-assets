@@ -1,0 +1,39 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Hind;font-weight:600;src:url(fonts/hind-devanagari-600-normal.woff2)}
+@font-face{font-family:Hind;font-weight:700;src:url(fonts/hind-devanagari-700-normal.woff2)}
+@font-face{font-family:Pop;font-weight:600;src:url(fonts/poppins-latin-600-normal.woff2)}
+@font-face{font-family:Pop;font-weight:700;src:url(fonts/poppins-latin-700-normal.woff2)}
+@font-face{font-family:Pop;font-weight:800;src:url(fonts/poppins-latin-800-normal.woff2)}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;font-family:Pop,Hind,sans-serif;background:#fff}
+#bg{position:absolute;inset:0;background:linear-gradient(160deg,#ffffff 0%,#f3f9ec 55%,#e3f2d3 100%)}
+#swoosh{position:absolute;left:-200px;right:-200px;bottom:-560px;height:1100px;background:#151515;border-radius:50% 50% 0 0;transform:rotate(-8deg)}
+#logo{position:absolute;left:50%;top:330px;width:860px;margin-left:-430px}
+.h{position:absolute;left:60px;right:60px;text-align:center;font-family:Hind,Pop;font-weight:700;color:#151515}
+#h1{top:620px;font-size:82px;line-height:1.2}
+#h1 b{color:#5FA22C}
+#h2{top:860px;font-size:66px;line-height:1.25}
+#h2 .pill{display:inline-block;background:#7DC242;color:#111;padding:4px 30px;border-radius:24px;margin-top:14px}
+#btn{position:absolute;left:50%;top:1420px;width:760px;height:150px;margin-left:-380px;border-radius:80px;background:#7DC242;color:#111;font-family:Hind,Pop;font-weight:700;font-size:58px;display:flex;align-items:center;justify-content:center;gap:20px;box-shadow:0 0 0 10px rgba(125,194,66,.25)}
+#foot{position:absolute;left:0;right:0;top:1640px;text-align:center;color:#cfd8c7;font-family:Pop;font-weight:600;font-size:34px;letter-spacing:1px}
+#foot b{color:#7DC242}
+</style></head><body>
+<div id="bg"></div><div id="swoosh"></div>
+<img id="logo" src="logo_full.png">
+<div class="h" id="h1"><b>Livekeeping</b><br>डाउनलोड करो</div>
+<div class="h" id="h2">और E-Way Bill बनाओ तुरंत<br><span class="pill">⚡ सिर्फ़ 1 सेकंड में!</span></div>
+<div id="btn">📲 अभी डाउनलोड करें</div>
+<div id="foot">Tally data · <b>Anytime, Anywhere</b></div>
+<script>
+const cl=x=>Math.max(0,Math.min(1,x)),e=x=>1-Math.pow(1-cl(x),3),s=(t,a,b)=>e((t-a)/(b-a));
+const $=i=>document.getElementById(i);
+function set(id,o,y,sc=1){$(id).style.opacity=o;$(id).style.transform=`translateY(${y}px) scale(${sc})`}
+window.render=t=>{
+ const l=s(t,0,.5);set('logo',l,(1-l)*-60,0.85+0.15*l);
+ const a=s(t,.35,.8);set('h1',a,(1-a)*50);
+ const b=s(t,.7,1.15);set('h2',b,(1-b)*50);
+ const c=s(t,1.1,1.5);const pulse=t>1.5?1+0.04*Math.sin((t-1.5)*7):1;set('btn',c,(1-c)*80,pulse);
+ set('foot',s(t,1.4,1.8),0);
+ $('swoosh').style.transform=`rotate(-8deg) translateY(${(1-s(t,0,.6))*300}px)`;
+};window.DUR=3.5;render(0);
+</script></body></html>

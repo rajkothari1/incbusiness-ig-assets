@@ -1,0 +1,225 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Hind;font-weight:400;src:url(fonts/hind-devanagari-400-normal.woff2)}
+@font-face{font-family:Hind;font-weight:500;src:url(fonts/hind-devanagari-500-normal.woff2)}
+@font-face{font-family:Hind;font-weight:600;src:url(fonts/hind-devanagari-600-normal.woff2)}
+@font-face{font-family:Hind;font-weight:700;src:url(fonts/hind-devanagari-700-normal.woff2)}
+@font-face{font-family:Pop;font-weight:400;src:url(fonts/poppins-latin-400-normal.woff2)}
+@font-face{font-family:Pop;font-weight:500;src:url(fonts/poppins-latin-500-normal.woff2)}
+@font-face{font-family:Pop;font-weight:600;src:url(fonts/poppins-latin-600-normal.woff2)}
+@font-face{font-family:Pop;font-weight:700;src:url(fonts/poppins-latin-700-normal.woff2)}
+@font-face{font-family:Pop;font-weight:800;src:url(fonts/poppins-latin-800-normal.woff2)}
+:root{--g:#7DC242;--gd:#5FA22C;--k:#151515;--bg:#F4F6F2;--line:#E3E7DF;--mut:#6B7266}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#0b0f0a;font-family:Pop,Hind,sans-serif}
+#stage{position:absolute;inset:0;background:radial-gradient(900px 900px at 50% 55%,#1d3a12 0%,#0b140a 55%,#050705 100%)}
+#cap{position:absolute;left:60px;right:60px;top:150px;text-align:center;font-family:Hind,Pop;font-weight:700;font-size:64px;line-height:1.25;color:#fff;text-shadow:0 4px 18px rgba(0,0,0,.6)}
+#cap b{color:var(--g)}
+#clock{position:absolute;left:50%;top:62px;transform:translateX(-50%);font-family:Pop;font-weight:600;font-size:38px;color:#ffd166;background:rgba(0,0,0,.45);border:2px solid rgba(255,209,102,.5);padding:8px 26px;border-radius:40px;letter-spacing:1px}
+#phone{position:absolute;left:50%;top:380px;width:700px;height:1440px;margin-left:-350px;border-radius:92px;background:#111;padding:22px;box-shadow:0 40px 120px rgba(125,194,66,.25),0 0 0 4px #2a2a2a inset}
+#scr{position:relative;width:100%;height:100%;border-radius:72px;overflow:hidden;background:var(--bg)}
+.notch{position:absolute;top:18px;left:50%;width:170px;height:46px;margin-left:-85px;background:#111;border-radius:30px;z-index:50}
+.sb{position:absolute;top:0;left:0;right:0;height:84px;display:flex;justify-content:space-between;align-items:center;padding:12px 60px 0;font-weight:600;font-size:26px;color:#fff;z-index:40}
+.view{position:absolute;inset:0;padding-top:84px;background:linear-gradient(#151515 84px,var(--bg) 84px);box-shadow:-24px 0 40px rgba(0,0,0,.28)}
+.hdr{background:var(--k);color:#fff;padding:20px 36px 26px;display:flex;align-items:center;gap:18px}
+.hdr .t{font-weight:600;font-size:34px}
+.hdr .s{font-size:22px;color:#b9c2b2}
+.back{width:44px;height:44px;border-radius:50%;background:#2b2b2b;display:flex;align-items:center;justify-content:center;font-size:28px;color:var(--g)}
+.logoRow{display:flex;align-items:center;gap:14px}
+.logoRow img{width:58px;height:58px;border-radius:14px}
+.lk{font-family:Pop;font-weight:700;font-size:38px}
+.lk span{color:var(--g)}
+.card{background:#fff;border-radius:26px;margin:22px 26px;padding:26px 28px;box-shadow:0 4px 16px rgba(0,0,0,.06)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:22px 26px}
+.tile{background:#fff;border-radius:26px;padding:30px 24px;box-shadow:0 4px 16px rgba(0,0,0,.06);height:190px;position:relative}
+.tile .ic{width:64px;height:64px;border-radius:18px;background:#EEF6E6;display:flex;align-items:center;justify-content:center;font-size:34px}
+.tile .nm{margin-top:22px;font-weight:600;font-size:28px;color:var(--k)}
+.tile.hot{background:var(--k)}
+.tile.hot .nm{color:#fff}
+.tile.hot .ic{background:var(--g)}
+.badge{position:absolute;top:22px;right:22px;background:var(--g);color:#111;font-weight:700;font-size:18px;padding:4px 12px;border-radius:20px}
+.sum .l{font-size:22px;color:var(--mut)} .sum .v{font-weight:700;font-size:44px;color:var(--k)}
+.steps{display:flex;gap:12px;margin:22px 26px 0}
+.st{flex:1;height:12px;border-radius:8px;background:#dfe5d9;overflow:hidden}
+.st i{display:block;height:100%;background:var(--g)}
+.stl{display:flex;justify-content:space-between;margin:10px 30px 0;font-size:22px;font-weight:600;color:var(--mut)}
+.sec{font-weight:700;font-size:24px;color:var(--gd);letter-spacing:1.5px;margin:22px 40px 0}
+.f{display:flex;justify-content:space-between;align-items:center;padding:17px 0;border-bottom:2px solid var(--line)}
+.f:last-child{border-bottom:0}
+.f .k{font-size:22px;color:var(--mut)}
+.f .v{font-weight:600;font-size:25px;color:var(--k);text-align:right}
+.f .v small{display:block;font-weight:400;font-size:19px;color:var(--mut)}
+.tick{display:inline-block;width:30px;height:30px;border-radius:50%;background:var(--g);color:#fff;font-size:20px;line-height:30px;text-align:center;margin-left:10px;vertical-align:middle}
+.inv{display:flex;justify-content:space-between;align-items:center;padding:24px 28px;margin:16px 26px;background:#fff;border-radius:22px;box-shadow:0 4px 16px rgba(0,0,0,.06);border:3px solid transparent}
+.inv .a{font-weight:600;font-size:26px} .inv .b{font-size:21px;color:var(--mut);margin-top:4px} .inv .c{font-weight:700;font-size:28px}
+.inv.sel{border-color:var(--g)}
+.inp{border:3px solid var(--line);border-radius:18px;padding:18px 22px;font-weight:600;font-size:34px;letter-spacing:2px;color:var(--k);min-height:80px}
+.inp.on{border-color:var(--g)}
+.lbl{font-size:22px;color:var(--mut);margin:18px 0 10px}
+.seg{display:flex;gap:12px}
+.seg div{flex:1;text-align:center;padding:16px 0;border-radius:16px;border:3px solid var(--line);font-weight:600;font-size:24px;color:var(--mut)}
+.seg .on{border-color:var(--g);background:#EEF6E6;color:var(--k)}
+.btn{position:absolute;left:26px;right:26px;bottom:50px;height:110px;border-radius:30px;background:var(--g);color:#111;font-weight:700;font-size:34px;display:flex;align-items:center;justify-content:center;gap:14px;box-shadow:0 10px 30px rgba(125,194,66,.45)}
+.caret{display:inline-block;width:4px;height:40px;background:var(--g);vertical-align:middle;margin-left:4px}
+.tap{position:absolute;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;background:rgba(125,194,66,.35);border:4px solid rgba(125,194,66,.9);z-index:60;pointer-events:none}
+.load{position:absolute;inset:0;z-index:30;background:rgba(255,255,255,.9);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;z-index:30}
+.spin{width:110px;height:110px;border-radius:50%;border:12px solid #e2ead9;border-top-color:var(--g)}
+.load p{font-weight:600;font-size:28px;color:var(--k)}
+.succ{position:absolute;inset:0;z-index:35;padding-top:84px;background:linear-gradient(180deg,#151515 0%,#151515 44%,var(--bg) 44%)}
+.ring{width:230px;height:230px;border-radius:50%;background:var(--g);margin:90px auto 0;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 22px rgba(125,194,66,.25),0 0 0 44px rgba(125,194,66,.1)}
+.ring svg{width:130px;height:130px}
+.sh{color:#fff;text-align:center;font-weight:700;font-size:40px;margin-top:56px;line-height:1.25}
+.sh2{color:#b9c2b2;text-align:center;font-size:24px;margin-top:10px}
+.ewb{font-family:Pop;font-weight:800;font-size:52px;letter-spacing:3px;color:var(--k);text-align:center;margin:6px 0 4px}
+.wa{position:absolute;left:26px;right:26px;bottom:50px;height:104px;border-radius:30px;background:#25D366;color:#fff;font-weight:700;font-size:32px;display:flex;align-items:center;justify-content:center}
+</style></head>
+<body>
+<div id="stage">
+  <div id="cap"></div>
+  <div id="clock">🌙 11:02 PM</div>
+  <div id="phone"><div id="scr">
+    <div class="notch"></div>
+    <div class="sb" id="sb"><span id="sbt">11:02</span><span>▮▮▮ 5G 🔋</span></div>
+
+    <!-- HOME -->
+    <div class="view" id="home">
+      <div class="hdr" style="padding:26px 36px 34px;display:block">
+        <div class="logoRow"><img src="logo_icon.png"><div class="lk">Live<span>Keeping</span></div></div>
+        <div class="s" style="margin-top:14px">Sharma Traders · FY 2026-27</div>
+      </div>
+      <div class="card sum" style="display:flex;justify-content:space-between">
+        <div><div class="l">Today's Sales</div><div class="v">₹4,12,600</div></div>
+        <div style="text-align:right"><div class="l">Receivables</div><div class="v" style="color:var(--gd)">₹9.8L</div></div>
+      </div>
+      <div class="grid">
+        <div class="tile"><div class="ic">🧾</div><div class="nm">Sales</div></div>
+        <div class="tile"><div class="ic">🛒</div><div class="nm">Purchase</div></div>
+        <div class="tile"><div class="ic">📦</div><div class="nm">Stock</div></div>
+        <div class="tile"><div class="ic">📊</div><div class="nm">Reports</div></div>
+        <div class="tile hot" id="ewTile"><div class="badge">NEW</div><div class="ic">🚚</div><div class="nm">E-Way Bill</div></div>
+        <div class="tile"><div class="ic">👥</div><div class="nm">Ledgers</div></div>
+      </div>
+    </div>
+
+    <!-- SELECT INVOICE -->
+    <div class="view" id="pick" style="z-index:2">
+      <div class="hdr"><div class="back">‹</div><div><div class="t">Create E-Way Bill</div><div class="s">Select invoice</div></div></div>
+      <div class="inv sel" id="inv1"><div><div class="a">INV/2026/0847</div><div class="b">Gupta Distributors · Nashik</div></div><div class="c">₹2,89,100</div></div>
+      <div class="inv"><div><div class="a">INV/2026/0846</div><div class="b">Patil Hardware · Pune</div></div><div class="c">₹68,450</div></div>
+      <div class="inv"><div><div class="a">INV/2026/0845</div><div class="b">Mehta Steel · Surat</div></div><div class="c">₹1,12,300</div></div>
+      <div class="inv"><div><div class="a">INV/2026/0844</div><div class="b">Shah Enterprises · Vapi</div></div><div class="c">₹45,900</div></div>
+    </div>
+
+    <!-- PART A -->
+    <div class="view" id="partA" style="z-index:3">
+      <div class="hdr"><div class="back">‹</div><div><div class="t">E-Way Bill · Part A</div><div class="s">Auto-filled from INV/2026/0847</div></div></div>
+      <div class="steps"><div class="st"><i id="pA"></i></div><div class="st"><i id="pB" style="width:0"></i></div></div>
+      <div class="stl"><span style="color:var(--k)">Part A · Details</span><span>Part B · Vehicle</span></div>
+      <div class="card" style="padding:6px 28px">
+        <div class="f fa"><div class="k">Supply Type</div><div class="v">Outward · Supply</div></div>
+        <div class="f fa"><div class="k">Document</div><div class="v">Tax Invoice<small>INV/2026/0847 · 12-10-2026</small></div></div>
+        <div class="f fa"><div class="k">From (Supplier)</div><div class="v">Sharma Traders<small>27AAKFS4821M1Z3 · 421302</small></div></div>
+        <div class="f fa"><div class="k">To (Recipient)</div><div class="v">Gupta Distributors<small>27AADCG7193P1ZQ · 422001</small></div></div>
+        <div class="f fa"><div class="k">Item · HSN</div><div class="v">Steel Pipes · 7306<small>120 Nos</small></div></div>
+        <div class="f fa"><div class="k">Taxable Value</div><div class="v">₹2,45,000<small>CGST 9% + SGST 9% = ₹44,100</small></div></div>
+        <div class="f fa"><div class="k">Invoice Total</div><div class="v" style="color:var(--gd);font-size:30px">₹2,89,100</div></div>
+        <div class="f fa"><div class="k">Transporter</div><div class="v">Shree Ganesh Roadlines<small>Distance: 168 km</small></div></div>
+      </div>
+    </div>
+
+    <!-- PART B -->
+    <div class="view" id="partB" style="z-index:4">
+      <div class="hdr"><div class="back">‹</div><div><div class="t">E-Way Bill · Part B</div><div class="s">Transport details</div></div></div>
+      <div class="steps"><div class="st"><i style="width:100%"></i></div><div class="st"><i id="pB2"></i></div></div>
+      <div class="stl"><span style="color:var(--gd)">Part A ✓</span><span style="color:var(--k)">Part B · Vehicle</span></div>
+      <div class="card">
+        <div class="lbl" style="margin-top:0">Mode of Transport</div>
+        <div class="seg"><div class="on">🚚 Road</div><div>Rail</div><div>Air</div><div>Ship</div></div>
+        <div class="lbl">Vehicle Type</div>
+        <div class="seg"><div class="on">Regular</div><div>Over Dimensional</div></div>
+        <div class="lbl">Vehicle Number</div>
+        <div class="inp" id="veh"></div>
+        <div class="lbl">Transport Doc No.</div>
+        <div class="inp" style="font-size:28px;letter-spacing:1px">LR-55821 · 12-10-2026</div>
+      </div>
+      <div class="btn" id="genBtn">⚡ Generate E-Way Bill</div>
+    </div>
+
+    <div class="load" id="load"><div class="spin" id="spin"></div><p>Generating on NIC portal…</p></div>
+
+    <!-- SUCCESS -->
+    <div class="succ" id="succ">
+      <div class="ring" id="ring"><svg viewBox="0 0 100 100"><path id="chk" d="M22 52 L42 72 L80 30" fill="none" stroke="#111" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="90" stroke-dashoffset="90"/></svg></div>
+      <div class="sh">E-Way Bill Generated<br>Successfully!</div>
+      <div class="sh2">12-10-2026 · 11:03 PM</div>
+      <div class="card" style="margin-top:70px;padding:30px 30px 14px" id="sCard">
+        <div style="text-align:center;font-size:22px;color:var(--mut)">E-Way Bill No.</div>
+        <div class="ewb">3812 4567 9021</div>
+        <div class="f"><div class="k">Vehicle</div><div class="v">MH 04 KT 5521</div></div>
+        <div class="f"><div class="k">From → To</div><div class="v">Bhiwandi → Nashik</div></div>
+        <div class="f"><div class="k">Valid Until</div><div class="v" style="color:var(--gd)">13-10-2026 · 11:59 PM</div></div>
+      </div>
+      <div class="wa" id="wa">Share with Driver on WhatsApp</div>
+    </div>
+
+    <div class="tap" id="tap"></div>
+  </div></div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const ease=x=>{x=cl(x);return 1-Math.pow(1-x,3)};
+const seg=(t,a,b)=>ease((t-a)/(b-a));
+function show(id,o,dx=0){const e=$(id);e.style.opacity=o;e.style.display=o<=0.001?'none':'block';e.style.transform=`translateX(${dx}px)`}
+function tap(x,y,t,t0){const p=(t-t0)/0.45;const e=$('tap');if(p<0||p>1){e.style.opacity=0;return}
+  e.style.left=x+'px';e.style.top=y+'px';e.style.opacity=1-p;e.style.transform=`scale(${0.5+p*0.9})`}
+const CAPS=[[0,1.45,'<b>Livekeeping</b> ऐप खोला'],[1.45,2.75,'इनवॉइस चुना 🧾'],[2.75,5.6,'<b>Part A</b> — इनवॉइस से<br>सब कुछ ऑटो-फ़िल ✓'],[5.6,7.45,'<b>Part B</b> — बस गाड़ी नंबर डालो'],[7.45,9.6,'E-Way Bill <b>तैयार!</b> ✅']];
+const VEH='MH 04 KT 5521';
+// timeline (seconds)
+const T={homeEnd:1.45,pickEnd:2.75,aEnd:5.6,genTap:7.0,loadEnd:7.45,dur:9.5};
+function render(t){
+  // captions
+  let c='',co=0;for(const [a,b,s] of CAPS){if(t>=a&&t<b){c=s;co=Math.min(seg(t,a,a+.25),1-seg(t,b-.15,b))}}
+  if(t>=T.loadEnd)co=seg(t,T.loadEnd,T.loadEnd+.25);
+  $('cap').innerHTML=c;$('cap').style.opacity=co;$('cap').style.transform=`translateY(${(1-co)*20}px)`;
+  $('sbt').textContent=t<T.loadEnd?'11:02':'11:03';$('clock').textContent=t<T.loadEnd?'🌙 11:02 PM':'🌙 11:03 PM';
+  // phone intro
+  const pi=seg(t,0,.45);$('phone').style.transform=`translateY(${(1-pi)*120}px) scale(${0.94+0.06*pi})`;$('phone').style.opacity=pi;
+  // views
+  show('home', t<T.homeEnd+.25?1:0);
+  const kp=seg(t,T.homeEnd,T.homeEnd+.25);
+  show('pick', t>=T.homeEnd&&t<T.pickEnd+.25?1:0,(1-kp)*656);
+  const ka=seg(t,T.pickEnd,T.pickEnd+.25);
+  show('partA', t>=T.pickEnd&&t<T.aEnd+.25?1:0,(1-ka)*656);
+  const kb=seg(t,T.aEnd,T.aEnd+.25);
+  show('partB', t>=T.aEnd&&t<T.loadEnd?1:0,(1-kb)*656);
+  // home tile press
+  $('ewTile').style.transform=`scale(${t>1.05&&t<1.35?0.95:1})`;
+  // part A: fields reveal with ticks
+  const fs=document.querySelectorAll('.fa');fs.forEach((f,i)=>{const s=T.pickEnd+.3+i*0.28;const o=seg(t,s,s+.22);f.style.opacity=0.25+0.75*o;
+    const v=f.querySelector('.v');let tk=v.querySelector('.tick');if(o>=.99&&!tk){tk=document.createElement('span');tk.className='tick';tk.textContent='✓';v.appendChild(tk)}if(o<.99&&tk)tk.remove()});
+  $('pA').style.width=(seg(t,T.pickEnd+.3,T.aEnd-.3)*100)+'%';
+  // part B typing
+  const ts=T.aEnd+.35,te=T.aEnd+1.2;const n=Math.round(cl((t-ts)/(te-ts))*VEH.length);
+  $('veh').innerHTML=VEH.slice(0,n)+(t<T.genTap&&Math.floor(t*3)%2==0?'<span class="caret"></span>':'');
+  $('veh').className='inp'+(t>ts?' on':'');
+  $('pB2').style.width=(cl((t-ts)/(te-ts))*100)+'%';
+  $('genBtn').style.transform=`scale(${t>T.genTap&&t<T.genTap+.2?0.96:1})`;
+  // loader
+  const lo=t>=T.genTap+.1&&t<T.loadEnd?1:0;$('load').style.display=lo?'flex':'none';$('spin').style.transform=`rotate(${t*720}deg)`;
+  // success
+  const so=seg(t,T.loadEnd,T.loadEnd+.3);$('succ').style.display=t>=T.loadEnd?'block':'none';$('succ').style.opacity=so;
+  const rs=seg(t,T.loadEnd+.05,T.loadEnd+.5);$('ring').style.transform=`scale(${rs<1?0.3+rs*0.8+Math.sin(rs*Math.PI)*0.15:1})`;
+  $('chk').style.strokeDashoffset=90*(1-seg(t,T.loadEnd+.35,T.loadEnd+.8));
+  $('sCard').style.opacity=seg(t,T.loadEnd+.6,T.loadEnd+1);$('sCard').style.transform=`translateY(${(1-seg(t,T.loadEnd+.6,T.loadEnd+1))*40}px)`;
+  $('wa').style.opacity=seg(t,T.loadEnd+1.1,T.loadEnd+1.4);
+  $('wa').style.transform=`scale(${t>8.9&&t<9.15?0.96:1})`;
+  // taps (phone screen origin: phone left = 190, top=380, +22 padding)
+  const ox=0,oy=0;
+  const taps=[[ox+170,oy+1020,1.0],[ox+330,oy+275,2.25],[ox+330,oy+1310,T.genTap-.05],[ox+330,oy+1340,8.85]];
+  let shown=false;for(const [x,y,t0] of taps){if(t>=t0&&t<=t0+.45){tap(x,y,t,t0);shown=true}}if(!shown)$('tap').style.opacity=0;
+}
+window.render=render;window.DUR=T.dur;render(0);
+</script>
+</body></html>
