@@ -1,0 +1,22 @@
+[
+ {"s":"hook","hi":"एक गिलास पानी में कितने मॉलिक्यूल होते हैं?","cap":"Ek glass paani mein kitne molecules hote hain?"},
+ {"s":"hook","hi":"गिनना शुरू करो... एक, दो, तीन... पूरी उम्र निकल जाएगी!","cap":"Ginna shuru karo... 1, 2, 3... poori umar nikal jaayegi!"},
+ {"s":"dozen","hi":"इसलिए हम चीज़ों को ग्रुप में गिनते हैं।","cap":"Isliye hum cheezon ko GROUP mein ginte hain."},
+ {"s":"dozen","hi":"बारह केले, यानी एक दर्जन।","cap":"12 kele = 1 DARJAN"},
+ {"s":"dozen","hi":"पाँच सौ कागज़, यानी एक रीम।","cap":"500 kaagaz = 1 REAM"},
+ {"s":"dozen","hi":"वैसे ही, केमिस्ट्री में एटम्स गिनने की यूनिट है, मोल!","cap":"Waise hi chemistry mein atoms ginne ki unit hai — MOLE!"},
+ {"s":"avo","hi":"एक मोल मतलब, छह दशमलव शून्य दो दो, गुणा दस की पावर तेईस पार्टिकल्स।","cap":"1 mole = 6.022 × 10²³ particles"},
+ {"s":"avo","hi":"इस नंबर को कहते हैं, ऐवोगाड्रो नंबर।","cap":"Is number ko kehte hain — AVOGADRO NUMBER"},
+ {"s":"rice","hi":"ये कितना बड़ा है? इतने चावल के दाने पूरी धरती पर बिछाओ,","cap":"Kitna bada? Itne chawal ke daane poori dharti par bichhao..."},
+ {"s":"rice","hi":"तो दस मंज़िल ऊँची परत बन जाएगी!","cap":"...toh 10 manzil oonchi parat ban jaayegi!"},
+ {"s":"mass","hi":"अब असली जादू देखो।","cap":"Ab asli JAADU dekho"},
+ {"s":"mass","hi":"एक मोल का वज़न, ग्राम में, उसके मोलर मास जितना होता है।","cap":"1 mole ka wazan (gram mein) = Molar Mass"},
+ {"s":"mass","hi":"कार्बन का एक मोल, बारह ग्राम।","cap":"1 mole Carbon = 12 g"},
+ {"s":"mass","hi":"पानी, यानी H two O, दो प्लस सोलह, अठारह ग्राम।","cap":"H₂O = 2 + 16 = 18 g"},
+ {"s":"mass","hi":"यानी बस एक चम्मच पानी में, छह गुणा दस की पावर तेईस मॉलिक्यूल्स!","cap":"Bas 1 chammach paani mein 6 × 10²³ molecules!"},
+ {"s":"formula","hi":"फ़ॉर्मूला याद रखो। मोल्स बराबर, मास भाग मोलर मास।","cap":"Formula: n = mass ÷ molar mass"},
+ {"s":"formula","hi":"छत्तीस ग्राम पानी? छत्तीस भाग अठारह, यानी दो मोल!","cap":"36 g paani → 36 ÷ 18 = 2 mole"},
+ {"s":"trap","hi":"और एग्ज़ाम ट्रैप!","cap":"Aur EXAM TRAP —"},
+ {"s":"trap","hi":"एक मोल O two में मॉलिक्यूल्स, एक ऐवोगाड्रो नंबर, पर एटम्स, उसके डबल!","cap":"1 mole O₂ → molecules = Nₐ, par atoms = 2 Nₐ!"},
+ {"s":"outro","hi":"तो याद रखो, मोल, केमिस्ट्री का दर्जन है!","cap":"Yaad rakho: MOLE = chemistry ka DARJAN!"}
+]
