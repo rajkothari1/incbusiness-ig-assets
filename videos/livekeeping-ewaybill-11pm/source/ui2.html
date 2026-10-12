@@ -103,7 +103,7 @@ function cam(t){let i=0;while(i<CAM.length-2&&t>CAM[i+1][0])i++;const a=CAM[i],b
   $('world').style.transform=`translate(${CX-fx*s}px,${CY-fy*s}px) scale(${s})`;}
 function hl(id,t,a,b){const o=Math.min(seg(t,a,a+.25),1-seg(t,b-.2,b));const e=$(id);e.style.opacity=o;e.style.transform=`scale(${1.04-0.04*o})`}
 function tap(x,y,t,t0){const p=(t-t0)/0.45;const e=$('tap');if(p<0||p>1)return false;e.style.left=x+'px';e.style.top=y+'px';e.style.opacity=1-p;e.style.transform=`scale(${0.5+p*0.9})`;return true}
-const CAPS=[[1.4,1.6,''],[1.6,4.4,'Supply & Transport details<br><b>already filled ✓</b>'],[4.4,6.45,'<b>Part B:</b> just enter<br>the vehicle number'],[6.45,7.5,'Tap <b>SAVE</b>'],[7.5,9.8,'E-Way Bill <b>ready!</b> ✅']];
+const CAPS=[[1.4,1.6,''],[1.6,4.4,'Supply & Transport details<br><b>pehle se bhari hain ✓</b>'],[4.4,6.45,'<b>Part B:</b> bas gaadi<br>number daalo'],[6.45,7.5,'<b>SAVE</b> dabao'],[7.5,9.8,'E-Way Bill <b>taiyaar!</b> ✅']];
 const VEH='DL02CAY1234';
 const T={sting:1.45,s2:4.42,save:6.95,load:7.05,succ:7.5,dur:9.6};
 function render(t){

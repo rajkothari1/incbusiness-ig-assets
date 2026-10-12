@@ -21,3 +21,8 @@ Visuals: Higgsfield (Nano Banana Pro stills, Kling 3.0 Pro animation). Voices: H
 - Scene 2: manager stands still; Scene 3: friendlier manager
 - English subtitles (Hindi voice + Hindi headline text kept)
 - Success screen is designed in the app's style (no real success screenshot was available)
+
+## v3 — `livekeeping_ewaybill_11pm_v3.mp4`
+- New energetic CTA voice: "तो देर किस बात की?! लाइवकीपिंग डाउनलोड करो! ई-वे बिल बनाओ तुरंत! सिर्फ़ एक सेकंड में!"
+- All voice lines loudness-matched; music stays at full energy to the end (final hit instead of fade)
+- Top headline texts, app captions and end card in Hinglish (Hindi in Roman script); English subtitles kept

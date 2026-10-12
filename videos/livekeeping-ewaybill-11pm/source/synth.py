@@ -53,7 +53,9 @@ add(sfx,23.8,eng,0.25)
 # horn
 add(sfx,24.4,tone(330,.45,.02,.5,(1,.6,.4,.3)),0.12); add(sfx,24.4,tone(415,.45,.02,.5,(1,.6,.4,.3)),0.1)
 # final fade
-fo=int(1.2*SR); mus[-fo:]*=np.linspace(1,0,fo)
+fo=int(0.35*SR); mus[-fo:]*=np.linspace(1,0,fo)
+add(mus,29.55,kick(),0.9)
+for f in (261.63,329.63,392.0,523.25): add(mus,29.55,tone(f,.5,.005,.25,(1,.3)),0.12)
 for name,buf in [('music.wav',mus),('sfx.wav',sfx)]:
     buf=buf/max(1e-9,np.abs(buf).max())*0.9
     with wave.open(name,'wb') as w:
