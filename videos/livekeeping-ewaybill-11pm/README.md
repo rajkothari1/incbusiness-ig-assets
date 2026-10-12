@@ -27,11 +27,11 @@ Visuals: Higgsfield (Nano Banana Pro stills, Kling 3.0 Pro animation). Voices: H
 - All voice lines loudness-matched; music stays at full energy to the end (final hit instead of fade)
 - Top headline texts, app captions and end card in Hinglish (Hindi in Roman script); English subtitles kept
 
-## v4 — `livekeeping_ewaybill_11pm_v4.mp4` (33.3s)
+## v4 — `livekeeping_ewaybill_11pm_v4.mp4` (33.3s) ← FINAL (approved)
 - New 3.2s pattern-interrupt hook before the story: clock strikes 11 → highway checkpoint with sirens → "🚨 PENALTY!" stamp
 - Hook VO: "रात ग्यारह बजे! बिना ई-वे बिल ट्रक निकला? सीधा पेनल्टी!" + gong, siren and stamp SFX
 
-## v5 — `livekeeping_ewaybill_11pm_v5_25s.mp4` (25.0s) ← latest
+## v5 — `livekeeping_ewaybill_11pm_v5_25s.mp4` (25.0s) — alternate cut, not chosen
 - Cut to 25s: shorter, punchier dialogue for every line; app section sped up to 7.2s (same zooms/highlights)
 - Hook clock is now the still illustration with punch-zoom + shake, so it reads exactly 11:00
 - Timeline: Hook 0–3 · Problem 3–10.9 · App 10.9–18.1 · Success 18.1–20.1 · Truck leaves 20.1–21.9 · End card 21.9–25
