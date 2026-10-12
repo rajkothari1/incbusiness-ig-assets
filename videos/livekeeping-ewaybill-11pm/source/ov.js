@@ -6,12 +6,12 @@ const items={
  t4:'<div class="title"><div class="tag g">✅ 11:03 PM</div><br>Bill taiyaar,<br>tension khatam! 👍</div>',
  t5:'<div class="title">Truck rawaana! 🚚💨</div>',
  lg:'<div class="badge"><img src="logo_full.png"></div>',
- s1:'<div class="sub"><span><i>Ramu:</i> Sir! It\'s 11 PM… the truck is ready,<br>but the E-Way Bill isn\'t made!</span></div>',
- s2:'<div class="sub"><span><i>Ramu:</i> The office is closed, and the Tally<br>computer is there too… what now?</span></div>',
- s3:'<div class="sub"><span><i>Sharma ji:</i> Relax, Ramu.<br>I have my phone!</span></div>',
- s5:'<div class="sub"><span><i>Ramu:</i> Wow sir, the bill is here!<br>I\'m off!</span></div>',
+ s1:'<div class="sub"><span><i>Ramu:</i> Sir! The truck is ready,<br>but no E-Way Bill!</span></div>',
+ s2:'<div class="sub"><span><i>Ramu:</i> Office closed, Tally\'s there too…<br>what do we do now?!</span></div>',
+ s3:'<div class="sub"><span><i>Sharma ji:</i> Relax,<br>I have my phone!</span></div>',
+ s5:'<div class="sub"><span><i>Ramu:</i> Wow sir!<br>I\'m off!</span></div>',
  sh:'<div class="sub"><span>11 PM! Truck out without E-Way Bill?<br>Straight penalty!</span></div>',
- s6:'<div class="sub"><span>Download Livekeeping now!<br>E-Way Bill in just 1 second!</span></div>',
+ s6:'<div class="sub"><span>Download Livekeeping —<br>E-Way Bill in 1 second!</span></div>',
 };
 (async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1080,height:1920}});
 await p.goto('file://'+process.cwd()+'/ov.html');
