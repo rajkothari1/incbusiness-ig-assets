@@ -26,3 +26,7 @@ Visuals: Higgsfield (Nano Banana Pro stills, Kling 3.0 Pro animation). Voices: H
 - New energetic CTA voice: "तो देर किस बात की?! लाइवकीपिंग डाउनलोड करो! ई-वे बिल बनाओ तुरंत! सिर्फ़ एक सेकंड में!"
 - All voice lines loudness-matched; music stays at full energy to the end (final hit instead of fade)
 - Top headline texts, app captions and end card in Hinglish (Hindi in Roman script); English subtitles kept
+
+## v4 — `livekeeping_ewaybill_11pm_v4.mp4` (33.3s)
+- New 3.2s pattern-interrupt hook before the story: clock strikes 11 → highway checkpoint with sirens → "🚨 PENALTY!" stamp
+- Hook VO: "रात ग्यारह बजे! बिना ई-वे बिल ट्रक निकला? सीधा पेनल्टी!" + gong, siren and stamp SFX

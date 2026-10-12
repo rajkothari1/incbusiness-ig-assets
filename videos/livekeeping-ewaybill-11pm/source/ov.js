@@ -10,6 +10,7 @@ const items={
  s2:'<div class="sub"><span><i>Ramu:</i> The office is closed, and the Tally<br>computer is there too… what now?</span></div>',
  s3:'<div class="sub"><span><i>Sharma ji:</i> Relax, Ramu.<br>I have my phone!</span></div>',
  s5:'<div class="sub"><span><i>Ramu:</i> Wow sir, the bill is here!<br>I\'m off!</span></div>',
+ sh:'<div class="sub"><span>11 PM! Truck out without E-Way Bill?<br>Straight penalty!</span></div>',
  s6:'<div class="sub"><span>Download Livekeeping now!<br>E-Way Bill in just 1 second!</span></div>',
 };
 (async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1080,height:1920}});
