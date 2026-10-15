@@ -1,0 +1,8 @@
+[
+ {"slug":"01-business-tech-idbi-bank","category":"Business & Tech","cardHeadline":"[[Fairfax]] to Buy [[60.72%]] of [[IDBI Bank]] for [[₹52,878 Crore]]","pillText":"IDBI Bank","background":"backgrounds/business-tech.jpg"},
+ {"slug":"02-ipo-zetwerk","category":"IPO","cardHeadline":"[[Zetwerk]] Opens [[₹5,012 Crore]] IPO at [[₹143 to ₹151]]","pillText":"Zetwerk","background":"backgrounds/ipo.jpg"},
+ {"slug":"03-earnings-groww","category":"Earnings","cardHeadline":"[[Groww]] Q2 Profit Jumps [[54%]] to [[₹725 Crore]]","pillText":"Groww","background":"backgrounds/earnings.jpg"},
+ {"slug":"04-layoffs-netflix","category":"Layoffs","cardHeadline":"[[Netflix]] Cuts [[1,000 Jobs]], About [[6%]] of Staff","logos":["generator/assets/netflix.svg"],"background":"backgrounds/layoffs.jpg"},
+ {"slug":"05-ipo-bonfiglioli","category":"IPO","cardHeadline":"[[Bonfiglioli]] Opens [[₹2,534 Crore]] IPO at [[₹558 to ₹586]]","pillText":"Bonfiglioli Transmissions","background":"backgrounds/ipo.jpg"},
+ {"slug":"06-funding-spill-games","category":"Funding","cardHeadline":"[[Spill Games]] Raises [[$10.5 Million]] Led by Elevation","pillText":"Spill Games","background":"backgrounds/funding.jpg"}
+]
