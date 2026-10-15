@@ -154,3 +154,16 @@ Follow @incbusiness.official for daily business news, simplified.
 
 #startups #business #incbusiness #tech #AI #news #SpillGames #ElevationCapital #SeriesA #Gaming #MobileGaming #StartupFunding #Funding #VC #Bengaluru #IndianStartups #GameDev #Venture
 ```
+
+---
+
+## Metricool schedule (confirmed by getScheduledPosts, blogId 6752944)
+
+| Time (IST) | Reel | Post id |
+|---|---|---|
+| 09:00 | 05-ipo-bonfiglioli | 396440226 |
+| 10:00 | 01-business-tech-idbi-bank | 396440144 |
+| 11:00 | 03-earnings-groww | 396440171 |
+| 12:00 | 02-ipo-zetwerk | 396440160 |
+| 17:00 | 06-funding-spill-games | 396440244 |
+| 18:00 | 04-layoffs-netflix | 396440192 |
