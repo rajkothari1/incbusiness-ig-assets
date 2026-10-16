@@ -1,0 +1,8 @@
+[
+ {"slug":"01-ipo-jio-platforms","category":"IPO","cardHeadline":"[[Jio Platforms]] Sets [[₹30,213 Crore]] IPO at [[₹1,065 to ₹1,119]]","pillText":"Jio Platforms","background":"backgrounds/ipo.jpg"},
+ {"slug":"02-earnings-wipro","category":"Earnings","cardHeadline":"[[Wipro]] Q2 Profit Dips [[1.4%]] to [[₹3,201 Crore]]","pillText":"Wipro","background":"backgrounds/earnings.jpg"},
+ {"slug":"03-earnings-nestle-india","category":"Earnings","cardHeadline":"[[Nestle India]] Q2 Profit Jumps [[36%]] to [[₹1,027 Crore]]","pillText":"Nestle India","background":"backgrounds/earnings.jpg"},
+ {"slug":"04-ipo-tonbo-imaging","category":"IPO","cardHeadline":"[[Tonbo Imaging]] Opens [[₹852 Crore]] IPO at [[₹665 to ₹700]]","pillText":"Tonbo Imaging","background":"backgrounds/ipo.jpg"},
+ {"slug":"05-funding-shamrock-ai","category":"Funding","cardHeadline":"[[Shamrock AI]] Raises [[$5 Million]] Seed Led by Endiya","pillText":"Shamrock AI","background":"backgrounds/funding.jpg"},
+ {"slug":"06-funding-cosmochute","category":"Funding","cardHeadline":"[[Cosmochute]] Raises [[$1.5 Million]] Led by Accel and Prosus","pillText":"Cosmochute","background":"backgrounds/funding.jpg"}
+]
