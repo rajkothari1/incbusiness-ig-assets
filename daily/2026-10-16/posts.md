@@ -103,3 +103,12 @@ Images: no official logos fetched, so every card uses a company-name pill over t
 - Netflix layoffs and Zetwerk IPO: already posted on 15 Oct.
 - Sahajanand Medical and Fusion CX IPOs: lower importance, not verified in 2 sources.
 
+## Metricool schedule (confirmed by getScheduledPosts, blogId 6752944)
+| Time (IST) | Reel | Post id |
+|---|---|---|
+| 09:00 | 04-ipo-tonbo-imaging | 397340065 |
+| 10:00 | 01-ipo-jio-platforms | 397340012 |
+| 11:00 | 02-earnings-wipro | 397340033 |
+| 12:00 | 03-earnings-nestle-india | 397340047 |
+| 15:00 | 06-funding-cosmochute | 397340108 |
+| 17:00 | 05-funding-shamrock-ai | 397340079 |
