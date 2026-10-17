@@ -59,15 +59,8 @@ The model in one line: **Apollo treats patients in its hospitals, sells medicine
 |---|---|---|
 | Revenue | ₹21,794 Cr | ₹25,229 Cr (+16%) |
 | EBITDA | ₹3,033 Cr | ₹3,769 Cr (+24%) |
-| Net profit* | — | ₹1,942 Cr (+34%) |
+| Net profit | — | ₹1,942 Cr (+34%) |
 | Final dividend | — | ₹10 per share |
-
-*\*Profit attributable to shareholders. Total profit including minority interests was ₹2,003 Cr.*
-
-**Where every ₹100 of revenue comes from (Q4 FY26):**
-- ~₹49 → hospitals
-- ~₹43 → pharmacy + Apollo 24/7
-- ~₹7 → clinics & diagnostics
 
 **What drives hospital revenue:** more patients, more complex (higher-value) cases and higher prices. In Q4 FY26, hospital revenue grew 16% to ₹3,268 Cr.
 
@@ -160,7 +153,7 @@ Mainly from hospital treatment (about half of revenue) and medicine sales throug
           "name": "Apollo Hospitals Enterprise Ltd"
         }
       ],
-      "wordCount": 646,
+      "wordCount": 604,
       "inLanguage": "en-IN"
     },
     {
@@ -277,5 +270,5 @@ Open Graph Description: Hospitals bring in half the money, pharmacies most of th
 Alt Text (hero image): Apollo Hospitals business model overview
 Author: Author Name
 Published Date: 2026-10-17
-Word Count: 646
+Word Count: 604
 ```

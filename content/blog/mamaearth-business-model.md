@@ -62,17 +62,10 @@ The model in one line: **Honasa builds the brands, contract manufacturers make t
 | Year | Revenue | Net profit / loss |
 |---|---|---|
 | FY22 | ₹943 Cr | ₹14 Cr |
-| FY23 | ₹1,492 Cr | −₹151 Cr* |
+| FY23 | ₹1,492 Cr | −₹151 Cr |
 | FY24 | ₹1,920 Cr | ₹110 Cr |
 | FY25 | ₹2,067 Cr | ₹73 Cr |
 | FY26 | ₹2,392 Cr | ₹200 Cr |
-
-*\*Includes a ₹154 Cr write-off of its Momspresso investment.*
-
-**Where every ₹100 goes (Jan–Mar 2026):**
-- ~₹30 → making the product
-- ~₹33 → advertising
-- ~₹8 → net profit (FY26)
 
 ## Mamaearth Marketing Strategy
 
@@ -165,7 +158,7 @@ It creates the formulas in-house, and contract manufacturers make the products.
           "name": "Mamaearth"
         }
       ],
-      "wordCount": 601,
+      "wordCount": 566,
       "inLanguage": "en-IN"
     },
     {
@@ -282,5 +275,5 @@ Open Graph Description: ₹2,392 Cr revenue, 6 brands, 3 lakh+ shops and 33% of 
 Alt Text (hero image): Unbranded baby lotion bottle, folded baby blanket, knitted cap and wooden rattle on a white bed in soft morning light
 Author: Author Name
 Published Date: 2026-10-17
-Word Count: 601
+Word Count: 566
 ```
