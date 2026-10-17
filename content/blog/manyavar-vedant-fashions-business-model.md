@@ -9,7 +9,7 @@
 
 # Manyavar Business Model Explained
 
-Manyavar started in 1999 with ₹10,000 borrowed from the founder's mother. Today its parent, Vedant Fashions Ltd, runs 669 stores and earned ₹1,436 crore in revenue in FY26 at a 26% profit margin.
+Manyavar started in 1999 with ₹10,000 borrowed from Ravi Modi's mother. Today its parent, Vedant Fashions Ltd, runs 669 stores and earned ₹1,436 crore in revenue in FY26 at a 26% profit margin.
 
 This Manyavar case study explains the Vedant Fashions business model and how Manyavar makes money.
 
@@ -114,7 +114,7 @@ Retail sales show what shoppers spent across all its channels. Revenue is what V
 
 | When | What happened |
 |---|---|
-| 1999 | Manyavar starts with ₹10,000 from the founder's mother |
+| 1999 | Manyavar starts with ₹10,000 from Ravi Modi's mother |
 | 2008 | First exclusive store, in Bhubaneswar |
 | 2015 | Mohey launched for women |
 | 2017 | Mebaz acquired; Kedaara Capital invests |
