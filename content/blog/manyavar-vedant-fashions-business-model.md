@@ -7,7 +7,7 @@
 > - **5 brands**: Manyavar, Mohey, Twamev, Diwas and Mebaz.
 > - **No end-of-season sales** on Manyavar, which helps keep gross margins at **~66%**.
 
-# Manyavar Business Model Explained: Where Vedant Fashions' ₹1,436 Crore Comes From
+# Manyavar Business Model Explained
 
 Manyavar started in 1999 with ₹10,000 borrowed from the founder's mother. Today its parent, Vedant Fashions Ltd, runs 669 stores and earned ₹1,436 crore in revenue in FY26 at a 26% profit margin.
 
@@ -161,7 +161,7 @@ No. Manyavar has no end-of-season sales, and prices are the same online and offl
     {
       "@type": "BlogPosting",
       "@id": "https://YOUR-DOMAIN.com/manyavar-business-model#article",
-      "headline": "Manyavar Business Model Explained: Where Vedant Fashions' ₹1,436 Crore Comes From",
+      "headline": "Manyavar Business Model Explained",
       "description": "Manyavar business model explained: ₹1,436 Cr FY26 revenue, 26% profit margin, 669 franchise-led stores, 5 brands and a no-discount policy.",
       "author": {
         "@id": "https://YOUR-DOMAIN.com#person-author-name"
@@ -225,7 +225,7 @@ No. Manyavar has no end-of-season sales, and prices are the same online and offl
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Manyavar Business Model Explained: Where Vedant Fashions' ₹1,436 Crore Comes From",
+          "name": "Manyavar Business Model Explained",
           "item": "https://YOUR-DOMAIN.com/manyavar-business-model"
         }
       ]
@@ -299,7 +299,7 @@ Tags: Manyavar, Vedant Fashions, Ethnic Wear, Franchise, Business Model, Indian 
 URL Slug: manyavar-business-model
 Category: Business Models / Retail & Fashion
 Canonical URL: https://YOUR-DOMAIN.com/manyavar-business-model
-Open Graph Title: Manyavar Business Model Explained: Where Vedant Fashions' ₹1,436 Crore Comes From
+Open Graph Title: Manyavar Business Model Explained
 Open Graph Description: Franchise stores, no discounts and a 26% profit margin. Here's how Manyavar's wedding-wear business works.
 Alt Text (hero image): Manyavar business model overview
 Author: Author Name
