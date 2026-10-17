@@ -32,19 +32,37 @@ The model in one line: **Honasa builds the brands, contract manufacturers make t
 - **2017:** those parents wanted safe products for themselves, so the brand moved into adult skin & hair care
 - **Today:** young adults who want natural, ingredient-led products, with a separate brand for each need
 
-## Mamaearth Business Model
+## Core Pillars of the Mamaearth Business Model
 
-**1. Connect with the audience.** Built by parents for parents. Growth came from mothers recommending it to other mothers.
+### 1. Built by Parents, for Parents
+- **What:** Mamaearth started from the founders' own problem: they couldn't find safe products for their baby.
+- **How it works:** Early growth came from mom bloggers and mothers recommending the brand to other mothers.
+- **Why it matters:** In a category where parents fear chemicals, trust from other parents sells better than ads.
 
-**2. Toxin-free promise.** Products are marketed as free from parabens, sulphates and SLS, and backed by MADE SAFE certification.
+### 2. The Toxin-Free Promise
+- **What:** Products are marketed as free from parabens, sulphates and SLS. Mamaearth was Asia's first brand with MADE SAFE certification.
+- **How it works:** The promise is printed on every pack and repeated in all marketing.
+- **Why it matters:** It gives Mamaearth one clear reason to choose it over big mass-market brands.
 
-**3. Lean innovation.** 122 new products launched in 2023. Trending ingredients like onion, rice water and vitamin C become full ranges.
+### 3. Lean, Fast Innovation
+- **What:** An in-house team of about 50 people, led by Ghazal Alagh, creates new formulas. Honasa launched 122 new products in 2023.
+- **How it works:** The team spots trending ingredients like onion, rice water and vitamin C and turns them into full ranges. Products that sell well are scaled up.
+- **Why it matters:** New products brought in about 9% of revenue in the April to June 2024 quarter.
 
-**4. Asset-light manufacturing.** Formulas are made in-house; contract manufacturers do the production. In 2024 Honasa bought Cosmogenesis's R&D lab (4,000+ formulations).
+### 4. Asset-Light Manufacturing
+- **What:** Honasa owns the formulas; contract manufacturers make the products.
+- **How it works:** Partner factories produce in batches as needed. In 2024, Honasa bought Cosmogenesis's R&D lab, which came with 4,000+ formulations.
+- **Why it matters:** Less money goes into factories, so more can go into new products and marketing.
 
-**5. Omnichannel.** Own website & app, Amazon, Flipkart, Nykaa, Zepto, Instamart, plus **3 lakh+ retail outlets** (June 2026).
+### 5. Omnichannel Distribution
+- **What:** Mamaearth sells online and in shops: its own website and app, Amazon, Flipkart, Nykaa, Zepto, Instamart and **3 lakh+ retail outlets** (June 2026).
+- **How it works:** Offline grew from about 9% of revenue in FY20 to about 29% in FY22. Under "Project Neev", Honasa replaced super-stockists with direct distributors in India's top 50 cities.
+- **Why it matters:** Most beauty products in India are still bought in local shops, so going offline opens a much bigger market.
 
-**6. House of brands.**
+### 6. House of Brands
+- **What:** Six brands, each for a different customer.
+- **How it works:** Honasa launched some brands and bought others, like BBlunt and Dr. Sheth's in 2022. All share one team, one supply chain and one sales network.
+- **Why it matters:** The younger brands grew 40%+ in FY26, faster than Mamaearth itself.
 
 | Brand | Focus |
 |---|---|
@@ -159,7 +177,7 @@ D2C beauty brands like WOW Skin Science, Plum, mCaffeine and The Moms Co, and la
           "name": "Mamaearth"
         }
       ],
-      "wordCount": 497,
+      "wordCount": 787,
       "inLanguage": "en-IN"
     },
     {
@@ -308,5 +326,5 @@ Open Graph Description: ₹2,392 Cr revenue, 6 brands, 3 lakh+ shops and 33% of 
 Alt Text (hero image): Unbranded baby lotion bottle, folded baby blanket, knitted cap and wooden rattle on a white bed in soft morning light
 Author: Author Name
 Published Date: 2026-10-17
-Word Count: 497
+Word Count: 787
 ```

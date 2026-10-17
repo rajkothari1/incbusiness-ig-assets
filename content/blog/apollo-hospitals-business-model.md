@@ -37,17 +37,32 @@ Dr. Reddy decided India needed world-class hospitals of its own. Four years late
 - **Everyday customers** buying medicines in stores or on the app
 - **Healthy people** who want regular health checks (Apollo ProHealth)
 
-## Apollo Hospitals Business Model
+## Core Pillars of the Apollo Hospitals Business Model
 
-**1. Hospitals.** The core business: big multi-specialty hospitals for serious and complex care.
+### 1. Hospitals as the Anchor
+- **What:** 70+ multi-specialty hospitals with 10,000+ beds, built for serious and complex care.
+- **How it works:** Patients pay for surgeries, treatments, ICU and room stays, consultations and tests. Most of the hospital bill is paid through insurance or by patients directly.
+- **Why it matters:** Hospitals bring in about half of Apollo's revenue and are its most profitable business. They also build the trust in the Apollo name that every other business relies on.
 
-**2. Pharmacy network.** 7,289 Apollo Pharmacy stores (March 2026). The Apollo Pharmacy business model is simple: stores near hospitals and homes, selling medicines every day.
+### 2. Pharmacy Network
+- **What:** 7,289 Apollo Pharmacy stores (March 2026).
+- **How it works:** The Apollo Pharmacy business model is simple: stores near hospitals and homes sell medicines and health products every day.
+- **Why it matters:** Hospital visits are occasional, but medicine purchases repeat every month. This gives Apollo steady, high-volume sales.
 
-**3. Apollo 24/7 (digital).** An app for online doctor consultations, medicine delivery and lab tests.
+### 3. Apollo 24/7 (Digital Health)
+- **What:** Apollo's app for online doctor consultations, medicine delivery and lab tests.
+- **How it works:** Patients can book a doctor, order medicines and schedule tests from home. The app handled ₹2,037 crore of transactions in FY26, up 24%.
+- **Why it matters:** It keeps patients inside the Apollo network even when they are not near a hospital or store.
 
-**4. Apollo Health & Lifestyle (AHLL).** Smaller-format centres outside big hospitals: clinics, diagnostics, maternity and more.
+### 4. Apollo Health & Lifestyle (AHLL)
+- **What:** Smaller health centres outside big hospitals: Apollo Clinics, Apollo Diagnostics, Apollo Cradle (maternity), Apollo Spectra (surgery centres), Apollo Fertility, Apollo Sugar (diabetes) and Apollo Dialysis.
+- **How it works:** These centres handle everyday and specialised care that doesn't need a full hospital.
+- **Why it matters:** They reach more neighbourhoods at a lower cost than building new hospitals.
 
-**5. The ecosystem.** One patient can use all four: a hospital surgery, follow-up medicines from the pharmacy, video check-ups on Apollo 24/7, and yearly health checks.
+### 5. One Patient, for Life
+- **What:** All four businesses are linked under one brand.
+- **How it works:** A patient can have surgery at an Apollo hospital, buy follow-up medicines at Apollo Pharmacy, consult a doctor on Apollo 24/7 and get yearly health checks at an Apollo clinic.
+- **Why it matters:** Apollo earns from the same patient many times, not just once.
 
 ## How Apollo Hospitals Makes Money
 
@@ -169,7 +184,7 @@ Hospital chains like Max Healthcare, Fortis, Narayana Health, Medanta, Manipal a
           "name": "Apollo Hospitals Enterprise Ltd"
         }
       ],
-      "wordCount": 658,
+      "wordCount": 898,
       "inLanguage": "en-IN"
     },
     {
@@ -318,5 +333,5 @@ Open Graph Description: Hospitals bring in half the money, pharmacies most of th
 Alt Text (hero image): Apollo Hospitals business model overview
 Author: Author Name
 Published Date: 2026-10-17
-Word Count: 658
+Word Count: 898
 ```
