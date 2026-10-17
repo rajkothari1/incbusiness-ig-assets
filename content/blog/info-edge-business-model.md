@@ -13,7 +13,7 @@ Info Edge started in the servants' quarters of its founder's father's house. Tod
 
 This Info Edge case study covers the Naukri business model, Info Edge revenue by business and its investment portfolio.
 
-**The model in one line:** Info Edge runs online classifieds that companies and people pay to use, and invests the cash in early-stage startups.
+**The model in one line:** Info Edge runs online classifieds that companies and people pay to use, and invests the cash in young startups.
 
 ## About Info Edge
 
@@ -21,7 +21,7 @@ This Info Edge case study covers the Naukri business model, Info Edge revenue by
 |---|---|
 | Founded | 1995 (Naukri.com launched in 1997) |
 | Founder | Sanjeev Bikhchandani |
-| Co-promoter | Hitesh Oberoi |
+| Promoter | Hitesh Oberoi |
 | Listed | 2006: India's first listed internet company (NSE: NAUKRI) |
 | Businesses | Naukri, 99acres, Jeevansathi, Shiksha, plus a startup investment arm |
 | Naukri resumes | ~115 million |
@@ -29,11 +29,10 @@ This Info Edge case study covers the Naukri business model, Info Edge revenue by
 
 ## The Problem Info Edge Solved
 
-In the 1990s, jobs in India were found through **newspaper classifieds**. Job seekers had to scan many papers, and companies had no easy way to reach good candidates.
-
-In 1996, Sanjeev Bikhchandani saw a stall marked "WWW" at an IT fair. He decided to put job listings online. **Naukri.com launched in 1997.**
-
-The same idea later went into property (99acres), marriage (Jeevansathi) and colleges (Shiksha).
+1. **Jobs were hidden in newspapers.** In the 1990s, people in India found jobs through newspaper ads and had to check many papers.
+2. **Companies struggled to find people.** Recruiters had no easy way to reach good candidates.
+3. **The answer: Naukri.com.** In 1996, Sanjeev Bikhchandani saw a stall marked "WWW" at an IT fair and decided to put jobs online. Naukri.com launched in 1997.
+4. **The same idea, new markets.** Info Edge later did the same for property (99acres), marriage (Jeevansathi) and colleges (Shiksha).
 
 ## Info Edge Target Audience
 
@@ -61,7 +60,7 @@ The same idea later went into property (99acres), marriage (Jeevansathi) and col
 - **Why it matters:** The business generates more cash than profit, which is why it has ₹4,963 crore in the bank.
 
 ### 4. Investing in Startups
-- **What:** Info Edge uses its own cash, and money from outside investors in funds it manages, to back early-stage startups.
+- **What:** Info Edge uses its own cash, and money from outside investors in funds it manages, to back young startups.
 - **How it works:** It invests early and stays invested for years. Its first big bets were Zomato (now Eternal) and Policybazaar.
 - **Why it matters:** About ₹4,900 crore invested in 135 startups is now valued at about ₹41,300 crore (8.4x).
 
@@ -76,7 +75,7 @@ Here's how Naukri makes money, and the rest of Info Edge too. Info Edge earns fr
 
 | Business | What it earns from | FY26 revenue | Share | Profit / loss |
 |---|---|---|---|---|
-| **Naukri (recruitment)** | Recruiter subscriptions, resume database access, job-seeker services, NaukriGulf | ₹2,256 Cr | ~74% | ₹1,277 Cr profit (57% margin) |
+| **Naukri (recruitment)** | Recruiter subscriptions, resume database access, services for job seekers, NaukriGulf | ₹2,256 Cr | ~74% | ₹1,277 Cr profit (57% margin) |
 | **99acres (real estate)** | Listings and ads from builders, brokers and owners | ₹488 Cr | ~16% | ₹59 Cr loss |
 | **Shiksha (education)** | Colleges and universities paying to reach students | ₹170 Cr | ~6% | ₹13 Cr profit |
 | **Jeevansathi (matrimony)** | Paid memberships | ₹138 Cr | ~5% | ₹4 Cr loss |
@@ -103,7 +102,7 @@ Here's how Naukri makes money, and the rest of Info Edge too. Info Edge earns fr
 | Deeptech startups | ₹455 Cr | ₹559 Cr | 1.2x |
 | **All 135 startups** | **~₹4,900 Cr** | **~₹41,300 Cr** | **8.4x** |
 
-*As of 31 March 2026. Includes ~₹1,300 Cr from outside investors in Info Edge-managed funds.*
+*As of 31 March 2026. Includes ~₹1,300 Cr from outside investors in funds managed by Info Edge.*
 
 ## Info Edge Competitors
 
@@ -120,7 +119,7 @@ Info Edge's playbook: **build the leading online classified, let businesses pay 
 ## Frequently Asked Questions
 
 **What is Info Edge's business model?**
-Info Edge runs online classifieds where businesses pay for access: Naukri for jobs, 99acres for property, Jeevansathi for matrimony and Shiksha for education. It also invests its cash in early-stage startups.
+Info Edge runs online classifieds where businesses pay for access: Naukri for jobs, 99acres for property, Jeevansathi for matrimony and Shiksha for education. It also invests its cash in young startups.
 
 **Who owns Naukri.com?**
 Naukri.com is owned by Info Edge (India) Ltd, founded by Sanjeev Bikhchandani. Naukri launched in 1997.
@@ -141,7 +140,7 @@ About ₹41,300 crore as of 31 March 2026, on about ₹4,900 crore invested in 1
 Info Edge is one of Eternal's (Zomato's) earliest investors, first investing in 2010. It held about 12% of Eternal as of June 2025.
 
 **Which is Info Edge's most profitable business?**
-Recruitment (Naukri). It made ₹1,277 crore in operating profit in FY26 at a 57% margin, while 99acres and Jeevansathi were still loss-making.
+Recruitment (Naukri). It made ₹1,277 crore in operating profit in FY26 at a 57% margin, while 99acres and Jeevansathi were still making losses.
 
 **When did Info Edge go public?**
 Info Edge listed on the stock market in 2006, the first internet company in India to do so. Its NSE symbol is NAUKRI.
@@ -188,7 +187,7 @@ LinkedIn, Indeed and foundit in jobs; MagicBricks, Housing.com and NoBroker in p
           "name": "Naukri.com"
         }
       ],
-      "wordCount": 914,
+      "wordCount": 938,
       "inLanguage": "en-IN"
     },
     {
@@ -240,7 +239,7 @@ LinkedIn, Indeed and foundit in jobs; MagicBricks, Housing.com and NoBroker in p
           "name": "What is Info Edge's business model?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Info Edge runs online classifieds where businesses pay for access: Naukri for jobs, 99acres for property, Jeevansathi for matrimony and Shiksha for education. It also invests its cash in early-stage startups."
+            "text": "Info Edge runs online classifieds where businesses pay for access: Naukri for jobs, 99acres for property, Jeevansathi for matrimony and Shiksha for education. It also invests its cash in young startups."
           }
         },
         {
@@ -296,7 +295,7 @@ LinkedIn, Indeed and foundit in jobs; MagicBricks, Housing.com and NoBroker in p
           "name": "Which is Info Edge's most profitable business?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Recruitment (Naukri). It made ₹1,277 crore in operating profit in FY26 at a 57% margin, while 99acres and Jeevansathi were still loss-making."
+            "text": "Recruitment (Naukri). It made ₹1,277 crore in operating profit in FY26 at a 57% margin, while 99acres and Jeevansathi were still making losses."
           }
         },
         {
@@ -337,5 +336,5 @@ Open Graph Description: Naukri pays the bills, Zomato made the fortune. Here's h
 Alt Text (hero image): Info Edge business model overview
 Author: Author Name
 Published Date: 2026-10-17
-Word Count: 914
+Word Count: 938
 ```

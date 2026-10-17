@@ -9,7 +9,7 @@
 
 # Apollo Hospitals Business Model Explained: Where Its ₹25,229 Crore Comes From
 
-Apollo started as one 150-bed hospital in Chennai in 1983. Today it runs 70+ hospitals and 7,289 pharmacies, and Apollo Hospitals revenue hit ₹25,229 crore in FY26.
+Apollo started as one hospital with 150 beds in Chennai in 1983. Today it runs 70+ hospitals and 7,289 pharmacies, and Apollo Hospitals revenue hit ₹25,229 crore in FY26.
 
 **The model in one line:** hospitals win the patient's trust; pharmacies and the Apollo 24/7 app serve that patient for life.
 
@@ -26,9 +26,9 @@ Apollo started as one 150-bed hospital in Chennai in 1983. Today it runs 70+ hos
 
 ## The Problem Apollo Solved
 
-In 1979, Dr. Prathap C. Reddy's 38-year-old patient needed heart surgery in the US. The family couldn't afford to send him, and he died.
-
-Dr. Reddy decided India needed world-class hospitals of its own. Four years later, he opened the first Apollo hospital in Chennai, India's first corporate hospital.
+1. **A patient died waiting.** In 1979, a patient of Dr. Prathap C. Reddy, aged 38, needed heart surgery in the US. His family could not afford the trip, and he died.
+2. **India had no big private hospitals.** No company in India ran a hospital chain, so serious cases often had to go abroad.
+3. **The answer: Apollo.** In 1983, Dr. Reddy opened the first Apollo hospital in Chennai, India's first corporate hospital.
 
 ## Apollo Hospitals Target Audience
 
@@ -40,14 +40,14 @@ Dr. Reddy decided India needed world-class hospitals of its own. Four years late
 ## Core Pillars of the Apollo Hospitals Business Model
 
 ### 1. Hospitals as the Anchor
-- **What:** 70+ multi-specialty hospitals with 10,000+ beds, built for serious and complex care.
+- **What:** 70+ large hospitals with 10,000+ beds that treat serious and complex illnesses.
 - **How it works:** Patients pay for surgeries, treatments, ICU and room stays, consultations and tests. Most of the hospital bill is paid through insurance or by patients directly.
 - **Why it matters:** Hospitals bring in about half of Apollo's revenue and are its most profitable business. They also build the trust in the Apollo name that every other business relies on.
 
 ### 2. Pharmacy Network
 - **What:** 7,289 Apollo Pharmacy stores (March 2026).
 - **How it works:** The Apollo Pharmacy business model is simple: stores near hospitals and homes sell medicines and health products every day.
-- **Why it matters:** Hospital visits are occasional, but medicine purchases repeat every month. This gives Apollo steady, high-volume sales.
+- **Why it matters:** Hospital visits are occasional, but medicine purchases repeat every month. This gives Apollo steady sales in large numbers.
 
 ### 3. Apollo 24/7 (Digital Health)
 - **What:** Apollo's app for online doctor consultations, medicine delivery and lab tests.
@@ -61,7 +61,7 @@ Dr. Reddy decided India needed world-class hospitals of its own. Four years late
 
 ### 5. One Patient, for Life
 - **What:** All four businesses are linked under one brand.
-- **How it works:** A patient can have surgery at an Apollo hospital, buy follow-up medicines at Apollo Pharmacy, consult a doctor on Apollo 24/7 and get yearly health checks at an Apollo clinic.
+- **How it works:** A patient can have surgery at an Apollo hospital, buy medicines after surgery at Apollo Pharmacy, consult a doctor on Apollo 24/7 and get yearly health checks at an Apollo clinic.
 - **Why it matters:** Apollo earns from the same patient many times, not just once.
 
 ## How Apollo Hospitals Makes Money
@@ -76,7 +76,7 @@ Apollo earns from **three revenue streams**:
 | **Total** | | **₹25,229 Cr** | |
 
 **Hospitals: who pays the bill?**
-- **83%** of hospital inpatient revenue comes from **insurance and cash-paying patients** (Q3 FY26)
+- **83%** of hospital inpatient revenue comes from **insurance and patients who pay in cash** (Q3 FY26)
 - International patients come to India for treatment through Apollo's international patient services
 
 **Pharmacy & digital: where the volume is**
@@ -91,8 +91,8 @@ Apollo earns from **three revenue streams**:
 |---|---|---|
 | Revenue | ₹21,794 Cr | ₹25,229 Cr (+16%) |
 | EBITDA | ₹3,033 Cr | ₹3,769 Cr (+24%) |
-| Net profit | — | ₹1,942 Cr (+34%) |
-| Final dividend | — | ₹10 per share |
+| Net profit | Not reported | ₹1,942 Cr (+34%) |
+| Final dividend | Not reported | ₹10 per share |
 
 ## The Big Move: Apollo Healthtech Demerger
 
@@ -111,7 +111,7 @@ Apollo earns from **three revenue streams**:
 | Type | Examples |
 |---|---|
 | Hospital chains | Max Healthcare, Fortis, Narayana Health, Medanta (Global Health), Manipal, Aster DM |
-| Pharmacy & e-pharmacy | MedPlus, Tata 1mg, PharmEasy, Netmeds (Reliance) |
+| Pharmacy & online pharmacy | MedPlus, Tata 1mg, PharmEasy, Netmeds (Reliance) |
 
 ## Conclusion
 
@@ -184,7 +184,7 @@ Hospital chains like Max Healthcare, Fortis, Narayana Health, Medanta, Manipal a
           "name": "Apollo Hospitals Enterprise Ltd"
         }
       ],
-      "wordCount": 898,
+      "wordCount": 934,
       "inLanguage": "en-IN"
     },
     {
@@ -333,5 +333,5 @@ Open Graph Description: Hospitals bring in half the money, pharmacies most of th
 Alt Text (hero image): Apollo Hospitals business model overview
 Author: Author Name
 Published Date: 2026-10-17
-Word Count: 898
+Word Count: 934
 ```

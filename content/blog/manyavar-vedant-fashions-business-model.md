@@ -2,10 +2,10 @@
 
 > **Key Takeaways**
 > - **₹1,436 Cr revenue, ₹376 Cr profit** in FY26: a **26% profit margin**.
-> - **Franchise-led:** Vedant designs and brands the clothes; **franchise partners** run the stores.
-> - **669 stores**, mostly **franchisee-owned**, across India and 5 countries.
+> - **Run by franchise partners:** Vedant designs and brands the clothes; **franchise partners** run the stores.
+> - **669 stores**, mostly **owned by franchise partners**, across India and 5 countries.
 > - **5 brands**: Manyavar, Mohey, Twamev, Diwas and Mebaz.
-> - **No end-of-season sales** on Manyavar, which helps keep gross margins at **~66%**.
+> - **No end of season sales** on Manyavar, which helps keep gross margins at **~66%**.
 
 # Manyavar Business Model Explained
 
@@ -29,33 +29,31 @@ This Manyavar case study explains the Vedant Fashions business model and how Man
 
 ## The Problem Manyavar Solved
 
-Indian men's wedding wear was **unorganised**: local tailors, small shops, no trusted brand and no fixed prices.
-
-Ravi Modi grew up working in his father's small clothing shop in Kolkata's AC Market. He borrowed ₹10,000 from his mother and started making his own kurtas, first selling to multi-brand shops.
-
-His idea: give men one trusted brand for every wedding and festival, with the same design, quality and price in every city.
+1. **No trusted brand.** Men's wedding wear in India came from local tailors and small shops, with no big brand.
+2. **No fixed prices.** Price and quality changed from shop to shop and city to city.
+3. **The answer: Manyavar.** Ravi Modi grew up working in his father's small clothing shop in Kolkata's AC Market. He borrowed ₹10,000 from his mother, made his own kurtas and sold them to multi brand shops. His goal was one trusted brand with the same design, quality and price in every city.
 
 ## Manyavar Target Audience
 
-- **Grooms and wedding guests** who want a sherwani, kurta or Indo-western outfit
+- **Grooms and wedding guests** who want a sherwani, kurta or Indo western outfit
 - **Families shopping together** for weddings: men, women and kids
 - **Festive shoppers** for Diwali, Eid and other celebrations
 - **The Indian diaspora** abroad, through international stores
 
 ## Core Pillars of the Manyavar Business Model
 
-### 1. Franchise-Led Store Network
+### 1. Stores Run by Franchise Partners
 - **What:** Most of Manyavar's Exclusive Brand Outlets (EBOs) are owned and run by franchise partners, not by Vedant. The network has 669 stores across India and 5 other countries.
 - **How it works:** The franchise partner owns and runs the store. Vedant provides the brand, the clothes, the designs and the store experience.
-- **Why it matters:** Vedant can open stores in hundreds of cities without paying for each one itself. The company calls this an asset-light model with high cash conversion.
+- **Why it matters:** Vedant can open stores in hundreds of cities without paying for each one itself. The company calls this a model that needs little money and brings in cash quickly.
 
 ### 2. Vedant Controls Design and Supply Chain
-- **What:** Vedant keeps the most important work in-house: designing the clothes and deciding which store gets what stock.
-- **How it works:** It runs a "52-week" design model, so new collections arrive all year. Data and AI help forecast demand, and an automated system refills stores down to pin-code level. Vedant can see what sells in every store.
+- **What:** Vedant keeps the most important work within the company: designing the clothes and deciding which store gets what stock.
+- **How it works:** It runs a "52 week" design model, so new collections arrive all year. Data and AI help forecast demand, and an automated system refills stores down to pin code level. Vedant can see what sells in every store.
 - **Why it matters:** The right outfits reach the right city at the right time, so very little stock is left unsold.
 
 ### 3. No Discounts, One Price
-- **What:** Manyavar has no end-of-season sales, and prices are the same online and offline across India.
+- **What:** Manyavar has no end of season sales, and prices are the same online and offline across India.
 - **How it works:** Because stock is managed tightly, stores don't need sales to clear old pieces.
 - **Why it matters:** Customers don't wait for a sale, and the brand keeps its premium image. This helps Vedant keep a gross margin of about 66%.
 
@@ -66,11 +64,11 @@ His idea: give men one trusted brand for every wedding and festival, with the sa
 
 | Brand | Since | For | Price range |
 |---|---|---|---|
-| Manyavar | 1999 | Men & boys | Mid-premium |
-| Mohey | 2015 | Women | Mid-premium |
-| Mebaz | Acquired 2017 | Whole family, South India | Mid-premium to premium |
+| Manyavar | 1999 | Men & boys | Mid premium |
+| Mohey | 2015 | Women | Mid premium |
+| Mebaz | Acquired 2017 | Whole family, South India | Mid premium to premium |
 | Twamev | 2019 | Men & women | Premium |
-| Diwas | 2024 | Men, festive wear | Value to mid-premium |
+| Diwas | 2024 | Men, festive wear | Value to mid premium |
 
 ## How Manyavar Makes Money
 
@@ -79,9 +77,9 @@ Vedant Fashions earns from **selling its clothes through four channels**:
 | Channel | How it works |
 |---|---|
 | **Exclusive Brand Outlets (EBOs)** | The main channel: franchise partners run Manyavar, Mohey, Twamev and Mebaz stores |
-| **Multi-brand outlets (MBOs) & shop-in-shops** | Manyavar and Diwas sold inside other clothing stores |
+| **Multi brand outlets (MBOs) & shop in shops** | Manyavar and Diwas sold inside other clothing stores |
 | **Large format stores (LFS)** | Big department stores |
-| **Online** | Its own website and leading e-commerce platforms |
+| **Online** | Its own website and leading ecommerce platforms |
 
 **Vedant Fashions revenue and profit over the years:**
 
@@ -96,7 +94,7 @@ Vedant Fashions earns from **selling its clothes through four channels**:
 ## Manyavar Marketing Strategy
 
 - **Celebrity ambassadors:** Virat Kohli (2016), Ranveer Singh and Amitabh Bachchan (2019)
-- **Emotional, wedding-themed campaigns:** "Taiyaar Hokar Aaiye", "Jab Aap Taiyaar Hum Taiyaar" and "Mohey Rang Do"
+- **Emotional, wedding themed campaigns:** "Taiyaar Hokar Aaiye", "Jab Aap Taiyaar Hum Taiyaar" and "Mohey Rang Do"
 - **Cricket:** Official partner of IPL teams since 2013
 - **Content:** "The Manyavar Shaadi Show", a YouTube series hosted by Karan Johar (2025)
 
@@ -105,11 +103,11 @@ Vedant Fashions earns from **selling its clothes through four channels**:
 | Type | Examples |
 |---|---|
 | Branded ethnic wear | Tasva, FabIndia |
-| Unorganised market | Local tailors and wedding-wear shops, still the biggest competitor |
+| Unorganised market | Local tailors and wedding wear shops, still the biggest competitor |
 
 ## Conclusion
 
-Manyavar's playbook: **own the brand and the supply chain, let franchise partners own the stores, and never discount.** That gives it industry-leading margins. Its challenge is growth: sales depend on the wedding calendar, and revenue has barely moved since FY23.
+Manyavar's playbook: **own the brand and the supply chain, let franchise partners own the stores, and never discount.** That gives it the best margins in its industry. Its challenge is growth: sales depend on the wedding calendar, and revenue has barely moved since FY23.
 
 ## Frequently Asked Questions
 
@@ -129,7 +127,7 @@ Yes, most Manyavar stores are owned and run by franchise partners, while Vedant 
 Manyavar, Mohey, Twamev, Diwas and Mebaz.
 
 **Does Manyavar give discounts?**
-No. Manyavar has no end-of-season sales, and prices are the same online and offline.
+No. Manyavar has no end of season sales, and prices are the same online and offline.
 
 **When was Manyavar founded?**
 Ravi Modi started Manyavar in 1999 in Kolkata. The parent company, Vedant Fashions, was incorporated in 2002.
@@ -141,7 +139,7 @@ Vedant Fashions had 669 stores at the end of FY26, including 17 international st
 Yes. Vedant Fashions listed on the stock market in February 2022, at an IPO price of ₹866 per share. Its NSE symbol is MANYAVAR.
 
 **Who are Manyavar's competitors?**
-Branded ethnic wear labels like Tasva and FabIndia, and the large unorganised market of local tailors and wedding-wear shops.
+Branded ethnic wear labels like Tasva and FabIndia, and the large unorganised market of local tailors and wedding wear shops.
 
 ### Sources
 
@@ -182,7 +180,7 @@ Branded ethnic wear labels like Tasva and FabIndia, and the large unorganised ma
           "name": "Manyavar"
         }
       ],
-      "wordCount": 807,
+      "wordCount": 850,
       "inLanguage": "en-IN"
     },
     {
@@ -274,7 +272,7 @@ Branded ethnic wear labels like Tasva and FabIndia, and the large unorganised ma
           "name": "Does Manyavar give discounts?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. Manyavar has no end-of-season sales, and prices are the same online and offline."
+            "text": "No. Manyavar has no end of season sales, and prices are the same online and offline."
           }
         },
         {
@@ -306,7 +304,7 @@ Branded ethnic wear labels like Tasva and FabIndia, and the large unorganised ma
           "name": "Who are Manyavar's competitors?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Branded ethnic wear labels like Tasva and FabIndia, and the large unorganised market of local tailors and wedding-wear shops."
+            "text": "Branded ethnic wear labels like Tasva and FabIndia, and the large unorganised market of local tailors and wedding wear shops."
           }
         }
       ]
@@ -331,5 +329,5 @@ Open Graph Description: Franchise stores, no discounts and a 26% profit margin. 
 Alt Text (hero image): Manyavar business model overview
 Author: Author Name
 Published Date: 2026-10-17
-Word Count: 807
+Word Count: 850
 ```
