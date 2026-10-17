@@ -33,7 +33,7 @@ Sub: How Mamaearth makes money 👉
 ## Slide 4 — How they make money
 
 - Sells beauty & personal care products, online + in shops
-- **Biggest cost = advertising: 32.9% of revenue** in Q4 FY26
+- **Advertising = 32.9% of revenue** in Q4 FY26 (nearly ₹1 of every ₹3 earned)
 - Growth engine now = the younger brands (The Derma Co, Aqualogica, Dr. Sheth's…), **growing 40%+ YoY in FY26**
 
 ## Slide 5 — The crash & the comeback
