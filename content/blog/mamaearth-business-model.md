@@ -84,17 +84,6 @@ The model in one line: **Honasa builds the brands, contract manufacturers make t
 | D2C beauty brands | WOW Skin Science, Plum, mCaffeine, The Moms Co |
 | FMCG giants | HUL, which bought Minimalist in 2025 at a ₹2,955 Cr valuation |
 
-## Mamaearth's Ups and Downs
-
-| When | What happened |
-|---|---|
-| Jan 2022 | $52M raised (Sequoia-led), **$1.2B valuation**; India's first unicorn of 2022 |
-| 2022 | Ghazal Alagh becomes a Shark Tank India judge |
-| Nov 2023 | IPO at ₹324/share (~₹10,500 Cr valuation), 7.6x subscribed |
-| Nov 2024 | First quarterly loss (₹18.6 Cr); **stock falls 20% in a day** |
-| 2024–25 | **Project Neev:** super-stockists removed, direct distributors in top 50 cities |
-| FY26 | Profit ₹200 Cr; **first dividend, ₹3/share** |
-
 ## Conclusion
 
 Mamaearth's playbook: **own the brand and the customer, outsource production, and grow with new brands and offline shops.** Advertising is its biggest cost and its biggest growth lever.
@@ -118,6 +107,18 @@ It creates the formulas in-house, and contract manufacturers make the products.
 
 **What was Mamaearth's IPO price?**
 ₹324 per share (upper end of the ₹308–324 band), in November 2023.
+
+**When was Mamaearth founded?**
+Varun Alagh and Ghazal Alagh founded Mamaearth in 2016 in Gurugram, starting with 6 toxin-free baby products.
+
+**Is Mamaearth an Indian company?**
+Yes. Mamaearth is an Indian brand based in Gurugram, owned by Honasa Consumer Ltd, which has been listed in India since November 2023.
+
+**How much does Mamaearth spend on advertising?**
+Advertising was 32.9% of Honasa Consumer's revenue in the January to March 2026 quarter, about a third of every rupee earned.
+
+**Who are Mamaearth's competitors?**
+D2C beauty brands like WOW Skin Science, Plum, mCaffeine and The Moms Co, and large FMCG companies like HUL, which bought Minimalist in 2025.
 
 ### Sources
 
@@ -158,7 +159,7 @@ It creates the formulas in-house, and contract manufacturers make the products.
           "name": "Mamaearth"
         }
       ],
-      "wordCount": 566,
+      "wordCount": 497,
       "inLanguage": "en-IN"
     },
     {
@@ -252,6 +253,38 @@ It creates the formulas in-house, and contract manufacturers make the products.
             "@type": "Answer",
             "text": "₹324 per share (upper end of the ₹308–324 band), in November 2023."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "When was Mamaearth founded?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Varun Alagh and Ghazal Alagh founded Mamaearth in 2016 in Gurugram, starting with 6 toxin-free baby products."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Mamaearth an Indian company?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Mamaearth is an Indian brand based in Gurugram, owned by Honasa Consumer Ltd, which has been listed in India since November 2023."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does Mamaearth spend on advertising?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Advertising was 32.9% of Honasa Consumer's revenue in the January to March 2026 quarter, about a third of every rupee earned."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who are Mamaearth's competitors?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "D2C beauty brands like WOW Skin Science, Plum, mCaffeine and The Moms Co, and large FMCG companies like HUL, which bought Minimalist in 2025."
+          }
         }
       ]
     }
@@ -275,5 +308,5 @@ Open Graph Description: ₹2,392 Cr revenue, 6 brands, 3 lakh+ shops and 33% of 
 Alt Text (hero image): Unbranded baby lotion bottle, folded baby blanket, knitted cap and wooden rattle on a white bed in soft morning light
 Author: Author Name
 Published Date: 2026-10-17
-Word Count: 566
+Word Count: 497
 ```

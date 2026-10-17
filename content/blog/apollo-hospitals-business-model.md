@@ -98,17 +98,6 @@ Apollo earns from **three revenue streams**:
 | Hospital chains | Max Healthcare, Fortis, Narayana Health, Medanta (Global Health), Manipal, Aster DM |
 | Pharmacy & e-pharmacy | MedPlus, Tata 1mg, PharmEasy, Netmeds (Reliance) |
 
-## Apollo Hospitals Timeline
-
-| When | What happened |
-|---|---|
-| 1979 | A patient dies because he can't afford heart surgery abroad |
-| 1983 | First Apollo hospital opens in Chennai: India's first corporate hospital |
-| 2024 | Advent invests ₹2,475 Cr in the pharmacy business |
-| 2025 | Demerger of pharmacy + digital business announced |
-| FY26 | ₹25,229 Cr revenue, ₹1,942 Cr profit |
-| Q4 FY27 (target) | Apollo Healthtech listing |
-
 ## Conclusion
 
 Apollo's playbook: **win patients' trust with big hospitals, then serve the same patients for life through pharmacies, an app and health checks.** The next chapter is two focused companies, one for hospitals and one for medicines and digital health. That split is what makes this Apollo Hospitals case study worth watching.
@@ -132,6 +121,18 @@ The new company that will hold Apollo's pharmacy business, Apollo 24/7 and the K
 
 **How does Apollo Hospitals make money?**
 From three streams: hospitals (₹12,555 Cr, about 50% of FY26 revenue), pharmacy and Apollo 24/7 (₹10,808 Cr, about 43%), and clinics and diagnostics (₹1,865 Cr, about 7%).
+
+**Is Apollo Hospitals a listed company?**
+Yes. Apollo Hospitals Enterprise Ltd is listed on the Indian stock market under the NSE symbol APOLLOHOSP.
+
+**How many hospitals does Apollo have?**
+Apollo runs 70+ hospitals with more than 10,000 beds across India.
+
+**What is Apollo 24/7?**
+Apollo 24/7 is Apollo's app for online doctor consultations, medicine delivery and lab tests. It handled ₹2,037 crore of transactions in FY26, up 24%.
+
+**Who are Apollo Hospitals' competitors?**
+Hospital chains like Max Healthcare, Fortis, Narayana Health, Medanta, Manipal and Aster DM, and pharmacy players like MedPlus, Tata 1mg, PharmEasy and Netmeds.
 
 ### Sources
 
@@ -168,7 +169,7 @@ From three streams: hospitals (₹12,555 Cr, about 50% of FY26 revenue), pharmac
           "name": "Apollo Hospitals Enterprise Ltd"
         }
       ],
-      "wordCount": 716,
+      "wordCount": 658,
       "inLanguage": "en-IN"
     },
     {
@@ -262,6 +263,38 @@ From three streams: hospitals (₹12,555 Cr, about 50% of FY26 revenue), pharmac
             "@type": "Answer",
             "text": "From three streams: hospitals (₹12,555 Cr, about 50% of FY26 revenue), pharmacy and Apollo 24/7 (₹10,808 Cr, about 43%), and clinics and diagnostics (₹1,865 Cr, about 7%)."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Apollo Hospitals a listed company?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Apollo Hospitals Enterprise Ltd is listed on the Indian stock market under the NSE symbol APOLLOHOSP."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many hospitals does Apollo have?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Apollo runs 70+ hospitals with more than 10,000 beds across India."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Apollo 24/7?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Apollo 24/7 is Apollo's app for online doctor consultations, medicine delivery and lab tests. It handled ₹2,037 crore of transactions in FY26, up 24%."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who are Apollo Hospitals' competitors?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hospital chains like Max Healthcare, Fortis, Narayana Health, Medanta, Manipal and Aster DM, and pharmacy players like MedPlus, Tata 1mg, PharmEasy and Netmeds."
+          }
         }
       ]
     }
@@ -285,5 +318,5 @@ Open Graph Description: Hospitals bring in half the money, pharmacies most of th
 Alt Text (hero image): Apollo Hospitals business model overview
 Author: Author Name
 Published Date: 2026-10-17
-Word Count: 716
+Word Count: 658
 ```

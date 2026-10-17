@@ -2,7 +2,7 @@
 
 > **Key Takeaways**
 > - **₹1,436 Cr revenue, ₹376 Cr profit** in FY26: a **26% profit margin**.
-> - Shoppers spent **₹2,008 Cr** at its stores; Vedant earns by selling to its **franchise partners**.
+> - **Franchise-led:** Vedant designs and brands the clothes; **franchise partners** run the stores.
 > - **669 stores**, mostly **franchisee-owned**, across India and 5 countries.
 > - **5 brands**: Manyavar, Mohey, Twamev, Diwas and Mebaz.
 > - **No end-of-season sales** on Manyavar, which helps keep gross margins at **~66%**.
@@ -73,19 +73,6 @@ Vedant Fashions earns from **selling its clothes through four channels**:
 | **Large format stores (LFS)** | Big department stores |
 | **Online** | Its own website and leading e-commerce platforms |
 
-**Two numbers to know:**
-
-| FY26 | |
-|---|---|
-| **Retail sales** (what shoppers paid at the stores) | ₹2,008 Cr |
-| **Revenue** (what Vedant earned from selling to its channel partners) | ₹1,436 Cr |
-
-Retail sales show what shoppers spent across all its channels. Revenue is what Vedant itself books, mainly from selling to its franchise and channel partners.
-
-**What it earns on each sale:**
-- **Gross margin ~66%:** after paying for the clothes, about two-thirds of revenue is left
-- **Profit margin 26%:** ₹376 Cr profit on ₹1,436 Cr revenue in FY26
-
 **Vedant Fashions revenue and profit over the years:**
 
 | Year | Revenue | Net profit |
@@ -110,20 +97,6 @@ Retail sales show what shoppers spent across all its channels. Revenue is what V
 | Branded ethnic wear | Tasva, FabIndia |
 | Unorganised market | Local tailors and wedding-wear shops, still the biggest competitor |
 
-## Manyavar's Ups and Downs
-
-| When | What happened |
-|---|---|
-| 1999 | Manyavar starts with ₹10,000 from Ravi Modi's mother |
-| 2008 | First exclusive store, in Bhubaneswar |
-| 2015 | Mohey launched for women |
-| 2017 | Mebaz acquired; Kedaara Capital invests |
-| 2019 | Twamev launched |
-| Feb 2022 | IPO at ₹866 per share (₹3,149 Cr, all shares sold by existing owners) |
-| FY23–FY26 | Revenue nearly flat; profit falls from ₹429 Cr to ₹376 Cr |
-| Q3 FY26 | Fewer wedding dates in December and none in January hit sales |
-| 2024–26 | Diwas launched; push into women's, premium and festive wear |
-
 ## Conclusion
 
 Manyavar's playbook: **own the brand and the supply chain, let franchise partners own the stores, and never discount.** That gives it industry-leading margins. Its challenge is growth: sales depend on the wedding calendar, and revenue has barely moved since FY23.
@@ -134,7 +107,7 @@ Manyavar's playbook: **own the brand and the supply chain, let franchise partner
 Vedant Fashions Ltd, founded by Ravi Modi. The Manyavar brand started in 1999 in Kolkata.
 
 **What is Vedant Fashions' revenue in FY26?**
-₹1,436 crore, up 3.5% from FY25. Shoppers spent ₹2,008 crore at its stores.
+₹1,436 crore, up 3.5% from FY25.
 
 **Is Manyavar profitable?**
 Yes. Net profit was ₹376 crore in FY26, a 26% profit margin.
@@ -147,6 +120,18 @@ Manyavar, Mohey, Twamev, Diwas and Mebaz.
 
 **Does Manyavar give discounts?**
 No. Manyavar has no end-of-season sales, and prices are the same online and offline.
+
+**When was Manyavar founded?**
+Ravi Modi started Manyavar in 1999 in Kolkata. The parent company, Vedant Fashions, was incorporated in 2002.
+
+**How many Manyavar stores are there?**
+Vedant Fashions had 669 stores at the end of FY26, including 17 international stores in the USA, UAE, Canada, UK and Australia.
+
+**Is Vedant Fashions a listed company?**
+Yes. Vedant Fashions listed on the stock market in February 2022, at an IPO price of ₹866 per share. Its NSE symbol is MANYAVAR.
+
+**Who are Manyavar's competitors?**
+Branded ethnic wear labels like Tasva and FabIndia, and the large unorganised market of local tailors and wedding-wear shops.
 
 ### Sources
 
@@ -187,7 +172,7 @@ No. Manyavar has no end-of-season sales, and prices are the same online and offl
           "name": "Manyavar"
         }
       ],
-      "wordCount": 766,
+      "wordCount": 594,
       "inLanguage": "en-IN"
     },
     {
@@ -247,7 +232,7 @@ No. Manyavar has no end-of-season sales, and prices are the same online and offl
           "name": "What is Vedant Fashions' revenue in FY26?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "₹1,436 crore, up 3.5% from FY25. Shoppers spent ₹2,008 crore at its stores."
+            "text": "₹1,436 crore, up 3.5% from FY25."
           }
         },
         {
@@ -281,6 +266,38 @@ No. Manyavar has no end-of-season sales, and prices are the same online and offl
             "@type": "Answer",
             "text": "No. Manyavar has no end-of-season sales, and prices are the same online and offline."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "When was Manyavar founded?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ravi Modi started Manyavar in 1999 in Kolkata. The parent company, Vedant Fashions, was incorporated in 2002."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many Manyavar stores are there?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vedant Fashions had 669 stores at the end of FY26, including 17 international stores in the USA, UAE, Canada, UK and Australia."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Vedant Fashions a listed company?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Vedant Fashions listed on the stock market in February 2022, at an IPO price of ₹866 per share. Its NSE symbol is MANYAVAR."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who are Manyavar's competitors?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Branded ethnic wear labels like Tasva and FabIndia, and the large unorganised market of local tailors and wedding-wear shops."
+          }
         }
       ]
     }
@@ -304,5 +321,5 @@ Open Graph Description: Franchise stores, no discounts and a 26% profit margin. 
 Alt Text (hero image): Manyavar business model overview
 Author: Author Name
 Published Date: 2026-10-17
-Word Count: 766
+Word Count: 594
 ```
