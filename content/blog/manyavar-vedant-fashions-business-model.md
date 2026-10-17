@@ -15,7 +15,7 @@ This Manyavar case study explains the Vedant Fashions business model and how Man
 
 **The model in one line:** Vedant designs and brands wedding wear; franchise partners own and run the stores; Vedant earns on every piece they sell.
 
-## About Manyavar (Vedant Fashions)
+## 1. About Manyavar (Vedant Fashions)
 
 | | |
 |---|---|
@@ -27,37 +27,39 @@ This Manyavar case study explains the Vedant Fashions business model and how Man
 | Stores | 669, including 17 abroad (USA, UAE, Canada, UK, Australia) |
 | Store area | 1.79 million sq. ft. |
 
-## The Problem Manyavar Solved
+## 2. The Problem Manyavar Solved
 
-1. **No trusted brand.** Men's wedding wear in India came from local tailors and small shops, with no big brand.
-2. **No fixed prices.** Price and quality changed from shop to shop and city to city.
-3. **The answer: Manyavar.** Ravi Modi grew up working in his father's small clothing shop in Kolkata's AC Market. He borrowed ₹10,000 from his mother, made his own kurtas and sold them to multi brand shops. His goal was one trusted brand with the same design, quality and price in every city.
+a) **No trusted brand.** Men's wedding wear in India came from local tailors and small shops, with no big brand.
 
-## Manyavar Target Audience
+b) **No fixed prices.** Price and quality changed from shop to shop and city to city.
+
+c) **The answer: Manyavar.** Ravi Modi grew up working in his father's small clothing shop in Kolkata's AC Market. He borrowed ₹10,000 from his mother, made his own kurtas and sold them to multi brand shops. His goal was one trusted brand with the same design, quality and price in every city.
+
+## 3. Manyavar Target Audience
 
 - **Grooms and wedding guests** who want a sherwani, kurta or Indo western outfit
 - **Families shopping together** for weddings: men, women and kids
 - **Festive shoppers** for Diwali, Eid and other celebrations
 - **The Indian diaspora** abroad, through international stores
 
-## Core Pillars of the Manyavar Business Model
+## 4. Core Pillars of the Manyavar Business Model
 
-### 1. Stores Run by Franchise Partners
+### a) Stores Run by Franchise Partners
 - **What:** Most of Manyavar's Exclusive Brand Outlets (EBOs) are owned and run by franchise partners, not by Vedant. The network has 669 stores across India and 5 other countries.
 - **How it works:** The franchise partner owns and runs the store. Vedant provides the brand, the clothes, the designs and the store experience.
 - **Why it matters:** Vedant can open stores in hundreds of cities without paying for each one itself. The company calls this a model that needs little money and brings in cash quickly.
 
-### 2. Vedant Controls Design and Supply Chain
+### b) Vedant Controls Design and Supply Chain
 - **What:** Vedant keeps the most important work within the company: designing the clothes and deciding which store gets what stock.
 - **How it works:** It runs a "52 week" design model, so new collections arrive all year. Data and AI help forecast demand, and an automated system refills stores down to pin code level. Vedant can see what sells in every store.
 - **Why it matters:** The right outfits reach the right city at the right time, so very little stock is left unsold.
 
-### 3. No Discounts, One Price
+### c) No Discounts, One Price
 - **What:** Manyavar has no end of season sales, and prices are the same online and offline across India.
 - **How it works:** Because stock is managed tightly, stores don't need sales to clear old pieces.
 - **Why it matters:** Customers don't wait for a sale, and the brand keeps its premium image. This helps Vedant keep a gross margin of about 66%.
 
-### 4. A Brand for Every Member and Every Budget
+### d) A Brand for Every Member and Every Budget
 - **What:** Five brands cover men, women and kids, from value to premium prices.
 - **How it works:** A family shopping for a wedding can buy everything in one place. Twamev offers a premium upgrade to existing Manyavar customers.
 - **Why it matters:** Each wedding becomes a bigger bill, and Vedant earns from the whole family, not just the groom.
@@ -70,7 +72,7 @@ This Manyavar case study explains the Vedant Fashions business model and how Man
 | Twamev | 2019 | Men & women | Premium |
 | Diwas | 2024 | Men, festive wear | Value to mid premium |
 
-## How Manyavar Makes Money
+## 5. How Manyavar Makes Money
 
 Vedant Fashions earns from **selling its clothes through four channels**:
 
@@ -91,25 +93,25 @@ Vedant Fashions earns from **selling its clothes through four channels**:
 | FY25 | ₹1,387 Cr | ₹389 Cr |
 | FY26 | ₹1,436 Cr | ₹376 Cr |
 
-## Manyavar Marketing Strategy
+## 6. Manyavar Marketing Strategy
 
 - **Celebrity ambassadors:** Virat Kohli (2016), Ranveer Singh and Amitabh Bachchan (2019)
 - **Emotional, wedding themed campaigns:** "Taiyaar Hokar Aaiye", "Jab Aap Taiyaar Hum Taiyaar" and "Mohey Rang Do"
 - **Cricket:** Official partner of IPL teams since 2013
 - **Content:** "The Manyavar Shaadi Show", a YouTube series hosted by Karan Johar (2025)
 
-## Manyavar Competitors
+## 7. Manyavar Competitors
 
 | Type | Examples |
 |---|---|
 | Branded ethnic wear | Tasva, FabIndia |
 | Unorganised market | Local tailors and wedding wear shops, still the biggest competitor |
 
-## Conclusion
+## 8. Conclusion
 
 Manyavar's playbook: **own the brand and the supply chain, let franchise partners own the stores, and never discount.** That gives it the best margins in its industry. Its challenge is growth: sales depend on the wedding calendar, and revenue has barely moved since FY23.
 
-## Frequently Asked Questions
+## 9. Frequently Asked Questions
 
 **Who owns Manyavar?**
 Vedant Fashions Ltd, founded by Ravi Modi. The Manyavar brand started in 1999 in Kolkata.
@@ -180,7 +182,7 @@ Branded ethnic wear labels like Tasva and FabIndia, and the large unorganised ma
           "name": "Manyavar"
         }
       ],
-      "wordCount": 850,
+      "wordCount": 859,
       "inLanguage": "en-IN"
     },
     {
@@ -329,5 +331,5 @@ Open Graph Description: Franchise stores, no discounts and a 26% profit margin. 
 Alt Text (hero image): Manyavar business model overview
 Author: Author Name
 Published Date: 2026-10-17
-Word Count: 850
+Word Count: 859
 ```

@@ -13,7 +13,7 @@ Mamaearth started in 2016 with 6 toxin free baby products. In FY26, Honasa Consu
 
 The model in one line: **Honasa builds the brands, contract manufacturers make the products, and they're sold online and in shops across India.**
 
-## About Mamaearth
+## 1. About Mamaearth
 
 | | |
 |---|---|
@@ -24,46 +24,48 @@ The model in one line: **Honasa builds the brands, contract manufacturers make t
 | Seed money | ₹30 lakh own savings + ₹60 lakh from friends & family |
 | First claim to fame | Asia's first brand certified by MADE SAFE |
 
-## The Problem Mamaearth Solved
+## 2. The Problem Mamaearth Solved
 
-1. **Baby products full of chemicals.** In 2014, Varun and Ghazal Alagh had their first son and could not find toxin free baby products in India.
-2. **Buying from abroad was hard.** Friends and family had to bring products from the US, which was slow and costly.
-3. **The answer: Mamaearth.** In 2016, they launched Mamaearth with 6 toxin free baby products.
+a) **Baby products full of chemicals.** In 2014, Varun and Ghazal Alagh had their first son and could not find toxin free baby products in India.
 
-## Mamaearth Target Audience
+b) **Buying from abroad was hard.** Friends and family had to bring products from the US, which was slow and costly.
+
+c) **The answer: Mamaearth.** In 2016, they launched Mamaearth with 6 toxin free baby products.
+
+## 3. Mamaearth Target Audience
 
 - **2016:** new mothers worried about chemicals in baby products
 - **2017:** those parents wanted safe products for themselves, so the brand moved into adult skin & hair care
 - **Today:** young adults who want natural products made with simple, known ingredients, with a separate brand for each need
 
-## Core Pillars of the Mamaearth Business Model
+## 4. Core Pillars of the Mamaearth Business Model
 
-### 1. Built by Parents, for Parents
+### a) Built by Parents, for Parents
 - **What:** Mamaearth started from the founders' own problem: they couldn't find safe products for their baby.
 - **How it works:** Early growth came from mom bloggers and mothers recommending the brand to other mothers.
 - **Why it matters:** In a category where parents fear chemicals, trust from other parents sells better than ads.
 
-### 2. The Toxin Free Promise
+### b) The Toxin Free Promise
 - **What:** Products are marketed as free from parabens, sulphates and SLS. Mamaearth was Asia's first brand with MADE SAFE certification.
 - **How it works:** The promise is printed on every pack and repeated in all marketing.
 - **Why it matters:** It gives Mamaearth one clear reason to choose it over big mass market brands.
 
-### 3. Lean, Fast Innovation
+### c) Lean, Fast Innovation
 - **What:** A team of about 50 people, led by Ghazal Alagh, creates new formulas. Honasa launched 122 new products in 2023.
 - **How it works:** The team spots trending ingredients like onion, rice water and vitamin C and turns them into full ranges. Products that sell well are scaled up.
 - **Why it matters:** New products brought in about 9% of revenue in the April to June 2024 quarter.
 
-### 4. Partner Factories, Not Own Factories
+### d) Partner Factories, Not Own Factories
 - **What:** Honasa owns the formulas; contract manufacturers make the products.
 - **How it works:** Partner factories produce in batches as needed. In 2024, Honasa bought Cosmogenesis's R&D lab, which came with 4,000+ formulations.
 - **Why it matters:** Less money goes into factories, so more can go into new products and marketing.
 
-### 5. Omnichannel Distribution
+### e) Omnichannel Distribution
 - **What:** Mamaearth sells online and in shops: its own website and app, Amazon, Flipkart, Nykaa, Zepto, Instamart and **3 lakh+ retail outlets** (June 2026).
 - **How it works:** Offline grew from about 9% of revenue in FY20 to about 29% in FY22. Under "Project Neev", Honasa replaced super stockists (big wholesalers) with direct distributors in India's top 50 cities.
 - **Why it matters:** Most beauty products in India are still bought in local shops, so going offline opens a much bigger market.
 
-### 6. House of Brands
+### f) House of Brands
 - **What:** Six brands, each for a different customer.
 - **How it works:** Honasa launched some brands and bought others, like BBlunt and Dr. Sheth's in 2022. All share one team, one supply chain and one sales network.
 - **Why it matters:** The younger brands grew 40%+ in FY26, faster than Mamaearth itself.
@@ -77,7 +79,7 @@ The model in one line: **Honasa builds the brands, contract manufacturers make t
 | BBlunt | Salon style hair care |
 | Staze | Makeup |
 
-## How Does Mamaearth Earn Money?
+## 5. How Does Mamaearth Earn Money?
 
 **By selling products:** skin care, hair care, baby care and personal care.
 
@@ -89,7 +91,7 @@ The model in one line: **Honasa builds the brands, contract manufacturers make t
 | FY25 | ₹2,067 Cr | ₹73 Cr |
 | FY26 | ₹2,392 Cr | ₹200 Cr |
 
-## Mamaearth Marketing Strategy
+## 6. Mamaearth Marketing Strategy
 
 - **Mom bloggers:** the first growth engine, before Instagram influencers existed
 - **Free samples** instead of ads in the early days
@@ -99,18 +101,18 @@ The model in one line: **Honasa builds the brands, contract manufacturers make t
 
 > "When a mother tells another mother of experience, that has the most trust." (Ghazal Alagh)
 
-## Mamaearth Competitors
+## 7. Mamaearth Competitors
 
 | Type | Examples |
 |---|---|
 | D2C beauty brands | WOW Skin Science, Plum, mCaffeine, The Moms Co |
 | FMCG giants | HUL, which bought Minimalist in 2025 at a ₹2,955 Cr valuation |
 
-## Conclusion
+## 8. Conclusion
 
 Mamaearth's playbook: **own the brand and the customer, outsource production, and grow with new brands and offline shops.** Advertising is its biggest cost and its biggest growth lever.
 
-## Frequently Asked Questions
+## 9. Frequently Asked Questions
 
 **Who owns Mamaearth?**
 Honasa Consumer Ltd, founded by Varun Alagh and Ghazal Alagh in 2016.
@@ -181,7 +183,7 @@ D2C beauty brands like WOW Skin Science, Plum, mCaffeine and The Moms Co, and la
           "name": "Mamaearth"
         }
       ],
-      "wordCount": 847,
+      "wordCount": 856,
       "inLanguage": "en-IN"
     },
     {
@@ -330,5 +332,5 @@ Open Graph Description: ₹2,392 Cr revenue, 6 brands, 3 lakh+ shops and 33% of 
 Alt Text (hero image): Unbranded baby lotion bottle, folded baby blanket, knitted cap and wooden rattle on a white bed in soft morning light
 Author: Author Name
 Published Date: 2026-10-17
-Word Count: 847
+Word Count: 856
 ```

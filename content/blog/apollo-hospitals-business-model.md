@@ -13,7 +13,7 @@ Apollo started as one hospital with 150 beds in Chennai in 1983. Today it runs 7
 
 **The model in one line:** hospitals win the patient's trust; pharmacies and the Apollo 24/7 app serve that patient for life.
 
-## About Apollo Hospitals
+## 1. About Apollo Hospitals
 
 | | |
 |---|---|
@@ -24,47 +24,49 @@ Apollo started as one hospital with 150 beds in Chennai in 1983. Today it runs 7
 | Listed company | Apollo Hospitals Enterprise Ltd (NSE: APOLLOHOSP) |
 | Network | 70+ hospitals, 10,000+ beds, 7,289 pharmacies |
 
-## The Problem Apollo Solved
+## 2. The Problem Apollo Solved
 
-1. **A patient died waiting.** In 1979, a patient of Dr. Prathap C. Reddy, aged 38, needed heart surgery in the US. His family could not afford the trip, and he died.
-2. **India had no big private hospitals.** No company in India ran a hospital chain, so serious cases often had to go abroad.
-3. **The answer: Apollo.** In 1983, Dr. Reddy opened the first Apollo hospital in Chennai, India's first corporate hospital.
+a) **A patient died waiting.** In 1979, a patient of Dr. Prathap C. Reddy, aged 38, needed heart surgery in the US. His family could not afford the trip, and he died.
 
-## Apollo Hospitals Target Audience
+b) **India had no big private hospitals.** No company in India ran a hospital chain, so serious cases often had to go abroad.
+
+c) **The answer: Apollo.** In 1983, Dr. Reddy opened the first Apollo hospital in Chennai, India's first corporate hospital.
+
+## 3. Apollo Hospitals Target Audience
 
 - **Patients who need advanced care:** heart surgery, cancer treatment, transplants and complex procedures
 - **International patients** who come to India for treatment
 - **Everyday customers** buying medicines in stores or on the app
 - **Healthy people** who want regular health checks (Apollo ProHealth)
 
-## Core Pillars of the Apollo Hospitals Business Model
+## 4. Core Pillars of the Apollo Hospitals Business Model
 
-### 1. Hospitals as the Anchor
+### a) Hospitals as the Anchor
 - **What:** 70+ large hospitals with 10,000+ beds that treat serious and complex illnesses.
 - **How it works:** Patients pay for surgeries, treatments, ICU and room stays, consultations and tests. Most of the hospital bill is paid through insurance or by patients directly.
 - **Why it matters:** Hospitals bring in about half of Apollo's revenue and are its most profitable business. They also build the trust in the Apollo name that every other business relies on.
 
-### 2. Pharmacy Network
+### b) Pharmacy Network
 - **What:** 7,289 Apollo Pharmacy stores (March 2026).
 - **How it works:** The Apollo Pharmacy business model is simple: stores near hospitals and homes sell medicines and health products every day.
 - **Why it matters:** Hospital visits are occasional, but medicine purchases repeat every month. This gives Apollo steady sales in large numbers.
 
-### 3. Apollo 24/7 (Digital Health)
+### c) Apollo 24/7 (Digital Health)
 - **What:** Apollo's app for online doctor consultations, medicine delivery and lab tests.
 - **How it works:** Patients can book a doctor, order medicines and schedule tests from home. The app handled ₹2,037 crore of transactions in FY26, up 24%.
 - **Why it matters:** It keeps patients inside the Apollo network even when they are not near a hospital or store.
 
-### 4. Apollo Health & Lifestyle (AHLL)
+### d) Apollo Health & Lifestyle (AHLL)
 - **What:** Smaller health centres outside big hospitals: Apollo Clinics, Apollo Diagnostics, Apollo Cradle (maternity), Apollo Spectra (surgery centres), Apollo Fertility, Apollo Sugar (diabetes) and Apollo Dialysis.
 - **How it works:** These centres handle everyday and specialised care that doesn't need a full hospital.
 - **Why it matters:** They reach more neighbourhoods at a lower cost than building new hospitals.
 
-### 5. One Patient, for Life
+### e) One Patient, for Life
 - **What:** All four businesses are linked under one brand.
 - **How it works:** A patient can have surgery at an Apollo hospital, buy medicines after surgery at Apollo Pharmacy, consult a doctor on Apollo 24/7 and get yearly health checks at an Apollo clinic.
 - **Why it matters:** Apollo earns from the same patient many times, not just once.
 
-## How Apollo Hospitals Makes Money
+## 5. How Apollo Hospitals Makes Money
 
 Apollo earns from **three revenue streams**:
 
@@ -94,7 +96,7 @@ Apollo earns from **three revenue streams**:
 | Net profit | Not reported | ₹1,942 Cr (+34%) |
 | Final dividend | Not reported | ₹10 per share |
 
-## The Big Move: Apollo Healthtech Demerger
+## 6. The Big Move: Apollo Healthtech Demerger
 
 | When | What happened |
 |---|---|
@@ -106,18 +108,36 @@ Apollo earns from **three revenue streams**:
 
 **Why it matters:** Apollo Hospitals becomes a pure hospital company. Medicines and digital health get their own listed company, which can raise its own money. Apollo Hospitals keeps a minority stake.
 
-## Apollo Hospitals Competitors
+## 7. Apollo Hospitals Product and Marketing Strategy
+
+### a) ProHealth: Bringing Healthy People to Apollo
+- ProHealth is Apollo's preventive health check program. It uses AI to predict health risks and suggest lifestyle changes.
+- In May 2026, Apollo made music composer Anirudh Ravichander the face of ProHealth, to reach young working professionals.
+- The campaign runs on TV, print, digital, FM radio, social media and outdoor ads.
+
+### b) Apollo 24/7 Keeps Patients Connected
+- ProHealth is linked to the Apollo 24/7 app, which sends reminders and tracks progress.
+- The same app is used for doctor consultations, medicine delivery and lab tests, so patients stay with Apollo between hospital visits.
+
+### c) Health of the Nation Report
+- Apollo publishes a yearly "Health of the Nation" report on health trends in India.
+- It uses the findings, like rising obesity, high blood pressure and early diabetes in young adults, to show why regular health checks matter.
+
+### d) Care for International Patients
+- Apollo runs special services and health check packages for patients who travel to India for treatment.
+
+## 8. Apollo Hospitals Competitors
 
 | Type | Examples |
 |---|---|
 | Hospital chains | Max Healthcare, Fortis, Narayana Health, Medanta (Global Health), Manipal, Aster DM |
 | Pharmacy & online pharmacy | MedPlus, Tata 1mg, PharmEasy, Netmeds (Reliance) |
 
-## Conclusion
+## 9. Conclusion
 
 Apollo's playbook: **win patients' trust with big hospitals, then serve the same patients for life through pharmacies, an app and health checks.** The next chapter is two focused companies, one for hospitals and one for medicines and digital health. That split is what makes this Apollo Hospitals case study worth watching.
 
-## Frequently Asked Questions
+## 10. Frequently Asked Questions
 
 **Who founded Apollo Hospitals?**
 Dr. Prathap C. Reddy founded Apollo Hospitals in 1983 in Chennai.
@@ -184,7 +204,7 @@ Hospital chains like Max Healthcare, Fortis, Narayana Health, Medanta, Manipal a
           "name": "Apollo Hospitals Enterprise Ltd"
         }
       ],
-      "wordCount": 934,
+      "wordCount": 1120,
       "inLanguage": "en-IN"
     },
     {
@@ -333,5 +353,5 @@ Open Graph Description: Hospitals bring in half the money, pharmacies most of th
 Alt Text (hero image): Apollo Hospitals business model overview
 Author: Author Name
 Published Date: 2026-10-17
-Word Count: 934
+Word Count: 1120
 ```
