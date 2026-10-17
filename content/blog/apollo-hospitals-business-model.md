@@ -7,11 +7,13 @@
 > - The pharmacy and digital business is being split into a new company, **Apollo Healthtech**, with listing targeted by **Q4 FY27**.
 > - It all started in **1979**, when a patient died because he couldn't afford heart surgery in the US.
 
-# Apollo Hospitals Business Model: How Apollo Makes Money (2026)
+# Apollo Hospitals Business Model: How Hospitals and 7,000+ Pharmacies Make ₹25,229 Crore
 
-Apollo Hospitals opened its first hospital in Chennai in 1983. In FY26, Apollo Hospitals revenue reached ₹25,229 crore. This Apollo Hospitals case study breaks down how Apollo Hospitals makes money from hospitals, pharmacies and digital health.
+In 1979, a 38-year-old patient died because his family couldn't afford heart surgery in the US. His doctor, Prathap C. Reddy, decided India needed world-class hospitals of its own, and opened the first Apollo hospital in Chennai in 1983.
 
-The model in one line: **Apollo treats patients in its hospitals, sells medicines through 7,000+ pharmacies, and connects both through its Apollo 24/7 app.**
+Today, Apollo runs 70+ hospitals and 7,289 pharmacies. Apollo Hospitals revenue hit ₹25,229 crore in FY26. Here's how Apollo Hospitals makes money.
+
+**The model in one line:** hospitals win the patient's trust; pharmacies and the Apollo 24/7 app serve that patient for life.
 
 ## About Apollo Hospitals
 
@@ -96,7 +98,7 @@ The model in one line: **Apollo treats patients in its hospitals, sells medicine
 
 ## Conclusion
 
-Apollo's playbook: **win patients' trust with big hospitals, then serve the same patients for life through pharmacies, an app and health checks.** The next chapter is two focused companies, one for hospitals and one for medicines and digital health.
+Apollo's playbook: **win patients' trust with big hospitals, then serve the same patients for life through pharmacies, an app and health checks.** The next chapter is two focused companies, one for hospitals and one for medicines and digital health. That split is what makes this Apollo Hospitals case study worth watching.
 
 ## Frequently Asked Questions
 
@@ -131,7 +133,7 @@ Mainly from hospital treatment (about half of revenue) and medicine sales throug
     {
       "@type": "BlogPosting",
       "@id": "https://YOUR-DOMAIN.com/apollo-hospitals-business-model#article",
-      "headline": "Apollo Hospitals Business Model: How Apollo Makes Money (2026)",
+      "headline": "Apollo Hospitals Business Model: How Hospitals and 7,000+ Pharmacies Make ₹25,229 Crore",
       "description": "Apollo Hospitals business model explained: ₹25,229 Cr FY26 revenue, 70+ hospitals, 7,289 pharmacies, Apollo 24/7 and the Apollo Healthtech demerger.",
       "author": {
         "@id": "https://YOUR-DOMAIN.com#person-author-name"
@@ -153,7 +155,7 @@ Mainly from hospital treatment (about half of revenue) and medicine sales throug
           "name": "Apollo Hospitals Enterprise Ltd"
         }
       ],
-      "wordCount": 604,
+      "wordCount": 638,
       "inLanguage": "en-IN"
     },
     {
@@ -191,7 +193,7 @@ Mainly from hospital treatment (about half of revenue) and medicine sales throug
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Apollo Hospitals Business Model: How Apollo Makes Money (2026)",
+          "name": "Apollo Hospitals Business Model: How Hospitals and 7,000+ Pharmacies Make ₹25,229 Crore",
           "item": "https://YOUR-DOMAIN.com/apollo-hospitals-business-model"
         }
       ]
@@ -265,10 +267,10 @@ Tags: Apollo Hospitals, Apollo Pharmacy, Healthcare, Business Model, Hospitals, 
 URL Slug: apollo-hospitals-business-model
 Category: Business Models / Healthcare
 Canonical URL: https://YOUR-DOMAIN.com/apollo-hospitals-business-model
-Open Graph Title: Apollo Hospitals Business Model: How Apollo Makes Money (2026)
+Open Graph Title: Apollo Hospitals Business Model: How Hospitals and 7,000+ Pharmacies Make ₹25,229 Crore
 Open Graph Description: Hospitals bring in half the money, pharmacies most of the rest. Here's how Apollo's ₹25,229 Cr business works.
 Alt Text (hero image): Apollo Hospitals business model overview
 Author: Author Name
 Published Date: 2026-10-17
-Word Count: 604
+Word Count: 638
 ```
