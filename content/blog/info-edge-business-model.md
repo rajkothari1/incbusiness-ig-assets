@@ -51,7 +51,7 @@ This Info Edge case study covers the Naukri business model, Info Edge revenue by
 | Pillar | What it is | How it works | Key fact |
 |---|---|---|---|
 | **a) Free for users, businesses pay** | Online classifieds that connect two sides: recruiters and job seekers, sellers and buyers, colleges and students | Users browse for free. Recruiters, brokers, builders and colleges pay to reach them | Naukri has about **115 million resumes**; access to this database is what recruiters pay for |
-| **b) Naukri is the main business** | India's job platform run by Info Edge | Companies buy subscriptions for job posts and resume access; job seekers can pay for extra help | Recruitment is about **74% of revenue** at a **57% operating margin** |
+| **b) Naukri is the main business** | Info Edge's job platform | Companies buy subscriptions for job posts and resume access; job seekers can pay for extra help | Recruitment is about **74% of revenue** at a **57% operating margin** |
 | **c) Customers pay upfront** | Recruiters and advertisers pay for subscriptions in advance | Billings run ahead of revenue: ₹3,178 Cr billed vs ₹3,052 Cr revenue in FY26 | ₹1,469 Cr cash from operations in FY26; **₹4,963 Cr cash** in March 2026 |
 | **d) AI in every product** | AI tools like AI-Rex for recruiters and Neo for job seekers | AI matches candidates to jobs and automates recruiter work | About ₹70 Cr spent on AI in FY26; about **₹150 Cr planned in FY27** |
 
