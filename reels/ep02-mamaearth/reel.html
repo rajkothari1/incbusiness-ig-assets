@@ -28,11 +28,29 @@
   .flow .box.hl { background:var(--amber); color:var(--dark); border-color:var(--amber); }
   .flow .box.hl small { color:var(--dark); }
   .flow .arrow { font-size:60px; color:var(--amber); line-height:1; opacity:0; }
+  .bgimg { position:absolute; inset:0; opacity:0; overflow:hidden; }
+  .bgimg img { width:100%; height:100%; object-fit:cover; filter:saturate(.9) brightness(.8); }
+  .bgimg::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(28,27,58,.35) 0%, rgba(40,39,90,.72) 45%, rgba(40,39,90,.9) 100%); }
+  .names { margin-top:34px; display:inline-block; background:rgba(28,27,58,.75); border:3px solid var(--amber); border-radius:24px; padding:16px 34px; }
+  .names b { display:block; font-size:28px; letter-spacing:4px; color:var(--amber); }
+  .names span { font-size:50px; font-weight:900; }
+  .photo { width:600px; height:660px; border-radius:40px; overflow:hidden; border:8px solid var(--amber); box-shadow:0 30px 70px rgba(0,0,0,.5); margin-top:26px; }
+  .photo img { width:100%; height:100%; object-fit:cover; object-position:50% 30%; }
+  .chat { width:900px; background:#fff; color:#1b1b1b; border-radius:36px; padding:34px; margin-top:34px; text-align:left; box-shadow:0 30px 70px rgba(0,0,0,.45); }
+  .chat .q { margin-left:auto; width:fit-content; background:#efefef; border-radius:26px; padding:16px 26px; font-size:36px; font-weight:600; }
+  .chat .a { margin-top:24px; }
+  .chat .a i { display:block; height:22px; border-radius:11px; background:#e4e4e4; margin-top:14px; }
+  .chat .ad { margin-top:28px; border:3px solid #e2e2e2; border-radius:24px; padding:20px 24px; display:flex; align-items:center; gap:22px; opacity:0; }
+  .chat .ad img { height:46px; }
+  .chat .ad small { display:block; font-size:24px; color:#777; font-weight:700; letter-spacing:1px; }
+  .chat .ad span { font-size:32px; font-weight:800; }
   .xstamp { position:relative; display:inline-block; margin-top:90px; font-size:110px; font-weight:900; letter-spacing:2px; border:10px solid #ff5a5f; color:#ff5a5f; border-radius:26px; padding:10px 40px; transform:rotate(-4deg); }
 </style></head>
 <body>
 <div id="b1" class="blob"></div><div id="b2" class="blob"></div><div id="grid"></div>
 <div id="rays"></div>
+<div class="bgimg" id="bg1"><img src="img/founders-green.jpg" style="object-position:55% 30%"></div>
+<div class="bgimg" id="bg2"><img src="img/founders-red.jpg" style="object-position:50% 25%"></div>
 <div id="progress"></div>
 <div id="badge"><div>EPISODE 02/100</div></div>
 
@@ -47,7 +65,7 @@
 <div class="scene" id="s1">
   <div class="big" style="font-size:84px">Today's<br>business model</div>
   <div class="card bigcard" id="s1logo" style="margin-top:50px"><img src="../../logos/mamaearth-logo.png"></div>
-  <div style="font-size:42px;font-weight:700;color:var(--lav);margin-top:24px">by Honasa Consumer</div>
+  <div class="names" id="s1names"><b>FOUNDERS</b><span>Varun &amp; Ghazal Alagh</span></div>
 </div>
 
 <!-- s2: no own factory -->
@@ -132,6 +150,27 @@
   </div>
 </div>
 
+<!-- m1: marketing, influencers -->
+<div class="scene" id="m1">
+  <div class="tag">MARKETING</div>
+  <div class="photo" id="m1photo"><img src="img/ghazal.jpg"></div>
+  <div style="font-size:30px;font-weight:700;color:var(--lav);margin-top:14px">Ghazal Alagh, Co-founder</div>
+  <div class="chips"><span class="chip">Mom bloggers</span><span class="chip">Influencers</span></div>
+</div>
+
+<!-- m2: marketing, ChatGPT ads -->
+<div class="scene" id="m2">
+  <div class="tag">NOW · SEPT 2026</div>
+  <div class="big" style="font-size:66px;margin-top:14px">Ads on <span class="amber">ChatGPT</span></div>
+  <div class="chat">
+    <div class="q" id="m2q">Best face wash for oily skin?</div>
+    <div class="a"><i style="width:92%"></i><i style="width:78%"></i><i style="width:64%"></i></div>
+    <div class="ad" id="m2ad"><img src="../../logos/mamaearth-logo.png"><div><small>SPONSORED</small><span>Rice Face Wash</span></div></div>
+  </div>
+  <div style="font-size:38px;font-weight:800;margin-top:30px">One of the first Indian brands to do it</div>
+  <div style="font-size:24px;color:var(--lav);margin-top:10px">Illustration of a ChatGPT ad</div>
+</div>
+
 <!-- s10: profit -->
 <div class="scene" id="s10">
   <div class="big" style="font-size:80px">FY26 profit?</div>
@@ -152,8 +191,8 @@
 <script>
 // All timings in one place; they get re-synced to the real voice-over once it is generated.
 const T = {
-  s0: 0, s1: 1.6, s2: 3.8, s3: 5.8, how: 8.9, s4: 9.6, s5: 11.8, s6: 14.6, s7: 18.6, s8: 21.8,
-  s9: 26.8, s10: 31.2, s11: 34.0, end: 37.0,
+  s0: 0, s1: 1.6, s2: 3.8, s3: 5.8, how: 8.9, s4: 9.6, s5: 11.8, s6: 14.6, s7: 18.6, s8: 21.6,
+  s9: 26.0, m1: 29.6, m2: 32.2, s10: 35.2, s11: 37.4, end: 40.0,
 };
 const DUR = T.end;
 const clamp = (x) => Math.max(0, Math.min(1, x));
@@ -163,10 +202,12 @@ const back = (x) => { const c = 1.9; return 1 + (c + 1) * Math.pow(x - 1, 3) + c
 const $ = (id) => document.getElementById(id);
 const inr = (n) => '₹' + Math.round(n).toLocaleString('en-IN') + ' Cr';
 
-const ORDER = ['s0', 's1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 's9', 's10', 's11'];
+const ORDER = ['s0', 's1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 's9', 'm1', 'm2', 's10', 's11'];
 const SCENES = ORDER.map((id, i) => [id, T[id], i + 1 < ORDER.length ? T[ORDER[i + 1]] : DUR]);
-const FX = { s0: 'zoom', s1: 'zoom', s2: 'whip', s3: 'roll', s4: 'zoom', s5: 'whip', s6: 'roll', s7: 'whip', s8: 'roll', s9: 'whip', s10: 'zoom', s11: 'zoom' };
-const WIPES = [T.s4, T.s10, T.s11];
+const FX = { s0: 'zoom', s1: 'zoom', s2: 'whip', s3: 'roll', s4: 'zoom', s5: 'whip', s6: 'roll', s7: 'whip', s8: 'roll', s9: 'whip', m1: 'zoom', m2: 'roll', s10: 'zoom', s11: 'zoom' };
+const WIPES = [T.s4, T.m1, T.s10, T.s11];
+// full-screen photo backgrounds: [element, from, to]
+const BGS = [['bg1', T.s1, T.s2], ['bg2', T.s2, T.s3]];
 function fx(type, kin, kout) {
   const i = 1 - out3(kin), o = kout * kout;
   if (type === 'whip') return { t: `translateX(${i * 1100 - o * 1100}px)`, f: `blur(${(i + o) * 18}px)` };
@@ -184,7 +225,9 @@ const SUBS = [
   [T.s6, T.s7, '<b>2. The Derma Co</b>: active-ingredient skincare, now a <b>₹1,000 Cr</b> brand!'],
   [T.s7, T.s8, 'More skincare: <b>Aqualogica, Dr. Sheth\'s, Luminéve</b>.'],
   [T.s8, T.s9, 'Hair: <b>BBlunt</b> · Makeup: <b>Staze</b> · Men: <b>Reginald Men</b> · Perfume: <b>FIKN</b>'],
-  [T.s9, T.s10, 'Partner factories make it. Honasa sells online and in <b>3 Lakh+ shops</b>.'],
+  [T.s9, T.m1, 'Partner factories make it. Honasa sells online and in <b>3 Lakh+ shops</b>.'],
+  [T.m1, T.m2, 'Marketing? Mamaearth grew with <b>mom bloggers</b> and <b>influencers</b>.'],
+  [T.m2, T.s10, "Now it's one of the <b>first Indian brands</b> to advertise on <b>ChatGPT</b>!"],
   [T.s10, T.s11, 'FY26 profit? <b>₹200 Cr</b>!'],
   [T.s11, DUR, '<b>Follow</b> for more business stories!'],
 ];
@@ -258,6 +301,19 @@ window.render = function (t) {
   stagger([...document.querySelectorAll('#s7 .item')], T.s7 + 0.4, 0.7);
   stagger([...document.querySelectorAll('#s8 .item')], T.s8 + 0.3, 1.0);
   stagger([...document.querySelectorAll('#s9 .box, #s9 .arrow')], T.s9 + 0.2, 0.55);
+
+  BGS.forEach(([id, a, b]) => {
+    $(id).style.opacity = Math.min(p(t, a, 0.3), 1 - p(t, b - 0.15, 0.15));
+    $(id).style.transform = `scale(${1.1 - 0.1 * p(t, a, b - a)})`;
+  });
+  $('s1names').style.transform = `translateY(${(1 - out3(p(t, T.s1 + 1.3, 0.35))) * 60}px)`;
+  $('s1names').style.opacity = p(t, T.s1 + 1.3, 0.2);
+  $('m1photo').style.transform = `scale(${back(p(t, T.m1 + 0.1, 0.4))})`;
+  stagger([...document.querySelectorAll('#m1 .chip')], T.m1 + 0.9, 0.5);
+  $('m2q').style.opacity = p(t, T.m2 + 0.3, 0.2);
+  const ad = p(t, T.m2 + 1.0, 0.3);
+  $('m2ad').style.opacity = ad;
+  $('m2ad').style.transform = `translateY(${(1 - out3(ad)) * 40}px)`;
 
   $('s10num').textContent = inr(200 * out3(p(t, T.s10 + 0.6, 1.0)));
 
