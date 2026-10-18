@@ -91,15 +91,29 @@ c) **The answer: Mamaearth.** In 2016, they launched Mamaearth with 6 toxin free
 | FY25 | ₹2,067 Cr | ₹73 Cr |
 | FY26 | ₹2,392 Cr | ₹200 Cr |
 
-## 6. Mamaearth Marketing Strategy
+## 6. Mamaearth Product and Marketing Strategy
 
-- **Mom bloggers:** the first growth engine, before Instagram influencers existed
-- **Free samples** instead of ads in the early days
-- **Celebrities:** Shilpa Shetty (2018, also an investor), Sara Ali Khan (2021, Onion hair care range)
-- **Digital + TV ads:** about a third of revenue
-- **#PlantGoodness:** a tree for every order on its website & app, **8 lakh+ trees** planted
+Here is what Mamaearth and its parent Honasa are doing now (2025 and 2026).
 
-> "When a mother tells another mother of experience, that has the most trust." (Ghazal Alagh)
+### a) A Celebrity Face for Each Range
+- **Sreeleela for hair care (February 2026):** the actor became the face of Mamaearth's hair care range, starting with a campaign for its Rosemary hair fall shampoo.
+- **Made for social media:** the film, set at a cricket match "Kiss Cam" moment with actor Shantanu Maheshwari, runs on digital and social platforms.
+
+### b) New Brands Beyond Mamaearth
+- **Luminéve:** a new premium night time skincare brand, built by Honasa and sold only on Nykaa.
+- **Reginald Men:** a men's grooming brand Honasa bought in December 2025.
+- **FANG:** a minority stake in an oral care startup, Honasa's first step into premium oral beauty.
+
+### c) Quick Commerce and Small Packs
+- Apps like Blinkit, Zepto and Instamart help Honasa sell smaller, cheaper packs that people try on impulse.
+- Mamaearth plants a tree for every Mamaearth product ordered on Zepto, under its Plant Goodness campaign.
+
+### d) A Bigger Push Into Shops
+- Mamaearth products now reach about **3 lakh retail outlets** (June 2026).
+- In April to June 2026, sales in local shops and supermarkets grew more than 40%.
+
+### e) Heavy, Steady Ad Spending
+- About **33% of revenue** went to advertising in January to March 2026.
 
 ## 7. Mamaearth Competitors
 
@@ -146,7 +160,7 @@ D2C beauty brands like WOW Skin Science, Plum, mCaffeine and The Moms Co, and la
 
 ### Sources
 
-[Bajaj Broking](https://www.bajajbroking.in/share-market-news/honasa-consumer-share-price-jumps-8percentage-after-q4fy26) · [Inc42 FY26](https://inc42.com/buzz/honasa-q4-profit-surges-178-to-₹69-cr-declares-₹3-share-dividend/) · [Multibagg](https://www.multibagg.ai/market-pulse/articles/honasa-q4-fy26-94584) · [Honasa press release (NSE)](https://nsearchives.nseindia.com/corporate/HONASA16_13082026154727_PressRelease.pdf) · [Entrackr](https://entrackr.com/2024/05/mamaearth-parent-honasa-posts-rs-1920-cr-revenue-rs-110-cr-pat-in-fy24) · [Inc42 DRHP](https://inc42.com/buzz/mamaearth-ipo-decoding-the-d2c-giants-drhp) · [Business Today](https://www.businesstoday.in/amp/latest/corporate/story/hum-log-itni-middle-class-ghazal-alagh-sheds-light-on-mamaearths-early-marketing-strategy-418161-2024-02-20) · [Storyboard18](https://www.storyboard18.com/brand-makers/mamaearths-ghazal-alagh-on-word-of-mouth-and-influencer-marketing-24620.htm) · [Angel One](https://www.angelone.in/news/share-market/honasa-consumer-strengthens-r-d-acquisition-cosmogenesis-cosmetics) · [exchange4media](https://www.exchange4media.com/marketing-news/sara-ali-khan-is-the-face-of-mamaearths-haircare-range-112109.html) · [Indian Retailing](https://www.indiaretailing.com/2025/01/03/mamaearth-parners-with-zepto/) · [Entrackr (Minimalist)](https://entrackr.com/news/hul-acquires-905-stake-in-minimalist-at-rs-2955-cr-valuation-8644087) · [Business Standard (IPO)](https://www.business-standard.com/markets/news/mamaearth-parent-honasa-consumer-ipo-subscribed-nearly-7-6-times-123110201176_1.html) · [Business Standard (crash)](https://www.business-standard.com/markets/news/honasa-consumer-stock-tanks-20-hits-52-week-low-on-weak-q2-results-124111800148_1.html)
+[Social Samosa (Sreeleela)](https://www.socialsamosa.com/industry-updates/mamaearth-sreeleela-brand-ambassador-hair-care-range-11081937) · [In Fashion Business (Sreeleela)](https://infashionbusiness.com/home/news_details/7272/14) · [Inc42 (Honasa 2025: Luminéve, Reginald)](https://inc42.com/features/honasas-2025-becoming-more-than-mamaearth) · [Cosmetech (Luminéve, FANG)](https://cosmetech.co.in/?p=235280) · [ScanX (Reginald Men)](https://scanx.trade/stock-market-news/orders-deals/honasa-consumer-board-approves-acquisition-of-btm-ventures-for-95-crores/26997175) · [Honasa Q1 FY27 press release (NSE)](https://nsearchives.nseindia.com/corporate/HONASA16_13082026154727_PressRelease.pdf) · [Bajaj Broking](https://www.bajajbroking.in/share-market-news/honasa-consumer-share-price-jumps-8percentage-after-q4fy26) · [Inc42 FY26](https://inc42.com/buzz/honasa-q4-profit-surges-178-to-₹69-cr-declares-₹3-share-dividend/) · [Multibagg](https://www.multibagg.ai/market-pulse/articles/honasa-q4-fy26-94584) · [Honasa press release (NSE)](https://nsearchives.nseindia.com/corporate/HONASA16_13082026154727_PressRelease.pdf) · [Entrackr](https://entrackr.com/2024/05/mamaearth-parent-honasa-posts-rs-1920-cr-revenue-rs-110-cr-pat-in-fy24) · [Inc42 DRHP](https://inc42.com/buzz/mamaearth-ipo-decoding-the-d2c-giants-drhp) · [Business Today](https://www.businesstoday.in/amp/latest/corporate/story/hum-log-itni-middle-class-ghazal-alagh-sheds-light-on-mamaearths-early-marketing-strategy-418161-2024-02-20) · [Storyboard18](https://www.storyboard18.com/brand-makers/mamaearths-ghazal-alagh-on-word-of-mouth-and-influencer-marketing-24620.htm) · [Angel One](https://www.angelone.in/news/share-market/honasa-consumer-strengthens-r-d-acquisition-cosmogenesis-cosmetics) · [Indian Retailing](https://www.indiaretailing.com/2025/01/03/mamaearth-parners-with-zepto/) · [Entrackr (Minimalist)](https://entrackr.com/news/hul-acquires-905-stake-in-minimalist-at-rs-2955-cr-valuation-8644087) · [Business Standard (IPO)](https://www.business-standard.com/markets/news/mamaearth-parent-honasa-consumer-ipo-subscribed-nearly-7-6-times-123110201176_1.html) · [Business Standard (crash)](https://www.business-standard.com/markets/news/honasa-consumer-stock-tanks-20-hits-52-week-low-on-weak-q2-results-124111800148_1.html)
 
 ## GEO Schema (copy this)
 
@@ -183,7 +197,7 @@ D2C beauty brands like WOW Skin Science, Plum, mCaffeine and The Moms Co, and la
           "name": "Mamaearth"
         }
       ],
-      "wordCount": 856,
+      "wordCount": 996,
       "inLanguage": "en-IN"
     },
     {
@@ -332,5 +346,5 @@ Open Graph Description: ₹2,392 Cr revenue, 6 brands, 3 lakh+ shops and 33% of 
 Alt Text (hero image): Unbranded baby lotion bottle, folded baby blanket, knitted cap and wooden rattle on a white bed in soft morning light
 Author: Author Name
 Published Date: 2026-10-17
-Word Count: 856
+Word Count: 996
 ```

@@ -110,21 +110,27 @@ Apollo earns from **three revenue streams**:
 
 ## 7. Apollo Hospitals Product and Marketing Strategy
 
-### a) ProHealth: Bringing Healthy People to Apollo
-- ProHealth is Apollo's preventive health check program. It uses AI to predict health risks and suggest lifestyle changes.
-- In May 2026, Apollo made music composer Anirudh Ravichander the face of ProHealth, to reach young working professionals.
+Here is what Apollo is doing now (2026).
+
+### a) "Always Open, Always Here" (August 2026)
+- Apollo hospitals now offer doctor visits, tests, health checks and planned procedures **on Sundays too**, not just emergencies.
+- The message: you don't have to take a weekday off work to see a doctor.
+
+### b) ProHealth With Anirudh Ravichander (May 2026)
+- ProHealth is Apollo's AI powered health check that predicts health risks early.
+- Music composer Anirudh Ravichander is its new face, to reach young working professionals.
 - The campaign runs on TV, print, digital, FM radio, social media and outdoor ads.
 
-### b) Apollo 24/7 Keeps Patients Connected
-- ProHealth is linked to the Apollo 24/7 app, which sends reminders and tracks progress.
-- The same app is used for doctor consultations, medicine delivery and lab tests, so patients stay with Apollo between hospital visits.
+### c) AI With Microsoft
+- Apollo is building AI copilots with Microsoft for doctors, patients, nurses and hospital operations.
+- In 2026 it opened a 400 bed hospital in Hyderabad's Financial District, built with an AI layer for clinical support.
 
-### c) Health of the Nation Report
-- Apollo publishes a yearly "Health of the Nation" report on health trends in India.
-- It uses the findings, like rising obesity, high blood pressure and early diabetes in young adults, to show why regular health checks matter.
+### d) Apollo 24/7 Keeps Patients Connected
+- ProHealth is linked to the Apollo 24/7 app for reminders and progress tracking.
+- The app handled **₹2,037 crore** of transactions in FY26, up 24%.
 
-### d) Care for International Patients
-- Apollo runs special services and health check packages for patients who travel to India for treatment.
+### e) Health of the Nation Report
+- Apollo's yearly report on India's health. The 2026 edition flags rising obesity, high blood pressure and early diabetes in young professionals, which supports the ProHealth push.
 
 ## 8. Apollo Hospitals Competitors
 
@@ -171,7 +177,7 @@ Hospital chains like Max Healthcare, Fortis, Narayana Health, Medanta, Manipal a
 
 ### Sources
 
-[DSIJ (FY26 results)](https://insights.dsij.in/dsijarticledetail/apollo-hospitals-reports-q4fy26-results-pat-jumps-to-rs-551-crore-announces-rs-10-dividend-id021-57243) · [InvestyWise (FY26 results)](https://www.investywise.com/apollo-hospitals-enterprise-limited-financial-results-and-strategic-developments/) · [The Doctorpreneur Academy](https://thedoctorpreneuracademy.com/apollo-hospitals-reports-strong-quarterly-financial-growth/) · [India Med Today (Q4 segments)](https://indiamedtoday.com/apollo-hospitals-q4-strong-but-expansion-led-margin-pressure-seen-in-fy27/) · [DSIJ report](https://insights.dsij.in/markets/reports/report-details/apollo-hospitals-enterprise-ltd/44073) · [Quartr (FY26 segments)](https://quartr.com/events/apollo-hospitals-enterprise-limited-apollohosp-q4-25-26_FYSsn3Zb) · [AlphaStreet (Q3 FY26)](https://alphastreet.com/india/apollo-hospitals-delivers-strong-q3-fy26-growth-amid-segment-diversification) · [Business Standard broker note (payer mix)](https://bsmedia.business-standard.com/_media/bs/data/market-reports/equity-brokertips/2025-08/17551573320.25509800.pdf) · [Share.Market (Apollo 24/7)](https://www.share.market/buzz/news/apollo-24-7-breakeven/) · [Business Today (AHLL formats)](https://www.businesstoday.in/amp/latest/corporate/story/apollo-health-lifestyle-raises-rs-450-crore-from-ifc-to-fund-expansion-65808-2016-12-02) · [Outlook Business](https://www.outlookbusiness.com/amp/story/corporate/apollo-hospitals-q4-pat-grows-33-to-5513-crore) · [FundsIndia](https://fundsindia.com/blog/equities/alpha-apollo-hospitals-enterprise-ltd-equity-research-desk-4/34237) · [Business Today (founder story)](https://www.businesstoday.in/interactive/photo-essay/doctor-father-entrepreneur-here-s-what-makes-apollo-hospitals-founder-dr-prathap-c-reddy-one-of-india-s-best-known-business-tycoons-192-12-03-2024) · [Financial Express interview (Apollo site)](https://apollohospitals.com/financial-express-interviews-dr-prathap-c-reddy-chairman-apollo-hospitals-group) · [Wikipedia](https://en.wikipedia.org/wiki/Apollo_Hospitals) · [YourStory](https://yourstory.com/2020/08/apollo-hospitals-founder-prathap-reddy) · [Business Standard (Advent)](https://www.business-standard.com/markets/news/apollo-hospitals-slips-8-on-stake-sale-in-ahl-keimed-merger-124042900198_1.html) · [Sahi (listing target)](https://sahi.com/news/apollo-hospitals-targets-25-000-crore-healthco-revenue-and-q4-fy27-demerger-listing-326-PE1_CORP) · [Basis Point](https://www.basispointinsight.com/Story/apollo-demerger-recasts-it-as-a-pure-play-hospital-story_6aaa9dbb589b.html) · [Digital Health News](https://www.digitalhealthnews.com/apollo-healthco-keimed-merger-targets-inr-25-000-cr-revenue-by-fy27) · [The Week (CCI approval)](https://www.theweek.in/wire-updates/business/2025/09/23/dcm134-biz-cci-apollo-hospitals.html) · [Motilal Oswal (peers)](https://www.motilaloswal.com/share-market/peer-comparison/max-healthcare-institute-ltd) · [Value Research (peers)](https://www.valueresearchonline.com/stocks/270996/max-healthcare-institute-ltd/peer-comparison/) · [StartupTalky (MedPlus)](https://startuptalky.com/medplus-success-story/) · [CB Insights](https://www.cbinsights.com/company/net-meds-marketplace/alternatives-competitors)
+[PR Newswire (Always Open, Always Here)](https://www.prnewswire.com/news-releases/apollo-hospitals-launches-always-open-always-here-a-global-first-in-healthcare-from-india-302856496.html) · [The Tribune (Always Open)](https://www.tribuneindia.com/news/business/apollo-hospitals-launches-always-open-always-here-a-global-first-in-healthcare-from-india-2-2) · [MediaBrief (ProHealth, Anirudh)](https://mediabrief.com/apollo-hospitals-names-music-composer-anirudh-ravichander-brand-ambassador-for-prohealth/) · [Apollo press releases](https://www.apollohospitals.com/press-release) · [Digital Health News (Microsoft copilots)](https://www.digitalhealthnews.com/apollo-hospitals-partners-with-microsoft-to-advance-ai-in-healthcare) · [Microsoft (Apollo case study)](https://www.microsoft.com/en-in/aifirstmovers/FY26Apollo) · [Healthcare IT News](https://www.healthcareitnews.com/news/asia/apollo-hospitals-enters-next-phase-digital-transformation) · [DSIJ (FY26 results)](https://insights.dsij.in/dsijarticledetail/apollo-hospitals-reports-q4fy26-results-pat-jumps-to-rs-551-crore-announces-rs-10-dividend-id021-57243) · [InvestyWise (FY26 results)](https://www.investywise.com/apollo-hospitals-enterprise-limited-financial-results-and-strategic-developments/) · [The Doctorpreneur Academy](https://thedoctorpreneuracademy.com/apollo-hospitals-reports-strong-quarterly-financial-growth/) · [India Med Today (Q4 segments)](https://indiamedtoday.com/apollo-hospitals-q4-strong-but-expansion-led-margin-pressure-seen-in-fy27/) · [DSIJ report](https://insights.dsij.in/markets/reports/report-details/apollo-hospitals-enterprise-ltd/44073) · [Quartr (FY26 segments)](https://quartr.com/events/apollo-hospitals-enterprise-limited-apollohosp-q4-25-26_FYSsn3Zb) · [AlphaStreet (Q3 FY26)](https://alphastreet.com/india/apollo-hospitals-delivers-strong-q3-fy26-growth-amid-segment-diversification) · [Business Standard broker note (payer mix)](https://bsmedia.business-standard.com/_media/bs/data/market-reports/equity-brokertips/2025-08/17551573320.25509800.pdf) · [Share.Market (Apollo 24/7)](https://www.share.market/buzz/news/apollo-24-7-breakeven/) · [Business Today (AHLL formats)](https://www.businesstoday.in/amp/latest/corporate/story/apollo-health-lifestyle-raises-rs-450-crore-from-ifc-to-fund-expansion-65808-2016-12-02) · [Outlook Business](https://www.outlookbusiness.com/amp/story/corporate/apollo-hospitals-q4-pat-grows-33-to-5513-crore) · [FundsIndia](https://fundsindia.com/blog/equities/alpha-apollo-hospitals-enterprise-ltd-equity-research-desk-4/34237) · [Business Today (founder story)](https://www.businesstoday.in/interactive/photo-essay/doctor-father-entrepreneur-here-s-what-makes-apollo-hospitals-founder-dr-prathap-c-reddy-one-of-india-s-best-known-business-tycoons-192-12-03-2024) · [Financial Express interview (Apollo site)](https://apollohospitals.com/financial-express-interviews-dr-prathap-c-reddy-chairman-apollo-hospitals-group) · [Wikipedia](https://en.wikipedia.org/wiki/Apollo_Hospitals) · [YourStory](https://yourstory.com/2020/08/apollo-hospitals-founder-prathap-reddy) · [Business Standard (Advent)](https://www.business-standard.com/markets/news/apollo-hospitals-slips-8-on-stake-sale-in-ahl-keimed-merger-124042900198_1.html) · [Sahi (listing target)](https://sahi.com/news/apollo-hospitals-targets-25-000-crore-healthco-revenue-and-q4-fy27-demerger-listing-326-PE1_CORP) · [Basis Point](https://www.basispointinsight.com/Story/apollo-demerger-recasts-it-as-a-pure-play-hospital-story_6aaa9dbb589b.html) · [Digital Health News](https://www.digitalhealthnews.com/apollo-healthco-keimed-merger-targets-inr-25-000-cr-revenue-by-fy27) · [The Week (CCI approval)](https://www.theweek.in/wire-updates/business/2025/09/23/dcm134-biz-cci-apollo-hospitals.html) · [Motilal Oswal (peers)](https://www.motilaloswal.com/share-market/peer-comparison/max-healthcare-institute-ltd) · [Value Research (peers)](https://www.valueresearchonline.com/stocks/270996/max-healthcare-institute-ltd/peer-comparison/) · [StartupTalky (MedPlus)](https://startuptalky.com/medplus-success-story/) · [CB Insights](https://www.cbinsights.com/company/net-meds-marketplace/alternatives-competitors)
 
 ## GEO Schema (copy this)
 
@@ -204,7 +210,7 @@ Hospital chains like Max Healthcare, Fortis, Narayana Health, Medanta, Manipal a
           "name": "Apollo Hospitals Enterprise Ltd"
         }
       ],
-      "wordCount": 1120,
+      "wordCount": 1154,
       "inLanguage": "en-IN"
     },
     {
@@ -353,5 +359,5 @@ Open Graph Description: Hospitals bring in half the money, pharmacies most of th
 Alt Text (hero image): Apollo Hospitals business model overview
 Author: Author Name
 Published Date: 2026-10-17
-Word Count: 1120
+Word Count: 1154
 ```

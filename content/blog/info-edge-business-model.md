@@ -91,26 +91,31 @@ Here's how Naukri makes money, and the rest of Info Edge too. Info Edge earns fr
 
 ## 6. Info Edge Product and Marketing Strategy
 
-The Naukri marketing strategy and product plan, in four parts.
+Here is what Naukri and Info Edge are doing now (2025 and 2026).
 
-### a) Naukri: A Product for Every Type of Hiring
-- **Premium jobs:** Naukri Top Tier focuses on senior and high salary roles.
-- **Mid level jobs:** Naukri's core platform, where Info Edge calls itself the clear leader. AI-Rex, an AI assistant, helps recruiters find and screen candidates faster.
+### a) AI-Rex: AI Agents for Recruiters (July 2026)
+- A set of AI agents that refine the job brief, find candidates, reach out to them and screen them.
+- Live with **4,000+ companies and recruitment firms**. Talent Pulse, a tool to compare salaries and plan hiring, has 600+ paying customers.
+
+### b) AI for Job Seekers
+- **Neo**, an AI agent that finds jobs for you, plus an AI resume maker and AI mock interviews.
+- Info Edge spent about ₹70 crore on AI in FY26 and plans about ₹150 crore in FY27.
+
+### c) A Product for Every Type of Hiring
+- **Premium:** Naukri Top Tier for senior, high salary roles.
+- **Mid level:** Naukri's core platform with AI-Rex.
 - **Lower salary jobs:** JobHai, a free jobs app with paid extras.
+- **Naukri 360:** paid help for job seekers. Online sales went from 27% to 53% of this business in 15 months.
 
-### b) Naukri 360: Selling More to Job Seekers
-- Job seekers can pay for resume writing, profile boosts and other help.
-- These services moved to a self serve, online first model. Online sales went from 27% to 53% of this business in 15 months.
+### d) Growing the Other Platforms
+- **99acres:** short property videos (99Shorts) in NCR, plus more resale and rental listings.
+- **Jeevansathi:** AI based matching. It is close to breaking even.
+- **Shiksha:** AI search is cutting its traffic, so it is moving to student counselling and AI voice calls.
 
-### c) Growing the Other Platforms
-- **99acres:** short property videos (99Shorts) in NCR and more resale and rental listings to win more buyers and renters.
-- **Jeevansathi:** AI based matching. It is close to breaking even after years of losses.
-- **Shiksha:** AI search is cutting its website traffic, so it is moving towards student counselling and AI voice calls.
-
-### d) Marketing: From Famous TV Ads to Lower Spending
-- **Hari Sadu (2006):** Naukri's best known ad, about an angry boss, built on one idea: people don't leave jobs, they leave bosses.
-- **Digital and mobile:** later campaigns moved from TV to Facebook, YouTube and mobile.
-- **Spending less:** in Q4 FY26, Naukri's marketing spend fell 13% from a year earlier.
+### e) Marketing: Talking to Gen Z
+- **IPL 2025 campaign:** "All's fair when you love your career", short films by Lowe Lintas that back young people who switch jobs to grow. The tagline: "Naukri, for the ambitious."
+- **Naukri JobSpeak:** a monthly hiring report that the media quotes, which keeps Naukri in the news for free.
+- **Spending less:** Naukri's marketing spend fell 13% in Q4 FY26 while the business kept growing.
 
 ## 7. Info Edge Competitors
 
@@ -158,7 +163,7 @@ LinkedIn, Indeed and foundit in jobs; MagicBricks, Housing.com and NoBroker in p
 
 ### Sources
 
-[Info Edge Q4 FY26 earnings call transcript](https://www.infoedge.in/pdfs/financial_pdfs/f_Earnings/investor-concall-transcript-28May2026.pdf) · [Inc42 (FY26 results)](https://inc42.com/buzz/info-edge-q4-profit-increases-12-to-₹756-cr-declares-dividend-of-₹3-60/) · [Multibagg (FY26)](https://www.multibagg.ai/market-pulse/articles/infoedge-fy26-94689) · [afaqs (Hari Sadu)](https://www.afaqs.com/news/advertising/20590_a-hat-trick-for-hari-sadu) · [Campaign India (Hari Sadu)](https://campaignindia.in/article/hari-sadu-returns-in-naukri-coms-new-campaign/411429) · [Social Samosa (Naukri marketing)](https://www.socialsamosa.com/interviews/infoedge-sumeet-singh-on-naukri-com-marketing-strategy-1512740) · [Wikipedia (Naukri.com)](https://en.wikipedia.org/wiki/Naukri.com) · [Outlook India (founder)](https://outlookindia.com/business/sanjeev-bikhchandani-naukricom-news-298669) · [exchange4media (2006 IPO)](https://www.exchange4media.com/digital-news/naukri.com-promoter-info-edges-issue-oversubscribed-55-times-23717.html) · [Finology (business model)](https://blog.finology.in/entrepreneurship/infoedge-india-ltd-business-model) · [Medianama (competitors)](https://www.medianama.com/2020/02/223-infoedge-earnings-q3fy1920/) · [Online Marketplaces (competitors)](https://www.onlinemarketplaces.com/?p=102316)
+[Naukri AI press release, July 2026 (NSE)](https://nsearchives.nseindia.com/corporate/NAUKRI2_06072026090405_Stock_Exchange_Intimation-_Press_Release.pdf) · [YourStory (AI-Rex launch)](https://yourstory.com/2026/07/naukri-launches-ai-recruitment-platform-india) · [NewsBytes (AI tools)](https://www.newsbytesapp.com/news/science/naukri-launches-ai-tools-to-streamline-hiring-and-job-search/tldr) · [afaqs (IPL 2025 campaign)](https://www.afaqs.com/news/advertising/why-naukris-new-ipl-ad-campaign-validates-gen-zs-job-hopping-culture-9045422) · [exchange4media (IPL 2025 campaign)](https://www.exchange4media.com/ipl-2025-news/naukris-new-ipl-campaign-backs-gen-zs-career-choices-142726.html) · [Naukri JobSpeak](https://www.naukri.com/blog/naukri-jobspeak-white-collar-hiring-opens-2026-with-3-yoy-growth-driven-by-non-it-sectors-and-fresher-hiring/amp) · [Info Edge Q4 FY26 earnings call transcript](https://www.infoedge.in/pdfs/financial_pdfs/f_Earnings/investor-concall-transcript-28May2026.pdf) · [Inc42 (FY26 results)](https://inc42.com/buzz/info-edge-q4-profit-increases-12-to-₹756-cr-declares-dividend-of-₹3-60/) · [Multibagg (FY26)](https://www.multibagg.ai/market-pulse/articles/infoedge-fy26-94689) · [Wikipedia (Naukri.com)](https://en.wikipedia.org/wiki/Naukri.com) · [Outlook India (founder)](https://outlookindia.com/business/sanjeev-bikhchandani-naukricom-news-298669) · [exchange4media (2006 IPO)](https://www.exchange4media.com/digital-news/naukri.com-promoter-info-edges-issue-oversubscribed-55-times-23717.html) · [Finology (business model)](https://blog.finology.in/entrepreneurship/infoedge-india-ltd-business-model) · [Medianama (competitors)](https://www.medianama.com/2020/02/223-infoedge-earnings-q3fy1920/) · [Online Marketplaces (competitors)](https://www.onlinemarketplaces.com/?p=102316)
 
 ## GEO Schema (copy this)
 
@@ -195,7 +200,7 @@ LinkedIn, Indeed and foundit in jobs; MagicBricks, Housing.com and NoBroker in p
           "name": "Naukri.com"
         }
       ],
-      "wordCount": 1020,
+      "wordCount": 1069,
       "inLanguage": "en-IN"
     },
     {
@@ -344,5 +349,5 @@ Open Graph Description: Free for job seekers, paid by recruiters. Here's how Inf
 Alt Text (hero image): Info Edge business model overview
 Author: Author Name
 Published Date: 2026-10-17
-Word Count: 1020
+Word Count: 1069
 ```

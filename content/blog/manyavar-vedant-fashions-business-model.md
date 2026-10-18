@@ -93,12 +93,25 @@ Vedant Fashions earns from **selling its clothes through four channels**:
 | FY25 | ₹1,387 Cr | ₹389 Cr |
 | FY26 | ₹1,436 Cr | ₹376 Cr |
 
-## 6. Manyavar Marketing Strategy
+## 6. Manyavar Product and Marketing Strategy
 
-- **Celebrity ambassadors:** Virat Kohli (2016), Ranveer Singh and Amitabh Bachchan (2019)
-- **Emotional, wedding themed campaigns:** "Taiyaar Hokar Aaiye", "Jab Aap Taiyaar Hum Taiyaar" and "Mohey Rang Do"
-- **Cricket:** Official partner of IPL teams since 2013
-- **Content:** "The Manyavar Shaadi Show", a YouTube series hosted by Karan Johar (2025)
+Here is what Manyavar is doing now (2025 and 2026).
+
+### a) Rashmika and Vijay: "Made For Each Other" (March 2026)
+- Mohey signed newly married actors Rashmika Mandanna and Vijay Deverakonda for a wedding themed musical film.
+- The agency behind it says the campaign crossed **300 million views in 72 hours**. It was made and released in under three days, then moved to cinema, print and outdoor ads.
+
+### b) The Manyavar Shaadi Show (Late 2025)
+- A 6 episode YouTube series hosted by Karan Johar about wedding planning, fashion and real stories.
+- It turns Manyavar into wedding content people watch, not just an ad they skip.
+
+### c) New Brands for New Occasions
+- **Diwas:** a festive wear brand for men at value to mid premium prices, sold in multi brand shops and online, with influencer and Blinkit Diwali campaigns.
+- **Twamev:** bigger premium stores, like a 9,000 sq. ft. flagship store in Mumbai (late 2025).
+- **Mebaz:** moving from only wedding wear to clothes for every celebration.
+
+### d) No Discounts, Same Price Everywhere
+- Manyavar still runs **no end of season sales**, and prices are the same online and in stores across India.
 
 ## 7. Manyavar Competitors
 
@@ -145,7 +158,7 @@ Branded ethnic wear labels like Tasva and FabIndia, and the large unorganised ma
 
 ### Sources
 
-[Vedant Fashions investor presentation, Feb 2026](https://vedantfashions.com/wp-content/uploads/2026/02/Vedant-Fashion-Investor-presentation-_Q3-and-9M-FY26.pdf) · [InvestyWise (FY26 results)](https://www.investywise.com/?p=115752) · [FilingReader (FY26 results)](https://filingreader.com/news-wire/mumbai/2026-05-08/vedant-fashions-retail-sales-hit-record-inr-20bn-in-fy26) · [Univest (FY26 results)](https://univest.in/blogs/vedant-fashions-q4-results-fy26-pat-manyavar-2) · [YourStory (founder story)](https://yourstory.com/2023/11/ravi-modi-manyavar-vedant-fashion-journey) · [Third Eye Sight / Forbes India](https://www.thirdeyesight.in/the-untold-story-of-how-ravi-modi-built-vedant-fashions-the-makers-of-manyavar-into-a-3-5-billion-behemoth/) · [Kotak Securities](https://www.kotaksecurities.com/investing-guide/articles/manyavars-dominance) · [Business Standard (IPO)](https://www.business-standard.com/amp/article/markets/manyavar-owner-vedant-fashions-sets-ipo-price-band-at-rs-824-866-per-share-122012801124_1.html) · [Outlook Business (IPO)](https://www.outlookbusiness.com/news/manyavar-owner-vedant-fashions-ipo-to-open-on-february-4-news-47122) · [ICICI Direct IPO review](https://www.icicidirect.com/mailimages/IDirect_VedantFashions_IPOReview.pdf) · [Fibre2Fashion (Virat Kohli)](https://fibre2fashion.com/news/fashion-news/virat-kohli-is-new-brand-ambassador-of-manyavar-202447-newsdetails.htm) · [FashionNetwork (Ranveer Singh)](https://in.fashionnetwork.com/news/Manyavar-signs-ranveer-singh-as-its-new-brand-ambassador,1147423.html) · [FashionNetwork (Amitabh Bachchan)](https://in.fashionnetwork.com/news/Manyavar-names-amitabh-bachchan-as-its-new-brand-ambassador,1152104.html) · [exchange4media](https://www.exchange4media.com/advertising-news/is-manyavars-multiple-brand-ambassador-approach-breaking-the-clutter-or-adding-to-it-100580.html) · [Tasva](https://www.tasva.com/blogs/tasva-blogs/from-tradition-to-trend-how-tasva-is-redefining-ethnic-wear-in-india) · [Porter's Five Forces (competitors)](https://portersfiveforce.com/blogs/competitors/manyavar)
+[exchange4media (Made For Each Other)](https://www.exchange4media.com/industry-briefing-news/manyavar-mohey-launches-new-campaign-with-rashmika-mandanna-and-vijay-deverakonda-152475.html) · [Storyboard18 (Made For Each Other)](https://www.storyboard18.com/amp/brand-makers/newlyweds-vijay-deverakonda-rashmika-mandanna-front-manyavars-only-made-for-each-other-campaign-91232.htm) · [Free Press Journal (300M views)](https://www.freepressjournal.in/press-release/prachar-communications-manyavar-moheys-viral-campaign-featuring-vijay-deverakonda-and-rashmika-mandanna-crosses-300-million-views-across-platforms-in-just-72-hours) · [Republic World](https://www.republicworld.com/lifestyle/vijay-deverakonda-rashmika-mandannas-manyavar-mohey-wedding-campaign-goes-viral-in-just-72-hours-crosses-300-million-views) · [Vedant Fashions investor presentation, Feb 2026](https://vedantfashions.com/wp-content/uploads/2026/02/Vedant-Fashion-Investor-presentation-_Q3-and-9M-FY26.pdf) · [InvestyWise (FY26 results)](https://www.investywise.com/?p=115752) · [FilingReader (FY26 results)](https://filingreader.com/news-wire/mumbai/2026-05-08/vedant-fashions-retail-sales-hit-record-inr-20bn-in-fy26) · [Univest (FY26 results)](https://univest.in/blogs/vedant-fashions-q4-results-fy26-pat-manyavar-2) · [YourStory (founder story)](https://yourstory.com/2023/11/ravi-modi-manyavar-vedant-fashion-journey) · [Third Eye Sight / Forbes India](https://www.thirdeyesight.in/the-untold-story-of-how-ravi-modi-built-vedant-fashions-the-makers-of-manyavar-into-a-3-5-billion-behemoth/) · [Kotak Securities](https://www.kotaksecurities.com/investing-guide/articles/manyavars-dominance) · [Business Standard (IPO)](https://www.business-standard.com/amp/article/markets/manyavar-owner-vedant-fashions-sets-ipo-price-band-at-rs-824-866-per-share-122012801124_1.html) · [Outlook Business (IPO)](https://www.outlookbusiness.com/news/manyavar-owner-vedant-fashions-ipo-to-open-on-february-4-news-47122) · [ICICI Direct IPO review](https://www.icicidirect.com/mailimages/IDirect_VedantFashions_IPOReview.pdf) · [Tasva](https://www.tasva.com/blogs/tasva-blogs/from-tradition-to-trend-how-tasva-is-redefining-ethnic-wear-in-india) · [Porter's Five Forces (competitors)](https://portersfiveforce.com/blogs/competitors/manyavar)
 
 ## GEO Schema (copy this)
 
@@ -182,7 +195,7 @@ Branded ethnic wear labels like Tasva and FabIndia, and the large unorganised ma
           "name": "Manyavar"
         }
       ],
-      "wordCount": 859,
+      "wordCount": 1004,
       "inLanguage": "en-IN"
     },
     {
@@ -331,5 +344,5 @@ Open Graph Description: Franchise stores, no discounts and a 26% profit margin. 
 Alt Text (hero image): Manyavar business model overview
 Author: Author Name
 Published Date: 2026-10-17
-Word Count: 859
+Word Count: 1004
 ```

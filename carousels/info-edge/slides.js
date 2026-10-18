@@ -160,32 +160,34 @@ module.exports = {
       source: 'FY26 standalone figures. Source: Info Edge Q4 FY26 earnings call',
     },
 
-    // 7. Product and marketing
+    // 7. Product and marketing (latest: 2025 and 2026)
     {
       css: COMMON + `
-        .tiers { display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 30px; }
-        .tiers .card { padding: 20px 22px; }
-        .tiers .h { font-size: 22px; font-weight: 800; letter-spacing: 2px; color: var(--amber); }
-        .tiers .b { font-size: 30px; font-weight: 800; margin-top: 8px; }
-        .tiers .s { font-size: 21px; color: var(--sub); margin-top: 6px; line-height:1.3; }
-        .tiers .lt { height: 64px; margin-top: 12px; padding: 6px 12px; }
-        .pts { margin-top: 32px; gap: 26px; }
+        .ai { margin-top: 30px; padding: 26px 30px; }
+        .ai .h { font-size: 22px; font-weight: 800; letter-spacing: 2px; color: var(--amber); }
+        .ai .b { font-size: 40px; font-weight: 900; margin-top: 8px; }
+        .ai .s { font-size: 25px; color: var(--sub); margin-top: 8px; line-height: 1.35; }
+        .ai .nums { display:flex; gap: 40px; margin-top: 16px; }
+        .ai .nums div { font-size: 22px; color: var(--sub); }
+        .ai .nums b { display:block; font-size: 44px; color: #fff; }
+        .pts { margin-top: 30px; gap: 26px; }
         .pt .t { font-size: 31px; }
       `,
       html: `
-        <div class="eyebrow">Product and marketing</div>
-        <h1>A product for <span class="hl">every job seeker.</span></h1>
-        <div class="tiers">
-          <div class="card"><div class="h">PREMIUM</div><div class="b">Naukri Top Tier</div><div class="s">Senior, high salary roles</div></div>
-          <div class="card"><div class="h">MID LEVEL</div><div class="b">Naukri + AI-Rex</div><div class="s">AI assistant for recruiters</div></div>
-          <div class="card"><div class="h">LOWER SALARY</div><div class="b">JobHai</div>${tile('jobhai', 52)}</div>
+        <div class="eyebrow">Product and marketing · 2025 to 2026</div>
+        <h1>Betting big on <span class="hl">AI.</span></h1>
+        <div class="card ai">
+          <div class="h">JULY 2026</div>
+          <div class="b">AI-Rex: AI agents for recruiters</div>
+          <div class="s">Finds, contacts and screens candidates on its own.</div>
+          <div class="nums"><div><b>4,000+</b>companies live</div><div><b>₹150 Cr</b>AI spend planned, FY27</div></div>
         </div>
         <div class="pts">
-          <div class="pt"><div class="k">a</div><div class="t"><b>Naukri 360.</b> <span>Paid help for job seekers. Online sales went from 27% to 53% in 15 months.</span></div></div>
-          <div class="pt"><div class="k">b</div><div class="t"><b>Hari Sadu (2006).</b> <span>Its famous ad about an angry boss: people don't leave jobs, they leave bosses.</span></div></div>
-          <div class="pt"><div class="k">c</div><div class="t"><b>Spending less.</b> <span>Naukri's marketing spend fell 13% in Q4 FY26.</span></div></div>
+          <div class="pt"><div class="k">a</div><div class="t"><b>AI for job seekers.</b> <span>Neo job finder, AI resume maker and AI mock interviews.</span></div></div>
+          <div class="pt"><div class="k">b</div><div class="t"><b>IPL 2025 campaign.</b> <span>"Naukri, for the ambitious": films backing Gen Z who switch jobs to grow.</span></div></div>
+          <div class="pt"><div class="k">c</div><div class="t"><b>Spending less.</b> <span>Marketing spend fell 13% in Q4 FY26 while revenue grew.</span></div></div>
         </div>`,
-      source: 'Sources: Info Edge Q4 FY26 earnings call, afaqs, Campaign India',
+      source: 'Sources: Naukri press release (July 2026), YourStory, afaqs, exchange4media, Info Edge Q4 FY26 earnings call',
     },
 
     // 8. Numbers + CTA
