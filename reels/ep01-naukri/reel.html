@@ -10,6 +10,9 @@
   #b1 { width:700px; height:700px; background:#6b5fd0; }
   #b2 { width:600px; height:600px; background:#F9CB42; opacity:.12; }
   #grid { position:absolute; inset:-60px; opacity:.13; background-image:radial-gradient(#fff 1.3px,transparent 1.8px); background-size:48px 48px; }
+  #founderBg { position:absolute; inset:0; opacity:0; }
+  #founderBg img { width:100%; height:100%; object-fit:cover; object-position:30% 20%; filter:grayscale(.3) brightness(.75); }
+  #founderBg::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(28,27,58,.55) 0%, rgba(40,39,90,.82) 45%, rgba(40,39,90,.92) 100%); }
   #rays { position:absolute; left:-760px; top:-630px; width:2600px; height:2600px; opacity:0; border-radius:50%;
     background:repeating-conic-gradient(from 0deg, rgba(207,201,242,.22) 0deg 6deg, transparent 6deg 18deg);
     -webkit-mask-image:radial-gradient(circle, transparent 0, #000 260px, #000 70%, transparent 100%); }
@@ -61,6 +64,7 @@
 <body>
 <div id="b1" class="blob"></div><div id="b2" class="blob"></div><div id="grid"></div>
 <div id="rays"></div>
+<div id="founderBg"><img src="founder.jpg"></div>
 <div id="progress"></div>
 <div id="badge"><div>EPISODE 01/100</div></div>
 
@@ -264,6 +268,10 @@ window.render = function (t) {
   // s1: logo pop when "Naukri" is said
   $('s1logo').style.transform = `scale(${back(p(t, 2.85, 0.3))})`;
 
+  // s1: founder photo fades in as the slide's background
+  $('founderBg').style.opacity = Math.min(p(t, 1.49, 0.3), 1 - p(t, 4.55, 0.15));
+  $('founderBg').style.transform = `scale(${1.08 - 0.08 * p(t, 1.49, 3.2)})`;
+
   // s1: founder card slides in
   const fk = p(t, 3.2, 0.35);
   $('s1founder').style.opacity = fk;
@@ -311,7 +319,8 @@ window.render = function (t) {
   $('wipe').style.left = w ? (-1400 + p(t, w - 0.25, 0.5) * 3000) + 'px' : '-1400px';
 
   // s10: rotating sunburst behind the end card
-  $('rays').style.opacity = p(t, 34.47, 0.4);
+  // rays turn slowly all through so the purple never looks flat, then get bright on the end card
+  $('rays').style.opacity = 0.4 + 0.6 * p(t, 34.47, 0.4);
   $('rays').style.transform = `rotate(${t * 14}deg)`;
 
   // s10: logo pops in
