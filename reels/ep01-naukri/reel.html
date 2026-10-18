@@ -1,0 +1,273 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  :root { --navy:#28275a; --mid:#3a3778; --purple:#544aa0; --amber:#F9CB42; --dark:#1c1b3a; --lav:#cfc9f2; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html,body { width:1080px; height:1920px; overflow:hidden; }
+  body { font-family:'Inter','DejaVu Sans',sans-serif; color:#fff; position:relative;
+    background:linear-gradient(180deg,var(--dark) 0%,var(--navy) 35%,var(--mid) 70%,var(--purple) 100%); }
+  .blob { position:absolute; border-radius:50%; filter:blur(90px); opacity:.45; }
+  #b1 { width:700px; height:700px; background:#6b5fd0; }
+  #b2 { width:600px; height:600px; background:#F9CB42; opacity:.12; }
+  #grid { position:absolute; inset:-60px; opacity:.13; background-image:radial-gradient(#fff 1.3px,transparent 1.8px); background-size:48px 48px; }
+  #progress { position:absolute; top:0; left:0; height:10px; background:var(--amber); }
+  #badge { position:absolute; top:230px; left:0; right:0; display:flex; justify-content:center; z-index:10; }
+  #badge div { border:3px solid var(--amber); color:var(--amber); background:rgba(28,27,58,.85); border-radius:999px;
+    padding:14px 34px; font-weight:800; font-size:34px; letter-spacing:3px; }
+  .scene { position:absolute; left:60px; right:60px; top:340px; height:940px; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; text-align:center; opacity:0; }
+  .scene > * { flex:none; }
+  .big { white-space:nowrap; font-weight:900; letter-spacing:-2px; line-height:1.02; }
+  .amber { color:var(--amber); }
+  .card { background:#fff; border-radius:36px; display:flex; align-items:center; justify-content:center; box-shadow:0 24px 60px rgba(0,0,0,.35); }
+  .stamp { display:inline-block; border:12px solid var(--amber); color:var(--amber); border-radius:28px; padding:6px 48px;
+    font-weight:900; font-size:190px; letter-spacing:6px; }
+  #s4 .grid { display:grid; grid-template-columns:400px 400px; gap:36px; margin-top:50px; }
+  #s4 .tile { height:220px; }
+  #s4 .tile img { max-width:300px; max-height:130px; }
+  .num { width:130px; height:130px; border-radius:50%; background:var(--amber); color:var(--dark); font-weight:900; font-size:84px;
+    display:flex; align-items:center; justify-content:center; box-shadow:0 12px 40px rgba(249,203,66,.4); }
+  .biz .logo { width:760px; height:190px; margin-top:30px; }
+  .biz .logo img { max-width:500px; max-height:120px; }
+  .biz .money { margin-top:30px; font-size:70px; font-weight:900; }
+  .biz .bar { width:760px; height:26px; background:rgba(255,255,255,.18); border-radius:99px; margin-top:16px; overflow:hidden; }
+  .biz .bar i { display:block; height:100%; background:var(--amber); border-radius:99px; width:0; }
+  .biz .share { margin-top:14px; font-size:34px; color:var(--lav); font-weight:600; }
+  .rows { margin-top:34px; display:flex; flex-direction:column; gap:20px; width:900px; }
+  .row { background:rgba(255,255,255,.12); border:2px solid rgba(255,255,255,.25); border-radius:26px; padding:16px 28px;
+    display:flex; align-items:center; gap:24px; text-align:left; font-size:42px; font-weight:800; line-height:1.15; opacity:0; }
+  .row .coin { flex:none; width:66px; height:66px; border-radius:50%; background:var(--amber); color:var(--dark); font-size:40px; font-weight:900;
+    display:flex; align-items:center; justify-content:center; }
+  .row b { color:var(--amber); }
+  #stack { width:900px; height:90px; border-radius:24px; overflow:hidden; display:flex; margin-top:50px; }
+  #stack i { display:flex; align-items:center; justify-content:center; height:100%; font-style:normal; font-weight:900; font-size:34px; color:var(--dark); width:0; overflow:hidden; white-space:nowrap; }
+  .legend { display:flex; gap:26px; margin-top:24px; font-size:30px; font-weight:700; color:var(--lav); flex-wrap:wrap; justify-content:center; }
+  .legend span::before { content:''; display:inline-block; width:22px; height:22px; border-radius:6px; margin-right:10px; vertical-align:-3px; background:var(--c); }
+  #follow { margin-top:56px; background:var(--amber); color:var(--dark); font-weight:900; font-size:56px; border-radius:999px; padding:28px 70px; }
+  #sub { position:absolute; left:70px; right:70px; top:1300px; display:flex; justify-content:center; z-index:10; }
+  #sub div { background:rgba(0,0,0,.72); border-radius:22px; padding:20px 34px; font-size:46px; font-weight:800; line-height:1.2; text-align:center; max-width:940px; }
+  #sub b { color:var(--amber); }
+  #source { position:absolute; top:1470px; left:0; right:0; text-align:center; font-size:26px; color:rgba(255,255,255,.6); font-weight:600; z-index:10; }
+</style></head>
+<body>
+<div id="b1" class="blob"></div><div id="b2" class="blob"></div><div id="grid"></div>
+<div id="progress"></div>
+<div id="badge"><div>EPISODE 01/100</div></div>
+
+<!-- s0: episode intro -->
+<div class="scene" id="s0">
+  <div style="font-size:52px;font-weight:800;color:var(--lav);letter-spacing:6px">EPISODE</div>
+  <div class="big amber" style="font-size:330px" id="epnum">1<span style="font-size:150px;color:#fff">/100</span></div>
+  <div style="font-size:50px;font-weight:800;margin-top:10px">India's Top 100<br>Business Models</div>
+</div>
+
+<!-- s1: today's model -->
+<div class="scene" id="s1">
+  <div class="big" style="font-size:84px">Today's<br>business model</div>
+  <div class="card" id="s1logo" style="width:820px;height:280px;margin-top:60px"><img src="../../logos/naukri-logo.png" style="max-width:580px;max-height:170px"></div>
+</div>
+
+<!-- s2: free -->
+<div class="scene" id="s2">
+  <div class="big" style="font-size:88px">Job search on<br>Naukri is</div>
+  <div style="margin-top:50px" id="s2stamp"><span class="stamp">FREE</span></div>
+</div>
+
+<!-- s3: yet earns -->
+<div class="scene" id="s3">
+  <div class="big" style="font-size:80px" id="s3a">Yet Naukri earns</div>
+  <div class="big amber" style="font-size:150px;margin-top:20px" id="s3num">₹0 Cr</div>
+  <div class="big" style="font-size:64px;margin-top:10px;color:var(--lav)" id="s3b">every year</div>
+  <div class="big amber" style="font-size:230px;margin-top:20px" id="s3how">HOW?</div>
+</div>
+
+<!-- s4: 4 businesses -->
+<div class="scene" id="s4">
+  <div class="card" style="width:560px;height:150px" id="s4ie"><img src="../../logos/infoedge-logo.png" style="max-width:420px;max-height:100px"></div>
+  <div class="big" style="font-size:76px;margin-top:40px">runs <span class="amber">4</span> businesses</div>
+  <div class="grid">
+    <div class="card tile"><img src="../../logos/naukri-logo.png"></div>
+    <div class="card tile"><img src="../../logos/99acres-logo.png"></div>
+    <div class="card tile"><img src="../../logos/shiksha-logo.png"></div>
+    <div class="card tile"><img src="../../logos/jeevansathi-logo.png"></div>
+  </div>
+</div>
+
+<!-- business scenes -->
+<div class="scene biz" id="s5">
+  <div class="num">1</div>
+  <div class="card logo"><img src="../../logos/naukri-logo.png"></div>
+  <div class="money">₹2,256 Cr <span class="amber">· 74%</span></div>
+  <div class="bar"><i data-w="74"></i></div>
+  <div class="rows">
+    <div class="row" data-at="13.48"><span class="coin">₹</span><span><b>Companies</b> pay to post jobs</span></div>
+    <div class="row" data-at="14.75"><span class="coin">₹</span><span><b>Companies</b> pay for resume search</span></div>
+    <div class="row" data-at="16.39"><span class="coin">₹</span><span><b>Job seekers</b> pay for profile boost</span></div>
+  </div>
+</div>
+<div class="scene biz" id="s6">
+  <div class="num">2</div>
+  <div class="card logo"><img src="../../logos/99acres-logo.png"></div>
+  <div class="money">₹488 Cr <span class="amber">· 16%</span></div>
+  <div class="bar"><i data-w="16"></i></div>
+  <div class="rows">
+    <div class="row" data-at="19.99"><span class="coin">₹</span><span><b>Builders, brokers &amp; owners</b> pay to list property</span></div>
+  </div>
+</div>
+<div class="scene biz" id="s7">
+  <div class="num">3</div>
+  <div class="card logo"><img src="../../logos/shiksha-logo.png"></div>
+  <div class="money">₹170 Cr <span class="amber">· 6%</span></div>
+  <div class="bar"><i data-w="6"></i></div>
+  <div class="rows">
+    <div class="row" data-at="24.73"><span class="coin">₹</span><span><b>Colleges</b> pay to reach students</span></div>
+  </div>
+</div>
+<div class="scene biz" id="s8">
+  <div class="num">4</div>
+  <div class="card logo"><img src="../../logos/jeevansathi-logo.png"></div>
+  <div class="money">₹138 Cr <span class="amber">· 5%</span></div>
+  <div class="bar"><i data-w="5"></i></div>
+  <div class="rows">
+    <div class="row" data-at="28.39"><span class="coin">₹</span><span><b>Members</b> pay to find a partner</span></div>
+  </div>
+</div>
+
+<!-- s9: total -->
+<div class="scene" id="s9">
+  <div class="big" style="font-size:96px">Total?</div>
+  <div class="big amber" style="font-size:160px;margin-top:10px" id="s9num">₹0 Cr</div>
+  <div style="font-size:40px;font-weight:700;color:var(--lav)">Info Edge revenue, FY26</div>
+  <div id="stack">
+    <i style="background:#F9CB42" data-w="73.9">Naukri</i>
+    <i style="background:#8fd3ff" data-w="16">99acres</i>
+    <i style="background:#3ddc97" data-w="5.6"></i>
+    <i style="background:#ff8fa3" data-w="4.5"></i>
+  </div>
+  <div class="legend">
+    <span style="--c:#F9CB42">Naukri</span><span style="--c:#8fd3ff">99acres</span><span style="--c:#3ddc97">Shiksha</span><span style="--c:#ff8fa3">Jeevansathi</span>
+  </div>
+</div>
+
+<!-- s10: follow -->
+<div class="scene" id="s10">
+  <img src="../../logos/incbusiness-logo-white.png" style="width:640px">
+  <div class="big" style="font-size:92px;margin-top:60px">Episode <span class="amber">2</span><br>coming soon</div>
+  <div id="follow">FOLLOW</div>
+</div>
+
+<div id="sub"><div id="subtext"></div></div>
+<div id="source">Source: Info Edge FY26 results (standalone)</div>
+
+<script>
+const DUR = 35.3;
+const clamp = (x) => Math.max(0, Math.min(1, x));
+const p = (t, a, d) => clamp((t - a) / d);
+const out3 = (x) => 1 - Math.pow(1 - x, 3);
+const back = (x) => { const c = 1.9; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const $ = (id) => document.getElementById(id);
+const inr = (n) => '₹' + Math.round(n).toLocaleString('en-IN') + ' Cr';
+
+// scene windows on the voice-over timeline (seconds)
+const SCENES = [
+  ['s0', 0, 1.5], ['s1', 1.5, 3.62], ['s2', 3.62, 5.38], ['s3', 5.38, 9.6], ['s4', 9.6, 12.4],
+  ['s5', 12.4, 18.3], ['s6', 18.3, 23.64], ['s7', 23.64, 27.05], ['s8', 27.05, 30.56],
+  ['s9', 30.56, 32.78], ['s10', 32.78, DUR],
+];
+const SUBS = [
+  [0, 1.5, 'Episode <b>1 of 100</b>!'],
+  [1.5, 3.62, "Today's business model: <b>Naukri</b>!"],
+  [3.62, 5.38, 'Job search on Naukri is <b>free</b>.'],
+  [5.38, 8.95, 'Yet Naukri earns <b>₹2,256 Cr</b> a year.'],
+  [8.95, 9.6, '<b>How?</b>'],
+  [9.6, 12.4, "Naukri's parent, Info Edge, runs <b>4 businesses</b>."],
+  [12.4, 13.4, '<b>1. Naukri</b>'],
+  [13.4, 16.3, 'Companies pay for <b>job posts</b> and <b>resume search</b>,'],
+  [16.3, 18.3, 'and job seekers pay for <b>profile boosts</b>.'],
+  [18.3, 19.95, '<b>2. 99acres</b>'],
+  [19.95, 23.64, 'Builders, brokers and owners pay to <b>list properties</b>.'],
+  [23.64, 24.7, '<b>3. Shiksha</b>'],
+  [24.7, 27.05, 'Colleges pay to <b>reach students</b>.'],
+  [27.05, 28.35, '<b>4. Jeevansathi</b>'],
+  [28.35, 30.56, 'People pay for <b>memberships</b> to find a partner.'],
+  [30.56, 32.78, 'Total? <b>₹3,052 Cr</b>!'],
+  [32.78, DUR, 'Follow for <b>Episode 2</b>!'],
+];
+
+function sceneAlpha(t, a, b) {
+  const fin = a === 0 ? 1 : p(t, a, 0.14), fout = 1 - p(t, b - 0.1, 0.1);
+  return { a: Math.min(fin, fout), k: out3(p(t, a, 0.3)) };
+}
+
+window.render = function (t) {
+  // background drift
+  $('b1').style.transform = `translate(${-200 + 160 * Math.sin(t * 0.6)}px, ${200 + 220 * Math.cos(t * 0.4)}px)`;
+  $('b2').style.transform = `translate(${560 + 140 * Math.cos(t * 0.5)}px, ${1100 + 200 * Math.sin(t * 0.45)}px)`;
+  $('grid').style.transform = `translateY(${-(t * 14) % 48}px)`;
+  $('progress').style.width = (t / DUR * 100) + '%';
+  $('badge').style.opacity = t < 1.5 ? 0 : p(t, 1.5, 0.2);
+
+  for (const [id, a, b] of SCENES) {
+    const el = $(id), s = sceneAlpha(t, a, b);
+    el.style.opacity = s.a;
+    el.style.display = s.a <= 0 ? 'none' : 'flex';
+    el.style.transform = `translateY(${(1 - s.k) * 70}px)`;
+  }
+
+  // s0: slam in
+  const e0 = back(p(t, 0, 0.35));
+  $('epnum').style.transform = `scale(${0.3 + 0.7 * e0})`;
+
+  // s1: logo pop when "Naukri" is said
+  $('s1logo').style.transform = `scale(${back(p(t, 2.85, 0.3))})`;
+
+  // s2: stamp
+  const st = p(t, 4.55, 0.22);
+  $('s2stamp').style.transform = `scale(${2.4 - 1.4 * out3(st)}) rotate(${-8 * out3(st)}deg)`;
+  $('s2stamp').style.opacity = st;
+
+  // s3: counter, then HOW?
+  $('s3num').textContent = inr(2256 * out3(p(t, 5.9, 1.6)));
+  $('s3how').style.transform = `scale(${back(p(t, 9.0, 0.3))})`;
+  $('s3how').style.opacity = p(t, 9.0, 0.08);
+
+  // s4: tiles snap in one by one
+  document.querySelectorAll('#s4 .tile').forEach((el, i) => {
+    const k = back(p(t, 10.9 + i * 0.16, 0.3));
+    el.style.transform = `scale(${k})`;
+    el.style.opacity = p(t, 10.9 + i * 0.16, 0.1);
+  });
+  $('s4ie').style.transform = `scale(${back(p(t, 9.65, 0.3))})`;
+
+  // business scenes: number pop, bar fill, rows slide
+  [['s5', 12.4], ['s6', 18.3], ['s7', 23.64], ['s8', 27.05]].forEach(([id, a]) => {
+    const sc = $(id);
+    sc.querySelector('.num').style.transform = `scale(${back(p(t, a, 0.3))}) rotate(${(1 - out3(p(t, a, 0.4))) * -90}deg)`;
+    sc.querySelector('.logo').style.transform = `scale(${back(p(t, a + 0.25, 0.3))})`;
+    const bar = sc.querySelector('.bar i');
+    bar.style.width = (bar.dataset.w * out3(p(t, a + 0.5, 0.8))) + '%';
+    sc.querySelectorAll('.row').forEach((r) => {
+      const k = p(t, +r.dataset.at, 0.25);
+      r.style.opacity = k;
+      r.style.transform = `translateX(${(1 - out3(k)) * 160}px)`;
+    });
+  });
+
+  // s9: total counter and stacked bar
+  $('s9num').textContent = inr(3052 * out3(p(t, 31.2, 1.0)));
+  const fill = out3(p(t, 31.2, 1.1));
+  document.querySelectorAll('#stack i').forEach((el) => { el.style.width = (el.dataset.w * fill) + '%'; });
+
+  // s10: follow pulse
+  $('follow').style.transform = `scale(${back(p(t, 33.2, 0.3)) * (1 + 0.05 * Math.sin(Math.max(0, t - 33.5) * 9))})`;
+
+  // subtitles
+  const sub = SUBS.find(([a, b]) => t >= a && t < b);
+  const sd = $('subtext');
+  sd.innerHTML = sub ? sub[2] : '';
+  sd.parentElement.style.opacity = sub ? 1 : 0;
+  sd.style.transform = sub ? `scale(${0.92 + 0.08 * out3(p(t, sub[0], 0.12))})` : '';
+};
+window.render(0);
+</script>
+</body></html>
