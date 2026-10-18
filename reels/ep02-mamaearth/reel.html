@@ -1,0 +1,296 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="base.css">
+<style>
+  .tag { font-size:32px; font-weight:800; letter-spacing:4px; color:var(--amber); }
+  .line { font-size:52px; font-weight:800; line-height:1.15; margin-top:30px; white-space:normal; }
+  .chips { display:flex; gap:20px; margin-top:34px; justify-content:center; flex-wrap:wrap; }
+  .chip { background:rgba(255,255,255,.12); border:2px solid rgba(255,255,255,.25); border-radius:999px; padding:14px 32px; font-size:40px; font-weight:800; opacity:0; }
+  .logos9 { display:grid; grid-template-columns:repeat(3,290px); gap:22px; margin-top:44px; }
+  .logos9 .card { height:130px; border-radius:24px; opacity:0; }
+  .logos9 img { max-width:220px; max-height:74px; }
+  .bigcard { width:760px; height:190px; margin-top:30px; }
+  .bigcard img { max-width:520px; max-height:120px; }
+  .pill { display:inline-block; margin-top:34px; background:var(--amber); color:var(--dark); font-size:48px; font-weight:900; border-radius:999px; padding:16px 44px; }
+  .trio { display:flex; flex-direction:column; gap:24px; margin-top:40px; width:900px; }
+  .trio .item, .quad .item { display:flex; align-items:center; gap:26px; background:rgba(255,255,255,.1); border:2px solid rgba(255,255,255,.22); border-radius:28px; padding:16px; opacity:0; }
+  .trio .card, .quad .card { width:330px; height:120px; border-radius:22px; flex:none; }
+  .trio .card img, .quad .card img { max-width:260px; max-height:76px; }
+  .trio .txt, .quad .txt { text-align:left; font-size:42px; font-weight:800; line-height:1.1; }
+  .quad { display:grid; grid-template-columns:440px 440px; gap:22px; margin-top:40px; }
+  .quad .item { flex-direction:column; gap:12px; padding:20px 16px; }
+  .quad .card { width:380px; }
+  .quad .txt { text-align:center; font-size:38px; }
+  .quad .txt b { display:block; color:var(--amber); font-size:30px; letter-spacing:3px; }
+  .flow { display:flex; flex-direction:column; align-items:center; gap:14px; margin-top:40px; }
+  .flow .box { width:820px; border-radius:28px; padding:26px; font-size:48px; font-weight:900; background:rgba(255,255,255,.12); border:2px solid rgba(255,255,255,.25); opacity:0; }
+  .flow .box small { display:block; font-size:32px; font-weight:700; color:var(--lav); margin-top:6px; }
+  .flow .box.hl { background:var(--amber); color:var(--dark); border-color:var(--amber); }
+  .flow .box.hl small { color:var(--dark); }
+  .flow .arrow { font-size:60px; color:var(--amber); line-height:1; opacity:0; }
+  .xstamp { position:relative; display:inline-block; margin-top:90px; font-size:110px; font-weight:900; letter-spacing:2px; border:10px solid #ff5a5f; color:#ff5a5f; border-radius:26px; padding:10px 40px; transform:rotate(-4deg); }
+</style></head>
+<body>
+<div id="b1" class="blob"></div><div id="b2" class="blob"></div><div id="grid"></div>
+<div id="rays"></div>
+<div id="progress"></div>
+<div id="badge"><div>EPISODE 02/100</div></div>
+
+<!-- s0: episode intro -->
+<div class="scene" id="s0">
+  <div style="font-size:52px;font-weight:800;color:var(--lav);letter-spacing:6px">EPISODE</div>
+  <div class="big amber" style="font-size:330px" id="epnum">2<span style="font-size:150px;color:#fff">/100</span></div>
+  <div style="font-size:50px;font-weight:800;margin-top:10px">India's Top 100<br>Business Models</div>
+</div>
+
+<!-- s1: today's model -->
+<div class="scene" id="s1">
+  <div class="big" style="font-size:84px">Today's<br>business model</div>
+  <div class="card bigcard" id="s1logo" style="margin-top:50px"><img src="../../logos/mamaearth-logo.png"></div>
+  <div style="font-size:42px;font-weight:700;color:var(--lav);margin-top:24px">by Honasa Consumer</div>
+</div>
+
+<!-- s2: no own factory -->
+<div class="scene" id="s2">
+  <div class="big" style="font-size:80px">Mamaearth doesn't<br>make its own products</div>
+  <div class="xstamp" id="s2stamp">NO OWN FACTORY</div>
+</div>
+
+<!-- s3: yet earns -->
+<div class="scene" id="s3">
+  <div class="big" style="font-size:74px">Yet Honasa earns</div>
+  <div class="big amber" style="font-size:150px;margin-top:20px" id="s3num">₹0 Cr</div>
+  <div class="big" style="font-size:60px;margin-top:10px;color:var(--lav)">a year (FY26)</div>
+  <div class="big amber" style="font-size:230px;margin-top:20px" id="s3how">HOW?</div>
+</div>
+
+<!-- s4: 9 brands -->
+<div class="scene" id="s4">
+  <div class="card" style="width:420px;height:150px" id="s4h"><img src="../../logos/honasa-logo.png" style="max-height:120px"></div>
+  <div class="big" style="font-size:76px;margin-top:30px">runs <span class="amber">9</span> brands</div>
+  <div class="logos9">
+    <div class="card"><img src="../../logos/mamaearth-logo.png"></div>
+    <div class="card"><img src="../../logos/thedermaco-logo.png"></div>
+    <div class="card"><img src="../../logos/aqualogica-logo.png"></div>
+    <div class="card"><img src="../../logos/drsheths-logo.png"></div>
+    <div class="card"><img src="../../logos/lumineve-logo.png"></div>
+    <div class="card"><img src="../../logos/bblunt-logo.png"></div>
+    <div class="card"><img src="../../logos/staze-logo.png"></div>
+    <div class="card"><img src="../../logos/reginaldmen-logo.png"></div>
+    <div class="card"><img src="../../logos/fikn-logo.png"></div>
+  </div>
+</div>
+
+<!-- s5: Mamaearth -->
+<div class="scene" id="s5">
+  <div class="num">1</div>
+  <div class="card bigcard" data-pop><img src="../../logos/mamaearth-logo.png"></div>
+  <div class="line">Natural personal care</div>
+  <div class="chips"><span class="chip">Skin</span><span class="chip">Hair</span><span class="chip">Baby care</span></div>
+</div>
+
+<!-- s6: The Derma Co -->
+<div class="scene" id="s6">
+  <div class="num">2</div>
+  <div class="card bigcard" data-pop><img src="../../logos/thedermaco-logo.png"></div>
+  <div class="line">Active-ingredient skincare</div>
+  <div class="chips"><span class="chip">Face wash</span><span class="chip">Sunscreen</span><span class="chip">Serums</span></div>
+  <div class="pill" id="s6pill">Now a ₹1,000 Cr brand*</div>
+  <div style="font-size:26px;color:var(--lav);margin-top:14px">*yearly run-rate, Aug 2026</div>
+</div>
+
+<!-- s7: more skincare -->
+<div class="scene" id="s7">
+  <div class="tag">MORE SKINCARE</div>
+  <div class="trio">
+    <div class="item"><div class="card"><img src="../../logos/aqualogica-logo.png"></div><div class="txt">Hydrating<br>skincare</div></div>
+    <div class="item"><div class="card"><img src="../../logos/drsheths-logo.png"></div><div class="txt">Skincare for<br>Indian skin</div></div>
+    <div class="item"><div class="card"><img src="../../logos/lumineve-logo.png"></div><div class="txt">Night-time<br>skincare</div></div>
+  </div>
+</div>
+
+<!-- s8: hair, makeup, men, perfume -->
+<div class="scene" id="s8">
+  <div class="tag">AND BEYOND SKINCARE</div>
+  <div class="quad">
+    <div class="item"><div class="card"><img src="../../logos/bblunt-logo.png"></div><div class="txt"><b>HAIR</b>Salon-style hair care</div></div>
+    <div class="item"><div class="card"><img src="../../logos/staze-logo.png"></div><div class="txt"><b>MAKEUP</b>Makeup</div></div>
+    <div class="item"><div class="card"><img src="../../logos/reginaldmen-logo.png"></div><div class="txt"><b>MEN</b>Skincare for men</div></div>
+    <div class="item"><div class="card"><img src="../../logos/fikn-logo.png"></div><div class="txt"><b>PERFUME</b>New: elixir perfume</div></div>
+  </div>
+</div>
+
+<!-- s9: how it sells -->
+<div class="scene" id="s9">
+  <div class="tag">HOW IT WORKS</div>
+  <div class="flow">
+    <div class="box">Partner factories<small>make every product</small></div>
+    <div class="arrow">↓</div>
+    <div class="box hl">Honasa<small>owns the formula &amp; the brand</small></div>
+    <div class="arrow">↓</div>
+    <div class="box">Online + 3 Lakh+ shops<small>Amazon · Nykaa · quick commerce · stores</small></div>
+  </div>
+</div>
+
+<!-- s10: profit -->
+<div class="scene" id="s10">
+  <div class="big" style="font-size:80px">FY26 profit?</div>
+  <div class="big amber" style="font-size:200px;margin-top:20px" id="s10num">₹0 Cr</div>
+  <div style="font-size:40px;font-weight:700;color:var(--lav);margin-top:10px">on ₹2,392 Cr revenue</div>
+</div>
+
+<!-- s11: follow -->
+<div class="scene" id="s11">
+  <img id="endLogo" src="../../logos/incbusiness-logo-white.png" style="width:900px">
+  <div id="follow">FOLLOW</div>
+</div>
+
+<div id="wipe"></div>
+<div id="sub"><div id="subtext"></div></div>
+<div id="source">Source: Honasa Consumer FY26 &amp; Q1 FY27 results</div>
+
+<script>
+// All timings in one place; they get re-synced to the real voice-over once it is generated.
+const T = {
+  s0: 0, s1: 1.6, s2: 3.8, s3: 5.8, how: 8.9, s4: 9.6, s5: 11.8, s6: 14.6, s7: 18.6, s8: 21.8,
+  s9: 26.8, s10: 31.2, s11: 34.0, end: 37.0,
+};
+const DUR = T.end;
+const clamp = (x) => Math.max(0, Math.min(1, x));
+const p = (t, a, d) => clamp((t - a) / d);
+const out3 = (x) => 1 - Math.pow(1 - x, 3);
+const back = (x) => { const c = 1.9; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const $ = (id) => document.getElementById(id);
+const inr = (n) => '₹' + Math.round(n).toLocaleString('en-IN') + ' Cr';
+
+const ORDER = ['s0', 's1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 's9', 's10', 's11'];
+const SCENES = ORDER.map((id, i) => [id, T[id], i + 1 < ORDER.length ? T[ORDER[i + 1]] : DUR]);
+const FX = { s0: 'zoom', s1: 'zoom', s2: 'whip', s3: 'roll', s4: 'zoom', s5: 'whip', s6: 'roll', s7: 'whip', s8: 'roll', s9: 'whip', s10: 'zoom', s11: 'zoom' };
+const WIPES = [T.s4, T.s10, T.s11];
+function fx(type, kin, kout) {
+  const i = 1 - out3(kin), o = kout * kout;
+  if (type === 'whip') return { t: `translateX(${i * 1100 - o * 1100}px)`, f: `blur(${(i + o) * 18}px)` };
+  if (type === 'roll') return { t: `perspective(1400px) rotateX(${i * -95 + o * 95}deg) translateY(${i * 120 - o * 120}px)`, f: 'none', origin: i > 0 ? 'center top' : 'center bottom' };
+  return { t: `scale(${1 + i * 0.6 - o * 0.4})`, f: `blur(${(i + o) * 14}px)` };
+}
+const SUBS = [
+  [T.s0, T.s1, 'Episode <b>2 of 100</b>!'],
+  [T.s1, T.s2, "Today's business model: <b>Mamaearth</b>!"],
+  [T.s2, T.s3, "Mamaearth doesn't make its <b>own products</b>."],
+  [T.s3, T.how, 'Yet its parent Honasa earned <b>₹2,392 Cr</b> in a year.'],
+  [T.how, T.s4, '<b>How?</b>'],
+  [T.s4, T.s5, 'Honasa runs <b>9 brands</b>.'],
+  [T.s5, T.s6, '<b>1. Mamaearth</b>: natural skin, hair and baby care.'],
+  [T.s6, T.s7, '<b>2. The Derma Co</b>: active-ingredient skincare, now a <b>₹1,000 Cr</b> brand!'],
+  [T.s7, T.s8, 'More skincare: <b>Aqualogica, Dr. Sheth\'s, Luminéve</b>.'],
+  [T.s8, T.s9, 'Hair: <b>BBlunt</b> · Makeup: <b>Staze</b> · Men: <b>Reginald Men</b> · Perfume: <b>FIKN</b>'],
+  [T.s9, T.s10, 'Partner factories make it. Honasa sells online and in <b>3 Lakh+ shops</b>.'],
+  [T.s10, T.s11, 'FY26 profit? <b>₹200 Cr</b>!'],
+  [T.s11, DUR, '<b>Follow</b> for more business stories!'],
+];
+
+const WORDS = SUBS.map(([, , html]) => {
+  const out = [];
+  html.split(/(<b>.*?<\/b>)/).forEach((part) => {
+    const k = part.startsWith('<b>');
+    part.replace(/<\/?b>/g, '').split(/\s+/).filter(Boolean).forEach((w) => {
+      if (/^[,.!?·]+$/.test(w) && out.length) out[out.length - 1].w += w; else out.push({ w, k });
+    });
+  });
+  return out;
+});
+
+function sceneAlpha(t, a, b) {
+  const fin = a === 0 ? 1 : p(t, a, 0.12), fout = b >= DUR ? 1 : 1 - p(t, b - 0.08, 0.08);
+  return Math.min(fin, fout);
+}
+const stagger = (els, start, step) => els.forEach((el, i) => {
+  const k = p(t0, start + i * step, 0.28);
+  el.style.opacity = Math.min(1, k * 3);
+  el.style.transform = `scale(${back(k)})`;
+});
+let t0 = 0;
+
+window.render = function (t) {
+  t0 = t;
+  $('b1').style.transform = `translate(${-200 + 160 * Math.sin(t * 0.6)}px, ${200 + 220 * Math.cos(t * 0.4)}px)`;
+  $('b2').style.transform = `translate(${560 + 140 * Math.cos(t * 0.5)}px, ${1100 + 200 * Math.sin(t * 0.45)}px)`;
+  $('grid').style.transform = `translateY(${-(t * 14) % 48}px)`;
+  $('progress').style.width = (t / DUR * 100) + '%';
+  $('badge').style.opacity = t < T.s1 ? 0 : p(t, T.s1, 0.2);
+  // rays turn slowly all through so the purple never looks flat, then get bright on the end card
+  $('rays').style.opacity = 0.4 + 0.6 * p(t, T.s11, 0.4);
+  $('rays').style.transform = `rotate(${t * 14}deg)`;
+
+  for (const [id, a, b] of SCENES) {
+    const el = $(id), al = sceneAlpha(t, a, b);
+    const kin = a === 0 ? 1 : p(t, a, 0.3), kout = b >= DUR ? 0 : p(t, b - 0.18, 0.18);
+    const f = fx(FX[id], kin, kout);
+    el.style.opacity = al;
+    el.style.display = al <= 0 ? 'none' : 'flex';
+    el.style.transform = f.t;
+    el.style.filter = f.f;
+    el.style.transformOrigin = f.origin || 'center center';
+  }
+
+  $('epnum').style.transform = `scale(${0.3 + 0.7 * back(p(t, 0, 0.35))})`;
+  $('s1logo').style.transform = `scale(${back(p(t, T.s1 + 0.9, 0.3))})`;
+
+  const st = p(t, T.s2 + 0.8, 0.22);
+  $('s2stamp').style.transform = `scale(${2.4 - 1.4 * out3(st)}) rotate(${-4 - 4 * out3(st)}deg)`;
+  $('s2stamp').style.opacity = st;
+
+  $('s3num').textContent = inr(2392 * out3(p(t, T.s3 + 0.5, 1.6)));
+  $('s3how').style.transform = `scale(${back(p(t, T.how, 0.3))})`;
+  $('s3how').style.opacity = p(t, T.how, 0.08);
+
+  $('s4h').style.transform = `scale(${back(p(t, T.s4 + 0.05, 0.3))})`;
+  stagger([...document.querySelectorAll('.logos9 .card')], T.s4 + 0.35, 0.12);
+
+  ['s5', 's6'].forEach((id) => {
+    const sc = $(id), a = T[id];
+    sc.querySelector('.num').style.transform = `scale(${back(p(t, a, 0.3))}) rotate(${(1 - out3(p(t, a, 0.4))) * -90}deg)`;
+    sc.querySelector('[data-pop]').style.transform = `scale(${back(p(t, a + 0.25, 0.3))})`;
+    stagger([...sc.querySelectorAll('.chip')], a + 1.0, 0.25);
+  });
+  $('s6pill').style.transform = `scale(${back(p(t, T.s6 + 2.2, 0.35))})`;
+
+  stagger([...document.querySelectorAll('#s7 .item')], T.s7 + 0.4, 0.7);
+  stagger([...document.querySelectorAll('#s8 .item')], T.s8 + 0.3, 1.0);
+  stagger([...document.querySelectorAll('#s9 .box, #s9 .arrow')], T.s9 + 0.2, 0.55);
+
+  $('s10num').textContent = inr(200 * out3(p(t, T.s10 + 0.6, 1.0)));
+
+  const w = WIPES.find((c) => t > c - 0.25 && t < c + 0.25);
+  $('wipe').style.left = w ? (-1400 + p(t, w - 0.25, 0.5) * 3000) + 'px' : '-1400px';
+
+  $('endLogo').style.transform = `scale(${back(p(t, T.s11 + 0.1, 0.45))})`;
+  $('follow').style.transform = `scale(${back(p(t, T.s11 + 0.45, 0.3)) * (1 + 0.05 * Math.sin(Math.max(0, t - T.s11 - 0.75) * 9))})`;
+
+  // subtitles: word by word highlight so the eye keeps moving
+  const si = SUBS.findIndex(([a, b]) => t >= a && t < b);
+  const sd = $('subtext');
+  sd.parentElement.style.opacity = si < 0 ? 0 : 1;
+  if (si < 0) { sd.innerHTML = ''; return; }
+  const [a, b] = SUBS[si], words = WORDS[si];
+  const total = words.reduce((n, x) => n + x.w.length + 2, 0);
+  const span = Math.max(0.3, b - a - 0.15);
+  let acc = 0, active = words.length - 1;
+  for (let i = 0; i < words.length; i++) {
+    acc += words[i].w.length + 2;
+    if (t < a + (acc / total) * span) { active = i; break; }
+  }
+  const pop = (i) => {
+    const ws = a + (words.slice(0, i).reduce((n, x) => n + x.w.length + 2, 0) / total) * span;
+    return 1 + 0.14 * (1 - out3(p(t, ws, 0.18)));
+  };
+  sd.innerHTML = words.map((x, i) => {
+    const cls = ['w', x.k ? 'k' : '', i === active ? 'on' : '', i > active ? 'next' : ''].join(' ');
+    const sc = i === active ? `transform:scale(${pop(i)}) translateY(${-6 * (1 - out3(p(t, a, 0.15)))}px)` : '';
+    return `<span class="${cls}" style="${sc}">${x.w}</span>`;
+  }).join(' ');
+  sd.style.transform = `scale(${0.92 + 0.08 * out3(p(t, a, 0.12))})`;
+};
+window.render(0);
+</script>
+</body></html>
