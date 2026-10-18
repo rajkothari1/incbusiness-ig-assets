@@ -6,7 +6,7 @@ const { chromium } = require(require.resolve('playwright', { paths: ['/opt/node2
 
 const DIR = __dirname;
 const FPS = 30;
-const DUR = 35.3;
+const DUR = 37.3;
 
 (async () => {
   const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
@@ -25,7 +25,7 @@ const DUR = 35.3;
   }
 
   const ff = spawn('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'image2pipe', '-framerate', String(FPS), '-i', '-',
-    '-i', path.join(DIR, 'vo_fast.wav'), '-c:v', 'libx264', '-preset', 'medium', '-crf', '18', '-pix_fmt', 'yuv420p',
+    '-i', path.join(DIR, 'mix.wav'), '-c:v', 'libx264', '-preset', 'medium', '-crf', '18', '-pix_fmt', 'yuv420p',
     '-c:a', 'aac', '-b:a', '192k', '-af', 'apad', '-t', String(DUR), '-movflags', '+faststart',
     path.join(DIR, 'ep01-naukri-reel.mp4')], { stdio: ['pipe', 'inherit', 'inherit'] });
 
