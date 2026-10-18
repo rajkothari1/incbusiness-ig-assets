@@ -155,7 +155,7 @@ module.exports = {
         <div class="pts">
           <div class="pt"><div class="k">a</div><div class="t"><b>Paid in advance.</b> <span>Recruiters buy subscriptions before they use them.</span></div></div>
           <div class="pt"><div class="k">b</div><div class="t"><b>Billed more than booked.</b> <span>₹3,178 Cr billed in FY26, ₹3,052 Cr booked as revenue.</span></div></div>
-          <div class="pt"><div class="k">c</div><div class="t"><b>Funds everything else.</b> <span>Naukri's cash pays for 99acres, Jeevansathi and Shiksha.</span></div></div>
+          <div class="pt"><div class="k">c</div><div class="t"><b>Most of the money.</b> <span>Recruitment is about 74% of Info Edge's revenue.</span></div></div>
         </div>`,
       source: 'FY26 standalone figures. Source: Info Edge Q4 FY26 earnings call',
     },

@@ -97,7 +97,7 @@ Apollo earns from **three revenue streams**:
 |---|---|
 | 2024 | Advent International invests **₹2,475 Cr for a 12.1% stake** in Apollo's pharmacy arm |
 | 2025 | Plan announced: pharmacy + Apollo 24/7 to be demerged into **Apollo Healthtech Ltd** |
-| 2025 | **Keimed**, India's largest pharma wholesaler, to merge into the same company |
+| 2025 | **Keimed**, a medicine wholesaler, to merge into the same company |
 | 2025 | Competition Commission of India (CCI) approves the restructuring |
 | Target | ~₹25,000 Cr revenue at listing; listing by **Q4 FY27** |
 
