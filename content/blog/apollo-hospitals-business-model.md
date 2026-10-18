@@ -110,27 +110,23 @@ Apollo earns from **three revenue streams**:
 
 ## 7. Apollo Hospitals Product and Marketing Strategy
 
-Here is what Apollo is doing now (2026).
+What Apollo is doing now.
 
-### a) "Always Open, Always Here" (August 2026)
-- Apollo hospitals now offer doctor visits, tests, health checks and planned procedures **on Sundays too**, not just emergencies.
-- The message: you don't have to take a weekday off work to see a doctor.
+### a) Latest Launches and Campaigns
 
-### b) ProHealth With Anirudh Ravichander (May 2026)
-- ProHealth is Apollo's AI powered health check that predicts health risks early.
-- Music composer Anirudh Ravichander is its new face, to reach young working professionals.
-- The campaign runs on TV, print, digital, FM radio, social media and outdoor ads.
+| When | Launch | What it means for patients |
+|---|---|---|
+| Aug 2026 | **"Always Open, Always Here"** | Doctor visits, tests, health checks and planned procedures on **Sundays too** |
+| May 2026 | **ProHealth with Anirudh Ravichander** | AI powered health check that predicts risks early; campaign on TV, print, digital, FM radio, social media and outdoor, aimed at young professionals |
+| 2026 | **Health of the Nation report** | Flags rising obesity, high blood pressure and early diabetes in young professionals, which supports the ProHealth push |
 
-### c) AI With Microsoft
-- Apollo is building AI copilots with Microsoft for doctors, patients, nurses and hospital operations.
-- In 2026 it opened a 400 bed hospital in Hyderabad's Financial District, built with an AI layer for clinical support.
+### b) Latest Technology and Products
 
-### d) Apollo 24/7 Keeps Patients Connected
-- ProHealth is linked to the Apollo 24/7 app for reminders and progress tracking.
-- The app handled **₹2,037 crore** of transactions in FY26, up 24%.
-
-### e) Health of the Nation Report
-- Apollo's yearly report on India's health. The 2026 edition flags rising obesity, high blood pressure and early diabetes in young professionals, which supports the ProHealth push.
+| Product | Latest |
+|---|---|
+| **AI with Microsoft** | AI copilots for doctors, patients, nurses and hospital operations |
+| **New AI hospital** | 400 bed hospital in Hyderabad's Financial District (2026), built with an AI layer for clinical support |
+| **Apollo 24/7 app** | ₹2,037 Cr of transactions in FY26, up 24%; linked to ProHealth for reminders and tracking |
 
 ## 8. Apollo Hospitals Competitors
 
@@ -210,7 +206,7 @@ Hospital chains like Max Healthcare, Fortis, Narayana Health, Medanta, Manipal a
           "name": "Apollo Hospitals Enterprise Ltd"
         }
       ],
-      "wordCount": 1154,
+      "wordCount": 1092,
       "inLanguage": "en-IN"
     },
     {
@@ -359,5 +355,5 @@ Open Graph Description: Hospitals bring in half the money, pharmacies most of th
 Alt Text (hero image): Apollo Hospitals business model overview
 Author: Author Name
 Published Date: 2026-10-17
-Word Count: 1154
+Word Count: 1092
 ```

@@ -95,23 +95,24 @@ Vedant Fashions earns from **selling its clothes through four channels**:
 
 ## 6. Manyavar Product and Marketing Strategy
 
-Here is what Manyavar is doing now (2025 and 2026).
+What Manyavar is doing now.
 
-### a) Rashmika and Vijay: "Made For Each Other" (March 2026)
-- Mohey signed newly married actors Rashmika Mandanna and Vijay Deverakonda for a wedding themed musical film.
-- The agency behind it says the campaign crossed **300 million views in 72 hours**. It was made and released in under three days, then moved to cinema, print and outdoor ads.
+### a) Latest Marketing
 
-### b) The Manyavar Shaadi Show (Late 2025)
-- A 6 episode YouTube series hosted by Karan Johar about wedding planning, fashion and real stories.
-- It turns Manyavar into wedding content people watch, not just an ad they skip.
+| When | Campaign | Highlights |
+|---|---|---|
+| Mar 2026 | **"Made For Each Other"** for Mohey, with newly married actors Rashmika Mandanna and Vijay Deverakonda | 300 million+ views in 72 hours (agency claim); made in under 3 days, then moved to cinema, print and outdoor ads |
+| Late 2025 | **The Manyavar Shaadi Show** | 6 episode YouTube series hosted by Karan Johar on wedding planning, fashion and real stories |
+| Diwali 2025 | **Diwas festive push** | Influencer posts and a Blinkit Diwali campaign |
 
-### c) New Brands for New Occasions
-- **Diwas:** a festive wear brand for men at value to mid premium prices, sold in multi brand shops and online, with influencer and Blinkit Diwali campaigns.
-- **Twamev:** bigger premium stores, like a 9,000 sq. ft. flagship store in Mumbai (late 2025).
-- **Mebaz:** moving from only wedding wear to clothes for every celebration.
+### b) Latest Products and Stores
 
-### d) No Discounts, Same Price Everywhere
-- Manyavar still runs **no end of season sales**, and prices are the same online and in stores across India.
+| Brand | Latest move |
+|---|---|
+| **Diwas** | Festive wear for men at value to mid premium prices, sold in multi brand shops and online |
+| **Twamev** | Bigger premium stores, like a 9,000 sq. ft. flagship store in Mumbai (late 2025) |
+| **Mebaz** | Moving from only wedding wear to clothes for every celebration |
+| **Manyavar** | Still **no end of season sales**, and the same price online and in stores |
 
 ## 7. Manyavar Competitors
 
@@ -195,7 +196,7 @@ Branded ethnic wear labels like Tasva and FabIndia, and the large unorganised ma
           "name": "Manyavar"
         }
       ],
-      "wordCount": 1004,
+      "wordCount": 958,
       "inLanguage": "en-IN"
     },
     {
@@ -344,5 +345,5 @@ Open Graph Description: Franchise stores, no discounts and a 26% profit margin. 
 Alt Text (hero image): Manyavar business model overview
 Author: Author Name
 Published Date: 2026-10-17
-Word Count: 1004
+Word Count: 958
 ```

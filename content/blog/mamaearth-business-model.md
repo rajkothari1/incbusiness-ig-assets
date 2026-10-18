@@ -93,27 +93,31 @@ c) **The answer: Mamaearth.** In 2016, they launched Mamaearth with 6 toxin free
 
 ## 6. Mamaearth Product and Marketing Strategy
 
-Here is what Mamaearth and its parent Honasa are doing now (2025 and 2026).
+What Mamaearth and its parent Honasa are doing now.
 
-### a) A Celebrity Face for Each Range
-- **Sreeleela for hair care (February 2026):** the actor became the face of Mamaearth's hair care range, starting with a campaign for its Rosemary hair fall shampoo.
-- **Made for social media:** the film, set at a cricket match "Kiss Cam" moment with actor Shantanu Maheshwari, runs on digital and social platforms.
+### a) Latest Marketing
 
-### b) New Brands Beyond Mamaearth
-- **Luminéve:** a new premium night time skincare brand, built by Honasa and sold only on Nykaa.
-- **Reginald Men:** a men's grooming brand Honasa bought in December 2025.
-- **FANG:** a minority stake in an oral care startup, Honasa's first step into premium oral beauty.
+| When | Move | What it does |
+|---|---|---|
+| Feb 2026 | **Sreeleela** becomes the face of Mamaearth hair care | Launches the Rosemary hair fall shampoo with a fun "Kiss Cam" film for digital and social media |
+| Jan to Mar 2026 | **33% of revenue** spent on advertising | Keeps the brand in front of buyers every day |
+| 2025 | **Plant Goodness on Zepto** | One tree planted for every Mamaearth product ordered on Zepto |
 
-### c) Quick Commerce and Small Packs
-- Apps like Blinkit, Zepto and Instamart help Honasa sell smaller, cheaper packs that people try on impulse.
-- Mamaearth plants a tree for every Mamaearth product ordered on Zepto, under its Plant Goodness campaign.
+### b) Latest Products and Brands
 
-### d) A Bigger Push Into Shops
-- Mamaearth products now reach about **3 lakh retail outlets** (June 2026).
-- In April to June 2026, sales in local shops and supermarkets grew more than 40%.
+| When | Brand | What it is |
+|---|---|---|
+| 2025 | **Luminéve** | New premium night time skincare brand, built by Honasa, sold only on Nykaa |
+| Dec 2025 | **Reginald Men** | Men's grooming brand bought by Honasa |
+| 2025 | **FANG** | Minority stake in an oral care startup, Honasa's first step into premium oral beauty |
 
-### e) Heavy, Steady Ad Spending
-- About **33% of revenue** went to advertising in January to March 2026.
+### c) Where It Sells Now
+
+| Channel | Latest |
+|---|---|
+| **Quick commerce** | Smaller, cheaper packs on Blinkit, Zepto and Instamart for impulse buys |
+| **Shops** | About **3 lakh retail outlets** (June 2026); shop sales grew 40%+ in April to June 2026 |
+| **Online** | Own website and app, Amazon, Flipkart, Nykaa |
 
 ## 7. Mamaearth Competitors
 
@@ -197,7 +201,7 @@ D2C beauty brands like WOW Skin Science, Plum, mCaffeine and The Moms Co, and la
           "name": "Mamaearth"
         }
       ],
-      "wordCount": 996,
+      "wordCount": 953,
       "inLanguage": "en-IN"
     },
     {
@@ -346,5 +350,5 @@ Open Graph Description: ₹2,392 Cr revenue, 6 brands, 3 lakh+ shops and 33% of 
 Alt Text (hero image): Unbranded baby lotion bottle, folded baby blanket, knitted cap and wooden rattle on a white bed in soft morning light
 Author: Author Name
 Published Date: 2026-10-17
-Word Count: 996
+Word Count: 953
 ```

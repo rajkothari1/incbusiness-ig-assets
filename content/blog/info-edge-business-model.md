@@ -91,31 +91,42 @@ Here's how Naukri makes money, and the rest of Info Edge too. Info Edge earns fr
 
 ## 6. Info Edge Product and Marketing Strategy
 
-Here is what Naukri and Info Edge are doing now (2025 and 2026).
+What Naukri and Info Edge are doing now.
 
-### a) AI-Rex: AI Agents for Recruiters (July 2026)
-- A set of AI agents that refine the job brief, find candidates, reach out to them and screen them.
-- Live with **4,000+ companies and recruitment firms**. Talent Pulse, a tool to compare salaries and plan hiring, has 600+ paying customers.
+### a) Latest Products: Betting on AI
 
-### b) AI for Job Seekers
-- **Neo**, an AI agent that finds jobs for you, plus an AI resume maker and AI mock interviews.
-- Info Edge spent about ₹70 crore on AI in FY26 and plans about ₹150 crore in FY27.
+| When | Product | What it does | Traction |
+|---|---|---|---|
+| Jul 2026 | **AI-Rex** | AI agents that write the job brief, find candidates, contact them and screen them | Live with 4,000+ companies |
+| 2026 | **Talent Pulse** | Helps companies compare salaries and plan hiring | 600+ paying customers |
+| FY26 | **Neo** | AI agent that finds jobs for job seekers | New |
+| 2026 | **AI resume maker and AI mock interviews** | Help job seekers apply and prepare | New |
+| FY26 to FY27 | **AI spending** | ₹70 Cr in FY26, about ₹150 Cr planned in FY27 | |
 
-### c) A Product for Every Type of Hiring
-- **Premium:** Naukri Top Tier for senior, high salary roles.
-- **Mid level:** Naukri's core platform with AI-Rex.
-- **Lower salary jobs:** JobHai, a free jobs app with paid extras.
-- **Naukri 360:** paid help for job seekers. Online sales went from 27% to 53% of this business in 15 months.
+### b) A Product for Every Type of Hiring
 
-### d) Growing the Other Platforms
-- **99acres:** short property videos (99Shorts) in NCR, plus more resale and rental listings.
-- **Jeevansathi:** AI based matching. It is close to breaking even.
-- **Shiksha:** AI search is cutting its traffic, so it is moving to student counselling and AI voice calls.
+| Segment | Product | Who it serves |
+|---|---|---|
+| Premium | **Naukri Top Tier** | Senior, high salary roles |
+| Mid level | **Naukri + AI-Rex** | Most white collar hiring |
+| Lower salary | **JobHai** | Free jobs app with paid extras |
+| Job seekers | **Naukri 360** | Paid resume and profile help; online sales went from 27% to 53% in 15 months |
 
-### e) Marketing: Talking to Gen Z
-- **IPL 2025 campaign:** "All's fair when you love your career", short films by Lowe Lintas that back young people who switch jobs to grow. The tagline: "Naukri, for the ambitious."
-- **Naukri JobSpeak:** a monthly hiring report that the media quotes, which keeps Naukri in the news for free.
-- **Spending less:** Naukri's marketing spend fell 13% in Q4 FY26 while the business kept growing.
+### c) Growing the Other Platforms
+
+| Platform | Latest move |
+|---|---|
+| **99acres** | Short property videos (99Shorts) in NCR, plus more resale and rental listings |
+| **Jeevansathi** | AI based matching; close to breaking even |
+| **Shiksha** | AI search is cutting its traffic, so it is moving to student counselling and AI voice calls |
+
+### d) Latest Marketing
+
+| When | Move | What it does |
+|---|---|---|
+| IPL 2025 | **"All's fair when you love your career"** by Lowe Lintas | Short films backing Gen Z who switch jobs to grow. Tagline: "Naukri, for the ambitious" |
+| Every month, 2026 | **Naukri JobSpeak** hiring report | Media quote it often, so Naukri stays in the news for free |
+| Q4 FY26 | **Marketing spend down 13%** | The business kept growing while spending less on ads |
 
 ## 7. Info Edge Competitors
 
@@ -200,7 +211,7 @@ LinkedIn, Indeed and foundit in jobs; MagicBricks, Housing.com and NoBroker in p
           "name": "Naukri.com"
         }
       ],
-      "wordCount": 1069,
+      "wordCount": 1053,
       "inLanguage": "en-IN"
     },
     {
@@ -349,5 +360,5 @@ Open Graph Description: Free for job seekers, paid by recruiters. Here's how Inf
 Alt Text (hero image): Info Edge business model overview
 Author: Author Name
 Published Date: 2026-10-17
-Word Count: 1069
+Word Count: 1053
 ```
