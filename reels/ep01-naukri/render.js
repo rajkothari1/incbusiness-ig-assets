@@ -8,6 +8,9 @@ const DIR = __dirname;
 const FPS = 30;
 const DUR = 37.9;
 
+// waits until every <img> (e.g. the swapped mascot frame) has finished loading
+const imagesReady = () => Promise.all([...document.images].map((i) => i.complete ? 0 : new Promise((r) => { i.onload = i.onerror = r; })));
+
 (async () => {
   const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
   const page = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
@@ -18,6 +21,7 @@ const DUR = 37.9;
   if (previewArg > -1) {
     for (const t of process.argv[previewArg + 1].split(',').map(Number)) {
       await page.evaluate((x) => window.render(x), t);
+      await page.evaluate(imagesReady);
       await page.screenshot({ path: path.join(DIR, `preview-${t}.png`) });
     }
     await browser.close();
@@ -32,6 +36,7 @@ const DUR = 37.9;
   const frames = Math.round(DUR * FPS);
   for (let i = 0; i < frames; i++) {
     await page.evaluate((x) => window.render(x), i / FPS);
+    await page.evaluate(imagesReady);
     const buf = await page.screenshot({ type: 'jpeg', quality: 95 });
     if (!ff.stdin.write(buf)) await new Promise((r) => ff.stdin.once('drain', r));
   }
