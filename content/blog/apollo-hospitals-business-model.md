@@ -44,27 +44,22 @@ c) **The answer: Apollo.** In 1983, Dr. Reddy opened the first Apollo hospital i
 ### a) Hospitals as the Anchor
 - **What:** 70+ large hospitals with 10,000+ beds that treat serious and complex illnesses.
 - **How it works:** Patients pay for surgeries, treatments, ICU and room stays, consultations and tests. Most of the hospital bill is paid through insurance or by patients directly.
-- **Why it matters:** Hospitals bring in about half of Apollo's revenue and are its most profitable business. They also build the trust in the Apollo name that every other business relies on.
+- **Key fact:** Hospitals brought in ₹12,555 crore in FY26, about 50% of Apollo's revenue.
 
 ### b) Pharmacy Network
 - **What:** 7,289 Apollo Pharmacy stores (March 2026).
 - **How it works:** The Apollo Pharmacy business model is simple: stores near hospitals and homes sell medicines and health products every day.
-- **Why it matters:** Hospital visits are occasional, but medicine purchases repeat every month. This gives Apollo steady sales in large numbers.
+- **Key fact:** Pharmacy and Apollo 24/7 together brought in ₹10,808 crore in FY26, about 43% of revenue.
 
 ### c) Apollo 24/7 (Digital Health)
 - **What:** Apollo's app for online doctor consultations, medicine delivery and lab tests.
 - **How it works:** Patients can book a doctor, order medicines and schedule tests from home. The app handled ₹2,037 crore of transactions in FY26, up 24%.
-- **Why it matters:** It keeps patients inside the Apollo network even when they are not near a hospital or store.
+- **Key fact:** ProHealth health checks are linked to the app for reminders and progress tracking.
 
 ### d) Apollo Health & Lifestyle (AHLL)
 - **What:** Smaller health centres outside big hospitals: Apollo Clinics, Apollo Diagnostics, Apollo Cradle (maternity), Apollo Spectra (surgery centres), Apollo Fertility, Apollo Sugar (diabetes) and Apollo Dialysis.
-- **How it works:** These centres handle everyday and specialised care that doesn't need a full hospital.
-- **Why it matters:** They reach more neighbourhoods at a lower cost than building new hospitals.
-
-### e) One Patient, for Life
-- **What:** All four businesses are linked under one brand.
-- **How it works:** A patient can have surgery at an Apollo hospital, buy medicines after surgery at Apollo Pharmacy, consult a doctor on Apollo 24/7 and get yearly health checks at an Apollo clinic.
-- **Why it matters:** Apollo earns from the same patient many times, not just once.
+- **How it works:** Each format focuses on one need, like maternity, surgery, fertility, diabetes or dialysis.
+- **Key fact:** Clinics and diagnostics brought in ₹1,865 crore in FY26.
 
 ## 5. How Apollo Hospitals Makes Money
 
@@ -106,7 +101,7 @@ Apollo earns from **three revenue streams**:
 | 2025 | Competition Commission of India (CCI) approves the restructuring |
 | Target | ~₹25,000 Cr revenue at listing; listing by **Q4 FY27** |
 
-**Why it matters:** Apollo Hospitals becomes a pure hospital company. Medicines and digital health get their own listed company, which can raise its own money. Apollo Hospitals keeps a minority stake.
+**After the split:** Apollo Hospitals will focus on hospitals, and the pharmacy and digital business will be a separate listed company. Apollo Hospitals keeps a minority stake.
 
 ## 7. Apollo Hospitals Product and Marketing Strategy
 
@@ -118,7 +113,7 @@ What Apollo is doing now.
 |---|---|---|
 | Aug 2026 | **"Always Open, Always Here"** | Doctor visits, tests, health checks and planned procedures on **Sundays too** |
 | May 2026 | **ProHealth with Anirudh Ravichander** | AI powered health check that predicts risks early; campaign on TV, print, digital, FM radio, social media and outdoor, aimed at young professionals |
-| 2026 | **Health of the Nation report** | Flags rising obesity, high blood pressure and early diabetes in young professionals, which supports the ProHealth push |
+| 2026 | **Health of the Nation report** | Flags rising obesity, high blood pressure and early diabetes in young professionals; Apollo uses these findings in its ProHealth campaign |
 
 ### b) Latest Technology and Products
 
@@ -137,7 +132,7 @@ What Apollo is doing now.
 
 ## 9. Conclusion
 
-Apollo's playbook: **win patients' trust with big hospitals, then serve the same patients for life through pharmacies, an app and health checks.** The next chapter is two focused companies, one for hospitals and one for medicines and digital health. That split is what makes this Apollo Hospitals case study worth watching.
+Apollo earns from three places: **hospitals (about 50% of revenue), pharmacy and Apollo 24/7 (about 43%) and clinics and diagnostics (about 7%).** Its pharmacy and digital business is being split into a separate company, Apollo Healthtech, with listing targeted by Q4 FY27. This Apollo Hospitals case study uses FY26 figures from the company's results.
 
 ## 10. Frequently Asked Questions
 
@@ -206,7 +201,7 @@ Hospital chains like Max Healthcare, Fortis, Narayana Health, Medanta, Manipal a
           "name": "Apollo Hospitals Enterprise Ltd"
         }
       ],
-      "wordCount": 1092,
+      "wordCount": 998,
       "inLanguage": "en-IN"
     },
     {
@@ -355,5 +350,5 @@ Open Graph Description: Hospitals bring in half the money, pharmacies most of th
 Alt Text (hero image): Apollo Hospitals business model overview
 Author: Author Name
 Published Date: 2026-10-17
-Word Count: 1092
+Word Count: 998
 ```

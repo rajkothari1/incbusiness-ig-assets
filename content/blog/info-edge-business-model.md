@@ -50,22 +50,22 @@ d) **The same idea, new markets.** Info Edge later did the same for property (99
 ### a) Online Classifieds Where Businesses Pay
 - **What:** Info Edge runs marketplaces that connect two sides: recruiters and job seekers, sellers and buyers, colleges and students.
 - **How it works:** Most users browse for free. The side with money pays: recruiters pay to post jobs and search resumes, brokers and builders pay to list property, colleges pay to reach students.
-- **Why it matters:** Once a platform has the most users, it attracts the most paying customers, and that keeps users coming back.
+- **Key fact:** Naukri has about 115 million resumes, and access to this database is what recruiters pay for.
 
 ### b) Naukri: The Cash Machine
 - **What:** Naukri is Info Edge's job platform, with about 115 million resumes and ~21,000 new resumes added every day (Q4 FY26).
 - **How it works:** Companies buy subscriptions for job postings and resume database access. Job seekers can also pay for services like resume writing and profile boosts.
-- **Why it matters:** Recruitment brings in ~74% of Info Edge's revenue at a 57% operating margin. This cash funds every other Info Edge business.
+- **Key fact:** Recruitment brings in about 74% of Info Edge's revenue at a 57% operating margin.
 
 ### c) Customers Pay Upfront
 - **What:** Info Edge collects money before it delivers the full service.
 - **How it works:** Recruiters and advertisers pay for subscriptions in advance. In FY26, Info Edge billed ₹3,178 crore but booked ₹3,052 crore as revenue; the rest is booked as the service is delivered.
-- **Why it matters:** The business generates more cash than profit, which is why it has ₹4,963 crore in the bank.
+- **Key fact:** In FY26, Info Edge made ₹1,469 crore of cash from operations (before tax). It had ₹4,963 crore of cash in March 2026.
 
 ### d) AI Built Into the Products
 - **What:** Info Edge is adding AI across its platforms, like AI-Rex, an AI assistant for recruiters on Naukri.
 - **How it works:** AI helps match candidates to jobs, automate recruiter work and improve recommendations.
-- **Why it matters:** Management sees AI as strengthening its platforms, not replacing them, because it owns the data and the user base.
+- **Key fact:** Info Edge spent about ₹70 crore on AI in FY26 and plans about ₹150 crore in FY27. It says it does not see AI as a threat to its platforms.
 
 ## 5. How Info Edge Makes Money
 
@@ -125,8 +125,8 @@ What Naukri and Info Edge are doing now.
 | When | Move | What it does |
 |---|---|---|
 | IPL 2025 | **"All's fair when you love your career"** by Lowe Lintas | Short films backing Gen Z who switch jobs to grow. Tagline: "Naukri, for the ambitious" |
-| Every month, 2026 | **Naukri JobSpeak** hiring report | Media quote it often, so Naukri stays in the news for free |
-| Q4 FY26 | **Marketing spend down 13%** | The business kept growing while spending less on ads |
+| Every month, 2026 | **Naukri JobSpeak** hiring report | A monthly report on white collar hiring trends in India, published by Naukri |
+| Q4 FY26 | **Marketing spend down 13%** | Recruitment revenue still grew 14% in the same quarter |
 
 ## 7. Info Edge Competitors
 
@@ -138,7 +138,7 @@ What Naukri and Info Edge are doing now.
 
 ## 8. Conclusion
 
-Info Edge's playbook: **build the leading online classified, keep it free for users, and let businesses pay for access.** Naukri pays the bills, while 99acres, Jeevansathi and Shiksha use the same model in new markets. AI is now its main tool to grow each platform.
+Info Edge runs four online classifieds where users browse for free and businesses pay. **Naukri brings in about 74% of revenue at a 57% operating margin**, while 99acres, Jeevansathi and Shiksha are much smaller. Its newest focus is AI, with about ₹150 crore of AI spending planned for FY27.
 
 ## 9. Frequently Asked Questions
 
@@ -211,7 +211,7 @@ LinkedIn, Indeed and foundit in jobs; MagicBricks, Housing.com and NoBroker in p
           "name": "Naukri.com"
         }
       ],
-      "wordCount": 1053,
+      "wordCount": 1060,
       "inLanguage": "en-IN"
     },
     {
@@ -360,5 +360,5 @@ Open Graph Description: Free for job seekers, paid by recruiters. Here's how Inf
 Alt Text (hero image): Info Edge business model overview
 Author: Author Name
 Published Date: 2026-10-17
-Word Count: 1053
+Word Count: 1060
 ```

@@ -47,22 +47,21 @@ c) **The answer: Manyavar.** Ravi Modi grew up working in his father's small clo
 ### a) Stores Run by Franchise Partners
 - **What:** Most of Manyavar's Exclusive Brand Outlets (EBOs) are owned and run by franchise partners, not by Vedant. The network has 669 stores across India and 5 other countries.
 - **How it works:** The franchise partner owns and runs the store. Vedant provides the brand, the clothes, the designs and the store experience.
-- **Why it matters:** Vedant can open stores in hundreds of cities without paying for each one itself. The company calls this a model that needs little money and brings in cash quickly.
+- **Key fact:** The company says this model needs little of its own money and turns profit into cash quickly. Its stores are in about 250 cities and towns.
 
 ### b) Vedant Controls Design and Supply Chain
 - **What:** Vedant keeps the most important work within the company: designing the clothes and deciding which store gets what stock.
 - **How it works:** It runs a "52 week" design model, so new collections arrive all year. Data and AI help forecast demand, and an automated system refills stores down to pin code level. Vedant can see what sells in every store.
-- **Why it matters:** The right outfits reach the right city at the right time, so very little stock is left unsold.
+- **Key fact:** The company reports low levels of old and unsold stock.
 
 ### c) No Discounts, One Price
 - **What:** Manyavar has no end of season sales, and prices are the same online and offline across India.
-- **How it works:** Because stock is managed tightly, stores don't need sales to clear old pieces.
-- **Why it matters:** Customers don't wait for a sale, and the brand keeps its premium image. This helps Vedant keep a gross margin of about 66%.
+- **Key fact:** Gross margin was about 66% in FY26.
 
 ### d) A Brand for Every Member and Every Budget
 - **What:** Five brands cover men, women and kids, from value to premium prices.
 - **How it works:** A family shopping for a wedding can buy everything in one place. Twamev offers a premium upgrade to existing Manyavar customers.
-- **Why it matters:** Each wedding becomes a bigger bill, and Vedant earns from the whole family, not just the groom.
+- **Key fact:** Twamev is priced above Manyavar and offered to existing Manyavar customers.
 
 | Brand | Since | For | Price range |
 |---|---|---|---|
@@ -123,7 +122,7 @@ What Manyavar is doing now.
 
 ## 8. Conclusion
 
-Manyavar's playbook: **own the brand and the supply chain, let franchise partners own the stores, and never discount.** That gives it the best margins in its industry. Its challenge is growth: sales depend on the wedding calendar, and revenue has barely moved since FY23.
+Manyavar's playbook: **own the brand and the supply chain, let franchise partners own the stores, and offer no discounts on Manyavar.** It earned a 26% profit margin in FY26. Its challenge is growth: sales depend on the wedding calendar, and revenue grew only about 6% from FY23 to FY26.
 
 ## 9. Frequently Asked Questions
 
@@ -196,7 +195,7 @@ Branded ethnic wear labels like Tasva and FabIndia, and the large unorganised ma
           "name": "Manyavar"
         }
       ],
-      "wordCount": 958,
+      "wordCount": 909,
       "inLanguage": "en-IN"
     },
     {
@@ -345,5 +344,5 @@ Open Graph Description: Franchise stores, no discounts and a 26% profit margin. 
 Alt Text (hero image): Manyavar business model overview
 Author: Author Name
 Published Date: 2026-10-17
-Word Count: 958
+Word Count: 909
 ```
