@@ -10,6 +10,9 @@
   #b1 { width:700px; height:700px; background:#6b5fd0; }
   #b2 { width:600px; height:600px; background:#F9CB42; opacity:.12; }
   #grid { position:absolute; inset:-60px; opacity:.13; background-image:radial-gradient(#fff 1.3px,transparent 1.8px); background-size:48px 48px; }
+  #rays { position:absolute; left:-760px; top:-630px; width:2600px; height:2600px; opacity:0; border-radius:50%;
+    background:repeating-conic-gradient(from 0deg, rgba(207,201,242,.22) 0deg 6deg, transparent 6deg 18deg);
+    -webkit-mask-image:radial-gradient(circle, transparent 0, #000 260px, #000 70%, transparent 100%); }
   #progress { position:absolute; top:0; left:0; height:10px; background:var(--amber); }
   #badge { position:absolute; top:230px; left:0; right:0; display:flex; justify-content:center; z-index:10; }
   #badge div { border:3px solid var(--amber); color:var(--amber); background:rgba(28,27,58,.85); border-radius:999px;
@@ -57,6 +60,7 @@
 </style></head>
 <body>
 <div id="b1" class="blob"></div><div id="b2" class="blob"></div><div id="grid"></div>
+<div id="rays"></div>
 <div id="progress"></div>
 <div id="badge"><div>EPISODE 01/100</div></div>
 
@@ -289,6 +293,10 @@ window.render = function (t) {
   // amber swipe on big cuts
   const w = WIPES.find((c) => t > c - 0.25 && t < c + 0.25);
   $('wipe').style.left = w ? (-1400 + p(t, w - 0.25, 0.5) * 3000) + 'px' : '-1400px';
+
+  // s10: rotating sunburst behind the end card
+  $('rays').style.opacity = p(t, 32.78, 0.4);
+  $('rays').style.transform = `rotate(${t * 14}deg)`;
 
   // s10: spinning ring that keeps going till the end
   $('ringText').style.transform = `rotate(${(t - 32.78) * 60}deg)`;
