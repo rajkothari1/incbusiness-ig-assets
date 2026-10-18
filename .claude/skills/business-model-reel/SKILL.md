@@ -5,6 +5,8 @@ description: Make one episode of the incbusiness "India's Top 100 Business Model
 
 # Business model reel (incbusiness, 100-episode series)
 
+Company list and episode status: `content/100-companies.md` (update it after every episode).
+
 Reference episodes, copy the closest one as the starting point:
 - `reels/ep01-naukri/`: Info Edge. Business-wise revenue split (each business gets ₹ and %).
 - `reels/ep02-mamaearth/`: Honasa. House of brands, founders' photos, marketing section, own colour theme. **Newest template, start from this.**
