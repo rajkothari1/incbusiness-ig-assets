@@ -114,9 +114,9 @@
   <div class="money">₹2,256 Cr <span class="amber">· 74%</span></div>
   <div class="bar"><i data-w="74"></i></div>
   <div class="rows">
-    <div class="row" data-at="13.48"><span class="coin">₹</span><span><b>Companies</b> pay to post jobs</span></div>
-    <div class="row" data-at="14.75"><span class="coin">₹</span><span><b>Companies</b> pay for resume search</span></div>
-    <div class="row" data-at="16.39"><span class="coin">₹</span><span><b>Job seekers</b> pay for profile boost</span></div>
+    <div class="row" data-at="13.42"><span class="coin">₹</span><span><b>Companies</b> pay to post jobs</span></div>
+    <div class="row" data-at="14.69"><span class="coin">₹</span><span><b>Companies</b> pay for resume search</span></div>
+    <div class="row" data-at="16.44"><span class="coin">₹</span><span><b>Job seekers</b> pay for profile boost</span></div>
   </div>
 </div>
 <div class="scene biz" id="s6">
@@ -125,7 +125,7 @@
   <div class="money">₹488 Cr <span class="amber">· 16%</span></div>
   <div class="bar"><i data-w="16"></i></div>
   <div class="rows">
-    <div class="row" data-at="19.99"><span class="coin">₹</span><span><b>Builders, brokers &amp; owners</b> pay to list property</span></div>
+    <div class="row" data-at="20.16"><span class="coin">₹</span><span><b>Builders, brokers &amp; owners</b> pay to list property</span></div>
   </div>
 </div>
 <div class="scene biz" id="s7">
@@ -134,7 +134,7 @@
   <div class="money">₹170 Cr <span class="amber">· 6%</span></div>
   <div class="bar"><i data-w="6"></i></div>
   <div class="rows">
-    <div class="row" data-at="24.73"><span class="coin">₹</span><span><b>Colleges</b> pay to reach students</span></div>
+    <div class="row" data-at="25.12"><span class="coin">₹</span><span><b>Colleges</b> pay to reach students</span></div>
   </div>
 </div>
 <div class="scene biz" id="s8">
@@ -143,7 +143,7 @@
   <div class="money">₹138 Cr <span class="amber">· 5%</span></div>
   <div class="bar"><i data-w="5"></i></div>
   <div class="rows">
-    <div class="row" data-at="28.39"><span class="coin">₹</span><span><b>Members</b> pay to find a partner</span></div>
+    <div class="row" data-at="28.98"><span class="coin">₹</span><span><b>Members</b> pay to find a partner</span></div>
   </div>
 </div>
 
@@ -182,7 +182,7 @@
 <div id="source">Source: Info Edge FY26 results (standalone)</div>
 
 <script>
-const DUR = 37.3;
+const DUR = 37.9;
 const clamp = (x) => Math.max(0, Math.min(1, x));
 const p = (t, a, d) => clamp((t - a) / d);
 const out3 = (x) => 1 - Math.pow(1 - x, 3);
@@ -192,14 +192,14 @@ const inr = (n) => '₹' + Math.round(n).toLocaleString('en-IN') + ' Cr';
 
 // scene windows on the voice-over timeline (seconds)
 const SCENES = [
-  ['s0', 0, 1.5], ['s1', 1.5, 3.62], ['s2', 3.62, 5.38], ['s3', 5.38, 9.6], ['s4', 9.6, 12.4],
-  ['s5', 12.4, 18.3], ['s6', 18.3, 23.64], ['s7', 23.64, 27.05], ['s8', 27.05, 30.56],
-  ['s9', 30.56, 32.78], ['s10', 32.78, DUR],
+  ['s0', 0, 1.57], ['s1', 1.57, 3.52], ['s2', 3.52, 5.18], ['s3', 5.18, 9.4], ['s4', 9.4, 12.24],
+  ['s5', 12.24, 18.35], ['s6', 18.35, 23.92], ['s7', 23.92, 27.48], ['s8', 27.48, 31.17],
+  ['s9', 31.17, 33.36], ['s10', 33.36, DUR],
 ];
 // how each scene enters / leaves
 const FX = { s0: 'zoom', s1: 'zoom', s2: 'whip', s3: 'roll', s4: 'zoom', s5: 'whip', s6: 'roll', s7: 'whip', s8: 'roll', s9: 'zoom', s10: 'zoom' };
 // amber swipe across the screen on these cuts
-const WIPES = [9.6, 30.56, 32.78];
+const WIPES = [9.4, 31.17, 33.36];
 function fx(type, kin, kout) {
   const i = 1 - out3(kin), o = kout * kout;
   if (type === 'whip') return { t: `translateX(${i * 1100 - o * 1100}px)`, f: `blur(${(i + o) * 18}px)` };
@@ -207,23 +207,23 @@ function fx(type, kin, kout) {
   return { t: `scale(${1 + i * 0.6 - o * 0.4})`, f: `blur(${(i + o) * 14}px)` };
 }
 const SUBS = [
-  [0, 1.5, 'Episode <b>1 of 100</b>!'],
-  [1.5, 3.62, "Today's business model: <b>Naukri</b>!"],
-  [3.62, 5.38, 'Job search on Naukri is <b>free</b>.'],
-  [5.38, 8.95, 'Yet Naukri earns <b>₹2,256 Cr</b> a year.'],
-  [8.95, 9.6, '<b>How?</b>'],
-  [9.6, 12.4, "Naukri's parent, Info Edge, runs <b>4 businesses</b>."],
-  [12.4, 13.4, '<b>1. Naukri</b>'],
-  [13.4, 16.3, 'Companies pay for <b>job posts</b> and <b>resume search</b>,'],
-  [16.3, 18.3, 'and job seekers pay for <b>profile boosts</b>.'],
-  [18.3, 19.95, '<b>2. 99acres</b>'],
-  [19.95, 23.64, 'Builders, brokers and owners pay to <b>list properties</b>.'],
-  [23.64, 24.7, '<b>3. Shiksha</b>'],
-  [24.7, 27.05, 'Colleges pay to <b>reach students</b>.'],
-  [27.05, 28.35, '<b>4. Jeevansathi</b>'],
-  [28.35, 30.56, 'People pay for <b>memberships</b> to find a partner.'],
-  [30.56, 32.78, 'Total? <b>₹3,052 Cr</b>!'],
-  [32.78, DUR, 'Follow for <b>Episode 2</b>!'],
+  [0, 1.57, 'Episode <b>1 of 100</b>!'],
+  [1.57, 3.52, "Today's business model: <b>Naukri</b>!"],
+  [3.52, 5.18, 'Job search on Naukri is <b>free</b>.'],
+  [5.18, 8.85, 'Yet Naukri earns <b>₹2,256 Cr</b> a year.'],
+  [8.85, 9.4, '<b>How?</b>'],
+  [9.4, 12.24, "Naukri's parent, Info Edge, runs <b>4 businesses</b>."],
+  [12.24, 13.35, '<b>1. Naukri</b>'],
+  [13.35, 16.36, 'Companies pay for <b>job posts</b> and <b>resume search</b>,'],
+  [16.36, 18.35, 'and job seekers pay for <b>profile boosts</b>.'],
+  [18.35, 20.1, '<b>2. 99acres</b>'],
+  [20.1, 23.92, 'Builders, brokers and owners pay to <b>list properties</b>.'],
+  [23.92, 25.05, '<b>3. Shiksha</b>'],
+  [25.05, 27.48, 'Colleges pay to <b>reach students</b>.'],
+  [27.48, 28.9, '<b>4. Jeevansathi</b>'],
+  [28.9, 31.17, 'People pay for <b>memberships</b> to find a partner.'],
+  [31.17, 33.36, 'Total? <b>₹3,052 Cr</b>!'],
+  [33.36, DUR, 'Follow for <b>Episode 2</b>!'],
 ];
 
 // split each subtitle into words, remembering which ones were bold (key words)
@@ -249,7 +249,7 @@ window.render = function (t) {
   $('b2').style.transform = `translate(${560 + 140 * Math.cos(t * 0.5)}px, ${1100 + 200 * Math.sin(t * 0.45)}px)`;
   $('grid').style.transform = `translateY(${-(t * 14) % 48}px)`;
   $('progress').style.width = (t / DUR * 100) + '%';
-  $('badge').style.opacity = t < 1.5 ? 0 : p(t, 1.5, 0.2);
+  $('badge').style.opacity = t < 1.57 ? 0 : p(t, 1.57, 0.2);
 
   for (const [id, a, b] of SCENES) {
     const el = $(id), s = sceneAlpha(t, a, b);
@@ -267,28 +267,28 @@ window.render = function (t) {
   $('epnum').style.transform = `scale(${0.3 + 0.7 * e0})`;
 
   // s1: logo pop when "Naukri" is said
-  $('s1logo').style.transform = `scale(${back(p(t, 2.85, 0.3))})`;
+  $('s1logo').style.transform = `scale(${back(p(t, 2.9, 0.3))})`;
 
   // s2: stamp
-  const st = p(t, 4.55, 0.22);
+  const st = p(t, 4.45, 0.22);
   $('s2stamp').style.transform = `scale(${2.4 - 1.4 * out3(st)}) rotate(${-8 * out3(st)}deg)`;
   $('s2stamp').style.opacity = st;
 
   // s3: counter, then HOW?
-  $('s3num').textContent = inr(2256 * out3(p(t, 5.9, 1.6)));
-  $('s3how').style.transform = `scale(${back(p(t, 9.0, 0.3))})`;
-  $('s3how').style.opacity = p(t, 9.0, 0.08);
+  $('s3num').textContent = inr(2256 * out3(p(t, 5.7, 1.6)));
+  $('s3how').style.transform = `scale(${back(p(t, 8.85, 0.3))})`;
+  $('s3how').style.opacity = p(t, 8.85, 0.08);
 
   // s4: tiles snap in one by one
   document.querySelectorAll('#s4 .tile').forEach((el, i) => {
-    const k = back(p(t, 10.9 + i * 0.16, 0.3));
+    const k = back(p(t, 10.7 + i * 0.16, 0.3));
     el.style.transform = `scale(${k})`;
-    el.style.opacity = p(t, 10.9 + i * 0.16, 0.1);
+    el.style.opacity = p(t, 10.7 + i * 0.16, 0.1);
   });
-  $('s4ie').style.transform = `scale(${back(p(t, 9.65, 0.3))})`;
+  $('s4ie').style.transform = `scale(${back(p(t, 9.45, 0.3))})`;
 
   // business scenes: number pop, bar fill, rows slide
-  [['s5', 12.4], ['s6', 18.3], ['s7', 23.64], ['s8', 27.05]].forEach(([id, a]) => {
+  [['s5', 12.24], ['s6', 18.35], ['s7', 23.92], ['s8', 27.48]].forEach(([id, a]) => {
     const sc = $(id);
     sc.querySelector('.num').style.transform = `scale(${back(p(t, a, 0.3))}) rotate(${(1 - out3(p(t, a, 0.4))) * -90}deg)`;
     sc.querySelector('.logo').style.transform = `scale(${back(p(t, a + 0.25, 0.3))})`;
@@ -302,8 +302,8 @@ window.render = function (t) {
   });
 
   // s9: total counter and stacked bar
-  $('s9num').textContent = inr(3052 * out3(p(t, 31.2, 1.0)));
-  const fill = out3(p(t, 31.2, 1.1));
+  $('s9num').textContent = inr(3052 * out3(p(t, 31.8, 1.0)));
+  const fill = out3(p(t, 31.8, 1.1));
   document.querySelectorAll('#stack i').forEach((el) => { el.style.width = (el.dataset.w * fill) + '%'; });
 
   // amber swipe on big cuts
@@ -311,16 +311,16 @@ window.render = function (t) {
   $('wipe').style.left = w ? (-1400 + p(t, w - 0.25, 0.5) * 3000) + 'px' : '-1400px';
 
   // s10: rotating sunburst behind the end card
-  $('rays').style.opacity = p(t, 32.78, 0.4);
+  $('rays').style.opacity = p(t, 33.36, 0.4);
   $('rays').style.transform = `rotate(${t * 14}deg)`;
 
   // s10: spinning ring that keeps going till the end
-  $('ringText').style.transform = `rotate(${(t - 32.78) * 60}deg)`;
-  $('ringDash').style.transform = `rotate(${-(t - 32.78) * 40}deg)`;
-  $('ring').style.transform = `scale(${back(p(t, 32.85, 0.45))})`;
+  $('ringText').style.transform = `rotate(${(t - 33.36) * 60}deg)`;
+  $('ringDash').style.transform = `rotate(${-(t - 33.36) * 40}deg)`;
+  $('ring').style.transform = `scale(${back(p(t, 33.43, 0.45))})`;
 
   // s10: follow pulse
-  $('follow').style.transform = `scale(${back(p(t, 33.2, 0.3)) * (1 + 0.05 * Math.sin(Math.max(0, t - 33.5) * 9))})`;
+  $('follow').style.transform = `scale(${back(p(t, 33.8, 0.3)) * (1 + 0.05 * Math.sin(Math.max(0, t - 34.1) * 9))})`;
 
   // subtitles
   // subtitles: word by word highlight so the eye keeps moving
