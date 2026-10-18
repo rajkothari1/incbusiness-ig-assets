@@ -29,43 +29,31 @@ This Info Edge case study covers the Naukri business model, Info Edge revenue by
 
 ## 2. The Problem Info Edge Solved
 
-a) **Jobs were hidden in newspapers.** In the 1990s, people in India found jobs through newspaper ads and had to check many papers.
-
-b) **Companies struggled to find people.** Recruiters had no easy way to reach good candidates.
-
-c) **The answer: Naukri.com.** In 1996, Sanjeev Bikhchandani saw a stall marked "WWW" at an IT fair and decided to put jobs online. Naukri.com launched in 1997.
-
-d) **The same idea, new markets.** Info Edge later did the same for property (99acres), marriage (Jeevansathi) and colleges (Shiksha).
+| | Problem / answer | What happened |
+|---|---|---|
+| a) | **Jobs were hidden in newspapers** | In the 1990s, people in India found jobs through newspaper ads and had to check many papers |
+| b) | **Companies struggled to find people** | Recruiters had no easy way to reach good candidates |
+| c) | **The answer: Naukri.com** | In 1996, Sanjeev Bikhchandani saw a stall marked "WWW" at an IT fair and decided to put jobs online. Naukri.com launched in 1997 |
+| d) | **Same idea, new markets** | Info Edge later did the same for property (99acres), marriage (Jeevansathi) and colleges (Shiksha) |
 
 ## 3. Info Edge Target Audience
 
-- **Companies and recruiters** who pay to post jobs and search resumes
-- **Job seekers**, who use Naukri for free; some pay for resume help and visibility
-- **Builders, brokers and property owners** who pay to list on 99acres
-- **Families and individuals** looking for a life partner on Jeevansathi
-- **Colleges and universities** that pay Shiksha to reach students
+| Who | Platform | Do they pay? |
+|---|---|---|
+| **Companies and recruiters** | Naukri | Yes: to post jobs and search resumes |
+| **Job seekers** | Naukri, JobHai | Free to use; some pay for resume help and profile boosts |
+| **Builders, brokers and property owners** | 99acres | Yes: to list and advertise properties |
+| **People looking for a life partner** | Jeevansathi | Yes: for paid memberships |
+| **Colleges and universities** | Shiksha | Yes: to reach students |
 
 ## 4. Core Pillars of the Info Edge Business Model
 
-### a) Online Classifieds Where Businesses Pay
-- **What:** Info Edge runs marketplaces that connect two sides: recruiters and job seekers, sellers and buyers, colleges and students.
-- **How it works:** Most users browse for free. The side with money pays: recruiters pay to post jobs and search resumes, brokers and builders pay to list property, colleges pay to reach students.
-- **Key fact:** Naukri has about 115 million resumes, and access to this database is what recruiters pay for.
-
-### b) Naukri: The Cash Machine
-- **What:** Naukri is Info Edge's job platform, with about 115 million resumes and ~21,000 new resumes added every day (Q4 FY26).
-- **How it works:** Companies buy subscriptions for job postings and resume database access. Job seekers can also pay for services like resume writing and profile boosts.
-- **Key fact:** Recruitment brings in about 74% of Info Edge's revenue at a 57% operating margin.
-
-### c) Customers Pay Upfront
-- **What:** Info Edge collects money before it delivers the full service.
-- **How it works:** Recruiters and advertisers pay for subscriptions in advance. In FY26, Info Edge billed ₹3,178 crore but booked ₹3,052 crore as revenue; the rest is booked as the service is delivered.
-- **Key fact:** In FY26, Info Edge made ₹1,469 crore of cash from operations (before tax). It had ₹4,963 crore of cash in March 2026.
-
-### d) AI Built Into the Products
-- **What:** Info Edge is adding AI across its platforms, like AI-Rex, an AI assistant for recruiters on Naukri.
-- **How it works:** AI helps match candidates to jobs, automate recruiter work and improve recommendations.
-- **Key fact:** Info Edge spent about ₹70 crore on AI in FY26 and plans about ₹150 crore in FY27. It says it does not see AI as a threat to its platforms.
+| Pillar | What it is | How it works | Key fact |
+|---|---|---|---|
+| **a) Free for users, businesses pay** | Online classifieds that connect two sides: recruiters and job seekers, sellers and buyers, colleges and students | Users browse for free. Recruiters, brokers, builders and colleges pay to reach them | Naukri has about **115 million resumes**; access to this database is what recruiters pay for |
+| **b) Naukri is the main business** | India's job platform run by Info Edge | Companies buy subscriptions for job posts and resume access; job seekers can pay for extra help | Recruitment is about **74% of revenue** at a **57% operating margin** |
+| **c) Customers pay upfront** | Recruiters and advertisers pay for subscriptions in advance | Billings run ahead of revenue: ₹3,178 Cr billed vs ₹3,052 Cr revenue in FY26 | ₹1,469 Cr cash from operations in FY26; **₹4,963 Cr cash** in March 2026 |
+| **d) AI in every product** | AI tools like AI-Rex for recruiters and Neo for job seekers | AI matches candidates to jobs and automates recruiter work | About ₹70 Cr spent on AI in FY26; about **₹150 Cr planned in FY27** |
 
 ## 5. How Info Edge Makes Money
 
@@ -211,7 +199,7 @@ LinkedIn, Indeed and foundit in jobs; MagicBricks, Housing.com and NoBroker in p
           "name": "Naukri.com"
         }
       ],
-      "wordCount": 1060,
+      "wordCount": 944,
       "inLanguage": "en-IN"
     },
     {
@@ -360,5 +348,5 @@ Open Graph Description: Free for job seekers, paid by recruiters. Here's how Inf
 Alt Text (hero image): Info Edge business model overview
 Author: Author Name
 Published Date: 2026-10-17
-Word Count: 1060
+Word Count: 944
 ```
