@@ -46,10 +46,12 @@
   #stack i { display:flex; align-items:center; justify-content:center; height:100%; font-style:normal; font-weight:900; font-size:34px; color:var(--dark); width:0; overflow:hidden; white-space:nowrap; }
   .legend { display:flex; gap:26px; margin-top:24px; font-size:30px; font-weight:700; color:var(--lav); flex-wrap:wrap; justify-content:center; }
   .legend span::before { content:''; display:inline-block; width:22px; height:22px; border-radius:6px; margin-right:10px; vertical-align:-3px; background:var(--c); }
-  #ring { position:relative; width:600px; height:600px; }
-  #ring svg { position:absolute; inset:0; }
-  #ringCore { position:absolute; left:120px; top:120px; width:360px; height:360px; border-radius:50%; display:flex; align-items:center; justify-content:center;
-    background:#1f1d55; box-shadow:0 0 80px rgba(249,203,66,.35); overflow:hidden; border:6px solid #F9CB42; }
+  #ring { position:relative; width:520px; height:520px; }
+  #ring svg { position:absolute; inset:0; width:100%; height:100%; }
+  #ringCore { position:absolute; left:20%; top:20%; width:60%; height:60%; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    background:#1f1d55; box-shadow:0 0 80px rgba(249,203,66,.35); overflow:hidden; }
+  #mascot { position:absolute; z-index:15; border-radius:50%; overflow:hidden; border:6px solid #F9CB42; background:#1f1d55;
+    box-shadow:0 10px 40px rgba(0,0,0,.45), 0 0 40px rgba(249,203,66,.3); }
   #robot { width:100%; height:100%; object-fit:cover; transform:scale(1.4) translateY(4%); }
   #wipe { position:absolute; top:-200px; bottom:-200px; width:900px; background:linear-gradient(90deg,transparent,#F9CB42 18%,#F9CB42 82%,transparent);
     transform:skewX(-14deg); z-index:20; left:-1400px; }
@@ -61,7 +63,7 @@
   #sub .w.k { color:var(--amber); }
   #sub .w.on { background:var(--amber); color:var(--dark); }
   #sub .w.next { opacity:.55; }
-  #source { position:absolute; top:1470px; left:0; right:0; text-align:center; font-size:26px; color:rgba(255,255,255,.6); font-weight:600; z-index:10; }
+  #source { position:absolute; top:1480px; left:70px; right:330px; text-align:left; font-size:26px; color:rgba(255,255,255,.6); font-weight:600; z-index:10; }
 </style></head>
 <body>
 <div id="b1" class="blob"></div><div id="b2" class="blob"></div><div id="grid"></div>
@@ -172,14 +174,15 @@
       <text font-size="40" font-weight="900" letter-spacing="7" fill="#F9CB42"><textPath href="#circ" textLength="1540">FOLLOW FOR EPISODE 2 ✦ INCBUSINESS ✦ </textPath></text>
     </svg>
     <svg id="ringDash" viewBox="0 0 600 600" width="600" height="600"><circle cx="300" cy="300" r="196" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="5" stroke-dasharray="4 22" stroke-linecap="round"/></svg>
-    <div id="ringCore"><img id="robot" src="../mascot/frames/f001.jpg"></div>
+    <div id="ringCore"></div>
   </div>
-  <img src="../../logos/incbusiness-logo-white.png" style="width:360px;margin-top:6px">
-  <div class="big" style="font-size:72px;margin-top:22px">Episode <span class="amber">2</span> coming soon</div>
+  <img id="endLogo" src="../../logos/incbusiness-logo-white.png" style="width:760px;margin-top:10px">
+  <div class="big" style="font-size:66px;margin-top:18px">Episode <span class="amber">2</span> coming soon</div>
   <div id="follow">FOLLOW</div>
 </div>
 
 <div id="wipe"></div>
+<div id="mascot"><img id="robot" src="../mascot/frames/f001.jpg"></div>
 <div id="sub"><div id="subtext"></div></div>
 <div id="source">Source: Info Edge FY26 results (standalone)</div>
 
@@ -322,9 +325,25 @@ window.render = function (t) {
   $('ringDash').style.transform = `rotate(${-(t - 33.36) * 40}deg)`;
   $('ring').style.transform = `scale(${back(p(t, 33.43, 0.45))})`;
 
-  // s10: mascot loop (frames extracted from the Kling clip)
-  const rf = Math.floor(Math.max(0, t - 33.36) * 30) % ROBOT_FRAMES + 1;
+  // mascot: waves in the bottom right corner all through, then flies into the end-card ring
+  const fi = Math.floor(t * 30) % (2 * ROBOT_FRAMES - 2);
+  const rf = fi < ROBOT_FRAMES ? fi + 1 : 2 * ROBOT_FRAMES - 1 - fi;  // ping-pong so the loop never jumps
   $('robot').src = `../mascot/frames/f${String(rf).padStart(3, '0')}.jpg`;
+  const corner = { x: 862, y: 1575, d: 210 };
+  let target = corner;
+  if (t >= 33.36) {
+    const r = $('ringCore').getBoundingClientRect();
+    target = { x: r.left + r.width / 2, y: r.top + r.height / 2, d: r.width };
+  }
+  const fly = out3(p(t, 33.36, 0.6));
+  const cx = corner.x + (target.x - corner.x) * fly, cy = corner.y + (target.y - corner.y) * fly;
+  const d = corner.d + (target.d - corner.d) * fly;
+  const bob = (1 - fly) * 8 * Math.sin(t * 3.2);
+  const m = $('mascot');
+  m.style.width = m.style.height = d + 'px';
+  m.style.left = (cx - d / 2) + 'px';
+  m.style.top = (cy - d / 2 + bob) + 'px';
+  m.style.transform = `scale(${back(p(t, 0.15, 0.45))})`;
 
   // s10: follow pulse
   $('follow').style.transform = `scale(${back(p(t, 33.8, 0.3)) * (1 + 0.05 * Math.sin(Math.max(0, t - 34.1) * 9))})`;
