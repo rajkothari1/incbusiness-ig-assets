@@ -67,10 +67,9 @@ while t < DUR:
 
 # volume curve: low bed, rising build, full at the drop
 time = np.arange(n) / SR
-gain = np.full(n, 0.45)
-build = (time >= BUILD) & (time < DROP)
-gain[build] = 0.45 + 0.4 * ((time[build] - BUILD) / (DROP - BUILD)) ** 2
-gain[time >= DROP] = 1.0
+# one smooth ramp from the build start to a little after the drop, no sudden jumps
+ramp = np.clip((time - BUILD) / (DROP + 1.0 - BUILD), 0, 1)
+gain = 0.45 + 0.55 * (3 * ramp ** 2 - 2 * ramp ** 3)
 gain *= np.minimum(1, (DUR - time) / 0.6)  # fade at the very end
 mix *= gain
 mix /= np.max(np.abs(mix)) + 1e-9

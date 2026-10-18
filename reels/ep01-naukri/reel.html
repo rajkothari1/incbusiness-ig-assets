@@ -56,6 +56,10 @@
   #sub { position:absolute; left:70px; right:70px; top:1300px; display:flex; justify-content:center; z-index:10; }
   #sub div { background:rgba(0,0,0,.72); border-radius:22px; padding:20px 34px; font-size:46px; font-weight:800; line-height:1.2; text-align:center; max-width:940px; }
   #sub b { color:var(--amber); }
+  #sub .w { display:inline-block; padding:2px 6px; margin:0 -2px; border-radius:12px; transition:none; }
+  #sub .w.k { color:var(--amber); }
+  #sub .w.on { background:var(--amber); color:var(--dark); }
+  #sub .w.next { opacity:.55; }
   #source { position:absolute; top:1470px; left:0; right:0; text-align:center; font-size:26px; color:rgba(255,255,255,.6); font-weight:600; z-index:10; }
 </style></head>
 <body>
@@ -222,6 +226,18 @@ const SUBS = [
   [32.78, DUR, 'Follow for <b>Episode 2</b>!'],
 ];
 
+// split each subtitle into words, remembering which ones were bold (key words)
+const WORDS = SUBS.map(([, , html]) => {
+  const out = [];
+  html.split(/(<b>.*?<\/b>)/).forEach((part) => {
+    const k = part.startsWith('<b>');
+    part.replace(/<\/?b>/g, '').split(/\s+/).filter(Boolean).forEach((w) => {
+      if (/^[,.!?]+$/.test(w) && out.length) out[out.length - 1].w += w; else out.push({ w, k });
+    });
+  });
+  return out;
+});
+
 function sceneAlpha(t, a, b) {
   const fin = a === 0 ? 1 : p(t, a, 0.12), fout = b >= DUR ? 1 : 1 - p(t, b - 0.08, 0.08);
   return { a: Math.min(fin, fout), k: out3(p(t, a, 0.3)) };
@@ -307,11 +323,29 @@ window.render = function (t) {
   $('follow').style.transform = `scale(${back(p(t, 33.2, 0.3)) * (1 + 0.05 * Math.sin(Math.max(0, t - 33.5) * 9))})`;
 
   // subtitles
-  const sub = SUBS.find(([a, b]) => t >= a && t < b);
+  // subtitles: word by word highlight so the eye keeps moving
+  const si = SUBS.findIndex(([a, b]) => t >= a && t < b);
   const sd = $('subtext');
-  sd.innerHTML = sub ? sub[2] : '';
-  sd.parentElement.style.opacity = sub ? 1 : 0;
-  sd.style.transform = sub ? `scale(${0.92 + 0.08 * out3(p(t, sub[0], 0.12))})` : '';
+  sd.parentElement.style.opacity = si < 0 ? 0 : 1;
+  if (si < 0) { sd.innerHTML = ''; return; }
+  const [a, b] = SUBS[si], words = WORDS[si];
+  const total = words.reduce((n, w) => n + w.w.length + 2, 0);
+  const span = Math.max(0.3, b - a - 0.15);
+  let acc = 0, active = words.length - 1;
+  for (let i = 0; i < words.length; i++) {
+    acc += words[i].w.length + 2;
+    if (t < a + (acc / total) * span) { active = i; break; }
+  }
+  const pop = (i) => {
+    const ws = a + (words.slice(0, i).reduce((n, w) => n + w.w.length + 2, 0) / total) * span;
+    return 1 + 0.14 * (1 - out3(p(t, ws, 0.18)));
+  };
+  sd.innerHTML = words.map((w, i) => {
+    const cls = ['w', w.k ? 'k' : '', i === active ? 'on' : '', i > active ? 'next' : ''].join(' ');
+    const sc = i === active ? `transform:scale(${pop(i)}) translateY(${-6 * (1 - out3(p(t, a, 0.15)))}px)` : '';
+    return `<span class="${cls}" style="${sc}">${w.w}</span>`;
+  }).join(' ');
+  sd.style.transform = `scale(${0.92 + 0.08 * out3(p(t, a, 0.12))})`;
 };
 window.render(0);
 </script>
