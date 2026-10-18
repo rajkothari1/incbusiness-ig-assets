@@ -74,8 +74,14 @@
 <!-- s1: today's model -->
 <div class="scene" id="s1">
   <div class="big" style="font-size:84px">Today's<br>business model</div>
-  <div class="card" id="s1logo" style="width:820px;height:280px;margin-top:60px"><img src="../../logos/infoedge-logo.png" style="max-width:600px;max-height:150px"></div>
-  <div style="font-size:44px;font-weight:700;color:var(--lav);margin-top:30px">the company behind Naukri</div>
+  <div class="card" id="s1logo" style="width:760px;height:190px;margin-top:40px"><img src="../../logos/infoedge-logo.png" style="max-width:520px;max-height:120px"></div>
+  <div style="font-size:42px;font-weight:700;color:var(--lav);margin-top:22px">the company behind Naukri</div>
+  <div id="s1founder" style="display:flex;align-items:center;gap:30px;margin-top:40px">
+    <div style="width:260px;height:260px;border-radius:50%;overflow:hidden;border:7px solid var(--amber);box-shadow:0 14px 40px rgba(0,0,0,.45);flex:none">
+      <img src="founder.jpg" style="width:100%;height:100%;object-fit:cover;object-position:35% 22%;transform:scale(1.35);transform-origin:35% 25%"></div>
+    <div style="text-align:left"><div style="font-size:30px;font-weight:800;letter-spacing:3px;color:var(--amber)">FOUNDER</div>
+      <div style="font-size:50px;font-weight:900;line-height:1.05">Sanjeev<br>Bikhchandani</div></div>
+  </div>
 </div>
 
 <!-- s2: free -->
@@ -257,6 +263,11 @@ window.render = function (t) {
 
   // s1: logo pop when "Naukri" is said
   $('s1logo').style.transform = `scale(${back(p(t, 2.85, 0.3))})`;
+
+  // s1: founder card slides in
+  const fk = p(t, 3.2, 0.35);
+  $('s1founder').style.opacity = fk;
+  $('s1founder').style.transform = `translateY(${(1 - out3(fk)) * 80}px)`;
 
   // s2: stamp
   const st = p(t, 5.6, 0.22);
