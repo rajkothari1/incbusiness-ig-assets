@@ -200,13 +200,11 @@
 <script>
 // All timings in one place; they get re-synced to the real voice-over once it is generated.
 const T = {
-  s0: 0, s1: 1.76, s2: 4.24, s3: 6.52, how: 10.85, s4: 11.5, s5: 13.28, s6: 16.99, s7: 22.91, s8: 27.54,
-  s9: 35.07, m1: 40.95, m2: 44.9, s10: 49.5, s11: 52.98, end: 58.2,
+  s0: 0, s1: 1.68, s2: 4.06, s3: 6.3, how: 10.37, s4: 10.99, s5: 13.7, s6: 17.42, s7: 22.93, s8: 27.49, s9: 34.72, m1: 40.24, m2: 44.04, s10: 48.31, s11: 51.75, end: 56.9,
 };
 // moments inside scenes, taken from where each phrase starts in the voice-over
 const K = {
-  s5chips: 14.76, s6pill: 20.35, s7: [24.15, 24.97, 26.44], s8: [27.54, 29.04, 30.48, 32.09],
-  s9: [35.07, 35.8, 37.37, 38.0, 38.44], m1chips: 41.8, m2ad: 46.0, s10num: 50.94,
+  s5chips: 15.17, s6pill: 20.62, s7: [24.95, 25.75, 26.55], s8: [27.49, 28.89, 30.21, 31.85], s9: [34.72, 35.26, 36.84, 37.38, 38.63], m1chips: 41.13, m2ad: 44.93, s10num: 49.87,
 };
 const DUR = T.end;
 const clamp = (x) => Math.max(0, Math.min(1, x));
@@ -237,7 +235,7 @@ const SUBS = [
   [T.s4, T.s5, 'Honasa runs <b>9 brands</b>.'],
   [T.s5, T.s6, '<b>1. Mamaearth</b>: natural skin, hair and baby care.'],
   [T.s6, T.s7, '<b>2. The Derma Co</b>: active-ingredient skincare, now a <b>₹1,000 Cr</b> brand!'],
-  [T.s7, T.s8, 'More skincare: <b>Aqualogica, Dr. Sheth\'s, Luminéve</b>.'],
+  [T.s7, T.s8, 'Three more skincare brands: <b>Aqualogica, Dr. Sheth\'s, Luminéve</b>.'],
   [T.s8, T.s9, 'Hair: <b>BBlunt</b> · Makeup: <b>Staze</b> · Men: <b>Reginald Men</b> · Perfume: <b>FIKN</b>'],
   [T.s9, T.m1, 'Partner factories make it. Honasa sells online and in <b>3 Lakh+ shops</b>.'],
   [T.m1, T.m2, 'Marketing? Mamaearth grew with <b>mom bloggers</b> and <b>influencers</b>.'],

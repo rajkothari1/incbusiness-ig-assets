@@ -6,7 +6,7 @@ const { chromium } = require(require.resolve('playwright', { paths: ['/opt/node2
 
 const DIR = __dirname;
 const FPS = 30;
-const DUR = 58.2;
+const DUR = 56.9;
 
 // waits until every <img> (e.g. the swapped mascot frame) has finished loading
 const imagesReady = () => Promise.all([...document.images].map((i) => i.complete ? 0 : new Promise((r) => { i.onload = i.onerror = r; })));
