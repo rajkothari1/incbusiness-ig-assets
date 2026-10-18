@@ -200,8 +200,13 @@
 <script>
 // All timings in one place; they get re-synced to the real voice-over once it is generated.
 const T = {
-  s0: 0, s1: 1.6, s2: 3.8, s3: 5.8, how: 8.9, s4: 9.6, s5: 11.8, s6: 14.6, s7: 18.6, s8: 21.6,
-  s9: 26.0, m1: 29.6, m2: 32.2, s10: 35.2, s11: 37.4, end: 40.0,
+  s0: 0, s1: 1.33, s2: 3.03, s3: 4.7, how: 8.24, s4: 8.7, s5: 10.03, s6: 12.88, s7: 17.43, s8: 20.88,
+  s9: 26.75, m1: 31.37, m2: 34.41, s10: 38.07, s11: 40.85, end: 43.4,
+};
+// moments inside scenes, taken from where each phrase starts in the voice-over
+const K = {
+  s5chips: 10.98, s6pill: 15.33, s7: [18.3, 18.83, 19.75], s8: [20.88, 22.04, 23.07, 25.6],
+  s9: [26.75, 27.4, 28.53, 29.2, 29.8], m1chips: 32.06, m2ad: 35.2, s10num: 39.36,
 };
 const DUR = T.end;
 const clamp = (x) => Math.max(0, Math.min(1, x));
@@ -257,7 +262,7 @@ function sceneAlpha(t, a, b) {
   return Math.min(fin, fout);
 }
 const stagger = (els, start, step) => els.forEach((el, i) => {
-  const k = p(t0, start + i * step, 0.28);
+  const k = p(t0, Array.isArray(start) ? start[Math.min(i, start.length - 1)] : start + i * step, 0.28);
   el.style.opacity = Math.min(1, k * 3);
   el.style.transform = `scale(${back(k)})`;
 });
@@ -303,13 +308,13 @@ window.render = function (t) {
     const sc = $(id), a = T[id];
     sc.querySelector('.num').style.transform = `scale(${back(p(t, a, 0.3))}) rotate(${(1 - out3(p(t, a, 0.4))) * -90}deg)`;
     sc.querySelector('[data-pop]').style.transform = `scale(${back(p(t, a + 0.25, 0.3))})`;
-    stagger([...sc.querySelectorAll('.chip')], a + 1.0, 0.25);
+    stagger([...sc.querySelectorAll('.chip')], id === 's5' ? K.s5chips : a + 1.0, 0.25);
   });
-  $('s6pill').style.transform = `scale(${back(p(t, T.s6 + 2.2, 0.35))})`;
+  $('s6pill').style.transform = `scale(${back(p(t, K.s6pill, 0.35))})`;
 
-  stagger([...document.querySelectorAll('#s7 .item')], T.s7 + 0.4, 0.7);
-  stagger([...document.querySelectorAll('#s8 .item')], T.s8 + 0.3, 1.0);
-  stagger([...document.querySelectorAll('#s9 .box, #s9 .arrow')], T.s9 + 0.2, 0.55);
+  stagger([...document.querySelectorAll('#s7 .item')], K.s7);
+  stagger([...document.querySelectorAll('#s8 .item')], K.s8);
+  stagger([...document.querySelectorAll('#s9 .box, #s9 .arrow')], K.s9);
 
   BGS.forEach(([id, a, b]) => {
     $(id).style.opacity = Math.min(p(t, a, 0.3), 1 - p(t, b - 0.15, 0.15));
@@ -319,13 +324,13 @@ window.render = function (t) {
   $('s1names').style.opacity = p(t, T.s1 + 1.3, 0.2);
   $('s5photo').style.transform = `scale(${back(p(t, T.s5 + 0.5, 0.4))})`;
   $('m1photo').style.transform = `scale(${back(p(t, T.m1 + 0.1, 0.4))})`;
-  stagger([...document.querySelectorAll('#m1 .chip')], T.m1 + 0.9, 0.5);
+  stagger([...document.querySelectorAll('#m1 .chip')], K.m1chips, 0.6);
   $('m2q').style.opacity = p(t, T.m2 + 0.3, 0.2);
-  const ad = p(t, T.m2 + 1.0, 0.3);
+  const ad = p(t, K.m2ad, 0.3);
   $('m2ad').style.opacity = ad;
   $('m2ad').style.transform = `translateY(${(1 - out3(ad)) * 40}px)`;
 
-  $('s10num').textContent = inr(200 * out3(p(t, T.s10 + 0.6, 1.0))) + (p(t, T.s10 + 0.6, 1.0) >= 1 ? '+' : '');
+  $('s10num').textContent = inr(200 * out3(p(t, K.s10num, 1.0))) + (p(t, K.s10num, 1.0) >= 1 ? '+' : '');
 
   const w = WIPES.find((c) => t > c - 0.25 && t < c + 0.25);
   $('wipe').style.left = w ? (-1400 + p(t, w - 0.25, 0.5) * 3000) + 'px' : '-1400px';
