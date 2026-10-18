@@ -29,98 +29,95 @@ This Info Edge case study covers the Naukri business model, Info Edge revenue by
 
 ## 2. The Problem Info Edge Solved
 
-| | Problem / answer | What happened |
+| | Problem | Answer |
 |---|---|---|
-| a) | **Jobs were hidden in newspapers** | In the 1990s, people in India found jobs through newspaper ads and had to check many papers |
-| b) | **Companies struggled to find people** | Recruiters had no easy way to reach good candidates |
-| c) | **The answer: Naukri.com** | In 1996, Sanjeev Bikhchandani saw a stall marked "WWW" at an IT fair and decided to put jobs online. Naukri.com launched in 1997 |
-| d) | **Same idea, new markets** | Info Edge later did the same for property (99acres), marriage (Jeevansathi) and colleges (Shiksha) |
+| a) | Jobs were only in newspapers | Put jobs online |
+| b) | Companies couldn't find people | One searchable resume database |
+| c) | 1996: Sanjeev saw a "WWW" stall at an IT fair | Naukri.com launched in 1997 |
+| d) | Same problem in property, marriage, colleges | 99acres, Jeevansathi, Shiksha |
 
 ## 3. Info Edge Target Audience
 
-| Who | Platform | Do they pay? |
+| Who | Platform | Pays? |
 |---|---|---|
-| **Companies and recruiters** | Naukri | Yes: to post jobs and search resumes |
-| **Job seekers** | Naukri, JobHai | Free to use; some pay for resume help and profile boosts |
-| **Builders, brokers and property owners** | 99acres | Yes: to list and advertise properties |
-| **People looking for a life partner** | Jeevansathi | Yes: for paid memberships |
-| **Colleges and universities** | Shiksha | Yes: to reach students |
+| Recruiters | Naukri | Yes |
+| Job seekers | Naukri, JobHai | Free; extras paid |
+| Property sellers | 99acres | Yes |
+| Life partner seekers | Jeevansathi | Yes |
+| Colleges | Shiksha | Yes |
 
 ## 4. Core Pillars of the Info Edge Business Model
 
-| Pillar | What it is | How it works | Key fact |
-|---|---|---|---|
-| **a) Free for users, businesses pay** | Online classifieds that connect two sides: recruiters and job seekers, sellers and buyers, colleges and students | Users browse for free. Recruiters, brokers, builders and colleges pay to reach them | Naukri has about **115 million resumes**; access to this database is what recruiters pay for |
-| **b) Naukri is the main business** | Info Edge's job platform | Companies buy subscriptions for job posts and resume access; job seekers can pay for extra help | Recruitment is about **74% of revenue** at a **57% operating margin** |
-| **c) Customers pay upfront** | Recruiters and advertisers pay for subscriptions in advance | Billings run ahead of revenue: ₹3,178 Cr billed vs ₹3,052 Cr revenue in FY26 | ₹1,469 Cr cash from operations in FY26; **₹4,963 Cr cash** in March 2026 |
-| **d) AI in every product** | AI tools like AI-Rex for recruiters and Neo for job seekers | AI matches candidates to jobs and automates recruiter work | About ₹70 Cr spent on AI in FY26; about **₹150 Cr planned in FY27** |
+| Pillar | One line | Key fact |
+|---|---|---|
+| **a) Free for users, businesses pay** | Users browse free; businesses pay to reach them | 115 million resumes |
+| **b) Naukri is the main business** | Recruiters pay for job posts and resume access | 74% of revenue |
+| **c) Customers pay upfront** | Subscriptions are paid in advance | ₹4,963 Cr cash |
+| **d) AI in every product** | AI tools for recruiters and job seekers | ₹150 Cr AI spend planned, FY27 |
 
 ## 5. How Info Edge Makes Money
 
-Here's how Naukri makes money, and the rest of Info Edge too. Info Edge earns from **four online businesses** (FY26, standalone):
+Here's how Naukri makes money, and the rest of Info Edge too (FY26, standalone):
 
-| Business | What it earns from | FY26 revenue | Share | Profit / loss |
+| Business | Earns from | Revenue | Share | Profit / loss |
 |---|---|---|---|---|
-| **Naukri (recruitment)** | Recruiter subscriptions, resume database access, services for job seekers, NaukriGulf | ₹2,256 Cr | ~74% | ₹1,277 Cr profit (57% margin) |
-| **99acres (real estate)** | Listings and ads from builders, brokers and owners | ₹488 Cr | ~16% | ₹59 Cr loss |
-| **Shiksha (education)** | Colleges and universities paying to reach students | ₹170 Cr | ~6% | ₹13 Cr profit |
-| **Jeevansathi (matrimony)** | Paid memberships | ₹138 Cr | ~5% | ₹4 Cr loss |
-| **Total** | | **₹3,052 Cr** | | **₹1,138 Cr operating profit** |
+| **Naukri** | Recruiter subscriptions | ₹2,256 Cr | 74% | ₹1,277 Cr profit |
+| **99acres** | Property listings | ₹488 Cr | 16% | ₹59 Cr loss |
+| **Shiksha** | Colleges | ₹170 Cr | 6% | ₹13 Cr profit |
+| **Jeevansathi** | Memberships | ₹138 Cr | 5% | ₹4 Cr loss |
+| **Total** | | **₹3,052 Cr** | | **₹1,138 Cr profit** |
 
-**Info Edge financials (FY26, standalone):**
-
-| Metric | FY26 |
+| FY26 | |
 |---|---|
-| Billings | ₹3,178 Cr (+10%) |
 | Revenue | ₹3,052 Cr (+15%) |
-| Operating profit | ₹1,138 Cr (37% margin) |
-| Cash from operations (before tax) | ₹1,469 Cr |
-| Total dividend | ₹8.4 per share |
+| Operating profit | ₹1,138 Cr |
+| Operating margin | 37% |
+| Dividend | ₹8.4 per share |
 
 ## 6. Info Edge Product and Marketing Strategy
 
-What Naukri and Info Edge are doing now.
+Naukri marketing strategy and latest products, at a glance.
 
-### a) Latest Products: Betting on AI
+### a) Latest Products
 
-| When | Product | What it does | Traction |
-|---|---|---|---|
-| Jul 2026 | **AI-Rex** | AI agents that write the job brief, find candidates, contact them and screen them | Live with 4,000+ companies |
-| 2026 | **Talent Pulse** | Helps companies compare salaries and plan hiring | 600+ paying customers |
-| FY26 | **Neo** | AI agent that finds jobs for job seekers | New |
-| 2026 | **AI resume maker and AI mock interviews** | Help job seekers apply and prepare | New |
-| FY26 to FY27 | **AI spending** | ₹70 Cr in FY26, about ₹150 Cr planned in FY27 | |
-
-### b) A Product for Every Type of Hiring
-
-| Segment | Product | Who it serves |
+| When | Product | One line |
 |---|---|---|
-| Premium | **Naukri Top Tier** | Senior, high salary roles |
-| Mid level | **Naukri + AI-Rex** | Most white collar hiring |
-| Lower salary | **JobHai** | Free jobs app with paid extras |
-| Job seekers | **Naukri 360** | Paid resume and profile help; online sales went from 27% to 53% in 15 months |
+| Jul 2026 | **AI-Rex** | AI agents that find and screen candidates; 4,000+ companies |
+| 2026 | **Talent Pulse** | Salary benchmarks for companies; 600+ paying clients |
+| FY26 | **Neo** | AI agent that finds jobs for you |
+| 2026 | **AI resume maker** | Builds your resume with AI |
+| 2026 | **AI mock interviews** | Practice interviews with AI |
 
-### c) Growing the Other Platforms
+### b) A Product for Every Job Level
+
+| Level | Product |
+|---|---|
+| Senior | Naukri Top Tier |
+| Mid level | Naukri + AI-Rex |
+| Lower salary | JobHai |
+| Job seeker extras | Naukri 360 |
+
+### c) Other Platforms
 
 | Platform | Latest move |
 |---|---|
-| **99acres** | Short property videos (99Shorts) in NCR, plus more resale and rental listings |
-| **Jeevansathi** | AI based matching; close to breaking even |
-| **Shiksha** | AI search is cutting its traffic, so it is moving to student counselling and AI voice calls |
+| **99acres** | Short property videos (99Shorts) |
+| **Jeevansathi** | AI matching; near break even |
+| **Shiksha** | Shifting to student counselling |
 
 ### d) Latest Marketing
 
-| When | Move | What it does |
-|---|---|---|
-| IPL 2025 | **"All's fair when you love your career"** by Lowe Lintas | Short films backing Gen Z who switch jobs to grow. Tagline: "Naukri, for the ambitious" |
-| Every month, 2026 | **Naukri JobSpeak** hiring report | A monthly report on white collar hiring trends in India, published by Naukri |
-| Q4 FY26 | **Marketing spend down 13%** | Recruitment revenue still grew 14% in the same quarter |
+| When | Move |
+|---|---|
+| IPL 2025 | "Naukri, for the ambitious" films for Gen Z |
+| Monthly, 2026 | Naukri JobSpeak hiring report |
+| Q4 FY26 | Marketing spend cut 13% |
 
 ## 7. Info Edge Competitors
 
 | Business | Competitors |
 |---|---|
-| Naukri | LinkedIn, Indeed, foundit (formerly Monster India) |
+| Naukri | LinkedIn, Indeed, foundit |
 | 99acres | MagicBricks, Housing.com, NoBroker |
 | Jeevansathi | Shaadi.com, BharatMatrimony |
 
@@ -199,7 +196,7 @@ LinkedIn, Indeed and foundit in jobs; MagicBricks, Housing.com and NoBroker in p
           "name": "Naukri.com"
         }
       ],
-      "wordCount": 944,
+      "wordCount": 565,
       "inLanguage": "en-IN"
     },
     {
@@ -348,5 +345,5 @@ Open Graph Description: Free for job seekers, paid by recruiters. Here's how Inf
 Alt Text (hero image): Info Edge business model overview
 Author: Author Name
 Published Date: 2026-10-17
-Word Count: 944
+Word Count: 565
 ```
