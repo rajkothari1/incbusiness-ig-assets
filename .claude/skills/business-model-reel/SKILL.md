@@ -1,6 +1,6 @@
 ---
 name: business-model-reel
-description: Make one episode of the incbusiness "India's Top 100 Business Models" Instagram reel series (1080x1920, ~35-45s, Hinglish female voice-over, English subtitles, code-animated). Use when the user asks for the next episode, a business model reel for a company, or "reel banao" for any company in the 100-company list. Covers fact-checking, script, voice, animation, music, cover image and Metricool scheduling.
+description: Make one episode of the incbusiness "India's Top 100 Business Models" Instagram reel series (1080x1920, ~40-60s, Hinglish female voice-over, English subtitles, code-animated). Use when the user asks for the next episode, a business model reel for a company, or "reel banao" for any company in the 100-company list. Covers fact-checking, script, voice, animation, music, cover image and Metricool scheduling.
 ---
 
 # Business model reel (incbusiness, 100-episode series)
@@ -29,7 +29,7 @@ Shared tools: `reels/music.py` (royalty-free music bed), `logos/` (brand logos, 
 - Revenue, profit, business/brand split, outlets, latest marketing, latest products.
 - Present a fact table (claim, source 1, source 2) with links.
 
-### 2. Script (~35-45s)
+### 2. Script (~40-60s at a calm pace)
 Structure that works:
 1. "Episode N of 100! Aaj ka business model: X!"
 2. Hook: a surprising fact plus the revenue number, then "Kaise?"
@@ -43,7 +43,8 @@ Give the voice-over in Hinglish (romanised) and the English subtitles. Numbers a
 - `generate_audio` with `model: "elevenlabs_v4"`, `stability: 0.3`, `dialogue: [{text, voice_id: "4b2dc8f3-5e8b-59a9-9a5c-85620e44c033", voice_type: "preset"}]` (voice "Anika", same as the news reels).
 - Text in Devanagari, numbers written as words, `[excited]` / `[energetic]` tags.
 - Generate **one take for the whole script**. Never splice single words from another take (the voice changes).
-- Download, then `silencedetect=noise=-35dB:d=0.25`, list speech segments, cut each segment, keep 0.14-0.2s gaps, `atempo` 1.22-1.4 so it lands at ~35-43s (see the python block used in ep02). Print each segment's new start time.
+- Download, then `silencedetect=noise=-35dB:d=0.25`, list speech segments, cut each segment, keep ~0.22s gaps, `atempo` about **1.1-1.15** (the user found 1.4 too fast; clarity matters more than length, 50-60s is fine). Print each segment's new start time.
+- Write brand names the way they are said: Mamaearth = "मामा अर्थ" (not ममाअर्थ), 99acres = "नाइंटी नाइन एकर्स", BBlunt = "बी ब्लंट". Spell unclear names letter by letter (FIKN = "एफ़ आई के एन").
 
 ### 4. Animation (free, code)
 - Copy the template folder. `reel.html` has a `T` object (scene start times) and `K` (moments inside scenes). Set them from the segment start times.

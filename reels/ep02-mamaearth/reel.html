@@ -200,13 +200,13 @@
 <script>
 // All timings in one place; they get re-synced to the real voice-over once it is generated.
 const T = {
-  s0: 0, s1: 1.33, s2: 3.03, s3: 4.7, how: 8.24, s4: 8.7, s5: 10.03, s6: 12.88, s7: 17.43, s8: 20.88,
-  s9: 26.75, m1: 31.37, m2: 34.41, s10: 38.07, s11: 40.85, end: 43.4,
+  s0: 0, s1: 1.76, s2: 4.24, s3: 6.52, how: 10.85, s4: 11.5, s5: 13.28, s6: 16.99, s7: 22.91, s8: 27.54,
+  s9: 35.07, m1: 40.95, m2: 44.9, s10: 49.5, s11: 52.98, end: 58.2,
 };
 // moments inside scenes, taken from where each phrase starts in the voice-over
 const K = {
-  s5chips: 10.98, s6pill: 15.33, s7: [18.3, 18.83, 19.75], s8: [20.88, 22.04, 23.07, 25.6],
-  s9: [26.75, 27.4, 28.53, 29.2, 29.8], m1chips: 32.06, m2ad: 35.2, s10num: 39.36,
+  s5chips: 14.76, s6pill: 20.35, s7: [24.15, 24.97, 26.44], s8: [27.54, 29.04, 30.48, 32.09],
+  s9: [35.07, 35.8, 37.37, 38.0, 38.44], m1chips: 41.8, m2ad: 46.0, s10num: 50.94,
 };
 const DUR = T.end;
 const clamp = (x) => Math.max(0, Math.min(1, x));
