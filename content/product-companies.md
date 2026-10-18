@@ -137,3 +137,27 @@ Profit figures come from two data sources each (company filings/news or Screener
 - **Large caps:** HUL, ITC, Britannia, Nestle, Marico, Godrej Consumer, Tata Consumer, Pidilite, Asian Paints, Titan, Havells, Polycab, Maruti, M&M, Eicher, Bajaj Auto, Tata Motors, Varun Beverages, Trent, DMart, Sun Pharma, Mankind, Dixon, Reliance, HAL and the large banks/IT/infra names.
 - **Not product-based:** banks, NBFCs, brokers, AMCs, insurers, IT services, platforms/marketplaces, travel, hotels, hospitals, labs, infrastructure.
 - **Thin/unstable profit:** Tilaknagar (loss over last 12 months), Delta Corp, Dreamfolks.
+
+## Same 82 companies in 20 categories
+| # | Category (business model) | Companies |
+|---|---|---|
+| 1 | Snacks & namkeen | Bikaji, Gopal Snacks, Prataap Snacks, Haldiram's |
+| 2 | Staples & dairy | LT Foods, KRBL, Heritage Foods, Dodla Dairy, Hatsun Agro, Amul |
+| 3 | Packaged food & health drinks | Mrs Bectors, Zydus Wellness, Lijjat Papad |
+| 4 | Alcohol | Sula Vineyards, Radico Khaitan, Globus Spirits |
+| 5 | D2C beauty & personal care | Honasa (Mamaearth), Minimalist |
+| 6 | Household FMCG brands | Jyothy Labs, Bajaj Consumer Care, Patanjali, Dabur, Colgate |
+| 7 | Kitchenware & cookware | TTK Prestige, Hawkins, Butterfly, Stove Kraft, Cello World, Borosil, La Opala |
+| 8 | Electricals & fans | V-Guard, Orient Electric |
+| 9 | ACs & cooling | Blue Star, Voltas |
+| 10 | D2C products (online-first) | Wakefit, boAt, Lenskart |
+| 11 | Luggage & stationery | Safari, DOMS, Kokuyo Camlin |
+| 12 | Paints | Indigo Paints, Sirca Paints |
+| 13 | Building materials | Cera, Century Plyboards, Greenply, Prince Pipes, Somany |
+| 14 | Footwear | Campus, Relaxo, Bata, Metro Brands |
+| 15 | Apparel & innerwear (own brands) | Raymond Lifestyle, Kewal Kiran, Lux, Rupa, Go Fashion, The Souled Store |
+| 16 | Licensed & franchise brands | Page (Jockey), Vedant (Manyavar), Arvind Fashions, Jubilant (Domino's), Westlife (McDonald's) |
+| 17 | Jewellery & watches | Kalyan, Senco Gold, PC Jeweller, Thangamayil, Ethos, Vaibhav Global |
+| 18 | Value & specialty retail | V-Mart, Medplus, Nykaa |
+| 19 | Pharma & B2B products | Eris Lifesciences, Jubilant Pharmova, Avanti Feeds |
+| 20 | Software, music & games (IP) | Zoho, Freshworks, Newgen, Tanla, Route Mobile, Saregama, Tips Music, Nazara |
