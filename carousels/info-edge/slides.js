@@ -6,7 +6,7 @@ const img = (p) => fileUrl(p);
 // Real brand logos captured from each brand's own website, shown on their own brand colour.
 const LOGO = {
   naukri: ['logos/naukri-logo.png', '#ffffff'],
-  acres: ['logos/99acres-logo.png', '#000000'],
+  acres: ['logos/99acres-logo.png', '#ffffff'],
   jeevansathi: ['logos/jeevansathi-logo.png', '#ffffff'],
   shiksha: ['logos/shiksha-logo.png', '#00706c'],
   jobhai: ['logos/jobhai-logo.png', '#f4f8fb'],
