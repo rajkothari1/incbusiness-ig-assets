@@ -11,7 +11,7 @@ body{font-family:Inter,sans-serif;color:#fff;--a:#FFC21A}
 .wrap{position:absolute;left:70px;right:70px;top:250px}
 .kicker{display:flex;align-items:center;gap:18px;font-weight:800;font-size:28px;letter-spacing:5px;color:var(--a);text-transform:uppercase}
 .kicker:before{content:"";width:60px;height:5px;background:var(--a)}
-h1{font-family:Poppins;font-weight:800;font-size:104px;line-height:1.02;letter-spacing:-3px;margin:22px 0 14px}
+h1{font-family:Poppins;font-weight:800;font-size:104px;line-height:1.02;letter-spacing:-3px;margin:10px 0 50px}
 h1 .l1{color:var(--a)}
 .hook{font-size:36px;color:rgba(255,255,255,.82);font-weight:500;margin-bottom:46px}
 .logo{background:#fff;border-radius:24px;overflow:hidden;flex:none}
@@ -66,6 +66,10 @@ h1 .l1{color:var(--a)}
 .cta .ic{display:flex;gap:12px;margin-right:6px}
 body.ctaonly .scrim,body.ctaonly .brand,body.ctaonly #w{visibility:hidden}
 body.ctaonly .cta{display:flex}
+.wm{background:#fff;border-radius:44px;padding:70px 60px;margin:40px 0 30px;box-shadow:0 0 0 10px var(--a)}
+.wm img{width:700px;display:block}
+.cover.lightcv .wm{box-shadow:0 0 0 10px #111}
+.swm{height:84px;display:block}
 </style></head><body>
 <div class="scrim"></div>
 <div class="brand"><img id="bl" src="../../brand/incbusiness-logo-white.png"></div>
@@ -82,15 +86,15 @@ window.render=(r,mode,i)=>{
   if(mode==='cover'){
     w.className='cv';
     w.innerHTML=r.type==='spotlight'
-      ?`<div class="kicker">Tool Spotlight</div><div class="logo slogo"><img src="../logos/${r.tools[0][2]}.png"></div><div class="sname">${r.tools[0][0]}</div><div class="shook">${r.hook}</div>`
+      ?`<div class="kicker">Tool Spotlight</div>${r.wordmark?`<div class="wm"><img src="../logos/${r.wordmark}.png"></div>`:`<div class="logo slogo"><img src="../logos/${r.tools[0][2]}.png"></div><div class="sname">${r.tools[0][0]}</div>`}<div class="shook">${r.hook}</div>`
       :`<div class="kicker">AI Toolkit</div><div class="big">${r.tools.length}</div><div class="cat">AI ${r.category}<small>TOOLS</small></div><div class="logos">${r.tools.map(t=>L(t[2])).join('')}</div>`;
     return;
   }
   w.className='wrap';
-  const head=`<div class="kicker">AI Toolkit · ${r.category}</div><h1><span class="l0">${r.title[0]}</span><br><span class="l1">${r.title[1]}</span></h1><div class="hook">${r.hook}</div>`;
+  const head=`<h1><span class="l0">${r.title[0]}</span><br><span class="l1">${r.title[1]}</span></h1>`;
   if(r.type==='spotlight'){
     const t=r.tools[0];
-    w.innerHTML=head+`<div class="spot"><div class="head">${L(t[2])}<div><span class="name">${t[0]}</span><span class="co">by ${t[1]}</span></div></div><div class="one">${t[3]}</div><ul>${r.points.map(p=>`<li>${p}</li>`).join('')}</ul><div class="btn">${t[4]} →</div></div>`;
+    w.innerHTML=head+`<div class="spot"><div class="head">${r.wordmark?`<div><img class="swm" src="../logos/${r.wordmark}.png"><span class="co">by ${t[1]}</span></div>`:`${L(t[2])}<div><span class="name">${t[0]}</span><span class="co">by ${t[1]}</span></div>`}</div><div class="one">${t[3]}</div><ul>${r.points.map(p=>`<li>${p}</li>`).join('')}</ul><div class="btn">${t[4]} →</div></div>`;
   } else {
     w.innerHTML=head+r.tools.map((t,i)=>`<div class="card"><div class="num">${i+1}</div>${L(t[2])}<div><div><span class="name">${t[0]}</span><span class="co">by ${t[1]}</span></div><div class="one">${t[3]}</div><div class="link">${t[4]}</div></div></div>`).join('');
   }
