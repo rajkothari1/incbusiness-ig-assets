@@ -70,6 +70,14 @@ body.ctaonly .cta{display:flex}
 .wm img{width:700px;display:block}
 .cover.lightcv .wm{box-shadow:0 0 0 10px #111}
 .swm{height:84px;display:block}
+/* spotlight with website screenshot */
+.web{background:#fff;border-radius:28px;overflow:hidden;box-shadow:0 22px 50px rgba(0,0,0,.55)}
+.web .bar{display:flex;align-items:center;gap:12px;padding:20px 26px;background:#f1f1f3;border-bottom:1px solid #e3e3e6}
+.web .bar i{width:18px;height:18px;border-radius:50%;background:#d0d0d5}
+.web .bar i:nth-child(1){background:#ff5f57}.web .bar i:nth-child(2){background:#febc2e}.web .bar i:nth-child(3){background:#28c840}
+.web .bar span{margin-left:18px;flex:1;background:#fff;border-radius:22px;padding:10px 24px;font-size:28px;font-weight:600;color:#333}
+.web img{display:block;width:100%}
+.wline{font-family:Poppins;font-weight:600;font-size:46px;line-height:1.25;margin-top:44px;color:#fff}
 </style></head><body>
 <div class="scrim"></div>
 <div class="brand"><img id="bl" src="../../brand/incbusiness-logo-white.png"></div>
@@ -92,7 +100,10 @@ window.render=(r,mode,i)=>{
   }
   w.className='wrap';
   const head=`<h1><span class="l0">${r.title[0]}</span><br><span class="l1">${r.title[1]}</span></h1>`;
-  if(r.type==='spotlight'){
+  if(r.type==='spotlight'&&r.screenshot){
+    const t=r.tools[0];
+    w.innerHTML=head+`<div class="web"><div class="bar"><i></i><i></i><i></i><span>${t[4]}</span></div><img src="../screenshots/${r.screenshot}.png"></div><div class="wline">${r.line||t[3]}</div>`;
+  } else if(r.type==='spotlight'){
     const t=r.tools[0];
     w.innerHTML=head+`<div class="spot"><div class="head">${r.wordmark?`<div><img class="swm" src="../logos/${r.wordmark}.png"><span class="co">by ${t[1]}</span></div>`:`${L(t[2])}<div><span class="name">${t[0]}</span><span class="co">by ${t[1]}</span></div>`}</div><div class="one">${t[3]}</div><ul>${r.points.map(p=>`<li>${p}</li>`).join('')}</ul><div class="btn">${t[4]} →</div></div>`;
   } else {
