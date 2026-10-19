@@ -61,14 +61,16 @@ h1 .l1{color:var(--a)}
 .cover.lightcv .logos .logo,.cover.lightcv .slogo{border:2px solid #e2e2e2}
 .cover.lightcv .slogo{box-shadow:0 0 0 10px #111}
 /* follow CTA (separate overlay, appears at 3s) */
-.cta{position:absolute;left:50%;transform:translateX(-50%);display:none;align-items:center;gap:16px;white-space:nowrap;background:var(--a);color:#111;font-family:Poppins;font-weight:800;font-size:36px;padding:18px 38px;border-radius:60px;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+.cta{position:absolute;left:50%;transform:translateX(-50%);display:none;align-items:center;gap:18px;white-space:nowrap;color:#fff;font-family:Poppins;font-weight:600;font-size:36px;text-shadow:0 2px 12px rgba(0,0,0,.8)}
+.cta svg{width:46px;height:46px;flex:none;filter:drop-shadow(0 2px 8px rgba(0,0,0,.7))}
+.cta .ic{display:flex;gap:12px;margin-right:6px}
 body.ctaonly .scrim,body.ctaonly .brand,body.ctaonly #w{visibility:hidden}
 body.ctaonly .cta{display:flex}
 </style></head><body>
 <div class="scrim"></div>
 <div class="brand"><img id="bl" src="../../brand/incbusiness-logo-white.png"></div>
 <div id="w"></div>
-<div class="cta" id="cta"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v15M5 12l7 7 7-7"/></svg>Follow for more AI content</div>
+<div class="cta" id="cta"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.4" cy="6.6" r="1.1" fill="#fff" stroke="none"/></svg><svg viewBox="0 0 24 24"><rect x="1.5" y="1.5" width="21" height="21" rx="4" fill="#fff"/><rect x="5.5" y="9.5" width="3" height="9" fill="#111"/><circle cx="7" cy="6.5" r="1.8" fill="#111"/><path d="M11 9.5h2.9v1.3c.5-.9 1.6-1.6 3.1-1.6 2.6 0 3.5 1.6 3.5 4.3v5h-3v-4.5c0-1.2-.3-2.2-1.6-2.2s-1.9 1-1.9 2.2v4.5h-3z" fill="#111"/></svg></span>Follow for more AI content</div>
 <script>
 const L=k=>`<div class="logo"><img src="../logos/${k}.png"></div>`;
 window.render=(r,mode,i)=>{
