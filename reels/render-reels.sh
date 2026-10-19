@@ -12,6 +12,11 @@ GRADE="scale=-2:1920,crop=1080:1920,hue=s=0,eq=contrast=1.12"
 for id in "${ids[@]}"; do
   bg=$(jq -r --arg id "$id" '.[]|select(.id==$id).bg.file' data/reels.json)
   ss=$(jq -r --arg id "$id" '.[]|select(.id==$id).bg.start' data/reels.json)
+  # bg-videos/ is gitignored: fetch the Mixkit clip (<clipid>.mp4) if this container doesn't have it yet.
+  if [ ! -s "bg-videos/$bg" ]; then
+    mkdir -p bg-videos; c=${bg%.mp4}
+    curl -sfL -m 300 -o "bg-videos/$bg" "https://assets.mixkit.co/videos/$c/$c-1080.mp4" || curl -sfL -m 300 -o "bg-videos/$bg" "https://assets.mixkit.co/videos/$c/$c-720.mp4"
+  fi
   ffmpeg -y -v error -ss "$ss" -t "$DUR" -i "bg-videos/$bg" -loop 1 -t "$DUR" -i "build/$id-reel.png" -loop 1 -t "$DUR" -i "build/$id-cta.png" -filter_complex \
     "[0:v]$GRADE,scale=w='trunc(1080*(1+0.08*t/$DUR)/2)*2':h=-2:eval=frame,crop=1080:1920,fps=30,setsar=1[bg];[1:v]format=rgba,fade=in:st=0:d=0.4:alpha=1[ov];[2:v]format=rgba,fade=in:st=3:d=0.35:alpha=1[cta];[bg][ov]overlay=0:0:format=auto[b1];[b1][cta]overlay=x=0:y='max(0,40*(1-(t-3)/0.35))':enable='gte(t,3)':format=auto,format=yuv420p[v]" \
     -map "[v]" -c:v libx264 -preset medium -crf 20 -movflags +faststart -an "out/$id.mp4"
