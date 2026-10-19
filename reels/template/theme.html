@@ -52,14 +52,30 @@ h1 .l1{color:var(--a)}
 .card .co,.spot .co{color:#6b6b6b}.card .one{color:#333}
 .card .link,.spot .link{color:#9A6A00}
 .card .logo,.spot .logo{border:2px solid #ececec}
+/* light cover (every 2nd post) -> checkerboard grid */
+.cover.lightcv .scrim{background:radial-gradient(ellipse at 50% 50%,rgba(255,255,255,.84),rgba(255,255,255,.95) 75%)}
+.cover.lightcv{color:#111}
+.cover.lightcv .big{color:#111}
+.cover.lightcv .cat small,.cover.lightcv .shook{color:#333}
+.cover.lightcv .kicker{color:#111}.cover.lightcv .kicker:before,.cover.lightcv .kicker:after{background:var(--a)}
+.cover.lightcv .logos .logo,.cover.lightcv .slogo{border:2px solid #e2e2e2}
+.cover.lightcv .slogo{box-shadow:0 0 0 10px #111}
+/* follow CTA (separate overlay, appears at 3s) */
+.cta{position:absolute;left:50%;transform:translateX(-50%);display:none;align-items:center;gap:16px;white-space:nowrap;background:var(--a);color:#111;font-family:Poppins;font-weight:800;font-size:36px;padding:18px 38px;border-radius:60px;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+body.ctaonly .scrim,body.ctaonly .brand,body.ctaonly #w{visibility:hidden}
+body.ctaonly .cta{display:flex}
 </style></head><body>
 <div class="scrim"></div>
-<div class="brand"><img src="../../brand/incbusiness-logo-white.png"></div>
+<div class="brand"><img id="bl" src="../../brand/incbusiness-logo-white.png"></div>
 <div id="w"></div>
+<div class="cta" id="cta"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v15M5 12l7 7 7-7"/></svg>Follow for more AI content</div>
 <script>
 const L=k=>`<div class="logo"><img src="../logos/${k}.png"></div>`;
-window.render=(r,mode)=>{
-  document.body.className=mode+' '+r.type;
+window.render=(r,mode,i)=>{
+  if(mode==='cta'){window.render(r,'reel',i);document.body.classList.add('ctaonly');document.getElementById('cta').style.top=Math.round(document.getElementById('w').getBoundingClientRect().bottom+(r.type==='top4'?24:44))+'px';return;}
+  const light=mode==='cover'&&i%2===1;
+  document.body.className=mode+' '+r.type+(light?' lightcv':'');
+  document.getElementById('bl').src='../../brand/incbusiness-logo-'+(light?'black':'white')+'.png';
   const w=document.getElementById('w');
   if(mode==='cover'){
     w.className='cv';

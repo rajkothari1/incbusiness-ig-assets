@@ -47,7 +47,7 @@
     "title": ["Top 3 AI", "Research Tools"], "hook": "Hours of research in minutes",
     "bg": { "file": "50726.mp4", "start": 1, "source": "https://mixkit.co/free-stock-video/a-hand-runs-through-the-book-spines-in-the-library-50726/" },
     "tools": [
-      ["Perplexity", "Perplexity AI", "perplexity_ai", "Answers with sources, like smarter search", "perplexity.ai"],
+      ["Perplexity", "Perplexity AI", "perplexity_ai", "AI search that cites its sources", "perplexity.ai"],
       ["NotebookLM", "Google", "notebooklm_google_com", "Chat with your PDFs, notes & docs", "notebooklm.google.com"],
       ["Consensus", "Consensus", "consensus_app", "Find answers backed by research papers", "consensus.app"]
     ],

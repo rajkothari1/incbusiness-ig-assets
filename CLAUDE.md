@@ -10,6 +10,8 @@ Instagram page **incbusiness** — Indian startup / business news (funding, IPO,
 - Reels: 1080x1920, 5s, keep content between y≈150 and y≈1600 (IG UI covers the bottom).
 - **Theme (fixed for the whole series — do not change per reel):** "AI Toolkit" look — black & white graded footage, black scrim, single amber accent `#FFC21A`, tool cards on white (dark text) for readability, Poppins (headings) + Inter (body), white incbusiness logo.
 - **Grid pattern:** posts go in rows of 3 in this order: `top4` (4 tools) → `top3` (3 tools) → `spotlight` (1 tool). Keep the count a multiple of 3 so the profile grid columns stay aligned. Variety comes from category, title, hook and background clip, not from colors/fonts.
+- Covers alternate dark / light (white) by post index → checkerboard on the 3-column grid. Never break the alternation.
+- Every reel shows a "↓ Follow for more AI content" amber pill from 3s (slides in under the cards).
 - Covers: `out/<id>-cover.png` (1080x1920) — all key content sits inside the 3:4 profile-grid crop (y 240..1680). Upload it as the reel cover.
 
 ## AI tools reels pipeline (`reels/`)
