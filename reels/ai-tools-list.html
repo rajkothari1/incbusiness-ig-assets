@@ -1,0 +1,28 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1920px;font-family:Inter,sans-serif;color:#fff;overflow:hidden;
+background:linear-gradient(180deg,rgba(14,18,48,.97),rgba(40,22,80,.98)),url(../backgrounds/ai.jpg) center/cover;}
+.wrap{padding:90px 70px 0}
+.tag{display:inline-block;background:#FFB020;color:#141633;font-weight:800;font-size:30px;letter-spacing:3px;padding:12px 26px;border-radius:40px}
+h1{font-size:88px;font-weight:900;line-height:1.02;margin:26px 0 12px;letter-spacing:-2px}
+h1 span{color:#FFB020}
+.sub{font-size:32px;color:#C9CBEF;margin-bottom:34px}
+.row{display:flex;align-items:center;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);border-radius:22px;padding:14px 28px;margin-bottom:10px}
+.n{width:58px;height:58px;border-radius:16px;background:#FFB020;color:#141633;font-weight:900;font-size:32px;display:flex;align-items:center;justify-content:center;margin-right:28px;flex:none}
+.t{flex:1}
+.name{font-size:36px;font-weight:800}
+.co{font-size:25px;color:#AEB1DD;margin-top:2px}
+.link{font-size:29px;font-weight:700;color:#FFD27A;text-align:right}
+.foot{position:absolute;bottom:190px;left:70px;right:70px;display:flex;justify-content:space-between;align-items:center;font-size:32px}
+.foot b{font-size:40px;font-weight:900}.foot b span{color:#FFB020}
+.save{background:#fff;color:#141633;font-weight:800;padding:16px 30px;border-radius:40px}
+</style></head><body><div class="wrap">
+<div class="tag">AI TOOLS</div>
+<h1>10 AI Tools<br><span>Har Founder ke liye</span></h1>
+<div class="sub">Tool · Company · Link</div>
+<div id="list"></div></div>
+<div class="foot"><b>inc<span>business</span></b><div class="save">🔖 Save for later</div></div>
+<script>
+const d=[["ChatGPT","OpenAI","chatgpt.com"],["Claude","Anthropic","claude.ai"],["Gemini","Google","gemini.google.com"],["Perplexity","Perplexity AI","perplexity.ai"],["Copilot","Microsoft","copilot.microsoft.com"],["NotebookLM","Google","notebooklm.google.com"],["Midjourney","Midjourney Inc.","midjourney.com"],["ElevenLabs","ElevenLabs","elevenlabs.io"],["Gamma","Gamma Tech","gamma.app"],["Runway","Runway AI","runwayml.com"]];
+document.getElementById('list').innerHTML=d.map((r,i)=>`<div class="row"><div class="n">${i+1}</div><div class="t"><div class="name">${r[0]}</div><div class="co">by ${r[1]}</div></div><div class="link">${r[2]}</div></div>`).join('');
+</script></body></html>
