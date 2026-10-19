@@ -26,7 +26,7 @@ for id in "${ids[@]}"; do
     -map "[v]" -map "[a]" -c:v libx264 -preset medium -crf 20 -c:a aac -b:a 192k -t "$DUR" -movflags +faststart "out/$id.mp4"
   ffmpeg -y -v error -ss "$ss" -i "bg-videos/$bg" -i "build/$id-cover.png" -filter_complex \
     "[0:v]$GRADE,setsar=1[bg];[bg][1:v]overlay=0:0" -frames:v 1 "out/$id-cover.png"
-  # Caption = body + "📍 Tool: HQ city" lines + 20-25 hashtags (fixed set first, then the reel's own, then generic fillers).
+  # Caption = body + one "🔹 Tool: one-liner (📍 HQ)" line per tool + 20-25 hashtags (fixed set first, then the reel's own, then generic fillers).
   python3 - "$id" > "out/$id-caption.txt" <<'PY'
 import json,sys
 r=next(x for x in json.load(open('data/reels.json')) if x['id']==sys.argv[1])
@@ -37,7 +37,7 @@ FILL=['#artificialintelligence','#technology','#founders','#entrepreneur','#prod
 tags=[]
 for t in FIXED+own.split()+FILL:
     if t.startswith('#') and t.lower() not in [x.lower() for x in tags] and len(tags)<23: tags.append(t)
-loc=''.join(f"\n📍 {t[0]}: {h}" for t,h in zip(r['tools'],r.get('hq',[])))
+loc=''.join(f"\n🔹 {t[0]}: {t[3]} (📍 {h})" for t,h in zip(r['tools'],r.get('hq',[])))
 print(f"{body}\n{loc}\n\n{' '.join(tags)}" if loc else f"{body}\n\n{' '.join(tags)}")
 PY
   echo "reel $id -> out/$id.mp4 ($(du -h "out/$id.mp4" | cut -f1))"

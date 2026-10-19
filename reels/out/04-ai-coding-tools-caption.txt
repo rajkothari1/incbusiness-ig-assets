@@ -3,9 +3,9 @@ You don't need a dev team to ship your first MVP anymore 💻
 These 4 AI tools write, fix and even deploy code for you.
 Save it & tag a founder who's building 👇
 
-📍 Cursor: San Francisco, USA
-📍 GitHub Copilot: San Francisco, USA
-📍 Lovable: Stockholm, Sweden
-📍 Replit: California, USA
+🔹 Cursor: AI code editor that writes & fixes code (📍 San Francisco, USA)
+🔹 GitHub Copilot: AI pair programmer inside your editor (📍 San Francisco, USA)
+🔹 Lovable: Build full web apps just by chatting (📍 Stockholm, Sweden)
+🔹 Replit: Describe an app, get it built & hosted (📍 California, USA)
 
 #aitools #ai #business #tech #startup #follow #instagram #incbusiness #aicoding #cursor #githubcopilot #lovable #replit #nocode #founders #artificialintelligence #technology #entrepreneur #productivity #innovation #startups #futureoftech #aitech

@@ -26,7 +26,7 @@ Instagram page **incbusiness** — Indian startup / business news (funding, IPO,
 - `reels/archive/` holds the earlier (pre-theme) versions.
 
 ## Captions
-- Built by `render-reels.sh` into `out/<id>-caption.txt`: body from `caption`, then one `📍 Tool: City, Country` line per tool (company HQ, from the entry's `hq` list), then 20-25 hashtags.
+- Built by `render-reels.sh` into `out/<id>-caption.txt`: body from `caption`, then one `🔹 Tool: one-liner (📍 City, Country)` line per tool (one-liner from `tools`, company HQ from the entry's `hq` list), then 20-25 hashtags.
 - Hashtags always start with the fixed set `#aitools #ai #business #tech #startup #follow #instagram #incbusiness`, then the reel's own tags (last paragraph of `caption`), then generic fillers; capped at 23.
 - Instagram's real location tag can't be set through Metricool — the HQ location lives in the caption only.
 
