@@ -1,0 +1,71 @@
+[
+  {
+    "id": "001-ai-video-tools",
+    "layout": "stack",
+    "accent": "#FF5A4E",
+    "font": "Anton",
+    "kicker": "AI VIDEO",
+    "title": ["4 AI Tools That", "Replace a Film Crew"],
+    "highlight": 1,
+    "bg": { "file": "49646.mp4", "start": 3, "source": "https://mixkit.co/free-stock-video/a-young-man-adjust-the-lens-of-an-old-film-49646/" },
+    "tools": [
+      ["Runway", "Runway AI", "runway_com", "Generate & edit cinematic video from text", "runway.com"],
+      ["Kling AI", "Kuaishou", "kling_ai", "Realistic video clips from text or images", "kling.ai"],
+      ["HeyGen", "HeyGen", "heygen_com", "AI avatars that present videos for you", "heygen.com"],
+      ["Synthesia", "Synthesia", "synthesia_io", "Explainer & training videos with AI presenters", "synthesia.io"]
+    ],
+    "caption": "No camera, no crew, no studio. These 4 AI tools turn a text prompt into a finished video 🎬\n\nWhich one are you trying first? 👇\n\nSave this for your next video project.\n\n#aitools #aivideo #runway #heygen #synthesia #klingai #startup #founders #incbusiness"
+  },
+  {
+    "id": "002-ai-image-tools",
+    "layout": "grid",
+    "accent": "#FF5FBF",
+    "font": "Bricolage Grotesque",
+    "kicker": "AI IMAGES",
+    "title": ["Stop Paying", "for Stock Photos"],
+    "highlight": 1,
+    "sub": "4 AI image tools that do it better",
+    "bg": { "file": "43418.mp4", "start": 2, "source": "https://mixkit.co/free-stock-video/artist-brushing-paint-across-a-canvas-43418/" },
+    "tools": [
+      ["Midjourney", "Midjourney Inc.", "midjourney_com", "Stunning visuals & art from a prompt", "midjourney.com"],
+      ["Ideogram", "Ideogram AI", "ideogram_ai", "Images with clean text, posters & logos", "ideogram.ai"],
+      ["Leonardo.Ai", "Canva", "leonardo_ai", "Brand-ready product & marketing images", "leonardo.ai"],
+      ["Firefly", "Adobe", "firefly_adobe_com", "Commercially safe AI images for brands", "firefly.adobe.com"]
+    ],
+    "caption": "Your brand doesn't need another stock photo subscription 🎨\n\nThese 4 AI tools create custom visuals, posters and product shots in seconds.\n\nSave it & share with your designer 👇\n\n#aitools #aiimages #midjourney #ideogram #adobefirefly #leonardoai #marketing #founders #incbusiness"
+  },
+  {
+    "id": "003-ai-presentation-tools",
+    "layout": "light",
+    "accent": "#2F6BFF",
+    "font": "Space Grotesk",
+    "kicker": "AI DECKS",
+    "title": ["Your Next Pitch Deck", "in 60 Seconds"],
+    "highlight": 1,
+    "bg": { "file": "42648.mp4", "start": 0, "source": "https://mixkit.co/free-stock-video/business-man-exposing-graphs-42648/" },
+    "tools": [
+      ["Gamma", "Gamma Tech", "gamma_app", "Full decks & docs from a single prompt", "gamma.app"],
+      ["Beautiful.ai", "Beautiful.ai", "beautiful_ai", "Slides that auto-design themselves", "beautiful.ai"],
+      ["Canva", "Canva", "canva_com", "Magic Design turns ideas into decks fast", "canva.com"],
+      ["Pitch", "Pitch Software", "pitch_com", "Collaborative pitch decks for startups", "pitch.com"]
+    ],
+    "caption": "Investor meeting tomorrow? Don't spend the night on slides 📊\n\nThese 4 AI tools build a clean pitch deck from a single prompt.\n\nSave this before your next fundraise 👇\n\n#pitchdeck #aitools #gamma #canva #startup #fundraising #founders #incbusiness"
+  },
+  {
+    "id": "004-ai-voice-tools",
+    "layout": "center",
+    "accent": "#3DF2A5",
+    "font": "Poppins",
+    "kicker": "AI VOICE",
+    "title": ["Never Record a", "Voiceover Again"],
+    "highlight": 1,
+    "bg": { "file": "44049.mp4", "start": 3, "source": "https://mixkit.co/free-stock-video/close-up-shot-of-a-professional-condenser-microphone-44049/" },
+    "tools": [
+      ["ElevenLabs", "ElevenLabs", "elevenlabs_io", "Ultra-realistic voiceovers in many languages", "elevenlabs.io"],
+      ["Murf AI", "Murf AI", "murf_ai", "Studio-quality voiceovers for videos & ads", "murf.ai"],
+      ["Descript", "Descript", "descript_com", "Edit audio & video like a text document", "descript.com"],
+      ["Speechify", "Speechify", "speechify_com", "Turn any text or PDF into audio", "speechify.com"]
+    ],
+    "caption": "No mic, no studio, no retakes 🎙️\n\nThese 4 AI voice tools give you studio-quality voiceovers for reels, ads and podcasts.\n\nSave it for later 👇\n\n#aitools #aivoice #elevenlabs #descript #voiceover #contentcreator #founders #incbusiness"
+  }
+]

@@ -1,0 +1,78 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Space+Grotesk:wght@700&family=Poppins:wght@700;800&family=Inter:wght@400;500;700;800;900&display=block" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;background:transparent;overflow:hidden}
+body{font-family:Inter,sans-serif;color:#fff;--a:#FFB020}
+.scrim{position:absolute;inset:0}
+.brand{position:absolute;top:150px;left:70px;height:52px}
+.brand img{height:100%}
+.wrap{position:absolute;left:70px;right:70px;top:250px}
+.kicker{display:inline-block;font-weight:800;font-size:30px;letter-spacing:4px;padding:10px 24px;border-radius:40px;background:var(--a);color:#111}
+h1{margin:26px 0 44px;line-height:1.02}
+h1 .hl{color:var(--a)}
+.sub{font-size:36px;color:rgba(255,255,255,.85);margin:-26px 0 44px;font-weight:500}
+.logo{background:#fff;border-radius:26px;overflow:hidden;flex:none}
+.logo img{width:100%;height:100%;object-fit:cover;display:block}
+.name{font-weight:900}.co{color:rgba(255,255,255,.65)}.link{color:var(--a);font-weight:800}
+
+/* stack */
+.stack .scrim{background:linear-gradient(180deg,rgba(10,10,14,.88) 0%,rgba(10,10,14,.72) 45%,rgba(10,10,14,.9) 100%)}
+.stack h1{font-family:Anton,sans-serif;font-weight:400;font-size:108px;text-transform:uppercase;letter-spacing:1px}
+.stack .row{display:flex;align-items:center;background:rgba(20,20,26,.7);backdrop-filter:blur(8px);border-left:10px solid var(--a);border-radius:20px;padding:24px 28px;margin-bottom:18px}
+.stack .logo{width:116px;height:116px;margin-right:30px}
+.stack .name{font-size:48px}.stack .co{font-size:26px;margin-left:12px}
+.stack .one{font-size:31px;margin:6px 0 8px;color:#eee}.stack .link{font-size:30px}
+
+/* grid */
+.grid .scrim{background:linear-gradient(160deg,rgba(40,8,48,.9),rgba(12,6,30,.8) 50%,rgba(12,6,30,.93))}
+.grid h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:122px;letter-spacing:-3px}
+.grid .tiles{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.grid .row{background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.18);border-radius:34px;padding:34px 30px;height:430px;display:flex;flex-direction:column}
+.grid .logo{width:120px;height:120px;border-radius:30px;margin-bottom:24px}
+.grid .name{font-size:44px}.grid .co{font-size:24px;display:block;margin-top:2px}
+.grid .one{font-size:28px;line-height:1.3;margin:14px 0;flex:1;color:#eee}.grid .link{font-size:27px}
+
+/* light */
+.light .scrim{background:linear-gradient(180deg,rgba(6,16,48,.85),rgba(6,16,48,.55) 40%,rgba(6,16,48,.85))}
+.light h1{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:88px;letter-spacing:-3px}
+.light h1 span{display:inline-block;padding:4px 22px;margin:4px 0}
+.light h1 .l0{background:#fff;color:#0B1530}
+.light h1 .hl{background:var(--a);color:#fff}
+.light .kicker{color:#fff}
+.light .row{display:flex;align-items:center;background:#fff;color:#0B1530;border-radius:24px;padding:26px 30px;margin-bottom:20px;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.light .num{font-family:'Space Grotesk';font-size:64px;font-weight:700;color:var(--a);width:62px;flex:none}
+.light .logo{width:104px;height:104px;margin-right:28px;border:2px solid #E6EAF5}
+.light .name{font-size:46px}.light .co{font-size:25px;color:#6A7390;margin-left:12px}
+.light .one{font-size:29px;color:#2B3554;margin:4px 0 6px}.light .link{font-size:28px}
+
+/* center */
+.center .scrim{background:radial-gradient(ellipse at 50% 40%,rgba(0,0,0,.62),rgba(0,0,0,.9))}
+.center .brand{left:50%;transform:translateX(-50%)}
+.center .wrap{text-align:center}
+.center h1{font-family:Poppins,sans-serif;font-weight:800;font-size:108px;letter-spacing:-3px;line-height:1.05}
+.center .kicker{background:transparent;color:var(--a);border:3px solid var(--a)}
+.center .row{display:flex;align-items:center;text-align:left;padding:30px 4px;border-top:2px solid rgba(255,255,255,.16)}
+.center .row:last-child{border-bottom:2px solid rgba(255,255,255,.16)}
+.center .num{font-family:Poppins;font-weight:800;font-size:40px;color:var(--a);width:70px;flex:none}
+.center .logo{width:108px;height:108px;border-radius:54px;margin-right:30px}
+.center .name{font-size:46px;font-family:Poppins;font-weight:700}.center .co{font-size:25px;margin-left:12px}
+.center .one{font-size:30px;margin:2px 0 6px;color:#ddd}.center .link{font-size:29px}
+</style></head><body>
+<div class="scrim"></div>
+<div class="brand"><img src="../../brand/incbusiness-logo-white.png"></div>
+<div class="wrap" id="w"></div>
+<script>
+window.render=r=>{
+  document.body.className=r.layout;
+  document.body.style.setProperty('--a',r.accent);
+  const t=r.title.map((l,i)=>`<span class="${i===r.highlight?'hl':'l'+i}">${l}</span>`).join('<br>');
+  const rows=r.tools.map((x,i)=>{
+    const logo=`<div class="logo"><img src="../logos/${x[2]}.png"></div>`;
+    const num=['light','center'].includes(r.layout)?`<div class="num">${i+1}</div>`:'';
+    if(r.layout==='grid') return `<div class="row">${logo}<div><span class="name">${x[0]}</span><span class="co">by ${x[1]}</span></div><div class="one">${x[3]}</div><div class="link">${x[4]}</div></div>`;
+    return `<div class="row">${num}${logo}<div><div><span class="name">${x[0]}</span><span class="co">by ${x[1]}</span></div><div class="one">${x[3]}</div><div class="link">${x[4]}</div></div></div>`;
+  }).join('');
+  document.getElementById('w').innerHTML=`<div class="kicker">${r.kicker}</div><h1>${t}</h1>${r.sub?`<div class="sub">${r.sub}</div>`:''}<div class="${r.layout==='grid'?'tiles':'list'}">${rows}</div>`;
+};
+</script></body></html>
