@@ -13,7 +13,7 @@ Instagram page **incbusiness** — Indian startup / business news (funding, IPO,
 - Covers alternate dark / light (white) by post index → checkerboard on the 3-column grid. Never break the alternation.
 - Reel top = incbusiness logo, then the 2-line headline. No kicker, no hook/sub-line above the cards (hook is used on covers only).
 - If a tool's square icon isn't recognisable (e.g. ElevenLabs "II"), add its wordmark as `logos/<key>-wordmark.png` and set `"wordmark"` on the reel entry (spotlight uses it on cover + card).
-- Spotlight reels: logo + headline, then a browser-framed screenshot of the tool's website (`reels/screenshots/<key>.png`, 1440x1080 Playwright capture; set `"screenshot"` + `"line"` on the entry) with one white line under it. Sites behind Cloudflare (e.g. gamma.app) can't be captured here — ask the owner for a screenshot or fall back to the points card.
+- Spotlight reels: logo + one-line headline ("Tool Spotlight"), then a browser-framed screenshot of the tool's website (`reels/screenshots/<key>.png`, 1440x1080 Playwright capture; set `"screenshot"` + `"line"` on the entry) then the tool name big in amber, then one white line. Sites behind Cloudflare (e.g. gamma.app) can't be captured here — pick a different tool whose site can be captured (owner's call: Gamma was swapped for Pitch).
 - Every reel shows plain white text "Follow for more AI content" with Instagram + LinkedIn icons from 3s (slides in under the cards; no pill, no arrow).
 - Covers: `out/<id>-cover.png` (1080x1920) — all key content sits inside the 3:4 profile-grid crop (y 240..1680). Upload it as the reel cover.
 

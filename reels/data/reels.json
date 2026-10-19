@@ -97,7 +97,7 @@
     }
   },
   {
-    "id": "03-spotlight-gamma",
+    "id": "03-spotlight-pitch",
     "type": "spotlight",
     "category": "Presentation",
     "title": [
@@ -112,25 +112,27 @@
     },
     "tools": [
       [
-        "Gamma",
-        "Gamma Tech",
-        "gamma_app",
-        "Turn a single prompt into a full pitch deck",
-        "gamma.app"
+        "Pitch",
+        "Pitch Software",
+        "pitch_com",
+        "Turn one prompt into a full pitch deck",
+        "pitch.com"
       ]
     ],
     "points": [
       "Full deck from one prompt",
-      "Auto-designed, on-brand slides",
-      "Export to PowerPoint or PDF"
+      "Beautiful, on-brand templates",
+      "Work on slides with your team live"
     ],
-    "caption": "Investor meeting tomorrow? Don't spend the night on slides 📊\n\nGamma builds a clean, designed deck from a single prompt — and exports to PowerPoint or PDF.\nSave this before your next fundraise 👇\n\n#gamma #pitchdeck #aitools #startup #fundraising #founders #incbusiness",
+    "caption": "Investor meeting tomorrow? Don't spend the night on slides 📊\n\nPitch turns a single prompt into a clean, designed deck your whole team can edit together.\nSave this before your next fundraise 👇\n\n#pitch #pitchdeck #aitools #startup #fundraising #founders #incbusiness",
     "music": {
       "file": "471.mp3",
       "start": 20,
       "title": "Digital Clouds",
       "source": "https://assets.mixkit.co/music/471/471.mp3"
-    }
+    },
+    "screenshot": "pitch_com",
+    "line": "Turn one prompt into a full pitch deck"
   },
   {
     "id": "04-ai-coding-tools",

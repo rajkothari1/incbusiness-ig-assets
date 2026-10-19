@@ -77,7 +77,8 @@ body.ctaonly .cta{display:flex}
 .web .bar i:nth-child(1){background:#ff5f57}.web .bar i:nth-child(2){background:#febc2e}.web .bar i:nth-child(3){background:#28c840}
 .web .bar span{margin-left:18px;flex:1;background:#fff;border-radius:22px;padding:10px 24px;font-size:28px;font-weight:600;color:#333}
 .web img{display:block;width:100%}
-.wline{font-family:Poppins;font-weight:600;font-size:46px;line-height:1.25;margin-top:44px;color:#fff}
+.wname{font-family:Poppins;font-weight:800;font-size:112px;line-height:1;letter-spacing:-3px;margin-top:44px;color:var(--a)}
+.wline{font-family:Poppins;font-weight:600;font-size:46px;line-height:1.25;margin-top:14px;color:#fff}
 </style></head><body>
 <div class="scrim"></div>
 <div class="brand"><img id="bl" src="../../brand/incbusiness-logo-white.png"></div>
@@ -99,10 +100,10 @@ window.render=(r,mode,i)=>{
     return;
   }
   w.className='wrap';
-  const head=`<h1><span class="l0">${r.title[0]}</span><br><span class="l1">${r.title[1]}</span></h1>`;
+  const head=`<h1><span class="l0">${r.title[0]}</span>${r.type==='spotlight'?' ':'<br>'}<span class="l1">${r.title[1]}</span></h1>`;
   if(r.type==='spotlight'&&r.screenshot){
     const t=r.tools[0];
-    w.innerHTML=head+`<div class="web"><div class="bar"><i></i><i></i><i></i><span>${t[4]}</span></div><img src="../screenshots/${r.screenshot}.png"></div><div class="wline">${r.line||t[3]}</div>`;
+    w.innerHTML=head+`<div class="web"><div class="bar"><i></i><i></i><i></i><span>${t[4]}</span></div><img src="../screenshots/${r.screenshot}.png"></div><div class="wname">${t[0]}</div><div class="wline">${r.line||t[3]}</div>`;
   } else if(r.type==='spotlight'){
     const t=r.tools[0];
     w.innerHTML=head+`<div class="spot"><div class="head">${r.wordmark?`<div><img class="swm" src="../logos/${r.wordmark}.png"><span class="co">by ${t[1]}</span></div>`:`${L(t[2])}<div><span class="name">${t[0]}</span><span class="co">by ${t[1]}</span></div>`}</div><div class="one">${t[3]}</div><ul>${r.points.map(p=>`<li>${p}</li>`).join('')}</ul><div class="btn">${t[4]} →</div></div>`;
