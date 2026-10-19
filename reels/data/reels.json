@@ -1,12 +1,7 @@
 [
   {
-    "id": "001-ai-video-tools",
-    "layout": "stack",
-    "accent": "#FF5A4E",
-    "font": "Anton",
-    "kicker": "AI VIDEO",
-    "title": ["4 AI Tools That", "Replace a Film Crew"],
-    "highlight": 1,
+    "id": "01-ai-video-tools", "type": "top4", "category": "Video",
+    "title": ["Top 4 AI", "Video Tools"], "hook": "Replace a full film crew",
     "bg": { "file": "49646.mp4", "start": 3, "source": "https://mixkit.co/free-stock-video/a-young-man-adjust-the-lens-of-an-old-film-49646/" },
     "tools": [
       ["Runway", "Runway AI", "runway_com", "Generate & edit cinematic video from text", "runway.com"],
@@ -14,58 +9,56 @@
       ["HeyGen", "HeyGen", "heygen_com", "AI avatars that present videos for you", "heygen.com"],
       ["Synthesia", "Synthesia", "synthesia_io", "Explainer & training videos with AI presenters", "synthesia.io"]
     ],
-    "caption": "No camera, no crew, no studio. These 4 AI tools turn a text prompt into a finished video 🎬\n\nWhich one are you trying first? 👇\n\nSave this for your next video project.\n\n#aitools #aivideo #runway #heygen #synthesia #klingai #startup #founders #incbusiness"
+    "caption": "No camera, no crew, no studio. These 4 AI tools turn a text prompt into a finished video 🎬\n\nWhich one are you trying first? 👇\nSave this for your next video project.\n\n#aitools #aivideo #runway #heygen #synthesia #klingai #founders #startup #incbusiness"
   },
   {
-    "id": "002-ai-image-tools",
-    "layout": "grid",
-    "accent": "#FF5FBF",
-    "font": "Bricolage Grotesque",
-    "kicker": "AI IMAGES",
-    "title": ["Stop Paying", "for Stock Photos"],
-    "highlight": 1,
-    "sub": "4 AI image tools that do it better",
+    "id": "02-ai-image-tools", "type": "top3", "category": "Image",
+    "title": ["Top 3 AI", "Image Tools"], "hook": "Stop paying for stock photos",
     "bg": { "file": "43418.mp4", "start": 2, "source": "https://mixkit.co/free-stock-video/artist-brushing-paint-across-a-canvas-43418/" },
     "tools": [
       ["Midjourney", "Midjourney Inc.", "midjourney_com", "Stunning visuals & art from a prompt", "midjourney.com"],
       ["Ideogram", "Ideogram AI", "ideogram_ai", "Images with clean text, posters & logos", "ideogram.ai"],
-      ["Leonardo.Ai", "Canva", "leonardo_ai", "Brand-ready product & marketing images", "leonardo.ai"],
       ["Firefly", "Adobe", "firefly_adobe_com", "Commercially safe AI images for brands", "firefly.adobe.com"]
     ],
-    "caption": "Your brand doesn't need another stock photo subscription 🎨\n\nThese 4 AI tools create custom visuals, posters and product shots in seconds.\n\nSave it & share with your designer 👇\n\n#aitools #aiimages #midjourney #ideogram #adobefirefly #leonardoai #marketing #founders #incbusiness"
+    "caption": "Your brand doesn't need another stock photo subscription 🎨\n\nThese 3 AI tools create custom visuals, posters and product shots in seconds.\nSave it & share with your designer 👇\n\n#aitools #aiimages #midjourney #ideogram #adobefirefly #marketing #founders #incbusiness"
   },
   {
-    "id": "003-ai-presentation-tools",
-    "layout": "light",
-    "accent": "#2F6BFF",
-    "font": "Space Grotesk",
-    "kicker": "AI DECKS",
-    "title": ["Your Next Pitch Deck", "in 60 Seconds"],
-    "highlight": 1,
+    "id": "03-spotlight-gamma", "type": "spotlight", "category": "Presentation",
+    "title": ["Tool", "Spotlight"], "hook": "Your pitch deck in 60 seconds",
     "bg": { "file": "42648.mp4", "start": 0, "source": "https://mixkit.co/free-stock-video/business-man-exposing-graphs-42648/" },
-    "tools": [
-      ["Gamma", "Gamma Tech", "gamma_app", "Full decks & docs from a single prompt", "gamma.app"],
-      ["Beautiful.ai", "Beautiful.ai", "beautiful_ai", "Slides that auto-design themselves", "beautiful.ai"],
-      ["Canva", "Canva", "canva_com", "Magic Design turns ideas into decks fast", "canva.com"],
-      ["Pitch", "Pitch Software", "pitch_com", "Collaborative pitch decks for startups", "pitch.com"]
-    ],
-    "caption": "Investor meeting tomorrow? Don't spend the night on slides 📊\n\nThese 4 AI tools build a clean pitch deck from a single prompt.\n\nSave this before your next fundraise 👇\n\n#pitchdeck #aitools #gamma #canva #startup #fundraising #founders #incbusiness"
+    "tools": [["Gamma", "Gamma Tech", "gamma_app", "Turn a single prompt into a full pitch deck", "gamma.app"]],
+    "points": ["Full deck from one prompt", "Auto-designed, on-brand slides", "Export to PowerPoint or PDF"],
+    "caption": "Investor meeting tomorrow? Don't spend the night on slides 📊\n\nGamma builds a clean, designed deck from a single prompt — and exports to PowerPoint or PDF.\nSave this before your next fundraise 👇\n\n#gamma #pitchdeck #aitools #startup #fundraising #founders #incbusiness"
   },
   {
-    "id": "004-ai-voice-tools",
-    "layout": "center",
-    "accent": "#3DF2A5",
-    "font": "Poppins",
-    "kicker": "AI VOICE",
-    "title": ["Never Record a", "Voiceover Again"],
-    "highlight": 1,
-    "bg": { "file": "44049.mp4", "start": 3, "source": "https://mixkit.co/free-stock-video/close-up-shot-of-a-professional-condenser-microphone-44049/" },
+    "id": "04-ai-coding-tools", "type": "top4", "category": "Coding",
+    "title": ["Top 4 AI", "Coding Tools"], "hook": "Ship your MVP without a dev team",
+    "bg": { "file": "41654.mp4", "start": 0, "source": "https://mixkit.co/free-stock-video/complex-programming-codes-on-a-programmers-screen-41654/" },
     "tools": [
-      ["ElevenLabs", "ElevenLabs", "elevenlabs_io", "Ultra-realistic voiceovers in many languages", "elevenlabs.io"],
-      ["Murf AI", "Murf AI", "murf_ai", "Studio-quality voiceovers for videos & ads", "murf.ai"],
-      ["Descript", "Descript", "descript_com", "Edit audio & video like a text document", "descript.com"],
-      ["Speechify", "Speechify", "speechify_com", "Turn any text or PDF into audio", "speechify.com"]
+      ["Cursor", "Anysphere", "cursor_com", "AI code editor that writes & fixes code", "cursor.com"],
+      ["GitHub Copilot", "GitHub", "github_com", "AI pair programmer inside your editor", "github.com/features/copilot"],
+      ["Lovable", "Lovable", "lovable_dev", "Build full web apps just by chatting", "lovable.dev"],
+      ["Replit", "Replit", "replit_com", "Describe an app, get it built & hosted", "replit.com"]
     ],
-    "caption": "No mic, no studio, no retakes 🎙️\n\nThese 4 AI voice tools give you studio-quality voiceovers for reels, ads and podcasts.\n\nSave it for later 👇\n\n#aitools #aivoice #elevenlabs #descript #voiceover #contentcreator #founders #incbusiness"
+    "caption": "You don't need a dev team to ship your first MVP anymore 💻\n\nThese 4 AI tools write, fix and even deploy code for you.\nSave it & tag a founder who's building 👇\n\n#aitools #aicoding #cursor #githubcopilot #lovable #replit #nocode #founders #incbusiness"
+  },
+  {
+    "id": "05-ai-research-tools", "type": "top3", "category": "Research",
+    "title": ["Top 3 AI", "Research Tools"], "hook": "Hours of research in minutes",
+    "bg": { "file": "50726.mp4", "start": 1, "source": "https://mixkit.co/free-stock-video/a-hand-runs-through-the-book-spines-in-the-library-50726/" },
+    "tools": [
+      ["Perplexity", "Perplexity AI", "perplexity_ai", "Answers with sources, like smarter search", "perplexity.ai"],
+      ["NotebookLM", "Google", "notebooklm_google_com", "Chat with your PDFs, notes & docs", "notebooklm.google.com"],
+      ["Consensus", "Consensus", "consensus_app", "Find answers backed by research papers", "consensus.app"]
+    ],
+    "caption": "Market research that used to take a week? Now it takes an evening 📚\n\nThese 3 AI tools find, read and summarise sources for you.\nSave this for your next deep dive 👇\n\n#aitools #research #perplexity #notebooklm #consensus #founders #startup #incbusiness"
+  },
+  {
+    "id": "06-spotlight-elevenlabs", "type": "spotlight", "category": "Voice",
+    "title": ["Tool", "Spotlight"], "hook": "Never record a voiceover again",
+    "bg": { "file": "44049.mp4", "start": 3, "source": "https://mixkit.co/free-stock-video/close-up-shot-of-a-professional-condenser-microphone-44049/" },
+    "tools": [["ElevenLabs", "ElevenLabs", "elevenlabs_io", "Studio-quality AI voiceovers in seconds", "elevenlabs.io"]],
+    "points": ["Realistic voices in many languages", "Clone your own voice", "Dub videos into other languages"],
+    "caption": "No mic, no studio, no retakes 🎙️\n\nElevenLabs gives you studio-quality voiceovers for reels, ads and podcasts — even in your own cloned voice.\nSave it for later 👇\n\n#elevenlabs #aivoice #aitools #voiceover #contentcreator #founders #incbusiness"
   }
 ]

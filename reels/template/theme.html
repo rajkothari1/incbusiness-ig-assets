@@ -1,0 +1,77 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=block" rel="stylesheet">
+<style>
+/* incbusiness "AI Toolkit" theme: B&W footage, black scrim, one amber accent, Poppins + Inter. */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;background:transparent;overflow:hidden}
+body{font-family:Inter,sans-serif;color:#fff;--a:#FFC21A}
+.scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.82),rgba(0,0,0,.66) 40%,rgba(0,0,0,.88))}
+.cover .scrim{background:radial-gradient(ellipse at 50% 50%,rgba(0,0,0,.5),rgba(0,0,0,.86) 75%)}
+.brand{position:absolute;left:70px;top:150px;height:46px}.brand img{height:100%}
+.wrap{position:absolute;left:70px;right:70px;top:250px}
+.kicker{display:flex;align-items:center;gap:18px;font-weight:800;font-size:28px;letter-spacing:5px;color:var(--a);text-transform:uppercase}
+.kicker:before{content:"";width:60px;height:5px;background:var(--a)}
+h1{font-family:Poppins;font-weight:800;font-size:104px;line-height:1.02;letter-spacing:-3px;margin:22px 0 14px}
+h1 .l1{color:var(--a)}
+.hook{font-size:36px;color:rgba(255,255,255,.82);font-weight:500;margin-bottom:46px}
+.logo{background:#fff;border-radius:24px;overflow:hidden;flex:none}
+.logo img{width:100%;height:100%;object-fit:cover;display:block}
+.card{display:flex;align-items:center;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.12);border-radius:26px}
+.num{font-family:Poppins;font-weight:800;color:var(--a);flex:none}
+.name{font-family:Poppins;font-weight:700}.co{color:rgba(255,255,255,.6);font-weight:500}
+.one{color:#e8e8e8}.link{color:var(--a);font-weight:700}
+/* top4 */
+.top4 .card{padding:24px 28px;margin-bottom:18px}
+.top4 .num{font-size:44px;width:56px}.top4 .logo{width:104px;height:104px;margin-right:28px}
+.top4 .name{font-size:42px}.top4 .co{font-size:24px;margin-left:10px}.top4 .one{font-size:29px;margin:4px 0 6px}.top4 .link{font-size:27px}
+/* top3 */
+.top3 .card{padding:34px 32px;margin-bottom:24px}
+.top3 .num{font-size:58px;width:70px}.top3 .logo{width:136px;height:136px;margin-right:32px;border-radius:30px}
+.top3 .name{font-size:50px}.top3 .co{font-size:26px;margin-left:12px}.top3 .one{font-size:32px;margin:6px 0 8px}.top3 .link{font-size:30px}
+/* spotlight */
+.spot{background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.12);border-radius:34px;padding:44px}
+.spot .head{display:flex;align-items:center;gap:36px;margin-bottom:30px}
+.spot .logo{width:180px;height:180px;border-radius:40px}
+.spot .name{font-size:76px;line-height:1}.spot .co{font-size:30px;display:block;margin-top:10px}
+.spot .one{font-size:38px;line-height:1.3;margin-bottom:28px;font-weight:600;color:#fff}
+.spot ul{list-style:none;margin-bottom:36px}
+.spot li{font-size:34px;color:#e8e8e8;padding:14px 0 14px 62px;position:relative}
+.spot li:before{content:"✓";position:absolute;left:0;top:10px;width:44px;height:44px;border-radius:22px;background:var(--a);color:#111;font-weight:900;font-size:28px;display:flex;align-items:center;justify-content:center}
+.spot .btn{display:inline-block;background:var(--a);color:#111;font-weight:800;font-size:34px;padding:18px 36px;border-radius:50px}
+/* covers: everything inside IG's 3:4 grid crop (y 240..1680) */
+.cover .brand{left:50%;transform:translateX(-50%);top:auto;bottom:300px;height:50px}
+.cv{position:absolute;left:60px;right:60px;top:300px;bottom:400px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.cv .kicker{justify-content:center;margin-bottom:10px}.cv .kicker:after{content:"";width:60px;height:5px;background:var(--a)}
+.big{font-family:Poppins;font-weight:900;font-size:520px;line-height:.86;color:var(--a);letter-spacing:-20px;margin-left:-20px}
+.cat{font-family:Poppins;font-weight:800;font-size:116px;line-height:1;letter-spacing:-3px;text-transform:uppercase;margin-top:10px}
+.cat small{display:block;font-size:56px;letter-spacing:12px;font-weight:700;margin-top:14px;color:rgba(255,255,255,.85)}
+.logos{display:flex;gap:22px;margin-top:50px}.logos .logo{width:96px;height:96px;border-radius:22px}
+.cv .slogo{width:330px;height:330px;border-radius:70px;margin:40px 0 44px;box-shadow:0 0 0 10px var(--a)}
+.cv .sname{font-family:Poppins;font-weight:800;font-size:132px;line-height:1;letter-spacing:-4px;text-transform:uppercase}
+.cv .shook{font-size:42px;margin-top:22px;color:rgba(255,255,255,.88);font-weight:600}
+</style></head><body>
+<div class="scrim"></div>
+<div class="brand"><img src="../../brand/incbusiness-logo-white.png"></div>
+<div id="w"></div>
+<script>
+const L=k=>`<div class="logo"><img src="../logos/${k}.png"></div>`;
+window.render=(r,mode)=>{
+  document.body.className=mode+' '+r.type;
+  const w=document.getElementById('w');
+  if(mode==='cover'){
+    w.className='cv';
+    w.innerHTML=r.type==='spotlight'
+      ?`<div class="kicker">Tool Spotlight</div><div class="logo slogo"><img src="../logos/${r.tools[0][2]}.png"></div><div class="sname">${r.tools[0][0]}</div><div class="shook">${r.hook}</div>`
+      :`<div class="kicker">AI Toolkit</div><div class="big">${r.tools.length}</div><div class="cat">AI ${r.category}<small>TOOLS</small></div><div class="logos">${r.tools.map(t=>L(t[2])).join('')}</div>`;
+    return;
+  }
+  w.className='wrap';
+  const head=`<div class="kicker">AI Toolkit · ${r.category}</div><h1><span class="l0">${r.title[0]}</span><br><span class="l1">${r.title[1]}</span></h1><div class="hook">${r.hook}</div>`;
+  if(r.type==='spotlight'){
+    const t=r.tools[0];
+    w.innerHTML=head+`<div class="spot"><div class="head">${L(t[2])}<div><span class="name">${t[0]}</span><span class="co">by ${t[1]}</span></div></div><div class="one">${t[3]}</div><ul>${r.points.map(p=>`<li>${p}</li>`).join('')}</ul><div class="btn">${t[4]} →</div></div>`;
+  } else {
+    w.innerHTML=head+r.tools.map((t,i)=>`<div class="card"><div class="num">${i+1}</div>${L(t[2])}<div><div><span class="name">${t[0]}</span><span class="co">by ${t[1]}</span></div><div class="one">${t[3]}</div><div class="link">${t[4]}</div></div></div>`).join('');
+  }
+};
+</script></body></html>
