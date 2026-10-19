@@ -25,6 +25,7 @@ Instagram page **incbusiness** — Indian startup / business news (funding, IPO,
 - `reels/archive/` holds the earlier (pre-theme) versions.
 
 ## Publishing (Metricool)
-- Brand: `incbusiness.official` (Instagram), blogId `6752944`, timezone Asia/Calcutta. Best slot: 10:00 IST, one reel per day, in id order.
+- Brand: `incbusiness.official` (Instagram), blogId `6752944`, timezone Asia/Calcutta. Best slots: 10:00 and 18:00 IST, in id order.
 - Media URLs: public raw GitHub links pinned to a commit, e.g. `https://raw.githubusercontent.com/rajkothari1/incbusiness-ig-assets/<commit>/reels/out/<id>.mp4`; cover via `videoThumbnailUrl` (`<id>-cover.png`).
-- Music: the Instagram audio catalog returns 403 for this account (not Business / not linked to a FB Page), so schedule with `autoPublish: false` — the owner gets a Metricool push at post time and adds trending audio in the Instagram app.
+- Music: every reel has a Mixkit Music Free License track baked in (rotate the pool in `reels.json` → `music`; tracks live in `reels/music/`, gitignored, auto-downloaded by id; loudnorm -14 LUFS, fades). The Instagram audio catalog via Metricool returns 403 (account is Creator, not Business+FB Page) and trending songs can't be embedded (copyright), so this is the owner's chosen "automatic" option.
+- Schedule with `autoPublish: true` (fully automatic). Slots: 10:00 and 18:00 IST, in id order.

@@ -43,7 +43,13 @@
         "synthesia.io"
       ]
     ],
-    "caption": "No camera, no crew, no studio. These 4 AI tools turn a text prompt into a finished video 🎬\n\nWhich one are you trying first? 👇\nSave this for your next video project.\n\n#aitools #aivideo #runway #heygen #synthesia #klingai #founders #startup #incbusiness"
+    "caption": "No camera, no crew, no studio. These 4 AI tools turn a text prompt into a finished video 🎬\n\nWhich one are you trying first? 👇\nSave this for your next video project.\n\n#aitools #aivideo #runway #heygen #synthesia #klingai #founders #startup #incbusiness",
+    "music": {
+      "file": "441.mp3",
+      "start": 32,
+      "title": "Motivating Mornings",
+      "source": "https://assets.mixkit.co/music/441/441.mp3"
+    }
   },
   {
     "id": "02-ai-image-tools",
@@ -82,7 +88,13 @@
         "firefly.adobe.com"
       ]
     ],
-    "caption": "Your brand doesn't need another stock photo subscription 🎨\n\nThese 3 AI tools create custom visuals, posters and product shots in seconds.\nSave it & share with your designer 👇\n\n#aitools #aiimages #midjourney #ideogram #adobefirefly #marketing #founders #incbusiness"
+    "caption": "Your brand doesn't need another stock photo subscription 🎨\n\nThese 3 AI tools create custom visuals, posters and product shots in seconds.\nSave it & share with your designer 👇\n\n#aitools #aiimages #midjourney #ideogram #adobefirefly #marketing #founders #incbusiness",
+    "music": {
+      "file": "162.mp3",
+      "start": 8,
+      "title": "Techno Fest Vibes",
+      "source": "https://assets.mixkit.co/music/162/162.mp3"
+    }
   },
   {
     "id": "03-spotlight-gamma",
@@ -112,7 +124,13 @@
       "Auto-designed, on-brand slides",
       "Export to PowerPoint or PDF"
     ],
-    "caption": "Investor meeting tomorrow? Don't spend the night on slides 📊\n\nGamma builds a clean, designed deck from a single prompt — and exports to PowerPoint or PDF.\nSave this before your next fundraise 👇\n\n#gamma #pitchdeck #aitools #startup #fundraising #founders #incbusiness"
+    "caption": "Investor meeting tomorrow? Don't spend the night on slides 📊\n\nGamma builds a clean, designed deck from a single prompt — and exports to PowerPoint or PDF.\nSave this before your next fundraise 👇\n\n#gamma #pitchdeck #aitools #startup #fundraising #founders #incbusiness",
+    "music": {
+      "file": "471.mp3",
+      "start": 20,
+      "title": "Digital Clouds",
+      "source": "https://assets.mixkit.co/music/471/471.mp3"
+    }
   },
   {
     "id": "04-ai-coding-tools",
@@ -158,7 +176,13 @@
         "replit.com"
       ]
     ],
-    "caption": "You don't need a dev team to ship your first MVP anymore 💻\n\nThese 4 AI tools write, fix and even deploy code for you.\nSave it & tag a founder who's building 👇\n\n#aitools #aicoding #cursor #githubcopilot #lovable #replit #nocode #founders #incbusiness"
+    "caption": "You don't need a dev team to ship your first MVP anymore 💻\n\nThese 4 AI tools write, fix and even deploy code for you.\nSave it & tag a founder who's building 👇\n\n#aitools #aicoding #cursor #githubcopilot #lovable #replit #nocode #founders #incbusiness",
+    "music": {
+      "file": "160.mp3",
+      "start": 32,
+      "title": "Focus on Yourself",
+      "source": "https://assets.mixkit.co/music/160/160.mp3"
+    }
   },
   {
     "id": "05-ai-research-tools",
@@ -197,7 +221,13 @@
         "consensus.app"
       ]
     ],
-    "caption": "Market research that used to take a week? Now it takes an evening 📚\n\nThese 3 AI tools find, read and summarise sources for you.\nSave this for your next deep dive 👇\n\n#aitools #research #perplexity #notebooklm #consensus #founders #startup #incbusiness"
+    "caption": "Market research that used to take a week? Now it takes an evening 📚\n\nThese 3 AI tools find, read and summarise sources for you.\nSave this for your next deep dive 👇\n\n#aitools #research #perplexity #notebooklm #consensus #founders #startup #incbusiness",
+    "music": {
+      "file": "759.mp3",
+      "start": 32,
+      "title": "Pop Track 03",
+      "source": "https://assets.mixkit.co/music/759/759.mp3"
+    }
   },
   {
     "id": "06-spotlight-elevenlabs",
@@ -228,6 +258,12 @@
       "Dub videos into other languages"
     ],
     "caption": "No mic, no studio, no retakes 🎙️\n\nElevenLabs gives you studio-quality voiceovers for reels, ads and podcasts — even in your own cloned voice.\nSave it for later 👇\n\n#elevenlabs #aivoice #aitools #voiceover #contentcreator #founders #incbusiness",
-    "wordmark": "elevenlabs_io-wordmark"
+    "wordmark": "elevenlabs_io-wordmark",
+    "music": {
+      "file": "416.mp3",
+      "start": 20,
+      "title": "Uplifting Bass",
+      "source": "https://assets.mixkit.co/music/416/416.mp3"
+    }
   }
 ]
