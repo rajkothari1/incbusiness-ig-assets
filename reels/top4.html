@@ -1,0 +1,35 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1920px;font-family:Inter,sans-serif;color:#fff;overflow:hidden;
+background:linear-gradient(180deg,rgba(14,18,48,.97),rgba(40,22,80,.98)),url(../backgrounds/ai.jpg) center/cover;}
+.wrap{padding:150px 70px 0}
+.tag{display:inline-block;background:#FFB020;color:#141633;font-weight:800;font-size:32px;letter-spacing:3px;padding:12px 28px;border-radius:40px}
+h1{font-size:118px;font-weight:900;line-height:1;margin:34px 0 60px;letter-spacing:-2px}
+h1 span{color:#FFB020}
+.row{display:flex;align-items:center;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);border-radius:28px;padding:30px;margin-bottom:24px}
+.logo{width:120px;height:120px;border-radius:26px;background:#fff;overflow:hidden;flex:none;margin-right:32px;display:flex;align-items:center;justify-content:center}
+.logo img{width:100%;height:100%;object-fit:cover}
+.t{flex:1;min-width:0}
+.top{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.name{font-size:48px;font-weight:900}
+.co{font-size:26px;color:#AEB1DD}
+.one{font-size:31px;color:#E4E5F7;margin:8px 0 10px;line-height:1.25}
+.link{font-size:30px;font-weight:700;color:#FFD27A}
+.foot{position:absolute;bottom:200px;left:70px;right:70px;display:flex;justify-content:space-between;align-items:center;font-size:32px}
+.foot b{font-size:44px;font-weight:900}.foot b span{color:#FFB020}
+.save{background:#fff;color:#141633;font-weight:800;padding:18px 32px;border-radius:40px}
+</style></head><body><div class="wrap">
+<div class="tag">AI TOOLS</div>
+<h1 id="h"></h1>
+<div id="list"></div></div>
+<div class="foot"><b>inc<span>business</span></b><div class="save">🔖 Save for later</div></div>
+<script>
+const C={
+video:["Video",[["Runway","Runway AI","runway_com","Generate & edit cinematic video from text","runway.com"],["Kling AI","Kuaishou","kling_ai","Realistic video clips from text or images","kling.ai"],["HeyGen","HeyGen","heygen_com","AI avatars that present videos for you","heygen.com"],["Synthesia","Synthesia","synthesia_io","Explainer & training videos with AI presenters","synthesia.io"]]],
+image:["Image",[["Midjourney","Midjourney Inc.","midjourney_com","Stunning visuals & art from a prompt","midjourney.com"],["Ideogram","Ideogram AI","ideogram_ai","AI images with clean text, posters & logos","ideogram.ai"],["Leonardo.Ai","Canva","leonardo_ai","Brand-ready product & marketing images","leonardo.ai"],["Firefly","Adobe","firefly_adobe_com","Commercially safe AI images for brands","firefly.adobe.com"]]],
+presentation:["Presentation",[["Gamma","Gamma Tech","gamma_app","Full decks & docs from a single prompt","gamma.app"],["Beautiful.ai","Beautiful.ai","beautiful_ai","Slides that auto-design themselves","beautiful.ai"],["Canva","Canva","canva_com","Magic Design turns ideas into decks fast","canva.com"],["Pitch","Pitch Software","pitch_com","Collaborative pitch decks for startups","pitch.com"]]],
+voice:["Voice",[["ElevenLabs","ElevenLabs","elevenlabs_io","Ultra-realistic voiceovers in many languages","elevenlabs.io"],["Murf AI","Murf AI","murf_ai","Studio-quality voiceovers for videos & ads","murf.ai"],["Descript","Descript","descript_com","Edit audio & video like a text document","descript.com"],["Speechify","Speechify","speechify_com","Turn any text or PDF into audio","speechify.com"]]]};
+const [title,d]=C[location.hash.slice(1)||'video'];
+document.getElementById('h').innerHTML=`Top 4 AI<br><span>${title} Tools</span>`;
+document.getElementById('list').innerHTML=d.map(r=>`<div class="row"><div class="logo"><img src="logos/${r[2]}.png"></div><div class="t"><div class="top"><div class="name">${r[0]}</div><div class="co">by ${r[1]}</div></div><div class="one">${r[3]}</div><div class="link">${r[4]}</div></div></div>`).join('');
+</script></body></html>
