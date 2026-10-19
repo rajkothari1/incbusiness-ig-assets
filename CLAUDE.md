@@ -23,3 +23,8 @@ Instagram page **incbusiness** — Indian startup / business news (funding, IPO,
 - Background clips: Mixkit free stock video (Mixkit License, free for commercial/social use). Download to `reels/bg-videos/<id>.mp4` from `https://assets.mixkit.co/videos/<id>/<id>-1080.mp4` (gitignored; sources listed in `reels.json`). Unsplash/Pexels/Pixabay block this container.
 - Render: `reels/render-reels.sh [id...]` → `reels/out/<id>.mp4`, `<id>-cover.png`, `<id>-caption.txt`, plus `out/grid-preview.png` (profile grid mock).
 - `reels/archive/` holds the earlier (pre-theme) versions.
+
+## Publishing (Metricool)
+- Brand: `incbusiness.official` (Instagram), blogId `6752944`, timezone Asia/Calcutta. Best slot: 10:00 IST, one reel per day, in id order.
+- Media URLs: public raw GitHub links pinned to a commit, e.g. `https://raw.githubusercontent.com/rajkothari1/incbusiness-ig-assets/<commit>/reels/out/<id>.mp4`; cover via `videoThumbnailUrl` (`<id>-cover.png`).
+- Music: the Instagram audio catalog returns 403 for this account (not Business / not linked to a FB Page), so schedule with `autoPublish: false` — the owner gets a Metricool push at post time and adds trending audio in the Instagram app.
