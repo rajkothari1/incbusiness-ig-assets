@@ -49,7 +49,13 @@
       "start": 32,
       "title": "Motivating Mornings",
       "source": "https://assets.mixkit.co/music/441/441.mp3"
-    }
+    },
+    "hq": [
+      "New York, USA",
+      "Beijing, China",
+      "Los Angeles, USA",
+      "London, UK"
+    ]
   },
   {
     "id": "02-ai-image-tools",
@@ -94,7 +100,12 @@
       "start": 8,
       "title": "Techno Fest Vibes",
       "source": "https://assets.mixkit.co/music/162/162.mp3"
-    }
+    },
+    "hq": [
+      "San Francisco, USA",
+      "Toronto, Canada",
+      "San Jose, USA"
+    ]
   },
   {
     "id": "03-spotlight-pitch",
@@ -132,7 +143,10 @@
       "source": "https://assets.mixkit.co/music/471/471.mp3"
     },
     "screenshot": "pitch_com",
-    "line": "Turn one prompt into a full pitch deck"
+    "line": "Turn one prompt into a full pitch deck",
+    "hq": [
+      "Berlin, Germany"
+    ]
   },
   {
     "id": "04-ai-coding-tools",
@@ -184,7 +198,13 @@
       "start": 32,
       "title": "Focus on Yourself",
       "source": "https://assets.mixkit.co/music/160/160.mp3"
-    }
+    },
+    "hq": [
+      "San Francisco, USA",
+      "San Francisco, USA",
+      "Stockholm, Sweden",
+      "California, USA"
+    ]
   },
   {
     "id": "05-ai-research-tools",
@@ -229,7 +249,12 @@
       "start": 32,
       "title": "Pop Track 03",
       "source": "https://assets.mixkit.co/music/759/759.mp3"
-    }
+    },
+    "hq": [
+      "San Francisco, USA",
+      "Mountain View, USA",
+      "Boston, USA"
+    ]
   },
   {
     "id": "06-spotlight-elevenlabs",
@@ -268,6 +293,9 @@
       "source": "https://assets.mixkit.co/music/416/416.mp3"
     },
     "screenshot": "elevenlabs_io",
-    "line": "Studio-quality AI voiceovers in seconds"
+    "line": "Studio-quality AI voiceovers in seconds",
+    "hq": [
+      "New York, USA"
+    ]
   }
 ]

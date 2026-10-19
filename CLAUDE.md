@@ -25,6 +25,11 @@ Instagram page **incbusiness** — Indian startup / business news (funding, IPO,
 - Render: `reels/render-reels.sh [id...]` → `reels/out/<id>.mp4`, `<id>-cover.png`, `<id>-caption.txt`, plus `out/grid-preview.png` (profile grid mock).
 - `reels/archive/` holds the earlier (pre-theme) versions.
 
+## Captions
+- Built by `render-reels.sh` into `out/<id>-caption.txt`: body from `caption`, then one `📍 Tool: City, Country` line per tool (company HQ, from the entry's `hq` list), then 20-25 hashtags.
+- Hashtags always start with the fixed set `#aitools #ai #business #tech #startup #follow #instagram #incbusiness`, then the reel's own tags (last paragraph of `caption`), then generic fillers; capped at 23.
+- Instagram's real location tag can't be set through Metricool — the HQ location lives in the caption only.
+
 ## Publishing (Metricool)
 - Brand: `incbusiness.official` (Instagram), blogId `6752944`, timezone Asia/Calcutta. Best slots: 10:00 and 18:00 IST, in id order.
 - Media URLs: public raw GitHub links pinned to a commit, e.g. `https://raw.githubusercontent.com/rajkothari1/incbusiness-ig-assets/<commit>/reels/out/<id>.mp4`; cover via `videoThumbnailUrl` (`<id>-cover.png`).

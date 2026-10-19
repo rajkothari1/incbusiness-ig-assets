@@ -26,7 +26,20 @@ for id in "${ids[@]}"; do
     -map "[v]" -map "[a]" -c:v libx264 -preset medium -crf 20 -c:a aac -b:a 192k -t "$DUR" -movflags +faststart "out/$id.mp4"
   ffmpeg -y -v error -ss "$ss" -i "bg-videos/$bg" -i "build/$id-cover.png" -filter_complex \
     "[0:v]$GRADE,setsar=1[bg];[bg][1:v]overlay=0:0" -frames:v 1 "out/$id-cover.png"
-  jq -r --arg id "$id" '.[]|select(.id==$id).caption' data/reels.json > "out/$id-caption.txt"
+  # Caption = body + "📍 Tool: HQ city" lines + 20-25 hashtags (fixed set first, then the reel's own, then generic fillers).
+  python3 - "$id" > "out/$id-caption.txt" <<'PY'
+import json,sys
+r=next(x for x in json.load(open('data/reels.json')) if x['id']==sys.argv[1])
+body,_,own=r['caption'].rstrip('\n').rpartition('\n\n')
+FIXED=['#aitools','#ai','#business','#tech','#startup','#follow','#instagram','#incbusiness']
+FILL=['#artificialintelligence','#technology','#founders','#entrepreneur','#productivity','#innovation','#startups',
+      '#futureoftech','#aitech','#smallbusiness','#growthhacking','#digitalmarketing','#techtools','#businesstips','#explorepage']
+tags=[]
+for t in FIXED+own.split()+FILL:
+    if t.startswith('#') and t.lower() not in [x.lower() for x in tags] and len(tags)<23: tags.append(t)
+loc=''.join(f"\n📍 {t[0]}: {h}" for t,h in zip(r['tools'],r.get('hq',[])))
+print(f"{body}\n{loc}\n\n{' '.join(tags)}" if loc else f"{body}\n\n{' '.join(tags)}")
+PY
   echo "reel $id -> out/$id.mp4 ($(du -h "out/$id.mp4" | cut -f1))"
 done
 # Profile grid preview: 3 columns, 3:4 crop, newest (last id) top-left like Instagram.
