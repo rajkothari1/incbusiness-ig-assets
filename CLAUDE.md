@@ -21,7 +21,7 @@ Instagram page **incbusiness** — Indian startup / business news (funding, IPO,
 - Data: `reels/data/reels.json` — one entry per reel: id (`NN-slug`), type (`top4` | `top3` | `spotlight`), category, title (2 lines), hook, bg clip, tools `[name, company, logo key, one-liner, link]`, `points` (3 bullets, spotlight only), caption.
 - Template: `reels/template/theme.html` (reel + cover modes).
 - Logos: `reels/logos/<domain_with_underscores>.png` (fetched via `https://www.google.com/s2/favicons?domain=<domain>&sz=256`).
-- Background clips: Mixkit free stock video (Mixkit License, free for commercial/social use). Download to `reels/bg-videos/<id>.mp4` from `https://assets.mixkit.co/videos/<id>/<id>-1080.mp4` (gitignored; `render-reels.sh` re-downloads any missing clip by its Mixkit id; sources listed in `reels.json`). Unsplash/Pexels/Pixabay block this container.
+- Background clips: Mixkit free stock video (Mixkit License, free for commercial/social use). Download to `reels/bg-videos/<id>.mp4` from `https://assets.mixkit.co/videos/<id>/<id>-1080.mp4` (gitignored; `render-reels.sh` re-downloads any missing clip by its Mixkit id, or from `bg.url` for newer clips whose id-based URL 403s — copy the `active_storage/...-video-720.mp4` link from the clip page; sources listed in `reels.json`). Unsplash/Pexels/Pixabay block this container.
 - Render: `reels/render-reels.sh [id...]` → `reels/out/<id>.mp4`, `<id>-cover.png`, `<id>-caption.txt`, plus `out/grid-preview.png` (profile grid mock).
 - `reels/archive/` holds the earlier (pre-theme) versions.
 

@@ -297,5 +297,114 @@
     "hq": [
       "New York, USA"
     ]
+  },
+  {
+    "id": "07-ai-writing-tools",
+    "type": "top4",
+    "category": "Writing",
+    "title": [
+      "Top 4 AI",
+      "Writing Tools"
+    ],
+    "hook": "Write 10x faster",
+    "bg": {
+      "file": "99910.mp4",
+      "start": 1,
+      "source": "https://mixkit.co/free-stock-video/beside-a-modern-laptop-the-hands-write-a-note-on-99910/",
+      "url": "https://assets.mixkit.co/active_storage/video_items/99910/1717715178/99910-video-720.mp4"
+    },
+    "tools": [
+      [
+        "Jasper",
+        "Jasper AI",
+        "jasper_ai",
+        "On-brand marketing copy in seconds",
+        "jasper.ai"
+      ],
+      [
+        "Notion AI",
+        "Notion Labs",
+        "notion_com",
+        "Write, summarise & plan inside your docs",
+        "notion.com"
+      ],
+      [
+        "Wordtune",
+        "AI21 Labs",
+        "wordtune_com",
+        "Rewrite any sentence to sound better",
+        "wordtune.com"
+      ],
+      [
+        "Copy.ai",
+        "Copy.ai",
+        "copy_ai",
+        "Sales emails & ad copy on autopilot",
+        "copy.ai"
+      ]
+    ],
+    "hq": [
+      "Austin, USA",
+      "San Francisco, USA",
+      "Tel Aviv, Israel",
+      "Memphis, USA"
+    ],
+    "music": {
+      "file": "441.mp3",
+      "start": 32,
+      "title": "Motivating Mornings",
+      "source": "https://assets.mixkit.co/music/441/441.mp3"
+    },
+    "caption": "Staring at a blank page? Let AI write the first draft ✍️\n\nThese 4 AI tools write emails, posts, ads and docs in seconds.\nSave this for your next writing sprint 👇\n\n#aiwriting #copywriting #jasper #notionai #wordtune #copyai #contentmarketing"
+  },
+  {
+    "id": "08-ai-meeting-tools",
+    "type": "top3",
+    "category": "Meeting",
+    "title": [
+      "Top 3 AI",
+      "Meeting Tools"
+    ],
+    "hook": "Never take meeting notes again",
+    "bg": {
+      "file": "10441.mp4",
+      "start": 1,
+      "source": "https://mixkit.co/free-stock-video/happy-man-chatting-on-a-video-call-10441/"
+    },
+    "tools": [
+      [
+        "Otter.ai",
+        "Otter.ai",
+        "otter_ai",
+        "Live transcripts & notes for every call",
+        "otter.ai"
+      ],
+      [
+        "Fireflies.ai",
+        "Fireflies.ai",
+        "fireflies_ai",
+        "Records & summarises every meeting",
+        "fireflies.ai"
+      ],
+      [
+        "Fathom",
+        "Fathom",
+        "fathom_ai",
+        "Free AI notetaker for Zoom & Meet",
+        "fathom.ai"
+      ]
+    ],
+    "hq": [
+      "Mountain View, USA",
+      "San Francisco, USA",
+      "San Francisco, USA"
+    ],
+    "music": {
+      "file": "162.mp3",
+      "start": 8,
+      "title": "Techno Fest Vibes",
+      "source": "https://assets.mixkit.co/music/162/162.mp3"
+    },
+    "caption": "Still typing notes during calls? Let AI do it 🎧\n\nThese 3 AI tools join your meetings, write the notes and list the action items.\nSave it & share with your team 👇\n\n#aimeetings #productivity #otterai #firefliesai #fathom #remotework #meetingnotes"
   }
 ]

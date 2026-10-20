@@ -15,7 +15,12 @@ for id in "${ids[@]}"; do
   # bg-videos/ is gitignored: fetch the Mixkit clip (<clipid>.mp4) if this container doesn't have it yet.
   if [ ! -s "bg-videos/$bg" ]; then
     mkdir -p bg-videos; c=${bg%.mp4}
-    curl -sfL -m 300 -o "bg-videos/$bg" "https://assets.mixkit.co/videos/$c/$c-1080.mp4" || curl -sfL -m 300 -o "bg-videos/$bg" "https://assets.mixkit.co/videos/$c/$c-720.mp4"
+    # Newer Mixkit clips use an active_storage URL: put it in bg.url when the id-based ones 403.
+    u=$(jq -r --arg id "$id" '.[]|select(.id==$id).bg.url // empty' data/reels.json)
+    { [ -n "$u" ] && curl -sfL -m 300 -o "bg-videos/$bg" "$u"; } \
+      || curl -sfL -m 300 -o "bg-videos/$bg" "https://assets.mixkit.co/videos/$c/$c-1080.mp4" \
+      || curl -sfL -m 300 -o "bg-videos/$bg" "https://assets.mixkit.co/videos/$c/$c-720.mp4" \
+      || { echo "ERROR $id: could not download bg clip $bg (set bg.url)" >&2; exit 1; }
   fi
   mf=$(jq -r --arg id "$id" '.[]|select(.id==$id).music.file' data/reels.json)
   ms=$(jq -r --arg id "$id" '.[]|select(.id==$id).music.start' data/reels.json)
