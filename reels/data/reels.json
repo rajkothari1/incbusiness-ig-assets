@@ -406,5 +406,104 @@
       "source": "https://assets.mixkit.co/music/162/162.mp3"
     },
     "caption": "Still typing notes during calls? Let AI do it 🎧\n\nThese 3 AI tools join your meetings, write the notes and list the action items.\nSave it & share with your team 👇\n\n#aimeetings #productivity #otterai #firefliesai #fathom #remotework #meetingnotes"
+  },
+  {
+    "id": "09-spotlight-descript",
+    "type": "spotlight",
+    "category": "Video Editing",
+    "title": [
+      "Tool",
+      "Spotlight"
+    ],
+    "hook": "Edit videos like a doc",
+    "bg": {
+      "file": "44047.mp4",
+      "start": 1,
+      "source": "https://mixkit.co/free-stock-video/close-shot-of-an-audio-console-44047/"
+    },
+    "tools": [
+      [
+        "Descript",
+        "Descript",
+        "descript_com",
+        "Edit video just by editing text",
+        "descript.com"
+      ]
+    ],
+    "points": [
+      "Edit video by editing the transcript",
+      "Remove filler words in one click",
+      "AI co-editor cuts clips for social"
+    ],
+    "screenshot": "descript_com",
+    "line": "Edit video just by editing text",
+    "hq": [
+      "San Francisco, USA"
+    ],
+    "music": {
+      "file": "471.mp3",
+      "start": 20,
+      "title": "Digital Clouds",
+      "source": "https://assets.mixkit.co/music/471/471.mp3"
+    },
+    "caption": "Video editing that feels like editing a Google Doc 🎬\n\nDescript turns your video into a transcript: delete a word, and it's gone from the video too. It even removes ums and long pauses for you.\nSave this for your next podcast or reel 👇\n\n#descript #videoediting #podcast #contentcreator #videomarketing #creatortools"
+  },
+  {
+    "id": "10-ai-automation-tools",
+    "type": "top4",
+    "category": "Automation",
+    "title": [
+      "Top 4 AI",
+      "Automation Tools"
+    ],
+    "hook": "Put your busywork on autopilot",
+    "bg": {
+      "file": "47266.mp4",
+      "start": 1,
+      "source": "https://mixkit.co/free-stock-video/automated-machine-places-parts-on-circuit-boards-47266/"
+    },
+    "tools": [
+      [
+        "Zapier",
+        "Zapier",
+        "zapier_com",
+        "Connect 7,000+ apps without code",
+        "zapier.com"
+      ],
+      [
+        "Make",
+        "Make",
+        "make_com",
+        "Visual workflows for complex automations",
+        "make.com"
+      ],
+      [
+        "n8n",
+        "n8n",
+        "n8n_io",
+        "Open-source automation with AI agents",
+        "n8n.io"
+      ],
+      [
+        "IFTTT",
+        "IFTTT",
+        "ifttt_com",
+        "Simple if-this-then-that app automations",
+        "ifttt.com"
+      ]
+    ],
+    "hq": [
+      "San Francisco, USA",
+      "Prague, Czechia",
+      "Berlin, Germany",
+      "San Francisco, USA"
+    ],
+    "music": {
+      "file": "160.mp3",
+      "start": 32,
+      "title": "Focus on Yourself",
+      "source": "https://assets.mixkit.co/music/160/160.mp3"
+    },
+    "caption": "Still copy-pasting between apps? Let automation do it ⚙️\n\nThese 4 tools connect your apps and run your repetitive work while you sleep.\nSave it & automate one task this week 👇\n\n#automation #nocode #zapier #make #n8n #ifttt #workflow"
   }
 ]
