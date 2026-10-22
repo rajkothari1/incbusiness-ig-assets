@@ -505,5 +505,96 @@
       "source": "https://assets.mixkit.co/music/160/160.mp3"
     },
     "caption": "Still copy-pasting between apps? Let automation do it ⚙️\n\nThese 4 tools connect your apps and run your repetitive work while you sleep.\nSave it & automate one task this week 👇\n\n#automation #nocode #zapier #make #n8n #ifttt #workflow"
+  },
+  {
+    "id": "11-ai-design-tools",
+    "type": "top3",
+    "category": "Design",
+    "title": [
+      "Top 3 AI",
+      "Design Tools"
+    ],
+    "hook": "Design apps without a designer",
+    "bg": {
+      "file": "799.mp4",
+      "start": 1,
+      "source": "https://mixkit.co/free-stock-video/a-graphic-designer-working-on-a-tablet-799/"
+    },
+    "tools": [
+      [
+        "Figma",
+        "Figma",
+        "figma_com",
+        "AI turns prompts into app designs",
+        "figma.com"
+      ],
+      [
+        "Framer",
+        "Framer",
+        "framer_com",
+        "Publish a full website from a prompt",
+        "framer.com"
+      ],
+      [
+        "Uizard",
+        "Uizard",
+        "uizard_io",
+        "Sketch to clickable app mockups",
+        "uizard.io"
+      ]
+    ],
+    "hq": [
+      "San Francisco, USA",
+      "Amsterdam, Netherlands",
+      "Copenhagen, Denmark"
+    ],
+    "music": {
+      "file": "759.mp3",
+      "start": 32,
+      "title": "Pop Track 03",
+      "source": "https://assets.mixkit.co/music/759/759.mp3"
+    },
+    "caption": "Have an app idea but no designer? Start here 🎨\n\nThese 3 AI tools turn a prompt or a rough sketch into real screens and websites.\nSave it for your next product launch 👇\n\n#uidesign #uxdesign #figma #framer #uizard #webdesign #productdesign"
+  },
+  {
+    "id": "12-spotlight-loom",
+    "type": "spotlight",
+    "category": "Video Messaging",
+    "title": [
+      "Tool",
+      "Spotlight"
+    ],
+    "hook": "Skip the meeting, send a Loom",
+    "bg": {
+      "file": "47003.mp4",
+      "start": 1,
+      "source": "https://mixkit.co/free-stock-video/businessman-in-a-video-call-at-his-home-47003/"
+    },
+    "tools": [
+      [
+        "Loom",
+        "Atlassian",
+        "loom_com",
+        "Record your screen, AI writes notes",
+        "loom.com"
+      ]
+    ],
+    "points": [
+      "Record screen + camera in one click",
+      "AI titles, summaries & chapters",
+      "Share a link instead of a meeting"
+    ],
+    "screenshot": "loom_com",
+    "line": "Record your screen, AI writes notes",
+    "hq": [
+      "San Francisco, USA"
+    ],
+    "music": {
+      "file": "416.mp3",
+      "start": 20,
+      "title": "Uplifting Bass",
+      "source": "https://assets.mixkit.co/music/416/416.mp3"
+    },
+    "caption": "That 30-minute meeting could have been a 2-minute video 🎥\n\nLoom records your screen and face, then AI adds the title, summary and chapters. Just share the link.\nSave this & cancel one meeting this week 👇\n\n#loom #remotework #async #productivity #screenrecording #teamwork"
   }
 ]
