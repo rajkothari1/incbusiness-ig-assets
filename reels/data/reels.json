@@ -596,5 +596,113 @@
       "source": "https://assets.mixkit.co/music/416/416.mp3"
     },
     "caption": "That 30-minute meeting could have been a 2-minute video 🎥\n\nLoom records your screen and face, then AI adds the title, summary and chapters. Just share the link.\nSave this & cancel one meeting this week 👇\n\n#loom #remotework #async #productivity #screenrecording #teamwork"
+  },
+  {
+    "id": "13-ai-chatbots",
+    "type": "top4",
+    "category": "Chatbot",
+    "title": [
+      "Top 4 AI",
+      "Chatbots"
+    ],
+    "hook": "Your 24/7 business assistant",
+    "bg": {
+      "file": "4915.mp4",
+      "start": 1,
+      "source": "https://mixkit.co/free-stock-video/hands-of-a-person-typing-on-a-cell-phone-4915/"
+    },
+    "tools": [
+      [
+        "ChatGPT",
+        "OpenAI",
+        "chatgpt_com",
+        "Answers, drafts & ideas for anything",
+        "chatgpt.com"
+      ],
+      [
+        "Claude",
+        "Anthropic",
+        "claude_ai",
+        "Long docs, writing & deep analysis",
+        "claude.ai"
+      ],
+      [
+        "Gemini",
+        "Google",
+        "gemini_google_com",
+        "Works across Gmail, Docs & Drive",
+        "gemini.google.com"
+      ],
+      [
+        "Grok",
+        "xAI",
+        "grok_com",
+        "Real-time answers from X & the web",
+        "grok.com"
+      ]
+    ],
+    "hq": [
+      "San Francisco, USA",
+      "San Francisco, USA",
+      "Mountain View, USA",
+      "California, USA"
+    ],
+    "music": {
+      "file": "441.mp3",
+      "start": 32,
+      "title": "Motivating Mornings",
+      "source": "https://assets.mixkit.co/music/441/441.mp3"
+    },
+    "caption": "One chatbot isn't enough anymore 🤖\n\nEach of these 4 AI assistants is best at something different: drafting, analysis, Google apps or real-time news.\nWhich one do you use daily? 👇\n\n#chatgpt #claude #gemini #grok #aichatbot #aiassistant #llm"
+  },
+  {
+    "id": "14-ai-social-media-tools",
+    "type": "top3",
+    "category": "Social Media",
+    "title": [
+      "Top 3 AI",
+      "Social Media Tools"
+    ],
+    "hook": "Post daily without burning out",
+    "bg": {
+      "file": "43257.mp4",
+      "start": 1,
+      "source": "https://mixkit.co/free-stock-video/friends-looking-at-social-networks-in-the-cafe-43257/"
+    },
+    "tools": [
+      [
+        "Hootsuite",
+        "Hootsuite",
+        "hootsuite_com",
+        "AI captions & scheduling for every app",
+        "hootsuite.com"
+      ],
+      [
+        "Buffer",
+        "Buffer",
+        "buffer_com",
+        "Plan a month of posts in one sitting",
+        "buffer.com"
+      ],
+      [
+        "Sprout Social",
+        "Sprout Social",
+        "sproutsocial_com",
+        "AI insights on what your audience loves",
+        "sproutsocial.com"
+      ]
+    ],
+    "hq": [
+      "Vancouver, Canada",
+      "San Francisco, USA",
+      "Chicago, USA"
+    ],
+    "music": {
+      "file": "162.mp3",
+      "start": 8,
+      "title": "Techno Fest Vibes",
+      "source": "https://assets.mixkit.co/music/162/162.mp3"
+    },
+    "caption": "Posting every day doesn't have to eat your whole day 📱\n\nThese 3 tools write captions, schedule posts and tell you what's working.\nSave it & batch your content this weekend 👇\n\n#socialmedia #socialmediamarketing #hootsuite #buffer #sproutsocial #contentstrategy #instagramtips"
   }
 ]
