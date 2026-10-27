@@ -1,0 +1,156 @@
+{
+ "company": "Zepto",
+ "logo": "logo.svg",
+ "color": "#950edb",
+ "url": "incbusiness.in/business-models/zepto",
+ "slides": [
+  {
+   "type": "hook",
+   "title": "How Zepto Makes Money",
+   "text": "Where the money comes from, where it goes, and what changed."
+  },
+  {
+   "type": "about",
+   "title": "What Zepto does",
+   "text": "Zepto delivers groceries and everyday items in minutes, from fruits and dairy to electronics, beauty and Zepto Cafe. It keeps stock in small dark stores close to where customers live.",
+   "image": "site.jpg",
+   "domain": "zepto.com"
+  },
+  {
+   "type": "donut",
+   "title": "Where the money comes from",
+   "subtitle": "FY26 revenue from operations",
+   "unit": "Rs crore",
+   "center": "₹22,624 cr",
+   "items": [
+    {
+     "label": "Selling products",
+     "value": 17588
+    },
+    {
+     "label": "Warehousing and delivery services",
+     "value": 2780
+    },
+    {
+     "label": "Advertising",
+     "value": 1636
+    },
+    {
+     "label": "Platform services",
+     "value": 564
+    },
+    {
+     "label": "Subscriptions and other fees",
+     "value": 56
+    }
+   ]
+  },
+  {
+   "type": "bars",
+   "title": "Advertising is the fastest riser",
+   "subtitle": "Ad revenue grew about 2.5 times in FY26",
+   "unit": "Rs crore",
+   "categories": [
+    "FY24",
+    "FY25",
+    "FY26"
+   ],
+   "series": [
+    {
+     "name": "Advertising",
+     "values": [
+      49,
+      651,
+      1636
+     ]
+    }
+   ]
+  },
+  {
+   "type": "hbars",
+   "title": "Where Zepto's money goes",
+   "subtitle": "Biggest costs in FY26, as reported",
+   "unit": "Rs crore",
+   "items": [
+    {
+     "label": "Buying the products it sells",
+     "value": 18199
+    },
+    {
+     "label": "Delivery and handling",
+     "value": 3046
+    },
+    {
+     "label": "Dark store costs",
+     "value": 2150
+    },
+    {
+     "label": "Staff",
+     "value": 1785
+    },
+    {
+     "label": "Advertising and promotion",
+     "value": 1389
+    }
+   ]
+  },
+  {
+   "type": "bars",
+   "title": "Revenue up 5x, loss up too",
+   "subtitle": "FY24 to FY26",
+   "unit": "Rs crore",
+   "categories": [
+    "FY24",
+    "FY25",
+    "FY26"
+   ],
+   "series": [
+    {
+     "name": "Revenue",
+     "values": [
+      4455,
+      11110,
+      22624
+     ]
+    },
+    {
+     "name": "Net loss",
+     "values": [
+      1215,
+      4700,
+      5905
+     ],
+     "tone": "loss"
+    }
+   ]
+  },
+  {
+   "type": "fromto",
+   "title": "What is improving",
+   "subtitle": "Loss per order fell as stores filled up",
+   "items": [
+    {
+     "label": "Adjusted EBITDA loss per order",
+     "from": "₹136.15",
+     "from_label": "FY25",
+     "to": "₹78.75",
+     "to_label": "FY26",
+     "change": "-42%"
+    },
+    {
+     "label": "Dark stores",
+     "from": "337",
+     "from_label": "Mar 2024",
+     "to": "1,139",
+     "to_label": "Mar 2026",
+     "change": "3.4x"
+    }
+   ]
+  },
+  {
+   "type": "end",
+   "title": "The full Zepto breakdown",
+   "text": "Costs, unit economics, the business model canvas and Zepto's journey so far."
+  }
+ ]
+}
