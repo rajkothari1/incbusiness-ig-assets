@@ -46,6 +46,7 @@ img,svg{display:block}
 .brand{display:flex;align-items:center;gap:9px;color:#fff;font-weight:700;font-size:18px;letter-spacing:-.3px}
 .brand i{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--lime),var(--green) 55%,var(--green-800));display:grid;place-items:center}
 .top .btn{padding:10px 16px;font-size:13px;box-shadow:none}
+.links{display:none}
 
 /* ---------- hero ---------- */
 .hero{position:relative;background:radial-gradient(120% 70% at 50% 0%,#1d4210 0%,var(--night-2) 45%,var(--night) 100%);color:#fff;padding:96px 0 0;overflow:hidden}
@@ -63,7 +64,7 @@ img,svg{display:block}
 .hero h1 .under svg{position:absolute;left:0;right:0;bottom:-8px;width:100%;height:14px}
 .hero h1 .under path{stroke:var(--green);stroke-width:5;fill:none;stroke-linecap:round;stroke-dasharray:300;stroke-dashoffset:300;animation:draw 1.1s .5s forwards ease-out}
 @keyframes draw{to{stroke-dashoffset:0}}
-.hero p.sub{color:rgba(255,255,255,.72);font-size:15.5px;max-width:360px;margin:0 auto 26px}
+.hero p.sub{color:rgba(255,255,255,.72);font-size:15.5px;max-width:360px;margin:26px auto 26px}
 .cta-row{display:flex;flex-direction:column;gap:10px}
 .trust{display:flex;justify-content:center;gap:18px;margin-top:18px;font-size:12px;color:rgba(255,255,255,.6)}
 .trust b{color:#fff;font-weight:600}
@@ -101,13 +102,14 @@ img,svg{display:block}
 .row .av{width:24px;height:24px;border-radius:8px;display:grid;place-items:center;font-weight:700;font-size:10px;background:var(--tint);color:var(--green-800)}
 .row b{font-weight:600;flex:1}
 .row em{font-style:normal;font-weight:600}
-.toast{position:absolute;z-index:4;left:-26px;right:-26px;top:118px;display:flex;align-items:center;gap:10px;background:#fff;color:var(--ink);border-radius:16px;padding:10px 12px;
+.toast{position:absolute;z-index:4;left:-26px;right:-26px;top:262px;display:flex;align-items:center;gap:10px;background:#fff;color:var(--ink);border-radius:16px;padding:10px 12px;
   box-shadow:0 18px 40px rgba(0,0,0,.35);text-align:left;opacity:0;transform:translateY(-14px) scale(.96);transition:.45s cubic-bezier(.2,.9,.3,1.2)}
 .toast.on{opacity:1;transform:none}
 .toast .ic{flex:none;width:34px;height:34px;border-radius:11px;background:var(--green);display:grid;place-items:center}
 .toast b{display:block;font-size:12px;font-weight:600}
 .toast span{font-size:11px;color:var(--ink-2)}
-.chip{position:absolute;z-index:4;background:rgba(255,255,255,.1);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);
+.phone{z-index:1}
+.chip{position:absolute;z-index:6;background:rgba(255,255,255,.1);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);
   color:#fff;font-size:11.5px;font-weight:600;padding:8px 12px;border-radius:12px;display:flex;align-items:center;gap:6px;animation:float2 5s ease-in-out infinite}
 .chip.c1{left:-34px;bottom:150px}
 .chip.c2{right:-34px;bottom:70px;animation-delay:-2.5s}
@@ -227,9 +229,82 @@ footer .brand{color:var(--ink);justify-content:center;margin-bottom:10px}
 .rv{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s cubic-bezier(.2,.8,.3,1)}
 .rv.in{opacity:1;transform:none}
 
-@media (min-width:720px){
+@media (min-width:720px) and (max-width:959px){
   .hero h1{font-size:56px}
   .cta-row{flex-direction:row;justify-content:center}
+}
+
+/* ---------- desktop web ---------- */
+@media (min-width:960px){
+  .wrap{max-width:1160px;padding:0 32px}
+  .top .wrap{height:76px}
+  .links{display:flex;gap:34px;margin-left:auto;margin-right:28px}
+  .links a{color:rgba(255,255,255,.75);font-size:14.5px;font-weight:500;transition:color .15s}
+  .links a:hover{color:#fff}
+  .top .btn{padding:12px 20px;font-size:14px}
+  .sec{padding:110px 0}
+  .sec h2{font-size:46px;letter-spacing:-1.4px}
+  .sec .lead{font-size:17px;max-width:520px}
+
+  .hero{padding:150px 0 40px}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:40px;text-align:left}
+  .hero h1{font-size:76px;letter-spacing:-3px;margin:26px 0 8px}
+  .hero p.sub{font-size:18px;max-width:480px;margin:34px 0 34px}
+  .cta-row{flex-direction:row;justify-content:flex-start}
+  .cta-row .btn{padding:18px 28px;font-size:16px}
+  .trust{justify-content:flex-start;font-size:13.5px;margin-top:26px}
+  .stage{margin:0 auto;height:600px;transform:scale(1.08);transform-origin:top center}
+  .fade{height:90px}
+  .chip.c1{left:-70px;bottom:170px}
+  .chip.c2{right:-60px}
+
+  .marq{padding:24px 0}
+  .track span{font-size:18px}
+
+  .ba .wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+  .ba .switch{margin-top:0}
+  .ba li{font-size:16px;padding:18px 20px}
+
+  .feats{grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px}
+  .duo{display:contents}
+  .feat{padding:28px}
+  .duo .feat{padding:28px}
+  .duo .feat h3,.feat h3{font-size:19px}
+  .duo .feat p,.feat p{font-size:14.5px}
+  .feat.big{grid-column:span 2}
+  .feat.big h3{font-size:26px}
+  .feat.big p{font-size:16px;max-width:440px}
+  .f-rem{order:2;grid-column:span 2}
+  .duo-2 .feat:last-child{order:3}
+  .feat:hover{transform:translateY(-4px);border-color:var(--green)}
+  .feat.big:hover{border:0}
+
+  .steps .wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+  .sync-vis{margin-top:0;padding:56px 40px}
+  .dev .box{width:96px;height:96px;border-radius:26px}
+  .dev svg{width:44px;height:44px}
+  .dev{font-size:14px}
+
+  .who{grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+  .who div{padding:26px}
+  .who b{font-size:17px}
+  .who span{font-size:14px}
+  .who .e{font-size:32px;margin-bottom:12px}
+
+  #faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}
+  #faq .faq{margin-top:0}
+  .faq summary{font-size:17px;padding:20px 0}
+  .faq p{font-size:15px}
+
+  .final{padding:0 0 110px}
+  .final .card{padding:80px 40px;border-radius:40px}
+  .final h2{font-size:58px;letter-spacing:-2px}
+  .final h2 br{display:none}
+  .final p{font-size:18px}
+  .stores{flex-direction:row;justify-content:center}
+  .store{min-width:220px}
+  footer{padding:40px 0}
+  .dock{display:none}
 }
 @media (prefers-reduced-motion:reduce){
   *,*:before,*:after{animation:none!important;transition:none!important}
@@ -243,6 +318,7 @@ footer .brand{color:var(--ink);justify-content:center;margin-bottom:10px}
 <header class="top" id="top">
   <div class="wrap">
     <a class="brand" href="#"><i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></i>Livekeeping</a>
+    <nav class="links"><a href="#features">Features</a><a href="#how">How it works</a><a href="#faq">FAQ</a></nav>
     <a class="btn btn-g" href="#download">Get the app</a>
   </div>
 </header>
@@ -250,6 +326,7 @@ footer .brand{color:var(--ink);justify-content:center;margin-bottom:10px}
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="wrap">
+    <div class="hero-copy">
     <span class="pill"><span class="dot"></span>Live sync with Tally</span>
     <h1>Your Tally.<br>Now <span class="rot" id="rot"><span>live</span></span><br><span class="under">in your pocket.<svg viewBox="0 0 300 14" preserveAspectRatio="none"><path d="M3 10 Q 80 2 150 8 T 297 5"/></svg></span></h1>
     <p class="sub">Sales, outstanding, stock and ledgers from your Tally, on your phone. Make invoices and chase payments without going back to the office PC.</p>
@@ -261,6 +338,7 @@ footer .brand{color:var(--ink);justify-content:center;margin-bottom:10px}
     <div class="trust">
       <span><b>Android</b> &amp; <b>iOS</b></span>
       <span>Works with <b>TallyPrime</b></span>
+    </div>
     </div>
 
     <div class="stage" aria-hidden="true">
@@ -309,17 +387,18 @@ footer .brand{color:var(--ink);justify-content:center;margin-bottom:10px}
 
 <!-- ============ BEFORE / AFTER ============ -->
 <section class="sec ba">
-  <div class="wrap rv">
+  <div class="wrap rv"><div class="ba-l">
     <span class="eyebrow">The difference</span>
     <h2>Stop running back to the <span class="hl">office PC.</span></h2>
     <p class="lead">Flip the switch and see what changes.</p>
+    </div><div class="ba-r">
     <div class="switch" id="sw">
       <span class="knob"></span>
       <button aria-pressed="true" data-v="old">Tally on desktop</button>
       <button aria-pressed="false" data-v="lk">With Livekeeping</button>
     </div>
     <ul id="baList"></ul>
-  </div>
+  </div></div>
 </section>
 
 <!-- ============ FEATURES ============ -->
@@ -354,12 +433,12 @@ footer .brand{color:var(--ink);justify-content:center;margin-bottom:10px}
           <p>GST-ready IRN, right from the app.</p>
         </div>
       </div>
-      <div class="feat rv">
+      <div class="feat rv f-rem">
         <div class="ic"><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></div>
         <h3>Automatic payment reminders</h3>
         <p>Overdue customers get polite, timely nudges, so you collect faster without the awkward calls.</p>
       </div>
-      <div class="duo">
+      <div class="duo duo-2">
         <div class="feat rv">
           <div class="ic"><svg viewBox="0 0 24 24"><path d="M21 16V8l-9-5-9 5v8l9 5z"/><path d="M3.3 7L12 12l8.7-5M12 22V12"/></svg></div>
           <h3>Stock check</h3>
@@ -377,7 +456,7 @@ footer .brand{color:var(--ink);justify-content:center;margin-bottom:10px}
 
 <!-- ============ HOW IT WORKS ============ -->
 <section class="sec steps" id="how">
-  <div class="wrap">
+  <div class="wrap"><div class="steps-l">
     <div class="rv">
       <span class="eyebrow">Setup in minutes</span>
       <h2>Connect once.<br>Stay synced forever.</h2>
@@ -388,6 +467,7 @@ footer .brand{color:var(--ink);justify-content:center;margin-bottom:10px}
       <li><span class="n">2</span><h3>Connect your Tally</h3><p>Install the connector on the PC that runs Tally and link your companies.</p></li>
       <li><span class="n">3</span><h3>Run your business from anywhere</h3><p>Your data syncs both ways: check reports, create entries and share them from your phone.</p></li>
     </ol>
+    </div>
     <div class="sync-vis rv" aria-hidden="true">
       <div class="dev"><div class="box"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>Tally PC</div>
       <div style="flex:1;display:grid;gap:12px">
@@ -414,10 +494,11 @@ footer .brand{color:var(--ink);justify-content:center;margin-bottom:10px}
 </section>
 
 <!-- ============ FAQ ============ -->
-<section class="sec" style="padding-top:0">
-  <div class="wrap rv">
+<section class="sec" style="padding-top:0" id="faq">
+  <div class="wrap rv"><div class="faq-l">
     <span class="eyebrow">Questions</span>
     <h2>Good to know</h2>
+    <p class="lead">Still unsure? Connect your Tally and try it free.</p></div>
     <div class="faq">
       <details open><summary>Do I need to stop using Tally?</summary><p>No. Livekeeping works alongside your existing Tally. You keep working on Tally as usual, and the app mirrors your data to your phone.</p></details>
       <details><summary>Does the PC need to stay on?</summary><p>Your Tally PC syncs data when it's online. Reports you've already synced stay available on your phone even when the PC is off.</p></details>
@@ -432,7 +513,7 @@ footer .brand{color:var(--ink);justify-content:center;margin-bottom:10px}
 <section class="final" id="download">
   <div class="wrap rv">
     <div class="card">
-      <h2>Take Tally<br>wherever you go.</h2>
+      <h2>Take Tally <br>wherever you go.</h2>
       <p>Download free and connect your Tally in minutes.</p>
       <div class="stores">
         <a class="store" href="https://play.google.com/store/search?q=livekeeping&c=apps" rel="noopener">
