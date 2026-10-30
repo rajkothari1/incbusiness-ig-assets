@@ -1,0 +1,609 @@
+#!/usr/bin/env python3
+"""Builds the Livekeeping landing site: index.html plus one page per feature in features/.
+
+Every page shares the same head, nav, final CTA and footer, so add a feature by
+appending to FEATURES below and re-running:
+
+    python3 build.py
+
+Feature copy is taken from livekeeping.com's own feature pages and FAQs.
+"""
+import html
+import os
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+CONNECTOR = "https://lkpsetup.s3.ap-south-1.amazonaws.com/lkpwpf/Livekeeping-Connector.exe"
+PLAY = "https://play.google.com/store/apps/details?id=com.finlitetech.livekeeping"
+APPSTORE = "https://apps.apple.com/in/app/livekeeping-tally-on-mobile/id1451277319"
+WEB = "https://www.livekeeping.com/login"
+SITE = "https://www.livekeeping.com"
+E = html.escape
+
+ICONS = {
+    "dashboard": '<path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/>',
+    "invoice": '<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/>',
+    "truck": '<rect x="1" y="7" width="15" height="11" rx="1"/><path d="M16 11h4l3 3v4h-7"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="19" r="2"/>',
+    "einvoice": '<path d="M9 12l2 2 4-4"/><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/>',
+    "bell": '<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/>',
+    "gift": '<path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>',
+    "reports": '<path d="M21 12A9 9 0 1 1 12 3v9z"/><path d="M21 12a9 9 0 0 0-9-9"/>',
+    "backup": '<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/>',
+    "check": '<path d="M20 6L9 17l-5-5"/>',
+    "shield": '<path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/>',
+    "lock": '<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',
+    "users": '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/>',
+    "phone": '<rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/>',
+    "monitor": '<rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/>',
+    "zap": '<path d="M13 2L3 14h9l-1 8 10-12h-9z"/>',
+    "download": '<path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 21h14"/>',
+    "arrow": '<path d="M5 12h14M13 6l6 6-6 6"/>',
+    "sun": '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+    "moon": '<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>',
+    "menu": '<path d="M3 6h18M3 12h18M3 18h18"/>',
+    "home": '<path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/>',
+    "cart": '<circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 12.4a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L22 7H6"/>',
+}
+WINDOWS = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.1l7.4-1v7.2H3zm8.3-1.2L21 2.5v8.8h-9.7zM3 12.7h7.4v7.2L3 18.9zm8.3 0H21v8.8l-9.7-1.4z"/></svg>'
+PLAY_SVG = '<svg viewBox="0 0 24 24"><path d="M3.6 1.8c-.3.3-.4.7-.4 1.2v18c0 .5.1.9.4 1.2l10-10.2zM14.8 13.2l2.9 2.9-11.5 6.6c-.5.3-1 .3-1.4.1zM18.9 9.4l-2.9-1.6-3 3.1 3 3.1 2.9-1.7c.9-.5.9-2.4 0-2.9zM4.8 1.2c.4-.2.9-.2 1.4.1l11.5 6.6-2.9 2.9z"/></svg>'
+APPLE_SVG = '<svg viewBox="0 0 24 24"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.7-4.1zM13.9 4.9c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg>'
+
+
+def icon(name, cls="", size=None):
+    s = f' width="{size}" height="{size}"' if size else ""
+    c = f' class="{cls}"' if cls else ""
+    return f'<svg{c}{s} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{ICONS[name]}</svg>'
+
+
+# ---------------------------------------------------------------- features
+FEATURES = [
+    {
+        "slug": "business-reports", "icon": "reports", "name": "Business Reports",
+        "short": "P&L, balance sheet and 35+ reports",
+        "card": "Profit and loss, balance sheet, receivables by age and 35+ more reports, pulled straight from your synced Tally books.",
+        "h1": "35+ business reports, on mobile and web",
+        "sub": "Livekeeping shows your profit and loss statement, balance sheet and 35+ reports in a clean, mobile-friendly view. Every number is pulled from your synced books.",
+        "steps": [
+            ("Download the connector", "Install the free connector on the Windows PC where Tally is running."),
+            ("Sync your company", "Sign in with your registered mobile number, select your company and click Sync."),
+            ("Open any report", "Sales, receipts, outstanding, P&L and balance sheet, ready on your phone and in your browser."),
+        ],
+        "highlights": [
+            ("Profit & loss and balance sheet", "See how the business is doing without opening Tally."),
+            ("Receivables by age", "Every party balance grouped by how overdue it is, with the total at the top."),
+            ("Sales and receipt trends", "Month-on-month sales and collections in simple charts."),
+            ("Instant answers", "Balances and payment history for any party, in a couple of taps."),
+        ],
+        "faqs": [
+            ("How do I use my accounting data on mobile?", "Install the Data Connector from the Livekeeping website to sync your Tally account and access it anytime on mobile and web."),
+            ("How long does the first sync take?", "Usually a few minutes, depending on how many vouchers your company has. After that, only new and changed entries are synced, so updates are much quicker."),
+            ("Can I sync more than one company?", "Yes. You can sync multiple Tally companies through the same connector and switch between them inside the app."),
+            ("Does it work with Tally Prime and Tally ERP 9?", "Yes. The same connector works with both Tally Prime and Tally ERP 9, and with single user as well as multi user options."),
+        ],
+    },
+    {
+        "slug": "billing", "icon": "invoice", "name": "Billing & Vouchers",
+        "short": "Create invoices and vouchers on mobile",
+        "card": "Create invoices, ledgers, items and every type of voucher from your phone. Entries sync with your accounting software.",
+        "h1": "Create invoices and vouchers from your phone",
+        "sub": "Record sales, track payments and manage your books right from the mobile app. Entries you create sync with your accounting software.",
+        "steps": [
+            ("Pick a voucher type", "Sales, purchase, receipt, payment and more, with your parties, ledgers and items already loaded."),
+            ("Fill it in like Tally", "Party, ledger, items, quantity, rate and GST ledgers, the way you normally do."),
+            ("Save and share", "The entry syncs back to your books, and you can send the bill on WhatsApp."),
+        ],
+        "highlights": [
+            ("All voucher types", "Create every type of voucher from the Livekeeping app."),
+            ("Ledgers and items too", "Add a new party or item on the spot, without waiting for the office."),
+            ("GST-ready invoices", "Raise an e-Invoice or e-Way Bill from the same voucher."),
+            ("Share instantly", "Send the bill PDF to your customer on WhatsApp."),
+        ],
+        "faqs": [
+            ("Can I create invoices, ledgers and items from the mobile app?", "Yes, you can create all types of vouchers through the Livekeeping mobile app. Entries created will sync with your accounting software."),
+            ("Does my computer need to stay on for syncing?", "Yes. The connector reads data from your Tally account, so the PC should be switched on, connected to the internet, and Tally should be open with your company loaded."),
+            ("Can I get a demo or free trial?", "Yes, you can get a free trial for 7 days by installing the Livekeeping mobile app from the Play Store or App Store."),
+        ],
+    },
+    {
+        "slug": "e-way-bills", "icon": "truck", "name": "e-Way Bills",
+        "short": "Generate, track and update e-Way Bills",
+        "card": "Generate GST-compliant e-Way Bills from your phone with pre-filled fields, then track the vehicle live.",
+        "h1": "Create e-Way Bills instantly, right from your phone",
+        "sub": "Generate GST-compliant e-Way Bills straight from your sales voucher, purchase voucher or delivery note, with fields pre-filled from your Tally data.",
+        "steps": [
+            ("Create the voucher", "Create your sales voucher or delivery note the way you normally do: party, ledger, items, quantity and rate."),
+            ("Add Part A and Part B", "Confirm buyer and consignee details, then add transporter, vehicle number and distance for Part B."),
+            ("Generate and share", "The e-Way Bill number, validity and QR code land on your branded PDF. Send it to the transporter on WhatsApp."),
+        ],
+        "highlights": [
+            ("Invoice-based creation", "Raise an e-Way Bill, an e-Invoice, or both together from the same voucher."),
+            ("Live vehicle tracking", "Follow the route on a map with distance covered and each toll plaza crossing."),
+            ("Update without cancelling", "Extend validity, change the vehicle number (Part B) or change the transporter."),
+            ("Filters and status tags", "In Transit, Pending, Only Part A, Cancelled or Rejected, with counts for each."),
+        ],
+        "faqs": [
+            ("How do I generate an e-Way Bill from my phone?", "e-Way Bill generation works the same way on mobile and web. Open the sales voucher, tap Generate e-Way Bill, review the transport details and hit generate."),
+            ("How do I track my goods after the e-Way Bill is generated?", "Live vehicle tracking shows the route on a map from source to destination, along with the distance covered, so you can see where the consignment is without calling the transporter."),
+            ("How do I change the vehicle number after the e-Way Bill is generated?", "Use Update Part B to change the vehicle number on an existing e-Way Bill from the app, without cancelling the document, as long as the bill is still valid."),
+            ("How do I cancel an e-Way Bill after it is generated?", "An e-Way Bill can be cancelled within 24 hours of generation, provided it has not already been verified in transit by a GST officer."),
+            ("How long is an e-Way Bill valid, and can I extend it?", "Validity depends on the distance the goods travel, roughly one day for every 200 km. If a consignment is delayed, you can extend the validity of an expiring e-Way Bill from the details page in the app."),
+        ],
+    },
+    {
+        "slug": "e-invoices", "icon": "einvoice", "name": "e-Invoices",
+        "short": "IRN and QR code in one tap",
+        "card": "GST-compliant e-Invoices with automatic IRN and QR code, generated from the vouchers you already have.",
+        "h1": "GST e-Invoices with IRN and QR code, in one tap",
+        "sub": "Create GST-compliant e-Invoices with automatic IRN and QR codes, generated from your existing vouchers. No JSON files to upload.",
+        "steps": [
+            ("Register with a GSP", "Register your GSTIN for the API interface through a GSP on the government e-Invoice portal. You only do this once."),
+            ("Switch it on", "Go to Menu → Configuration → Invoice and turn on the e-Invoice toggle, once per company."),
+            ("Generate the IRN", "Check the details and hit generate. The IRN, acknowledgement number and date come back from the portal automatically."),
+        ],
+        "highlights": [
+            ("Automatic IRN and QR code", "Added to your invoice PDF and saved against the voucher."),
+            ("Bulk generation", "Select up to five pending invoices and raise their e-Invoices together."),
+            ("Cancel within 24 hours", "Correct a mistake by cancelling and re-raising, right from Livekeeping."),
+            ("Share on WhatsApp", "Send the e-Invoice PDF, with its IRN and QR code, to your buyer."),
+        ],
+        "faqs": [
+            ("Do I need to upload a JSON file to generate an e-invoice?", "No. Livekeeping sends the invoice details directly to the IRP through the GSP connection, so there is no manual JSON file to prepare or upload."),
+            ("How do I fix an e-invoice after the IRN is generated?", "GST rules don't allow editing an IRN once it's generated, but you can cancel the e-invoice within 24 hours, right from Livekeeping."),
+            ("Can I generate an e-invoice from my phone?", "Yes. e-Invoice generation works the same way on mobile and web, so you can raise one from your sales voucher on either platform."),
+            ("Can I generate an e-Way Bill and e-Invoice together?", "Yes. When you save the voucher, choose whether to raise an e-Way Bill, an e-Invoice, or both, depending on what the transaction needs."),
+        ],
+    },
+    {
+        "slug": "payment-reminders", "icon": "bell", "name": "Payment Reminders",
+        "short": "Automatic reminders on WhatsApp, SMS, email",
+        "card": "Overdue customers get reminders on WhatsApp, SMS or email with the amount and bill link already filled in.",
+        "h1": "Get paid faster with automatic payment reminders",
+        "sub": "Livekeeping tracks every outstanding balance and sends reminders automatically over WhatsApp, SMS or email, with the amount and bill link already filled in.",
+        "steps": [
+            ("Open receivables", "Every party balance in one list, grouped by how overdue it is, with the total at the top."),
+            ("Tap Remind", "The party name and total outstanding carry straight into the reminder. Preview the exact message."),
+            ("Choose mode and time", "SMS, email or both. Pick the hour, then daily, weekly, monthly or on the due date."),
+        ],
+        "highlights": [
+            ("Customer-wise follow-up", "Filter by 30, 60, 90 or 120 days and check what's pending before you send."),
+            ("Instant or scheduled", "Send now, or repeat it on a cycle until the payment actually lands."),
+            ("Bulk reminders", "Select multiple customers from the receivables list and remind them all at once."),
+            ("Amount and bill link included", "Customers can check the details directly from the message."),
+        ],
+        "faqs": [
+            ("Can I choose the mode and frequency for automated reminders?", "Yes, for automated reminders different frequencies and modes can be chosen."),
+            ("Does the customer get the amount and a link to the bill?", "Yes. The outstanding amount and a link to the bill are added to the message automatically."),
+            ("How do I schedule reminders instead of sending them one at a time?", "Choose Schedule Reminder, set the time, and pick daily, weekly, monthly or on the due date. It repeats until you stop it."),
+            ("How do I send a reminder to more than one customer at once?", "Select multiple customers from the receivables list and send reminders to all of them in one action."),
+            ("Can I edit the reminder message?", "The message can't be edited before it is sent, but you can preview it, with the amount and bill link intact."),
+        ],
+    },
+    {
+        "slug": "customer-greetings", "icon": "gift", "name": "Customer Greetings",
+        "short": "100+ branded greetings for WhatsApp",
+        "card": "100+ birthday, festival and thank-you greetings with your logo and details added automatically. Share on WhatsApp.",
+        "h1": "Branded greetings that bring customers back",
+        "sub": "Choose from 100+ greetings for birthdays, festivals and thank-you notes, with your business name, logo, phone and address added automatically.",
+        "steps": [
+            ("Add your branding", "Drop in your logo, company name, phone, email and address. Livekeeping remembers it for next time."),
+            ("Choose a template", "Birthday, festival, thank-you, get-well and more, organised by category and ready in one tap."),
+            ("Share on WhatsApp", "Download or share directly. The greeting lands with your branding already on it."),
+        ],
+        "highlights": [
+            ("Inactive customer targeting", "Filter customers by 30, 60, 90 or 120 days since their last purchase."),
+            ("100+ ready templates", "No design skills needed. Every template is ready to send."),
+            ("No message credits used", "Greetings are shared through WhatsApp on your device."),
+            ("Download any greeting", "Save it and send it through any channel you like."),
+        ],
+        "faqs": [
+            ("Do I need design skills to create a greeting?", "No. Every template is ready to use as it is. You only need to add your details once."),
+            ("Does sending a greeting use my message credits?", "Greetings are shared directly through WhatsApp on your device, so they do not draw down your SMS or reminder credit balance."),
+            ("How do I know which customers to send a greeting to?", "Use the Inactive Customers report to filter by 30, 60, 90 or 120 days since last sale, then send a greeting directly from that list."),
+            ("How do I download a greeting instead of sending it on WhatsApp?", "Every template has a download option alongside the WhatsApp share button."),
+        ],
+    },
+    {
+        "slug": "data-backup", "icon": "backup", "name": "Data Backup",
+        "short": "Automatic daily, weekly or monthly backups",
+        "card": "Your company data is backed up automatically after every sync, with a log of every backup.",
+        "h1": "Automatic backups of your Tally data",
+        "sub": "Livekeeping schedules a backup of your company data the moment it is synced, logs every backup, and lets you email a copy in one tap.",
+        "steps": [
+            ("Install the connector", "Download and install the Livekeeping Data Connector on your business computer."),
+            ("Pick a schedule", "Choose daily, weekly or monthly backups based on your preference."),
+            ("Relax", "Every backup is logged, and you can email a copy whenever you need one."),
+        ],
+        "highlights": [
+            ("Backup after every sync", "Your latest data is protected without anyone remembering to do it."),
+            ("Daily, weekly or monthly", "Choose the backup frequency that suits your business."),
+            ("Backup log", "See exactly when each backup was taken."),
+            ("Email a copy", "Send a backup to yourself or your CA in one tap."),
+        ],
+        "faqs": [
+            ("How can I create a backup of my business data?", "The Livekeeping Data Connector provides options to generate automated backup files. You can choose daily, weekly or monthly backups based on your preference."),
+            ("Does my computer need to stay on for syncing?", "Yes. The connector reads data from your Tally account, so the PC should be switched on, connected to the internet, and Tally should be open with your company loaded."),
+        ],
+    },
+]
+BY = {f["slug"]: f for f in FEATURES}
+
+HOME_FAQS = [
+    ("How do I connect my Tally to Livekeeping?", "Download the connector on the PC where your Tally runs, sign in with your registered mobile number, select your company and click Sync."),
+    ("Does it work with TallyPrime and Tally ERP 9?", "Yes. The same connector works with both TallyPrime and Tally ERP 9, with single user as well as multi user options."),
+    ("Can I use Livekeeping in a browser?", "Yes. Your synced data is available on the Livekeeping mobile app and on the web, so you can work from your phone or any computer."),
+    ("Does my computer need to stay on for syncing?", "Yes. The connector reads data from your Tally account, so the PC should be switched on, connected to the internet, and Tally should be open with your company loaded."),
+    ("Can I create invoices, ledgers and items from the app?", "Yes. You can create all types of vouchers through the Livekeeping mobile app, and entries sync with your accounting software."),
+    ("Is my Tally data safe?", "Data is sent over an encrypted connection and stored on ISO 27001 certified systems. Livekeeping is ISO 27001 and ISO 27701 certified."),
+    ("Can I try it for free?", "Yes. You get a 7-day free trial when you install the Livekeeping mobile app from the Play Store or App Store."),
+]
+
+
+# ---------------------------------------------------------------- shared parts
+def head(title, desc, p):
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{E(title)}</title>
+<meta name="description" content="{E(desc)}">
+<link rel="icon" href="{p}img/SquareLogo.svg" type="image/svg+xml">
+<script>
+(function(){{var t;try{{t=localStorage.getItem('lk-theme')}}catch(e){{}}
+if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+document.documentElement.dataset.theme=t;}})();
+</script>
+<link rel="preload" href="{p}fonts/poppins-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{p}assets/site.css">
+</head>
+<body>
+"""
+
+
+def nav(p):
+    dd = "".join(f'<a href="{p}features/{f["slug"]}.html"><span class="fi">{icon(f["icon"])}</span><span><b>{E(f["name"])}</b><span>{E(f["short"])}</span></span></a>' for f in FEATURES)
+    dr = "".join(f'<a href="{p}features/{f["slug"]}.html"><span class="fi">{icon(f["icon"])}</span>{E(f["name"])}</a>' for f in FEATURES)
+    return f"""<header class="top" id="top">
+  <div class="wrap">
+    <a class="logo" href="{p}index.html" aria-label="Livekeeping home"><img class="l-light" src="{p}img/livekeeping-logo.svg" alt="Livekeeping, an IndiaMART company" width="242" height="68"><img class="l-dark" src="{p}img/livekeeping-logo-dark.svg" alt="Livekeeping, an IndiaMART company" width="242" height="68"></a>
+    <nav class="links">
+      <div class="dd"><a href="{p}index.html#features">Features <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></a><div class="dd-panel">{dd}</div></div>
+      <a href="{p}index.html#security">Security</a>
+      <a href="{SITE}/pricing">Pricing</a>
+      <a href="{WEB}">Login</a>
+    </nav>
+    <button class="icon-btn theme-btn" aria-label="Switch light or dark theme">{icon("moon", "moon")}{icon("sun", "sun")}</button>
+    <a class="btn btn-g" href="{CONNECTOR}">{WINDOWS}<span class="hide-sm">Download Connector</span></a>
+    <button class="icon-btn menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">{icon("menu")}</button>
+  </div>
+</header>
+<div class="drawer" id="drawer">
+  <h4>Features</h4>{dr}
+  <h4>More</h4>
+  <a href="{p}index.html#security"><span class="fi">{icon("shield")}</span>Security</a>
+  <a href="{SITE}/pricing"><span class="fi">{icon("zap")}</span>Pricing</a>
+  <a href="{WEB}"><span class="fi">{icon("monitor")}</span>Login to Livekeeping Web</a>
+</div>
+"""
+
+
+def final_cta(p):
+    return f"""<section class="final" id="download">
+  <div class="wrap rv">
+    <div class="card">
+      <h2>Take Tally <br>wherever you go.</h2>
+      <p>Install the connector on your Tally PC, then use Livekeeping on your phone or browser. 7-day free trial.</p>
+      <a class="btn btn-w" href="{CONNECTOR}">{WINDOWS}<span>Download Tally Connector<small>Free · Windows · TallyPrime &amp; Tally ERP 9</small></span></a>
+      <div class="stores">
+        <a class="store" href="{PLAY}" rel="noopener">{PLAY_SVG}<span><small>GET IT ON</small><b>Google Play</b></span></a>
+        <a class="store" href="{APPSTORE}" rel="noopener">{APPLE_SVG}<span><small>Download on the</small><b>App Store</b></span></a>
+      </div>
+      <a class="weblink" href="{WEB}">Or open Livekeeping on the web →</a>
+    </div>
+  </div>
+</section>
+"""
+
+
+def footer(p):
+    fl = "".join(f'<a href="{p}features/{f["slug"]}.html">{E(f["name"])}</a>' for f in FEATURES)
+    return f"""<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="logo" href="{p}index.html"><img class="l-light" src="{p}img/livekeeping-logo.svg" alt="Livekeeping" width="242" height="68"><img class="l-dark" src="{p}img/livekeeping-logo-dark.svg" alt="Livekeeping" width="242" height="68"></a>
+        <p>Your Tally business data, live on mobile and web.</p>
+        <div class="compat" style="margin-top:14px"><span>{icon("shield")}ISO 27001 &amp; 27701 Certified</span></div>
+      </div>
+      <div><h4>Features</h4>{fl}</div>
+      <div><h4>Get started</h4><a href="{CONNECTOR}">Download Tally Connector</a><a href="{PLAY}">Android app</a><a href="{APPSTORE}">iPhone app</a><a href="{WEB}">Livekeeping Web</a><a href="{SITE}/connect-livekeepingapp-to-your-tally">Setup guide</a></div>
+      <div><h4>Company</h4><a href="{SITE}/about">About</a><a href="{SITE}/pricing">Pricing</a><a href="{SITE}/partner-with-us">Partner with us</a><a href="{SITE}/privacy-policy">Privacy policy</a><a href="{SITE}/terms-of-use-doc">Terms of use</a></div>
+    </div>
+    <p class="legal">© Livekeeping, an IndiaMART company. Tally, TallyPrime and Tally.ERP 9 are trademarks of Tally Solutions Pvt. Ltd. Figures shown in product previews are sample data.</p>
+  </div>
+</footer>
+<div class="dock" id="dock">
+  <div><b>Connect your Tally</b>Free connector · Windows PC</div>
+  <a class="btn btn-g" href="{CONNECTOR}">{WINDOWS}Download</a>
+</div>
+<script src="{p}assets/site.js"></script>
+</body>
+</html>
+"""
+
+
+def faq_block(faqs, title="Good to know", lead="Still unsure? Install the app and try it free for 7 days."):
+    items = "".join(f'<details{" open" if i == 0 else ""}><summary>{E(q)}</summary><p>{E(a)}</p></details>' for i, (q, a) in enumerate(faqs))
+    return f"""<section class="sec" id="faq">
+  <div class="wrap rv faq-wrap"><div>
+    <span class="eyebrow">Questions</span>
+    <h2>{E(title)}</h2>
+    <p class="lead">{E(lead)}</p></div>
+    <div class="faq">{items}</div>
+  </div>
+</section>
+"""
+
+
+def cta_buttons(p, second="#download", second_label="Get the mobile app"):
+    return f"""<div class="cta-row">
+      <a class="btn btn-g" href="{CONNECTOR}">{WINDOWS}<span>Download Tally Connector<small>Free · Windows PC</small></span></a>
+      <a class="btn btn-o" href="{second}">{icon("phone", size=18)}{second_label}</a>
+    </div>
+    <a class="weblink" href="{WEB}">{icon("monitor", size=16)}Open Livekeeping Web →</a>"""
+
+
+TRUST = f"""<div class="trust">
+      <span class="badge"><i>{icon("shield")}</i>ISO 27001 &amp; 27701 Certified</span>
+      <span class="badge"><i>{icon("users")}</i>1,00,000+ businesses</span>
+      <span class="badge"><i>{icon("check")}</i>7-day free trial</span>
+    </div>"""
+
+
+# ---------------------------------------------------------------- home
+def hero_devices(p):
+    bars = "".join(f'<div><i style="--h:{a}%;animation-delay:{i*.08:.2f}s"></i><i style="--h:{b}%;animation-delay:{i*.08+.04:.2f}s"></i></div>'
+                   for i, (a, b) in enumerate([(52, 34), (68, 40), (44, 30), (80, 52), (60, 44), (92, 58)]))
+    return f"""<div class="stage-box" aria-hidden="true"><div class="stage">
+      <div class="glow"></div>
+      <div class="tabs"><span class="on">{icon("phone")}Mobile app</span><span>{icon("monitor")}Web app</span></div>
+      <div class="win">
+        <div class="win-bar"><i></i><i></i><i></i><span>{icon("lock", size=10)}livekeeping.com</span></div>
+        <div class="win-body">
+          <div class="side">
+            <img class="brandmark" src="{p}img/SquareLogo.svg" alt="">
+            <div class="on">{icon("dashboard")}Dashboard</div>
+            <div>{icon("invoice")}Sales</div>
+            <div>{icon("cart")}Purchase</div>
+            <div>{icon("users")}Parties</div>
+            <div>{icon("reports")}Reports</div>
+            <div>{icon("truck")}e-Way Bills</div>
+          </div>
+          <div class="main">
+            <div class="kpis">
+              <div class="kpi"><span>Total sales</span><b id="wsales">₹2,48,650</b><em>▲ 18% today</em></div>
+              <div class="kpi"><span>Receipts</span><b>₹5,89,172</b><em>▲ 2.5%</em></div>
+              <div class="kpi"><span>Receivables</span><b>₹4,82,300</b><em style="color:var(--red)">₹1,12,450 overdue</em></div>
+              <div class="kpi"><span>Cash &amp; bank</span><b>₹9,14,560</b><em>Synced just now</em></div>
+            </div>
+            <div class="panel"><h5>Sales &amp; receipts <small>Jan – Jun</small></h5><div class="wbars">{bars}</div></div>
+            <div class="panel"><h5>Receivables by age</h5>
+              <div class="donut">
+                <svg viewBox="0 0 42 42"><circle cx="21" cy="21" r="15.9" fill="none" stroke="var(--tint-2)" stroke-width="6"/>
+                  <circle cx="21" cy="21" r="15.9" fill="none" stroke="#5bbc21" stroke-width="6" stroke-dasharray="44 56" stroke-dashoffset="25"/>
+                  <circle cx="21" cy="21" r="15.9" fill="none" stroke="#f2c94c" stroke-width="6" stroke-dasharray="24 76" stroke-dashoffset="-19"/>
+                  <circle cx="21" cy="21" r="15.9" fill="none" stroke="#f2994a" stroke-width="6" stroke-dasharray="18 82" stroke-dashoffset="-43"/>
+                  <circle cx="21" cy="21" r="15.9" fill="none" stroke="#eb5757" stroke-width="6" stroke-dasharray="14 86" stroke-dashoffset="-61"/></svg>
+                <ul><li><i style="background:#5bbc21"></i>0–15d<b>44%</b></li><li><i style="background:#f2c94c"></i>16–30d<b>24%</b></li><li><i style="background:#f2994a"></i>31–45d<b>18%</b></li><li><i style="background:#eb5757"></i>45d+<b>14%</b></li></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="phone"><div class="screen">
+        <div class="notch"></div>
+        <div class="app-h">
+          <small><span>Sharma Distributors</span><span class="sync"><i></i>Live</span></small>
+          <div>Today's sales</div>
+          <strong id="sales">₹0</strong>
+          <em>▲ 18% vs yesterday</em>
+        </div>
+        <div class="cards">
+          <div class="mini"><span>Receivables</span><b>₹4,82,300</b></div>
+          <div class="mini"><span>Overdue</span><b class="red">₹1,12,450</b></div>
+        </div>
+        <div class="qa"><div>{icon("truck")}E-Way</div><div>{icon("einvoice")}E-Invoice</div><div>{icon("invoice")}Sales</div><div>{icon("bell")}Remind</div></div>
+        <div class="list">
+          <div class="row"><span class="av">GT</span><b>Gupta Traders</b><em>+₹38,500</em></div>
+          <div class="row"><span class="av">MK</span><b>Mehta &amp; Kumar</b><em>+₹12,900</em></div>
+          <div class="row"><span class="av">RE</span><b>Rao Enterprises</b><em style="color:var(--red)">Due 3d</em></div>
+        </div>
+      </div></div>
+      <div class="toast" id="toast">
+        <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <div><b id="tt">Invoice synced to Tally</b><span id="ts">INV-1042 · Gupta Traders</span></div>
+      </div>
+      <div class="chip c1">{icon("zap")}Live sync</div>
+      <div class="chip c2">{icon("shield")}ISO certified</div>
+    </div></div>"""
+
+
+def home():
+    p = ""
+    cards = []
+    order = ["business-reports", "billing", "e-way-bills", "e-invoices", "payment-reminders", "customer-greetings", "data-backup"]
+    for i, slug in enumerate(order):
+        f = BY[slug]
+        cls = "feat rv big" if i == 0 else "feat rv wide" if slug == "customer-greetings" else "feat rv"
+        title = "Live dashboard &amp; 35+ reports" if i == 0 else E(f["name"])
+        cards.append(f'<a class="{cls}" href="features/{slug}.html"><div class="ic">{icon(f["icon"])}</div><h3>{title}</h3><p>{E(f["card"])}</p><span class="more">Learn more</span></a>')
+    marquee = "".join(f"<span>{w}</span>" for w in ["Sales", "Purchases", "Outstanding", "Ledgers", "Stock", "e-Way Bills", "e-Invoices", "Payment reminders", "Customer greetings", "35+ reports", "Data backup"] * 2)
+
+    body = f"""{nav(p)}
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+    <span class="pill"><span class="dot"></span>Live sync with TallyPrime &amp; ERP 9</span>
+    <h1>Your Tally.<br>Live on <span class="rot" id="rot" data-words="mobile|Android|iPhone|mobile"><span>mobile</span></span><br><span class="under">&amp; web.<svg viewBox="0 0 300 14" preserveAspectRatio="none"><path d="M3 10 Q 80 2 150 8 T 297 5"/></svg></span></h1>
+    <p class="sub">Sales, outstanding, stock and 35+ reports from your Tally, live on your phone and in your browser. Create bills, e-Way Bills and e-Invoices, and chase payments, from anywhere.</p>
+    {cta_buttons(p)}
+    {TRUST}
+    </div>
+    {hero_devices(p)}
+  </div>
+  <div class="fade"></div>
+</section>
+
+<section class="sec conn" id="connector">
+  <div class="wrap">
+    <div class="conn-card rv">
+      <div>
+        <span class="eyebrow">Step 1 · Takes 2 minutes</span>
+        <h2>Download the <span class="hl">Tally Connector</span></h2>
+        <p class="lead">One small app on your Tally PC is all it takes. It keeps your data in sync with Livekeeping mobile and web.</p>
+        <ol class="conn-steps">
+          <li><div>Install it on the Windows PC where Tally runs<span>Works with single user and multi user Tally.</span></div></li>
+          <li><div>Sign in with your registered mobile number<span>The same number you use in the Livekeeping app.</span></div></li>
+          <li><div>Select your company and click Sync<span>The first sync takes a few minutes. After that, only changes sync.</span></div></li>
+        </ol>
+        <a class="btn btn-g" href="{CONNECTOR}">{WINDOWS}<span>Download Tally Connector<small>Free · Windows · .exe installer</small></span></a>
+        <div class="compat"><span>{icon("check")}TallyPrime</span><span>{icon("check")}Tally.ERP 9</span><span>{icon("check")}Multiple companies</span></div>
+      </div>
+      <div class="cwin" aria-hidden="true">
+        <div class="cwin-h"><img src="img/SquareLogo.svg" alt="">Livekeeping Data Connector</div>
+        <div class="cwin-b">
+          <div class="co"><i class="on"></i><div style="flex:1"><b>Sharma Distributors</b><br><small>TallyPrime · 2024-25</small></div></div>
+          <div class="co"><i class="on"></i><div style="flex:1"><b>Sharma Retail LLP</b><br><small>TallyPrime · 2024-25</small></div></div>
+          <div class="co"><i></i><div style="flex:1"><b>Sharma Exports</b><br><small>Tally.ERP 9 · 2023-24</small></div></div>
+          <div class="prog"><i></i></div>
+          <div class="prog-l"><span>Syncing vouchers…</span><span>Backup scheduled daily</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marq" aria-hidden="true"><div class="track">{marquee}</div></div>
+
+<section class="sec ba">
+  <div class="wrap rv"><div>
+    <span class="eyebrow">The difference</span>
+    <h2>Stop running back to the <span class="hl">office PC.</span></h2>
+    <p class="lead">Flip the switch and see what changes.</p>
+    </div><div>
+    <div class="switch" id="sw"><span class="knob"></span><button aria-pressed="true" data-v="old">Tally on desktop</button><button aria-pressed="false" data-v="lk">With Livekeeping</button></div>
+    <ul id="baList"></ul>
+  </div></div>
+</section>
+
+<section class="sec" id="features">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Everything on mobile &amp; web</span>
+      <h2>Your whole business,<br><span class="hl">one tap away.</span></h2>
+      <p class="lead">Built for owners, accountants and sales teams who run on Tally. Tap any feature to learn more.</p>
+    </div>
+    <div class="feats">{"".join(cards)}</div>
+  </div>
+</section>
+
+<section class="sec secu" id="security">
+  <div class="wrap">
+    <div class="rv">
+      <div class="seal" aria-hidden="true"><svg viewBox="0 0 200 200">
+        <g class="ring"><circle cx="100" cy="100" r="92" fill="none" stroke="rgba(166,241,106,.35)" stroke-width="2" stroke-dasharray="4 8"/>
+        <path id="arc" d="M100 100 m-74 0 a74 74 0 1 1 148 0 a74 74 0 1 1 -148 0" fill="none"/>
+        <text font-family="Poppins" font-size="11.5" font-weight="600" letter-spacing="3" fill="#a6f16a"><textPath href="#arc">ISO 27001 • ISO 27701 • CERTIFIED • SECURE •</textPath></text></g>
+        <circle cx="100" cy="100" r="58" fill="#5bbc21"/>
+        <path d="M100 66l26 12v18c0 17-11 28-26 32-15-4-26-15-26-32V78z" fill="none" stroke="#fff" stroke-width="5" stroke-linejoin="round"/>
+        <path d="M88 98l9 9 17-18" fill="none" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg></div>
+      <span class="eyebrow">Security</span>
+      <h2>Your books are safe with us.</h2>
+      <p class="lead">Your business data is your business. Livekeeping is independently certified to international standards for information security and privacy.</p>
+    </div>
+    <div class="rv">
+      <div class="isos">
+        <div class="iso"><small>ISO/IEC</small><b>27001</b><span>Information security management</span></div>
+        <div class="iso"><small>ISO/IEC</small><b>27701</b><span>Privacy information management</span></div>
+      </div>
+      <ul class="sec-list">
+        <li>{icon("lock")}<div><b>Encrypted connection</b><span>Data travels from your Tally PC over an encrypted connection.</span></div></li>
+        <li>{icon("backup")}<div><b>Automatic backups</b><span>Company data is backed up after it syncs, with a log of every backup.</span></div></li>
+        <li>{icon("users")}<div><b>Trusted by 1,00,000+ businesses</b><span>Owners, CAs and sales teams across India.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap rv">
+    <span class="eyebrow">Made for</span>
+    <h2>Everyone who touches <span class="hl">your books.</span></h2>
+    <div class="who">
+      <div><span class="e">🧑‍💼</span><b>Business owners</b><span>Know your numbers before your first chai.</span></div>
+      <div><span class="e">📊</span><b>CAs &amp; accountants</b><span>Review client data from the browser, no remote desktop.</span></div>
+      <div><span class="e">🚚</span><b>Sales teams</b><span>Take orders and share bills in the field.</span></div>
+      <div><span class="e">🏭</span><b>Distributors</b><span>Track stock, dues and e-Way Bills across parties.</span></div>
+    </div>
+  </div>
+</section>
+
+{faq_block(HOME_FAQS)}
+{final_cta(p)}
+{footer(p)}"""
+    return head("Livekeeping – Tally on Mobile & Web", "Your Tally data live on mobile and web. Download the Tally Connector, then check sales, outstanding and 35+ reports, and create bills, e-Way Bills and e-Invoices from anywhere. ISO 27001 & 27701 certified.", p) + body
+
+
+# ---------------------------------------------------------------- feature pages
+def feature_page(f):
+    p = "../"
+    steps = "".join(f"<li class=\"rv\"><h3>{E(t)}</h3><p>{E(d)}</p></li>" for t, d in f["steps"])
+    hls = "".join(f'<div class="rv">{icon("check")}<div><b>{E(t)}</b><span>{E(d)}</span></div></div>' for t, d in f["highlights"])
+    others = "".join(f'<a href="{o["slug"]}.html"><span class="fi">{icon(o["icon"])}</span>{E(o["name"])}</a>' for o in FEATURES if o["slug"] != f["slug"])
+    body = f"""{nav(p)}
+<section class="hero fhero">
+  <div class="wrap">
+    <div class="hero-copy">
+    <div class="crumb"><a href="../index.html">Home</a> / <a href="../index.html#features">Features</a> / {E(f["name"])}</div>
+    <span class="pill"><span class="dot"></span>{E(f["name"])} · mobile &amp; web</span>
+    <h1>{E(f["h1"])}</h1>
+    <p class="sub">{E(f["sub"])}</p>
+    {cta_buttons(p, "#download")}
+    {TRUST}
+    </div>
+    <div class="art" aria-hidden="true">{icon(f["icon"])}</div>
+  </div>
+  <div class="fade"></div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="rv"><span class="eyebrow">How it works</span><h2>Three steps. <span class="hl">That's it.</span></h2></div>
+    <ol class="steps3">{steps}</ol>
+  </div>
+</section>
+
+<section class="sec ba">
+  <div class="wrap" style="display:block">
+    <div class="rv"><span class="eyebrow">What you get</span><h2>Built for the way <span class="hl">you work.</span></h2></div>
+    <div class="hl-grid">{hls}</div>
+  </div>
+</section>
+
+{faq_block(f["faqs"], f"{f['name']}: questions")}
+
+<section class="sec" style="padding-top:0">
+  <div class="wrap rv"><span class="eyebrow">Explore more</span><h2>More from Livekeeping</h2><div class="others">{others}</div></div>
+</section>
+
+{final_cta(p)}
+{footer(p)}"""
+    return head(f"{f['name']} – Livekeeping", f["sub"], p) + body
+
+
+if __name__ == "__main__":
+    os.makedirs(os.path.join(HERE, "features"), exist_ok=True)
+    open(os.path.join(HERE, "index.html"), "w").write(home())
+    for f in FEATURES:
+        open(os.path.join(HERE, "features", f["slug"] + ".html"), "w").write(feature_page(f))
+    print(f"built index.html + {len(FEATURES)} feature pages")
