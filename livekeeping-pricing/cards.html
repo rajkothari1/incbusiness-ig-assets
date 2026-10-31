@@ -17,9 +17,20 @@
   .page { padding: 70px 48px 60px; }
   h1 { text-align: center; font-size: 46px; font-weight: 800; letter-spacing: -1px; }
   h1 span { color: var(--green); }
-  .sub { text-align: center; color: var(--muted); font-size: 20px; margin: 10px 0 56px; }
+  .sub { text-align: center; color: var(--muted); font-size: 20px; margin: 10px 0 30px; }
+  .toggle-wrap { display: flex; justify-content: center; margin-bottom: 56px; }
+  .toggle { display: inline-flex; background: #fff; border-radius: 40px; padding: 6px; box-shadow: 0 4px 16px rgba(0,0,0,.06); border: 1px solid #e3e8de; }
+  .toggle button {
+    font-family: inherit; font-size: 18px; font-weight: 600; color: #555; background: none; border: 0;
+    padding: 12px 30px; border-radius: 30px; cursor: pointer; display: flex; align-items: center; gap: 10px;
+  }
+  .toggle button .off { background: #ffe9a8; color: #7a5200; font-size: 12px; font-weight: 700; padding: 3px 9px; border-radius: 20px; letter-spacing: .5px; }
+  .toggle button.active { background: var(--text); color: #fff; }
+  .toggle button:focus-visible { outline: 3px solid var(--green); outline-offset: 2px; }
+  body.y1 .p3, body.y3 .p1 { display: none; }
+  .save.plain { background: #eef0eb; color: #666; }
 
-  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; align-items: stretch; }
+  .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; align-items: stretch; }
   .card { background: #fff; border-radius: 22px; padding: 44px 38px 40px; position: relative; }
   .card.pro { box-shadow: 0 0 0 3px var(--green), 0 24px 60px rgba(46, 138, 7, .18); }
   .badge {
@@ -77,19 +88,32 @@
   .credits-note { font-size: 14px; color: #777; margin-top: 8px; text-align: right; }
 </style>
 </head>
-<body>
+<body class="y3">
 <div class="page">
   <h1>Pick the right plan for <span>your Business</span></h1>
   <p class="sub">All plans include live Tally sync. Save 25% with the 3-year plan.</p>
+  <div class="toggle-wrap">
+    <div class="toggle" role="group" aria-label="Billing period">
+      <button type="button" id="btn-y1" data-period="y1">1 Year</button>
+      <button type="button" id="btn-y3" data-period="y3" class="active">3 Years <span class="off">SAVE 25%</span></button>
+    </div>
+  </div>
 
   <div class="grid">
     <!-- GROWTH -->
     <div class="card growth">
       <div class="name">Growth</div>
       <div class="tag">Track your Tally data on the go</div>
-      <span class="save">SAVE 25% ON 3 YEARS</span>
-      <div class="price"><s>₹3,000</s><b>₹2,250</b><span>/year</span></div>
-      <div class="pay">Pay <s>₹9,000</s> <b>₹6,750</b> for 3 years</div>
+      <div class="p3">
+        <span class="save">SAVE 25% ON 3 YEARS</span>
+        <div class="price"><s>₹3,000</s><b>₹2,250</b><span>/year</span></div>
+        <div class="pay">Pay <s>₹9,000</s> <b>₹6,750</b> for 3 years</div>
+      </div>
+      <div class="p1">
+        <span class="save plain">1-YEAR PLAN</span>
+        <div class="price"><b>₹3,000</b><span>/year</span></div>
+        <div class="pay">Billed yearly · Save 25% on 3 years</div>
+      </div>
       <div class="credits"><span class="lbl">AI Credits</span><span class="num">200 <small>/ month</small></span></div>
       <div class="credits-note">Need more? Recharge anytime</div>
       <div class="btn">Buy Now</div>
@@ -120,9 +144,16 @@
       <span class="badge">★ RECOMMENDED</span>
       <div class="name">Pro</div>
       <div class="tag">Powerful plan for growing businesses</div>
-      <span class="save">SAVE 25% ON 3 YEARS</span>
-      <div class="price"><s>₹5,000</s><b>₹3,750</b><span>/year</span></div>
-      <div class="pay">Pay <s>₹15,000</s> <b>₹11,250</b> for 3 years</div>
+      <div class="p3">
+        <span class="save">SAVE 25% ON 3 YEARS</span>
+        <div class="price"><s>₹5,000</s><b>₹3,750</b><span>/year</span></div>
+        <div class="pay">Pay <s>₹15,000</s> <b>₹11,250</b> for 3 years</div>
+      </div>
+      <div class="p1">
+        <span class="save plain">1-YEAR PLAN</span>
+        <div class="price"><b>₹5,000</b><span>/year</span></div>
+        <div class="pay">Billed yearly · Save 25% on 3 years</div>
+      </div>
       <div class="credits"><span class="lbl">AI Credits</span><span class="num">600 <small>/ month</small></span></div>
       <div class="credits-note">Need more? Recharge anytime</div>
       <div class="btn">Buy Now</div>
@@ -150,9 +181,16 @@
     <div class="card plus">
       <div class="name">Pro Plus</div>
       <div class="tag">Complete GST &amp; compliance power</div>
-      <span class="save">SAVE 25% ON 3 YEARS</span>
-      <div class="price"><s>₹7,000</s><b>₹5,250</b><span>/year</span></div>
-      <div class="pay">Pay <s>₹21,000</s> <b>₹15,750</b> for 3 years</div>
+      <div class="p3">
+        <span class="save">SAVE 25% ON 3 YEARS</span>
+        <div class="price"><s>₹7,000</s><b>₹5,250</b><span>/year</span></div>
+        <div class="pay">Pay <s>₹21,000</s> <b>₹15,750</b> for 3 years</div>
+      </div>
+      <div class="p1">
+        <span class="save plain">1-YEAR PLAN</span>
+        <div class="price"><b>₹7,000</b><span>/year</span></div>
+        <div class="pay">Billed yearly · Save 25% on 3 years</div>
+      </div>
       <div class="credits"><span class="lbl">AI Credits</span><span class="num">1,500 <small>/ month</small></span></div>
       <div class="credits-note">Need more? Recharge anytime</div>
       <div class="btn">Buy Now</div>
@@ -190,5 +228,13 @@
 
   <p class="addons"><b>ADDONS:</b> Add extra users to any plan &nbsp;·&nbsp; <b class="rc">Recharge AI credits anytime</b> &nbsp;·&nbsp; *Taxes as applicable</p>
 </div>
+<script>
+  document.querySelectorAll('.toggle button').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.body.className = btn.dataset.period;
+      document.querySelectorAll('.toggle button').forEach(function (b) { b.classList.toggle('active', b === btn); });
+    });
+  });
+</script>
 </body>
 </html>
