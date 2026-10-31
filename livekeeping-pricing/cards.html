@@ -29,10 +29,14 @@
   }
   .name { font-size: 46px; font-weight: 800; letter-spacing: -1px; line-height: 1.1; }
   .tag { font-size: 18px; color: #444; margin-top: 8px; }
-  .price { margin-top: 34px; display: flex; align-items: baseline; gap: 4px; }
+  .price { margin-top: 10px; display: flex; align-items: baseline; gap: 4px; }
   .price b { font-size: 54px; font-weight: 800; letter-spacing: -1.5px; }
   .price span { font-size: 22px; color: #555; }
-  .pay { font-size: 19px; color: var(--muted); margin-top: 4px; }
+  .price s { font-size: 26px; color: #9a9a9a; font-weight: 500; margin-right: 10px; }
+  .pay { font-size: 19px; color: var(--muted); margin-top: 4px; white-space: nowrap; }
+  .pay s { color: #a5a5a5; }
+  .pay b { color: var(--text); font-weight: 600; }
+  .save { display: inline-block; margin-top: 30px; background: #ffe9a8; color: #7a5200; font-size: 13px; font-weight: 700; letter-spacing: .6px; padding: 4px 10px; border-radius: 20px; }
 
   .credits {
     margin-top: 26px; display: flex; align-items: center; justify-content: space-between;
@@ -76,15 +80,16 @@
 <body>
 <div class="page">
   <h1>Pick the right plan for <span>your Tally</span></h1>
-  <p class="sub">All plans include live Tally sync. Prices for a 3-year plan.</p>
+  <p class="sub">All plans include live Tally sync. Save 25% with the 3-year plan.</p>
 
   <div class="grid">
     <!-- GROWTH -->
     <div class="card growth">
       <div class="name">Growth</div>
       <div class="tag">Track your Tally data on the go</div>
-      <div class="price"><b>₹3,000</b><span>/year</span></div>
-      <div class="pay">Pay ₹9,000 for 3 years</div>
+      <span class="save">SAVE 25% ON 3 YEARS</span>
+      <div class="price"><s>₹3,000</s><b>₹2,250</b><span>/year</span></div>
+      <div class="pay">Pay <s>₹9,000</s> <b>₹6,750</b> for 3 years</div>
       <div class="credits"><span class="lbl">AI Credits</span><span class="num">200 <small>/ month</small></span></div>
       <div class="credits-note">Need more? Recharge anytime</div>
       <div class="btn">Buy Now</div>
@@ -115,8 +120,9 @@
       <span class="badge">★ RECOMMENDED</span>
       <div class="name">Pro</div>
       <div class="tag">Powerful plan for growing businesses</div>
-      <div class="price"><b>₹5,000</b><span>/year</span></div>
-      <div class="pay">Pay ₹15,000 for 3 years</div>
+      <span class="save">SAVE 25% ON 3 YEARS</span>
+      <div class="price"><s>₹5,000</s><b>₹3,750</b><span>/year</span></div>
+      <div class="pay">Pay <s>₹15,000</s> <b>₹11,250</b> for 3 years</div>
       <div class="credits"><span class="lbl">AI Credits</span><span class="num">600 <small>/ month</small></span></div>
       <div class="credits-note">Need more? Recharge anytime</div>
       <div class="btn">Buy Now</div>
@@ -144,8 +150,9 @@
     <div class="card plus">
       <div class="name">Pro Plus</div>
       <div class="tag">Complete GST &amp; compliance power</div>
-      <div class="price"><b>₹7,000</b><span>/year</span></div>
-      <div class="pay">Pay ₹21,000 for 3 years</div>
+      <span class="save">SAVE 25% ON 3 YEARS</span>
+      <div class="price"><s>₹7,000</s><b>₹5,250</b><span>/year</span></div>
+      <div class="pay">Pay <s>₹21,000</s> <b>₹15,750</b> for 3 years</div>
       <div class="credits"><span class="lbl">AI Credits</span><span class="num">1,500 <small>/ month</small></span></div>
       <div class="credits-note">Need more? Recharge anytime</div>
       <div class="btn">Buy Now</div>
@@ -175,7 +182,7 @@
             <li>GST liability &amp; due date dashboard</li>
           </ul></div></li>
         <li><div><span class="hl">Multiple Warehouses</span><span class="note">(Godown-wise stock reports)</span></div></li>
-        <li><div><span class="hl">TDS Reports</span><span class="new">NEW</span><span class="note">(Party-wise deduction &amp; TDS payable)</span></div></li>
+        <li><div><span class="hl">TDS &amp; TCS Reports</span><span class="new">NEW</span><span class="note">(Party-wise deduction, collection &amp; payable)</span></div></li>
         <li><div>Admin + 1 Free User</div></li>
       </ul>
     </div>
