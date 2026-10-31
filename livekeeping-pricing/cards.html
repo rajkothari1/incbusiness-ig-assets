@@ -65,14 +65,15 @@
   .pro .btn { background: linear-gradient(90deg, #3fae0f, #5fd83a); box-shadow: 0 10px 24px rgba(63,174,15,.35); }
   .plus .btn { background: #111; }
 
-  ul { list-style: none; display: flex; flex-direction: column; gap: 13px; }
+  ul { list-style: none; display: flex; flex-direction: column; gap: 16px; }
   li { display: grid; grid-template-columns: 30px 1fr; font-size: 19px; line-height: 1.45; }
   li::before {
     content: ""; width: 9px; height: 16px; margin: 4px 0 0 6px;
     border: solid #444; border-width: 0 2px 2px 0; transform: rotate(45deg);
   }
   .hl { background: var(--hl); padding: 1px 6px; margin-left: -6px; border-radius: 3px; }
-  .note { display: block; color: var(--muted); font-size: 17px; margin-top: 2px; }
+  .note { display: block; color: var(--muted); font-size: 16px; margin-top: 2px; }
+  .sub2 { color: var(--muted); }
   .new {
     display: inline-block; background: linear-gradient(90deg, #ff7a45, #ff4d6d); color: #fff;
     font-size: 11px; font-weight: 700; letter-spacing: .6px; padding: 2px 8px; border-radius: 20px;
@@ -115,28 +116,16 @@
         <div class="pay">Billed yearly · Save 25% on 3 years</div>
       </div>
       <div class="credits"><span class="lbl">AI Credits</span><span class="num">200 <small>/ month</small></span></div>
-      <div class="credits-note">Need more? Recharge anytime</div>
       <div class="btn">Buy Now</div>
       <ul>
-        <li><div>Read-Only Access<span class="note">(Mobile &amp; Web)</span></div></li>
+        <li><div>View Tally Data <span class="sub2">(Mobile &amp; Web)</span></div></li>
         <li><div>Share Ledgers on WhatsApp</div></li>
-        <li><div>Track Outstanding Payments</div></li>
-        <li><div>Automated Payment Reminders</div></li>
+        <li><div>Outstanding &amp; Payment Reminders</div></li>
         <li><div><span class="hl">Collect Online Payments</span></div></li>
         <li><div>Manage Inventory / Stock</div></li>
-        <li><div>Auto Sync Companies</div></li>
-        <li><div><span class="hl">35+ Business Reports</span>
-          <ul class="dots">
-            <li>Sales &amp; Purchase Registers</li>
-            <li>Receivables &amp; Payables Ageing</li>
-            <li>Stock Summary &amp; Item-wise Stock</li>
-            <li>Profit &amp; Loss and Balance Sheet</li>
-            <li>Cash, Bank &amp; Day Book</li>
-            <li>Ledger &amp; Party Statements</li>
-            <li>Monthly Business Summary</li>
-          </ul></div></li>
-        <li><div>Accounting Data Backup</div></li>
-        <li><div><span class="hl">Ask AI</span><span class="new">NEW</span><span class="note">(Ask anything about your business)</span></div></li>
+        <li><div>Auto Sync &amp; Data Backup</div></li>
+        <li><div><span class="hl">35+ Business Reports</span><span class="note">Sales, Ageing, Stock, P&amp;L, Monthly Summary</span></div></li>
+        <li><div>Ask AI<span class="new">NEW</span></div></li>
         <li><div>Admin User Only</div></li>
       </ul>
     </div>
@@ -157,24 +146,17 @@
         <div class="pay">Billed yearly · Save 25% on 3 years</div>
       </div>
       <div class="credits"><span class="lbl">AI Credits</span><span class="num">600 <small>/ month</small></span></div>
-      <div class="credits-note">Need more? Recharge anytime</div>
       <div class="btn">Buy Now</div>
       <ul>
         <li><div><b>Everything in GROWTH, plus</b></div></li>
-        <li><div><span class="hl">Create Tally Sales, Quotation, Receipt + 12 Voucher Types</span><span class="note">(Mobile &amp; Web)</span></div></li>
-        <li><div>Edit Tally Vouchers <span style="color:var(--muted)">(Mobile &amp; Web)</span></div></li>
-        <li><div>Customised PDF Invoice Templates</div></li>
-        <li><div><span class="hl">Create Expenses &amp; Recurring Invoices</span><span class="new">NEW</span><span class="note">(Rent, AMC, subscriptions billed automatically)</span></div></li>
-        <li><div><span class="hl">Batch &amp; Expiry</span><span class="note">(Batch-wise stock &amp; expiry reports)</span></div></li>
+        <li><div><span class="hl">Create Tally Sales, Quotation, Receipt + 12 Voucher Types</span><span class="note">Mobile &amp; Web</span></div></li>
+        <li><div>Edit Tally Vouchers</div></li>
+        <li><div>Expenses &amp; Recurring Invoices<span class="new">NEW</span></div></li>
+        <li><div>Custom PDF Invoice Templates</div></li>
+        <li><div><span class="hl">Batch &amp; Expiry</span></div></li>
         <li><div>Multiple Pricelists</div></li>
         <li><div>Multiple Billing Addresses</div></li>
-        <li><div><span class="hl">Livekeeping AI</span><span class="new">NEW</span>
-          <ul class="dots">
-            <li>Ask AI</li>
-            <li>AI Bank Statement Upload</li>
-            <li>AI Purchase Invoice Scan</li>
-            <li>AI Ledger Auto-mapping</li>
-          </ul></div></li>
+        <li><div><span class="hl">Livekeeping AI</span><span class="new">NEW</span><span class="note">Bank Upload, Purchase Scan, Ledger Mapping</span></div></li>
         <li><div>Admin + 1 Free User</div></li>
       </ul>
     </div>
@@ -194,35 +176,14 @@
         <div class="pay">Billed yearly · Save 25% on 3 years</div>
       </div>
       <div class="credits"><span class="lbl">AI Credits</span><span class="num">1,500 <small>/ month</small></span></div>
-      <div class="credits-note">Need more? Recharge anytime</div>
       <div class="btn">Buy Now</div>
       <ul>
         <li><div><b>Everything in PRO, plus</b></div></li>
-        <li><div><span class="hl">One-click E-way Bills</span>
-          <ul class="dots">
-            <li>Track live truck location</li>
-            <li>E-way on Sales &amp; Purchase</li>
-            <li>E-way on Debit &amp; Credit Note</li>
-            <li>Update vehicle, extend &amp; cancel</li>
-          </ul></div></li>
-        <li><div><span class="hl">IRN-compliant E-invoicing</span>
-          <ul class="dots">
-            <li>Instant IRN &amp; QR code</li>
-            <li>E-invoice on Debit &amp; Credit Note</li>
-            <li>Auto E-way Bill from E-invoice</li>
-            <li>Cancel IRN in one click</li>
-          </ul></div></li>
-        <li><div><span class="hl">GST Module</span><span class="new">NEW</span>
-          <ul class="dots">
-            <li>GSTR-1 ready data from sales</li>
-            <li>GSTR-2B reconciliation</li>
-            <li>ITC mismatch alerts</li>
-            <li>GSTR-3B summary auto-ready</li>
-            <li>HSN-wise sales summary</li>
-            <li>GST liability &amp; due date dashboard</li>
-          </ul></div></li>
-        <li><div><span class="hl">Multiple Warehouses</span><span class="note">(Godown-wise stock reports)</span></div></li>
-        <li><div><span class="hl">TDS &amp; TCS Reports</span><span class="new">NEW</span><span class="note">(Party-wise deduction, collection &amp; payable)</span></div></li>
+        <li><div><span class="hl">E-way Bills</span><span class="note">Live truck tracking, Sales, Purchase, Debit &amp; Credit Note</span></div></li>
+        <li><div><span class="hl">E-invoicing</span><span class="note">Instant IRN, QR code, Auto E-way Bill</span></div></li>
+        <li><div><span class="hl">GST Module</span><span class="new">NEW</span><span class="note">GSTR-1, 2B &amp; 3B ready, ITC alerts</span></div></li>
+        <li><div>Multiple Warehouses</div></li>
+        <li><div>TDS &amp; TCS Reports</div></li>
         <li><div>Admin + 1 Free User</div></li>
       </ul>
     </div>
