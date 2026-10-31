@@ -83,6 +83,23 @@
   .dots li { display: list-item; font-size: 17px; line-height: 1.9; }
   .dots li::before { display: none; }
 
+  li.module { display: block; margin: 6px 0; }
+  li.module::before { display: none; }
+  .mod {
+    border-radius: 16px; padding: 18px 18px 16px;
+    background: linear-gradient(135deg, #eef9e4 0%, #f8fcf3 100%);
+    border: 1px solid #cfe8bb;
+  }
+  .mod.ai { background: linear-gradient(135deg, #eef3ff 0%, #f6f0ff 100%); border-color: #d6dcf7; }
+  .mod.gst { background: linear-gradient(135deg, #fff6e2 0%, #fffaf0 100%); border-color: #f1dfb3; }
+  .mod-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .mod-title { font-size: 20px; font-weight: 700; }
+  .mod-kicker { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--green-dark); }
+  .mod.ai .mod-kicker { color: #4a55c8; }
+  .mod.gst .mod-kicker { color: #9a6a00; }
+  .mod-desc { font-size: 15px; color: #555; margin-top: 4px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .chip { background: #fff; border: 1px solid rgba(0,0,0,.07); border-radius: 20px; padding: 5px 12px; font-size: 14px; font-weight: 500; color: #333; }
   .addons { text-align: center; margin-top: 40px; font-size: 19px; color: var(--muted); }
   .addons b { color: var(--text); }
   .addons .rc { color: var(--green-dark); }
@@ -124,7 +141,11 @@
         <li><div><span class="hl">Collect Online Payments</span></div></li>
         <li><div>Manage Inventory / Stock</div></li>
         <li><div>Auto Sync &amp; Data Backup</div></li>
-        <li><div><span class="hl">35+ Business Reports</span><span class="note">Sales, Ageing, Stock, P&amp;L, Monthly Summary</span></div></li>
+        <li class="module"><div class="mod">
+          <div class="mod-head"><span class="mod-title">35+ Business Reports</span></div>
+          <div class="mod-desc">Your full Tally picture, live on your phone</div>
+          <div class="chips"><span class="chip">Sales</span><span class="chip">Purchase</span><span class="chip">Ageing</span><span class="chip">Stock</span><span class="chip">P&amp;L</span><span class="chip">Balance Sheet</span><span class="chip">Day Book</span><span class="chip">Monthly Summary</span></div>
+        </div></li>
         <li><div>Ask AI<span class="new">NEW</span></div></li>
         <li><div>Admin User Only</div></li>
       </ul>
@@ -156,7 +177,11 @@
         <li><div><span class="hl">Batch &amp; Expiry</span></div></li>
         <li><div>Multiple Pricelists</div></li>
         <li><div>Multiple Billing Addresses</div></li>
-        <li><div><span class="hl">Livekeeping AI</span><span class="new">NEW</span><span class="note">Bank Upload, Purchase Scan, Ledger Mapping</span></div></li>
+        <li class="module"><div class="mod ai">
+          <div class="mod-head"><span class="mod-title">Livekeeping AI<span class="new">NEW</span></span></div>
+          <div class="mod-desc">Hours of data entry done in minutes</div>
+          <div class="chips"><span class="chip">Bank Statement Upload</span><span class="chip">Purchase Invoice Scan</span><span class="chip">Ledger Auto-mapping</span><span class="chip">Ask AI</span></div>
+        </div></li>
         <li><div>Admin + 1 Free User</div></li>
       </ul>
     </div>
@@ -181,7 +206,11 @@
         <li><div><b>Everything in PRO, plus</b></div></li>
         <li><div><span class="hl">E-way Bills</span><span class="note">Live truck tracking, Sales, Purchase, Debit &amp; Credit Note</span></div></li>
         <li><div><span class="hl">E-invoicing</span><span class="note">Instant IRN, QR code, Auto E-way Bill</span></div></li>
-        <li><div><span class="hl">GST Module</span><span class="new">NEW</span><span class="note">GSTR-1, 2B &amp; 3B ready, ITC alerts</span></div></li>
+        <li class="module"><div class="mod gst">
+          <div class="mod-head"><span class="mod-title">GST Module<span class="new">NEW</span></span></div>
+          <div class="mod-desc">File-ready GST data, straight from Tally</div>
+          <div class="chips"><span class="chip">GSTR-1</span><span class="chip">GSTR-2B Match</span><span class="chip">GSTR-3B</span><span class="chip">ITC Alerts</span><span class="chip">HSN Summary</span><span class="chip">Due Dates</span></div>
+        </div></li>
         <li><div>Multiple Warehouses</div></li>
         <li><div>TDS &amp; TCS Reports</div></li>
         <li><div>Admin + 1 Free User</div></li>
