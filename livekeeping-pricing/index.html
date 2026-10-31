@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Livekeeping Plans</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #4cbb17;
+    --green-dark: #3a9a10;
+    --green-light: #ebf7df;
+    --amber: #ffd27a;
+    --text: #1a1a1a;
+    --muted: #6b6b6b;
+    --border: #e6e6e6;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff;
+    color: var(--text);
+    padding: 40px 16px;
+  }
+  .wrap { max-width: 1100px; margin: 0 auto; }
+  h1 { text-align: center; font-size: 32px; font-weight: 700; margin-bottom: 6px; }
+  .sub { text-align: center; color: var(--muted); margin-bottom: 36px; }
+
+  .table-scroll { overflow-x: auto; padding-top: 16px; }
+  table {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 15px;
+  }
+  th, td {
+    padding: 13px 16px;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+  }
+  td:first-child, th:first-child { text-align: left; width: 38%; }
+
+  /* Plan header */
+  thead th { vertical-align: top; padding-top: 34px; border-bottom: none; position: relative; }
+  .plan-name { font-size: 24px; font-weight: 700; }
+  .plan-tag {
+    display: inline-block; margin: 10px 0 14px;
+    background: var(--green-light); color: var(--green-dark);
+    font-weight: 600; font-size: 13px; padding: 5px 12px; border-radius: 6px;
+  }
+  .price { font-size: 30px; font-weight: 700; }
+  .per { color: var(--muted); font-size: 13px; margin-top: 2px; }
+
+  /* Pro column highlight */
+  .pro { background: #f8fdf4; border-left: 2px solid var(--green); border-right: 2px solid var(--green); }
+  thead th.pro { border-top: 2px solid var(--green); border-radius: 16px 16px 0 0; }
+  tfoot td.pro { border-bottom: 2px solid var(--green); border-radius: 0 0 16px 16px; }
+  .badge {
+    position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+    background: var(--amber); font-size: 12px; font-weight: 600;
+    padding: 5px 14px; border-radius: 20px; white-space: nowrap; letter-spacing: .5px;
+  }
+
+  /* Section rows */
+  tr.section td {
+    background: #f4f4f4; font-weight: 700; font-size: 13px;
+    letter-spacing: .8px; text-transform: uppercase; text-align: left;
+  }
+  tr.section td.pro { background: #eef8e6; }
+
+  .sub-row td:first-child { padding-left: 34px; color: #444; }
+  .yes { color: var(--green); font-size: 20px; font-weight: 700; }
+  .no { color: #c9c9c9; font-size: 18px; }
+  .limit { font-size: 13px; color: var(--muted); }
+  .new {
+    background: #e8f0ff; color: #2a5bd7; font-size: 10px; font-weight: 700;
+    padding: 2px 6px; border-radius: 4px; margin-left: 6px; vertical-align: middle;
+  }
+
+  tfoot td { border-bottom: none; padding: 22px 16px; }
+  .btn {
+    display: inline-block; width: 100%; padding: 13px 0; border-radius: 30px;
+    background: var(--green-light); color: var(--text); font-weight: 700;
+    text-decoration: none; font-size: 16px;
+  }
+  .btn.primary { background: linear-gradient(90deg, #4cae1c, #5ad83a); color: #fff; }
+
+  .addons { text-align: center; margin-top: 24px; color: var(--muted); font-size: 14px; }
+  .addons b { color: var(--text); }
+  .addons a { color: #2a5bd7; font-weight: 600; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Choose your plan</h1>
+  <p class="sub">Tally on your mobile. Now with AI and GST.</p>
+
+  <div class="table-scroll">
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>
+          <div class="plan-name">Growth</div>
+          <div class="plan-tag">Read-Only Access</div>
+          <div class="price">₹7,200</div>
+          <div class="per">for 3 years · ₹2,400 / year</div>
+        </th>
+        <th class="pro">
+          <span class="badge">★ RECOMMENDED</span>
+          <div class="plan-name">Pro</div>
+          <div class="plan-tag">Create &amp; Manage Entries + AI</div>
+          <div class="price">₹11,250</div>
+          <div class="per">for 3 years · ₹3,750 / year</div>
+        </th>
+        <th>
+          <div class="plan-name">Pro Plus</div>
+          <div class="plan-tag">E-Way, E-Invoice &amp; GST</div>
+          <div class="price">₹15,750</div>
+          <div class="per">for 3 years · ₹5,250 / year</div>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <!-- DATA ACCESS -->
+      <tr class="section"><td colspan="2">📱 Data Access</td><td class="pro"></td><td></td></tr>
+      <tr><td>Access Data on Mobile &amp; Web</td><td class="yes">✓</td><td class="pro yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Auto Sync Companies</td><td class="yes">✓</td><td class="pro yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Accounting Data Backup</td><td class="yes">✓</td><td class="pro yes">✓</td><td class="yes">✓</td></tr>
+
+      <!-- REPORTS -->
+      <tr class="section"><td colspan="2">📊 35+ Business Reports</td><td class="pro"></td><td></td></tr>
+      <tr class="sub-row"><td>Sales &amp; Purchase Reports</td><td class="yes">✓</td><td class="pro yes">✓</td><td class="yes">✓</td></tr>
+      <tr class="sub-row"><td>Receivables &amp; Payables Ageing</td><td class="yes">✓</td><td class="pro yes">✓</td><td class="yes">✓</td></tr>
+      <tr class="sub-row"><td>Stock &amp; Inventory Reports</td><td class="yes">✓</td><td class="pro yes">✓</td><td class="yes">✓</td></tr>
+      <tr class="sub-row"><td>Profit &amp; Loss, Balance Sheet, Trial Balance</td><td class="yes">✓</td><td class="pro yes">✓</td><td class="yes">✓</td></tr>
+      <tr class="sub-row"><td>Cash, Bank &amp; Day Book</td><td class="yes">✓</td><td class="pro yes">✓</td><td class="yes">✓</td></tr>
+
+      <!-- COLLECTIONS -->
+      <tr class="section"><td colspan="2">💰 Collections</td><td class="pro"></td><td></td></tr>
+      <tr><td>Share Ledgers on WhatsApp</td><td class="yes">✓</td><td class="pro yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Track Outstanding Payments</td><td class="yes">✓</td><td class="pro yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Automated Payment Reminders</td><td class="yes">✓</td><td class="pro yes">✓</td><td class="yes">✓</td></tr>
+
+      <!-- ENTRIES -->
+      <tr class="section"><td colspan="2">🧾 Entries &amp; Invoicing</td><td class="pro"></td><td></td></tr>
+      <tr><td>Create &amp; edit vouchers on mobile</td><td class="no">✕</td><td class="pro yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>GST sales bills, quotations, receipts</td><td class="no">✕</td><td class="pro yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Customised PDF invoice templates</td><td class="no">✕</td><td class="pro yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Recurring Invoices <span class="new">NEW</span></td><td class="no">✕</td><td class="pro yes">✓</td><td class="yes">✓</td></tr>
+
+      <!-- AI -->
+      <tr class="section"><td colspan="2">🤖 AI Features</td><td class="pro"></td><td></td></tr>
+      <tr><td>Ask AI <span class="new">NEW</span></td><td class="limit">10 questions / month</td><td class="pro"><span class="yes">✓</span> <span class="limit">Unlimited</span></td><td><span class="yes">✓</span> <span class="limit">Unlimited</span></td></tr>
+      <tr><td>AI Bank Statement Upload <span class="new">NEW</span></td><td class="no">✕</td><td class="pro yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>AI Purchase Invoice Scan <span class="new">NEW</span></td><td class="no">✕</td><td class="pro yes">✓</td><td class="yes">✓</td></tr>
+
+      <!-- TAX -->
+      <tr class="section"><td colspan="2">📑 Tax &amp; Compliance</td><td class="pro"></td><td></td></tr>
+      <tr><td>TDS Reports <span class="new">NEW</span></td><td class="no">✕</td><td class="pro yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>One-click e-way bill generation</td><td class="no">✕</td><td class="pro no">✕</td><td class="yes">✓</td></tr>
+      <tr><td>IRN-compliant e-invoicing</td><td class="no">✕</td><td class="pro no">✕</td><td class="yes">✓</td></tr>
+
+      <!-- GST -->
+      <tr class="section"><td colspan="2">🏛️ GST Module <span class="new">NEW</span></td><td class="pro"></td><td></td></tr>
+      <tr><td>GSTR-1 ready data from sales</td><td class="no">✕</td><td class="pro no">✕</td><td class="yes">✓</td></tr>
+      <tr><td>GSTR-2B reconciliation &amp; ITC alerts</td><td class="no">✕</td><td class="pro no">✕</td><td class="yes">✓</td></tr>
+      <tr><td>GST dashboard – liability &amp; due dates</td><td class="no">✕</td><td class="pro no">✕</td><td class="yes">✓</td></tr>
+
+      <!-- USERS -->
+      <tr class="section"><td colspan="2">👥 Users</td><td class="pro"></td><td></td></tr>
+      <tr><td>Users included</td><td class="limit">Admin only</td><td class="pro limit">Admin + 1 free user</td><td class="limit">Admin + 1 free user</td></tr>
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <td></td>
+        <td><a href="#" class="btn">Buy Now</a></td>
+        <td class="pro"><a href="#" class="btn primary">Buy Now</a></td>
+        <td><a href="#" class="btn">Buy Now</a></td>
+      </tr>
+    </tfoot>
+  </table>
+  </div>
+
+  <p class="addons"><b>ADDONS:</b> Add extra users to any plan <a href="#">Buy Now</a> &nbsp; *Taxes as applicable</p>
+</div>
+</body>
+</html>
