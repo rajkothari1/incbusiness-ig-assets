@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+/* Instagram covers, 1080x1920 (the profile grid shows the middle 1080x1440). One family, three card types:
+   F news reel = polaroids fanned left + white date box; G AI tools = browser windows fanned right + yellow topic box;
+   H business models = folders stacked straight + navy company box. Fill with setF / setG / setH. */
+html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; }
+body { font-family: 'Poppins', sans-serif; position: relative; }
+.abs { position: absolute; }
+.v { display: none; position: absolute; inset: 0; }
+body.f #F, body.g #G, body.h #H { display: block; }
+/* F: polaroid stack on a soft blurred photo; lead story in front, the other four peeking out behind */
+#F { background: #222; overflow: hidden; }
+#F .bg { position: absolute; inset: -80px; background: 70% 50% / cover; filter: blur(26px) brightness(.62) saturate(1.1); }
+#F .dots { position: absolute; inset: 0; }
+#F .dots i, #G .dots i, #gdots i, #hdots i { position: absolute; width: 8px; height: 8px; border-radius: 50%; background: #fff; box-shadow: 0 0 10px rgba(255,255,255,.9); }
+#F .logo { left: 0; right: 0; top: 285px; text-align: center; } #F .logo img { height: 60px; }
+#F .pc { position: absolute; left: 240px; top: 510px; transform-origin: 50% 135%; width: 680px; box-sizing: border-box; padding: 30px 30px 0; background: linear-gradient(#f7f6f2, #e9e7e1); border-radius: 22px; box-shadow: 0 30px 60px rgba(0,0,0,.45); transform-origin: 50% 60%; }
+#F .pc .ph { width: 620px; height: 410px; border-radius: 10px; overflow: hidden; }
+#F .pc .ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
+#F .pc .cap { height: 260px; padding: 0 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #1b1b1b; }
+#F .pc h1 { margin: 0; font-family: 'Poppins', sans-serif; font-weight: 800; letter-spacing: -.01em; font-size: 84px; line-height: 1; letter-spacing: .01em; }
+#F .pc p { margin: 16px 0 0; font-size: 30px; font-weight: 700; }
+#F .pc p b { background: #EDB516; padding: 0 10px; border-radius: 8px; }
+#F .back .cap { visibility: hidden; }
+#F .date { left: 0; right: 0; top: 1370px; text-align: center; }
+#F .date span { display: inline-block; background: #fff; color: #111; font-size: 56px; font-weight: 800; letter-spacing: .02em; line-height: 1.1; padding: 18px 40px; border-radius: 22px; box-shadow: 0 16px 34px rgba(0,0,0,.35); }
+#F .date small { display: block; margin-top: 16px; color: #fff; font-size: 38px; font-weight: 600; letter-spacing: .08em; text-shadow: 0 2px 12px rgba(0,0,0,.55); }
+#F .pc h1.t { font-size: 54px; line-height: 1.12; }
+
+/* G: AI Tools — same stack idea as the news reels, but browser windows showing each tool's website */
+#G { background: #1d1b2a; overflow: hidden; }
+#G .bg { position: absolute; inset: -80px; background: center / cover; filter: blur(28px) brightness(.55) saturate(1.2); }
+#G .bg::after { content: ""; position: absolute; inset: 0; background: radial-gradient(60% 45% at 50% 48%, rgba(237,181,22,.22), rgba(237,181,22,0)); }
+#G .logo { left: 0; right: 0; top: 285px; text-align: center; } #G .logo img { height: 60px; }
+#G .bw { position: absolute; left: 150px; top: 500px; transform-origin: 50% 135%; width: 700px; background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,.5); }
+#G .bar { height: 46px; background: #ecebf0; display: flex; align-items: center; gap: 10px; padding: 0 18px; }
+#G .bar i { width: 14px; height: 14px; border-radius: 50%; background: #c9c7d1; } #G .bar i:first-child { background: #ff6159; } #G .bar i:nth-child(2) { background: #ffbd2e; } #G .bar i:nth-child(3) { background: #28c941; }
+#G .bar span { margin-left: 14px; flex: 1; height: 28px; border-radius: 14px; background: #fff; font-size: 17px; color: #666; display: flex; align-items: center; padding-left: 16px; }
+#G .shot { height: 400px; overflow: hidden; } #G .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+#G .cap { padding: 26px 34px 32px; text-align: center; color: #1b1b1b; }
+#G .cap h1 { margin: 0; font-family: 'Poppins', sans-serif; font-weight: 800; letter-spacing: -.01em; font-size: 44px; line-height: 1.12; }
+#G .chips { margin-top: 18px; display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
+#G .chips b { font-size: 22px; font-weight: 700; padding: 6px 16px; border-radius: 30px; background: #f1f0f5; color: #333; }
+#G .ai { position: absolute; right: -14px; top: -14px; z-index: 9; width: 96px; height: 96px; border-radius: 50%; background: #EDB516; color: #111; font-size: 40px; font-weight: 900; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px rgba(0,0,0,.35); }
+#G .label { left: 0; right: 0; top: 1360px; text-align: center; color: #fff; }
+#G .label span { display: inline-block; background: #EDB516; color: #111; font-size: 56px; font-weight: 800; letter-spacing: .02em; line-height: 1.1; padding: 18px 40px; border-radius: 22px; box-shadow: 0 16px 34px rgba(0,0,0,.35); }
+#G .label small { display: block; margin-top: 16px; color: #fff; font-size: 38px; font-weight: 600; letter-spacing: .08em; text-shadow: 0 2px 12px rgba(0,0,0,.55); }
+
+/* H: Business Models — company files: a folder with a tab, stacked straight up behind */
+#H { background: #20222b; overflow: hidden; }
+#H .bg { position: absolute; inset: -80px; background: center / cover; filter: blur(30px) brightness(.5) saturate(1.3); }
+#H .logo { left: 0; right: 0; top: 285px; text-align: center; } #H .logo img { height: 60px; }
+#H .fd { position: absolute; left: 190px; top: 560px; width: 700px; transform-origin: 50% 0; }
+#H .tabk { width: 300px; height: 56px; background: #f4f1ea; border-radius: 18px 18px 0 0; display: flex; align-items: center; padding-left: 28px; font-size: 22px; font-weight: 800; letter-spacing: .16em; color: #16213e; }
+#H .sheet { background: #f4f1ea; border-radius: 0 22px 22px 22px; padding: 28px; box-shadow: 0 30px 60px rgba(0,0,0,.45); }
+#H .lg { height: 400px; border-radius: 14px; background-repeat: no-repeat; background-size: 325% auto; background-position: 93% 44%; background-color: #fff; }
+#H .cap { padding: 28px 10px 8px; text-align: center; color: #1b1b1b; }
+#H .cap h1 { margin: 0; font-family: 'Poppins', sans-serif; font-weight: 800; letter-spacing: -.01em; font-size: 44px; line-height: 1.12; }
+#H .bk .tabk { color: transparent; } #H .bk .sheet { height: 560px; }
+#H .label { left: 0; right: 0; top: 1400px; text-align: center; }
+#H .label span { display: inline-block; background: #16213e; color: #fff; font-size: 56px; font-weight: 800; letter-spacing: .02em; line-height: 1.1; padding: 18px 40px; border-radius: 22px; box-shadow: 0 16px 34px rgba(0,0,0,.35); }
+</style>
+</head>
+<body>
+<section class="v" id="F">
+  <div class="bg"></div><div class="dots" id="fdots"></div>
+  <div class="abs logo"><img src="assets/logo-light.png"></div>
+  <div id="fstack"></div>
+  <div class="abs date"></div>
+</section>
+<section class="v" id="G">
+  <div class="bg"></div><div class="dots" id="gdots" style="position:absolute;inset:0"></div>
+  <div class="abs logo"><img src="assets/logo-light.png"></div>
+  <div id="gstack"></div>
+  <div class="abs label"></div>
+</section>
+<section class="v" id="H">
+  <div class="bg"></div><div class="dots" id="hdots" style="position:absolute;inset:0"></div>
+  <div class="abs logo"><img src="assets/logo-light.png"></div>
+  <div id="hstack"></div>
+  <div class="abs label"></div>
+</section>
+<script>
+const BACK = [[-16, 0, 0, 1], [-8, 0, 0, 1]];
+// sparkle dots shared by all three looks
+document.getElementById('fdots').innerHTML = [...Array(26)].map((_, k) => { const x = 60 + (k * 389) % 960, y = 250 + (k * 577) % 1400, sz = 4 + (k % 4) * 2;
+  return `<i style="left:${x}px;top:${y}px;width:${sz}px;height:${sz}px;opacity:${.4 + (k % 5) * .12}"></i>`; }).join('');
+
+// News reel cover: d = {imgs: [lead, 2nd, 3rd] (file names in src/ without .jpg), title, date}
+window.setF = d => {
+  document.querySelector('#F .bg').style.backgroundImage = `url(src/${d.imgs[0]}.jpg)`;
+  const cardF = (n, rot, dx, dy, sc, back) => `<div class="pc${back ? ' back' : ''}" style="transform: translate(${dx}px, ${dy}px) rotate(${rot}deg) scale(${sc}); filter: brightness(${back ? .85 : 1})"><div class="ph"><img src="src/${n}.jpg"></div><div class="cap">${back ? '' : `<h1 class="t" style="font-size:${d.title.length > 55 ? 40 : 46}px">${d.title}</h1>`}</div></div>`;
+  document.getElementById('fstack').innerHTML = d.imgs.slice(1, 3).reverse().map((n, k) => cardF(n, ...BACK[k], true)).join('') + cardF(d.imgs[0], 0, 0, 0, 1, false);
+  document.querySelector('#F .date').innerHTML = `<span>${d.date}</span>${d.sub ? `<small>${d.sub}</small>` : ''}`;
+  document.body.className = 'f';
+};
+
+// AI Tools cover: d = {shots: [[file, domain], ...] lead first, title, chips, label, sub}
+window.setG = d => {
+  document.querySelector('#G .bg').style.backgroundImage = `url(src/${d.shots[0][0]})`;
+  const GB = [[9, 0, 0, 1], [4.5, 0, 0, 1]];
+  const win = ([f, dom], rot, dx, dy, sc, front) => `<div class="bw" style="transform: translate(${dx}px, ${dy}px) rotate(${rot}deg) scale(${sc}); filter: brightness(${front ? 1 : .85})">${front ? '<div class="ai">AI</div>' : ''}<div class="bar"><i></i><i></i><i></i><span>${dom}</span></div><div class="shot"><img src="src/${f}"></div>${front ? `<div class="cap"><h1>${d.title}</h1></div>` : '<div style="height:200px;background:#fff"></div>'}</div>`;
+  document.getElementById('gstack').innerHTML = d.shots.slice(1, 3).reverse().map((sh, k) => win(sh, ...GB[k], false)).join('') + win(d.shots[0], 0, 0, 0, 1, true);
+  document.querySelector('#G .label').innerHTML = `<span>${d.label}</span>${d.sub ? `<small>${d.sub}</small>` : ''}`;
+  document.getElementById('gdots').innerHTML = document.getElementById('fdots').innerHTML;
+  document.body.className = 'g';
+};
+
+// Business Models cover: d = {img, title, label}
+window.setH = d => {
+  document.querySelector('#H .bg').style.backgroundImage = `url(src/${d.img})`;
+  const folder = (dy, sc, front) => `<div class="fd${front ? '' : ' bk'}" style="transform: translateY(${dy}px) scale(${sc}); filter: brightness(${front ? 1 : .8 + sc * .1})"><div class="tabk">BUSINESS MODEL</div><div class="sheet">${front ? `<div class="lg" style="background-image:url(src/${d.img})"></div><div class="cap"><h1>${d.title}</h1></div>` : ''}</div></div>`;
+  document.getElementById('hstack').innerHTML = folder(-110, .88, false) + folder(-55, .94, false) + folder(0, 1, true);
+  document.querySelector('#H .label').innerHTML = `<span>${d.label}</span>`;
+  document.getElementById('hdots').innerHTML = document.getElementById('fdots').innerHTML;
+  document.body.className = 'h';
+};
+</script>
+</body>
+</html>

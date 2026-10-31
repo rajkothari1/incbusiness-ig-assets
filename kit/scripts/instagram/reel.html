@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+body { font-family: 'Poppins', sans-serif; color: #fff; position: relative; }
+.abs { position: absolute; }
+.y { color: #EDB516; }
+.scene { position: absolute; inset: 0; display: none; overflow: hidden; transform-origin: 50% 40%; background: #000; }
+.w { display: inline-block; white-space: pre; background: linear-gradient(#EDB516, #EDB516) no-repeat left center / 0% 100%; box-shadow: none; }
+.extra { margin-top: 12px; display: inline-block; background: #fff; color: #000; font-size: 28px; font-weight: 700; padding: 8px 20px; border-radius: 12px; }
+#head { left: 0; right: 0; bottom: 0; height: 260px; background: linear-gradient(to top, rgba(0,0,0,.85), rgba(0,0,0,0)); z-index: 5; }
+#prog { left: 64px; right: 64px; top: 1770px; display: flex; gap: 10px; z-index: 6; }
+#prog div { flex: 1; height: 7px; background: rgba(255,255,255,.28); border-radius: 7px; overflow: hidden; }
+#prog i { display: block; height: 100%; width: 0; background: #EDB516; }
+#pill { left: 64px; top: 318px; background: #EDB516; color: #000; font-size: 28px; font-weight: 800; letter-spacing: .08em; padding: 12px 28px; border-radius: 50px; z-index: 6; }
+#brand { left: 50%; top: 1806px; height: 50px; z-index: 6; transform: translateX(-50%); }
+/* story */
+.photo { position: absolute; left: 0; top: 272px; width: 1080px; height: 567px; overflow: hidden; }
+.photo img { width: 100%; height: 100%; object-fit: cover; }
+.photo::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 180px; background: linear-gradient(to bottom, rgba(0,0,0,0), #000); }
+.big { position: absolute; left: 58px; top: 738px; font-size: 104px; font-weight: 900; line-height: 1; color: transparent; -webkit-text-stroke: 4px #EDB516; }
+.big small { font-size: 44px; -webkit-text-stroke: 2px rgba(255,255,255,.5); }
+.txt { position: absolute; left: 64px; right: 64px; top: 856px; display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
+.title { margin: 0; font-size: 76px; line-height: 1.16; font-weight: 800; }
+.stat { padding: 20px 34px 22px; background: #14161c; border: 2px solid #2a2e38; border-radius: 30px; }
+.lbl { white-space: nowrap; font-size: 27px; font-weight: 600; color: #b9bfcc; letter-spacing: .05em; }
+.num { font-size: 68px; font-weight: 900; line-height: 1.1; margin-top: 14px; color: #EDB516; white-space: nowrap; }
+.num small { font-size: 52px; }
+.icon { position: absolute; left: 846px; top: 730px; width: 110px; height: 110px; border-radius: 30px; background: #EDB516; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.chip { position: absolute; background: #EDB516; color: #000; font-weight: 800; border-radius: 50px; font-size: 38px; padding: 8px 26px; white-space: nowrap; }
+.chips { margin-left: auto; padding-left: 30px; border-left: 2px solid #2a2e38; display: flex; flex-direction: column; gap: 12px; }
+.chips span { background: #fff; color: #000; font-size: 28px; font-weight: 700; padding: 12px 26px; border-radius: 16px; white-space: nowrap; }
+.chips b { color: #0a8f4a; }
+/* intro */
+#rib { position: absolute; left: 0; right: 0; top: 0; bottom: 0; perspective: 900px; }
+#ribIn { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 540px 900px; }
+#ribIn i { position: absolute; top: 300px; height: 1200px; border-radius: 8px; transform-origin: 50% 50%; mix-blend-mode: screen; }
+#crack { position: absolute; left: 0; top: 0; z-index: 3; }
+#shards { position: absolute; inset: 0; z-index: 15; pointer-events: none; }
+#shards > div { position: absolute; inset: 0; will-change: transform; }
+/* transitions */
+#wipe { position: absolute; top: -200px; height: 2320px; width: 900px; background: #EDB516; z-index: 20; transform: skewX(-14deg); left: 1700px; }
+#wipe2 { position: absolute; top: -200px; height: 2320px; width: 260px; background: #fff; z-index: 19; transform: skewX(-14deg); left: 1800px; }
+#flash { position: absolute; inset: 0; background: #fff; z-index: 21; opacity: 0; }
+.icon svg { width: 76px; height: 76px; }
+.floor { position: absolute; left: -60px; right: -60px; top: 1180px; height: 800px; overflow: hidden; opacity: .45; }
+.floor img { width: 100%; height: 100%; object-fit: cover; filter: blur(30px) saturate(1.2); }
+.floor::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, #000, rgba(0,0,0,.2) 40%, rgba(0,0,0,.6)); }
+.sub { font-size: 38px; font-weight: 700; line-height: 1.3; color: #fff; border-left: 8px solid #EDB516; padding: 4px 0 4px 22px; }
+#c0 .th img { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 5px solid #EDB516; display: block; }
+</style>
+</head>
+<body>
+<div id="head" class="abs"></div>
+<div id="prog" class="abs"></div>
+<img id="brand" class="abs" src="assets/logo-light.png" alt="">
+
+<!-- intro: Netflix-style light ribbons, logo, then it cracks and breaks apart -->
+<section class="scene" id="c0">
+<div id="art" style="position: absolute; inset: 0">
+<div id="rib"><div id="ribIn"></div></div>
+<div id="glow" class="abs" style="left: 90px; top: 500px; width: 900px; height: 800px; background: radial-gradient(closest-side, rgba(237,181,22,.45), rgba(237,181,22,0)); "></div>
+<div id="logoBox" class="abs" style="left: 0; right: 0; top: 500px; text-align: center">
+<img src="assets/logo-light.png" style="height: 118px" alt="">
+
+<div id="iD" style="margin-top: 44px">
+<div id="dN" style="margin-top: 6px; display: inline-block; background: #fff; color: #000; font-size: 48px; font-weight: 900; line-height: 1; padding: 10px 22px; border-radius: 12px"></div>
+<div id="iT" style="margin-top: 26px; font-size: 34px; font-weight: 700; letter-spacing: .22em; color: #EDB516"></div>
+</div>
+<div id="iTh" style="margin-top: 40px; display: flex; justify-content: center; gap: 22px"></div>
+</div>
+</div>
+<svg id="crack" width="1080" height="1920" viewBox="0 0 1080 1920" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></svg>
+</section>
+
+<div id="stories"></div>
+
+<!-- end -->
+<section class="scene" id="cE">
+<div class="abs" id="rays2" style="left: -460px; top: -60px; width: 2000px; height: 2000px; border-radius: 50%; background: repeating-conic-gradient(from 0deg, rgba(237,181,22,.14) 0deg 9deg, rgba(0,0,0,0) 9deg 22.5deg); -webkit-mask: radial-gradient(circle, #000 20%, transparent 68%); mask: radial-gradient(circle, #000 20%, transparent 68%)"></div>
+<div class="abs" style="left: 64px; right: 64px; top: 600px; text-align: center">
+<h2 id="e1" style="margin: 0; font-size: 104px; line-height: 1.05; font-weight: 900">Business news,<br><span class="y">made quick.</span></h2>
+<div id="follow" style="margin-top: 70px; display: inline-flex; align-items: center; gap: 22px; background: #EDB516; color: #000; border-radius: 28px; padding: 34px 48px; font-size: 48px; font-weight: 800">
+<svg width="58" height="58" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"></circle></svg>Follow @incbusiness.official</div>
+<p id="e2" style="margin: 54px 0 0; font-size: 42px; color: #D3D7E0">Full stories on <b class="y">incbusiness.in</b></p>
+</div>
+</section>
+
+<div id="shards"></div>
+<div id="wipe2"></div><div id="wipe"></div><div id="flash"></div>
+
+<script>
+// Instagram news reel: 9:16, intro that shatters into 5 stories, karaoke titles, end card. Driven by setup(R) from news_reel.py.
+// Story icons (pick the closest): oil, cart, bolt, chip, crane, bank, coins, chart, rocket, truck, phone, brain, car, pill, building, bag, plane, leaf
+const ICONS = {
+  oil: '<svg width="190" height="190" viewBox="0 0 64 64" fill="none" stroke="#000" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 56V30l10-6v32"/><path d="M18 56V20h10v36"/><path d="M28 56V34l10-6v28"/><path d="M38 56V26h8v30"/><path d="M4 56h56"/><path class="an" d="M50 22c0-5 4-8 4-12 0 4 4 7 4 12a4 4 0 0 1-8 0z" fill="#000"/></svg>',
+  cart: '<svg width="190" height="190" viewBox="0 0 64 64" fill="none" stroke="#000" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 26h48l-6 20H14z"/><circle cx="20" cy="52" r="5"/><circle cx="44" cy="52" r="5"/><path d="M4 58h56"/><g class="an"><path d="M18 26l5-10 7 4 6-8 6 6 6-2 2 10" fill="#000"/></g></svg>',
+  bolt: '<svg width="190" height="190" viewBox="0 0 64 64" fill="none" stroke="#000" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 50c8-4 14 4 22 0s14 4 22 0 8-2 8-2"/><path d="M6 58c8-4 14 4 22 0s14 4 22 0 8-2 8-2"/><path class="an" d="M36 4L20 30h12l-4 16 18-26H34z" fill="#000"/></svg>',
+  chip: '<svg width="190" height="190" viewBox="0 0 64 64" fill="none" stroke="#000" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="32" height="32" rx="4"/><rect class="an" x="25" y="25" width="14" height="14" rx="2" fill="#000"/><path d="M24 8v8M32 8v8M40 8v8M24 48v8M32 48v8M40 48v8M8 24h8M8 32h8M8 40h8M48 24h8M48 32h8M48 40h8"/></svg>',
+  crane: '<svg width="190" height="190" viewBox="0 0 64 64" fill="none" stroke="#000" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 58V10"/><path d="M14 10h44"/><path d="M14 18L24 10"/><path d="M8 58h18"/><path d="M8 10h6"/><g class="an"><path d="M46 10v18"/><rect x="40" y="28" width="12" height="9" fill="#000"/></g><path d="M30 58V46h26v12"/></svg>',
+  bank: '<svg viewBox="0 0 64 64" fill="none" stroke="#000" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 24L32 8l26 16z"/><path d="M12 28v20M24 28v20M40 28v20M52 28v20"/><path d="M6 54h52"/><circle class="an" cx="32" cy="18" r="3" fill="#000"/></svg>',
+  coins: '<svg viewBox="0 0 64 64" fill="none" stroke="#000" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="26" cy="44" rx="16" ry="6"/><path d="M10 44v6c0 3 7 6 16 6s16-3 16-6v-6"/><g class="an"><ellipse cx="40" cy="20" rx="14" ry="6" fill="#000"/><path d="M26 20v8c0 3 6 6 14 6s14-3 14-6v-8"/></g></svg>',
+  chart: '<svg viewBox="0 0 64 64" fill="none" stroke="#000" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8v48h48"/><path d="M16 44l12-14 10 8 16-20"/><path class="an" d="M44 18h10v10" /></svg>',
+  rocket: '<svg viewBox="0 0 64 64" fill="none" stroke="#000" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M38 10c8 0 16 8 16 16L30 50l-16-16z"/><circle cx="40" cy="24" r="4"/><path d="M14 34l-6 2 6 6M30 50l-2 6-6-6"/><path class="an" d="M18 46l-8 8" /></svg>',
+  truck: '<svg viewBox="0 0 64 64" fill="none" stroke="#000" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="16" width="34" height="26" rx="3"/><path d="M38 24h12l10 10v8H38z"/><circle class="an" cx="16" cy="46" r="5" fill="#000"/><circle class="an" cx="48" cy="46" r="5" fill="#000"/></svg>',
+  phone: '<svg viewBox="0 0 64 64" fill="none" stroke="#000" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><rect x="18" y="6" width="28" height="52" rx="6"/><path d="M28 50h8"/><circle class="an" cx="32" cy="26" r="7" fill="#000"/></svg>',
+  brain: '<svg viewBox="0 0 64 64" fill="none" stroke="#000" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="14" width="36" height="36" rx="8"/><path d="M24 6v8M40 6v8M24 50v8M40 50v8M6 24h8M6 40h8M50 24h8M50 40h8"/><path class="an" d="M26 38l6-14 6 14M28 33h8"/></svg>',
+  car: '<svg viewBox="0 0 64 64" fill="none" stroke="#000" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 40l6-16h36l6 16v10H8z"/><path d="M8 40h48"/><circle class="an" cx="18" cy="50" r="5" fill="#000"/><circle class="an" cx="46" cy="50" r="5" fill="#000"/></svg>',
+  pill: '<svg viewBox="0 0 64 64" fill="none" stroke="#000" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="24" width="48" height="18" rx="9" transform="rotate(-35 32 33)"/><path d="M26 22l12 20"/><path class="an" d="M44 10v10M39 15h10"/></svg>',
+  building: '<svg viewBox="0 0 64 64" fill="none" stroke="#000" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="8" width="26" height="48"/><path d="M38 24h14v32H38"/><path d="M20 18h4M28 18h2M20 28h4M28 28h2M20 38h4M28 38h2"/><path class="an" d="M6 56h52"/></svg>',
+  bag: '<svg viewBox="0 0 64 64" fill="none" stroke="#000" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22h40l-4 34H16z"/><path d="M24 22v-6a8 8 0 0 1 16 0v6"/><path class="an" d="M26 36l4 4 8-8"/></svg>',
+  plane: '<svg viewBox="0 0 64 64" fill="none" stroke="#000" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path class="an" d="M8 36l48-20-14 40-8-16z" fill="#000"/><path d="M34 40l22-24"/></svg>',
+  leaf: '<svg viewBox="0 0 64 64" fill="none" stroke="#000" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 52C12 26 28 10 54 10c0 26-16 42-42 42z"/><path class="an" d="M12 52L36 28"/></svg>'
+};
+let D = [], S = [], END = 0;
+
+const $ = id => document.getElementById(id);
+const clamp = (x, a, b) => Math.max(a, Math.min(b, x));
+const ease = x => 1 - Math.pow(1 - clamp(x, 0, 1), 3);
+const back = x => { x = clamp(x, 0, 1); const c = 2.2; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const P = (t, s, d = .4) => (t - s) / d;
+function pop(el, p, from = .3) { el.style.opacity = clamp(p * 3, 0, 1); el.style.transform = `scale(${from + (1 - from) * back(p)})`; }
+function rise(el, p, dy = 80) { el.style.opacity = clamp(p * 3, 0, 1); el.style.transform = `translateY(${(1 - back(p)) * dy}px)`; }
+function slideX(el, p, dx) { el.style.opacity = clamp(p * 3, 0, 1); el.style.transform = `translateX(${(1 - ease(p)) * dx}px)`; }
+const fmt = (n, dec) => n.toLocaleString('en-IN', { minimumFractionDigits: dec, maximumFractionDigits: dec });
+
+// setup(R): R = {date_day, date_rest, brief, stories: [{img, icon, title, hl, hi, sub, subAt}], S, END}
+function setup(R) {
+D = R.stories; S = R.S; END = R.END;
+$('dN').innerHTML = `<span style="color: #c98f00">${R.date_day}</span> ${R.date_rest}`;
+$('iT').textContent = R.brief;
+let html = '';
+D.forEach((d, i) => {
+  const words = d.title.split(' ').map(w => `<span class="w${d.hl.includes(w) ? ' y' : ''}">${w}</span>`).join(' ');
+  html += `<section class="scene" id="c${i + 1}">
+<div class="floor"><img src="src/${d.img}.jpg" alt=""></div>
+<div class="floor" style="top: -60px; height: 420px"><img src="src/${d.img}.jpg" alt=""></div>
+<div class="photo"><img id="ph${i + 1}" src="src/${d.img}.jpg" alt=""></div>
+<div class="big" id="bg${i + 1}">0${i + 1}<small>/0${D.length}</small></div>
+<div class="txt"><h2 class="title" id="tt${i + 1}">${words}</h2>${d.sub ? `<div class="sub" id="sb${i + 1}">${d.sub}</div>` : ''}</div>
+<div class="icon" id="ic${i + 1}">${ICONS[d.icon]}</div>
+</section>`;
+});
+$('stories').innerHTML = html;
+$('iTh').innerHTML = D.map(d => `<div class="th"><img src="src/${d.img}.jpg" alt=""></div>`).join('');
+$('prog').innerHTML = D.map((_, i) => `<div><i id="p${i + 1}"></i></div>`).join('');
+}
+
+// intro ribbons
+const COLS = ['#EDB516', '#ffcf3a', '#ff9f1a', '#fff1b8', '#c98f00', '#ffe27a'];
+let rib = '';
+for (let k = 0; k < 34; k++) {
+  const x = 540 + (k - 16.5) * 34 + Math.sin(k * 7.3) * 14, w = 10 + (k * 37 % 5) * 9;
+  rib += `<i data-k="${k}" style="left: ${x}px; width: ${w}px; background: linear-gradient(to bottom, rgba(0,0,0,0), ${COLS[k % 6]} 30%, ${COLS[(k + 2) % 6]} 70%, rgba(0,0,0,0))"></i>`;
+}
+$('ribIn').innerHTML = rib;
+const ribs = [...document.querySelectorAll('#ribIn i')];
+
+// crack lines from the impact point, and the shard polygons that follow them
+const CX = 540, CY = 960, N = 13;
+const angs = [...Array(N)].map((_, k) => (k + .5 * Math.sin(k * 3.1)) / N * Math.PI * 2);
+let cp = '';
+angs.forEach((a, k) => {
+  let x = CX, y = CY, d = 'M' + x + ' ' + y;
+  for (let s = 1; s <= 6; s++) { const r = s * 260, j = Math.sin(k * 5 + s * 2.7) * .12; d += ` L${CX + Math.cos(a + j) * r} ${CY + Math.sin(a + j) * r}`; }
+  cp += `<path d="${d}" stroke-dasharray="1800" stroke-dashoffset="1800"/>`;
+});
+$('crack').innerHTML = cp;
+
+function renderIntro(t) {
+  // ribbons: grow from the centre line one after another, then the camera flies through them
+  ribs.forEach((r, k) => {
+    const g = ease(P(t, .02 * Math.abs(k - 16.5), .35));
+    r.style.transform = `scaleY(${g})`; r.style.opacity = .9 * g;
+  });
+  const fly = ease(P(t, .25, 1.2));
+  $('ribIn').style.transform = `scale(${1 + fly * 1.8}) rotateX(${fly * 8}deg)`;
+  $('ribIn').style.opacity = 1 - .55 * fly - .25 * ease(P(t, 1.2, 1));
+  // logo + title come up out of the light
+  const lg = ease(P(t, .25, .5));
+  $('logoBox').style.opacity = lg;
+  $('logoBox').style.transform = `scale(${.7 + .3 * lg + .03 * clamp((t - .75) / 5, 0, 1)})`;
+  $('logoBox').style.filter = lg < 1 ? `blur(${(1 - lg) * 16}px)` : 'none';
+  $('glow').style.opacity = lg * (.6 + .4 * Math.sin(t * 9) ** 2);
+  pop($('dN'), P(t, 1.0, .45), 1.8);
+  [...$('iTh').children].forEach((el, k) => pop(el, P(t, 2.4 + k * .12, .35), 0));
+  // cracks race out just before the break
+  [...$('crack').children].forEach((p, k) => { p.style.strokeDashoffset = 1800 * (1 - ease(P(t, S[1] - .32 + k * .006, .22))); });
+}
+
+// shards: frozen copies of the intro, each clipped to a wedge between two crack lines
+let shards = null;
+function buildShards() {
+  renderIntro(S[1] - .02);
+  const src = $('c0');
+  shards = angs.map((a, k) => {
+    const b = angs[(k + 1) % N] + (k === N - 1 ? Math.PI * 2 : 0), R = 2600;
+    const pts = [[CX, CY]]; for (let s = 0; s <= 4; s++) { const q = a + (b - a) * s / 4; pts.push([CX + Math.cos(q) * R, CY + Math.sin(q) * R]); }
+    const el = document.createElement('div');
+    el.innerHTML = src.innerHTML.replace(/ id="[^"]*"/g, '');
+    el.style.background = '#000';
+    el.style.clipPath = `polygon(${pts.map(p => p[0] + 'px ' + p[1] + 'px').join(',')})`;
+    el.style.transformOrigin = `${CX}px ${CY}px`;
+    el.dataset.a = (a + b) / 2;
+    $('shards').appendChild(el); return el;
+  });
+  // copy the live intro state into the clones (ids were stripped)
+  const live = [...src.querySelectorAll('*')];
+  shards.forEach(sh => [...sh.querySelectorAll('*')].forEach((n, i) => { if (live[i]) n.setAttribute('style', live[i].getAttribute('style') || ''); }));
+}
+
+function render(t) {
+  let cur = 0; for (let i = 0; i < S.length; i++) if (t >= S[i]) cur = i;
+  const ids = ['c0', ...D.map((_, i) => 'c' + (i + 1)), 'cE'];
+  ids.forEach((id, i) => $(id).style.display = i === cur ? 'block' : 'none');
+  const el = $(ids[cur]), since = t - S[cur];
+  // zoom-punch into each story (the first one comes in behind the breaking glass)
+  const z = ease(since / (cur === 1 ? .6 : .38));
+  el.style.transform = cur === 0 ? 'none' : `scale(${1.22 - .22 * z})`;
+  el.style.filter = cur > 0 && z < 1 ? `blur(${(1 - z) * 10}px)` : 'none';
+  // diagonal wipes on story-to-story cuts (not on the break)
+  let wx = 1700, wx2 = 1800, fl = 0;
+  for (let i = 2; i < S.length; i++) {
+    const q = (t - (S[i] - .22)) / .44;
+    if (q >= 0 && q <= 1) { wx = 1700 - q * 3000; wx2 = 1800 - q * 3200; }
+    const f = t - S[i]; if (f >= 0 && f < .15) fl = .35 * (1 - f / .15);
+  }
+  const fb = t - S[1]; if (fb >= -.05 && fb < .12) fl = Math.max(fl, .55 * (1 - Math.abs(fb) / .12));
+  $('wipe').style.left = wx + 'px'; $('wipe2').style.left = wx2 + 'px'; $('flash').style.opacity = fl;
+  D.forEach((_, i) => { $('p' + (i + 1)).style.width = clamp((t - S[i + 1]) / (S[i + 2] - S[i + 1]), 0, 1) * 100 + '%'; });
+  $('prog').style.opacity = cur >= 1 && cur <= D.length ? 1 : 0;
+  $('brand').style.opacity = cur === 0 ? 0 : 1;
+  $('head').style.opacity = cur === 0 ? 0 : 1;
+
+  // the break
+  if (!shards) buildShards();
+  const sp = (t - S[1]) / .75;
+  $('shards').style.display = sp >= 0 && sp < 1 ? 'block' : 'none';
+  if (sp >= 0 && sp < 1) shards.forEach((sh, k) => {
+    const a = +sh.dataset.a, e = sp * sp * .6 + sp * .4, d = 40 + e * (900 + (k % 4) * 160);
+    sh.style.transform = `translate(${Math.cos(a) * d}px, ${Math.sin(a) * d + e * e * 500}px) rotate(${(k % 2 ? 1 : -1) * e * (25 + k * 4)}deg) scale(${1 + e * .35})`;
+    sh.style.opacity = 1 - clamp((sp - .55) / .45, 0, 1);
+  });
+
+  if (cur === 0) {
+    renderIntro(t);
+  } else if (cur <= D.length) {
+    const s = S[cur], d = S[cur + 1] - s, k = since / d, i = cur;
+    $('ph' + i).style.transformOrigin = '15% 8%'; $('ph' + i).style.transform = `scale(${1 + .03 * k})`;
+    const bp = P(t, s + .15, .45); $('bg' + i).style.opacity = clamp(bp * 3, 0, 1); $('bg' + i).style.transform = `translateX(${(1 - back(bp)) * -160}px)`;
+    const dd0 = D[i - 1], span = d - .5, ws = [...$('tt' + i).children];
+    ws.forEach((w, j) => { rise(w, P(t, s + .25 + j * .06, .32), 70); w.style.backgroundSize = '0% 100%'; w.style.color = ''; w.style.boxShadow = 'none'; });
+    // karaoke: the phrase being spoken gets a yellow marker that sweeps across it
+    dd0.hi.forEach(([a, b, f], g) => {
+      const on = Math.max(s + f * span, s + .5), off = g + 1 < dd0.hi.length ? s + dd0.hi[g + 1][2] * span : s + span;
+      if (t < on || t > off + .15) return;
+      const n = b - a + 1, fade = 1 - clamp((t - off) / .15, 0, 1);
+      for (let j = a; j <= b; j++) {
+        const q = clamp((t - on) / .25 * n - (j - a), 0, 1) * fade;
+        ws[j].style.backgroundSize = q * 100 + '% 100%';
+        if (q > .5) { ws[j].style.color = '#000'; ws[j].style.boxShadow = `0 ${-4 * q}px 0 rgba(237,181,22,${q}), 0 ${4 * q}px 0 rgba(237,181,22,${q})${j === a ? `, ${-10 * q}px 0 0 rgba(237,181,22,${q})` : ''}, ${j === b ? 10 * q : 22 * q}px 0 0 rgba(237,181,22,${q})`; }
+      }
+    });
+    pop($('ic' + i), P(t, s + .85, .45), 0);
+    const an = $('ic' + i).querySelector('.an');
+    if (an) { an.style.transformBox = 'fill-box'; an.style.transformOrigin = 'center'; an.style.transform = `translateY(${Math.sin((t - s) * 7) * 3}px) scale(${1 + .08 * Math.sin((t - s) * 7)})`; }
+    if ($('sb' + i)) slideX($('sb' + i), P(t, s + dd0.subAt * span, .4), -400);
+  } else {
+    const s = S[D.length + 1];
+    $('rays2').style.transform = `rotate(${t * 20}deg)`;
+    rise($('e1'), P(t, s + .15, .45));
+    pop($('follow'), P(t, s + .5, .45), 0);
+    if (t > s + 1.1) $('follow').style.transform = `scale(${1 + .05 * Math.max(0, Math.sin((t - s) * 5))})`;
+    rise($('e2'), P(t, s + .8, .4));
+    $('cE').style.opacity = 1 - ease((t - (END - .35)) / .35);
+  }
+}
+
+</script>
+</body>
+</html>
