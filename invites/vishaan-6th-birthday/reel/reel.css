@@ -8,7 +8,7 @@
 @keyframes fadeUp{0%{transform:translateY(40px);opacity:0}100%{transform:none;opacity:1}}
 @keyframes cardUp{0%{transform:translateY(800px)}80%{transform:translateY(-14px)}100%{transform:none}}
 @keyframes glow{0%,100%{opacity:.6;transform:scale(.97)}50%{opacity:1;transform:scale(1.05)}}
-@keyframes fly{0%{transform:translate(-900px,1100px)}100%{transform:none}}
+@keyframes fly{0%{transform:translate(-1240px,1550px)}100%{transform:none}}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-22px)}}
 @keyframes twinkle{0%,100%{opacity:1}50%{opacity:.25}}
@@ -60,3 +60,32 @@
 .ringA{position:absolute;left:-22px;right:-22px;top:28px;height:16px;border:5px solid #ff4f9a;border-radius:50%;transform:rotate(-15deg)}
 .orbB{width:52px;height:52px;background:radial-gradient(circle at 35% 30%,#d4fff5,#22d3b8 55%,#0b7a6a);
   box-shadow:0 0 16px rgba(34,211,184,.6);animation-delay:-2.5s}
+
+/* ---- every planet revolves around its spot (orientation kept) and spins ---- */
+@keyframes revolve{to{transform:rotate(360deg)}}
+@keyframes unrevolve{to{transform:rotate(-360deg)}}
+.rev{transform-box:view-box;transform-origin:calc(var(--cx) + var(--r)) var(--cy);animation:revolve var(--d) linear infinite}
+.rev>.unrev{transform-box:view-box;transform-origin:var(--cx) var(--cy);animation:unrevolve var(--d) linear infinite}
+.rev.ccw{animation-direction:reverse}
+.rev.ccw>.unrev{animation-direction:reverse}
+@keyframes slideS{to{transform:translateX(160px)}}
+@keyframes slideP{to{transform:translateX(170px)}}
+.slideS{animation:slideS 2.5s linear infinite}
+.slideP{animation:slideP 2.5s linear infinite}
+.spinK{transform-box:view-box;transform-origin:1018px 905px;animation:spin 3s linear infinite}
+.spinY{transform-box:view-box;transform-origin:70px 175px;animation:spin 2.5s linear infinite}
+.spinE{animation:spin 10s linear infinite reverse}
+/* orbiting planets spin too */
+@keyframes spinR{to{rotate:360deg}}
+.orbB{animation:depth 5s linear infinite, spinR 1.6s linear infinite;animation-delay:-2.5s,0s}
+.orbB::after{content:"";position:absolute;left:10px;top:12px;width:12px;height:12px;border-radius:50%;background:#0b7a6a;opacity:.6;box-shadow:20px 14px 0 -2px #0b7a6a}
+.coreA{position:absolute;inset:0;border-radius:50%;overflow:hidden}
+.coreA i{position:absolute;top:22px;left:0;width:200%;height:28px;
+  background:repeating-linear-gradient(90deg,rgba(179,90,0,.55) 0 14px,transparent 14px 36px);animation:slideA 1.2s linear infinite}
+@keyframes slideA{to{transform:translateX(-36px)}}
+
+/* ---- rockets: one flies past, then another, then the last one parks ---- */
+@keyframes flyThrough{0%{transform:translate(-1240px,1550px)}100%{transform:translate(420px,-520px)}}
+.rk1{animation:flyThrough 1.6s .2s linear both}
+.rk2{animation:flyThrough 1.6s 1.5s linear both}
+.rocket{animation:fly 1.3s 2.8s cubic-bezier(.2,.8,.3,1) both, bob 1.2s 4.1s ease-in-out infinite}
