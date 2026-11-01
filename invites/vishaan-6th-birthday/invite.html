@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vishaan's 6th Birthday</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Pacifico&family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:1080px;height:1920px;overflow:hidden;font-family:'Fredoka',sans-serif;}
+  .card{position:relative;width:1080px;height:1920px;overflow:hidden;
+    background:
+      radial-gradient(circle at 50% 30%, rgba(255,255,255,.35) 0, rgba(255,255,255,0) 45%),
+      linear-gradient(170deg,#3ad1ff 0%,#3b82f6 45%,#5b3cc4 100%);}
+  /* sunburst */
+  .burst{position:absolute;left:50%;top:640px;width:2600px;height:2600px;transform:translate(-50%,-50%);
+    background:repeating-conic-gradient(rgba(255,255,255,.09) 0 7.5deg, rgba(255,255,255,0) 7.5deg 15deg);
+    border-radius:50%;}
+  .confetti{position:absolute;inset:0}
+  .head{position:absolute;top:60px;width:100%;text-align:center;color:#fff}
+  .small{font-size:46px;font-weight:600;letter-spacing:2px;text-shadow:0 4px 0 rgba(30,30,120,.35)}
+  .photo-wrap{position:absolute;left:50%;top:160px;transform:translateX(-50%);width:580px;height:580px}
+  .ring{position:absolute;inset:0;border-radius:50%;
+    background:conic-gradient(#ffd23f,#ff7a3d,#ff4f9a,#a35cff,#3ad1ff,#5be37d,#ffd23f);
+    box-shadow:0 30px 60px rgba(20,10,80,.45)}
+  .photo{position:absolute;inset:26px;border-radius:50%;border:14px solid #fff;
+    background:url('vishaan.jpg') center 30%/118% no-repeat;}
+  .six{position:absolute;right:-40px;bottom:10px;width:210px;height:210px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%,#fff3a8,#ffd23f 45%,#ffaa00);
+    border:12px solid #fff;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 18px 30px rgba(20,10,80,.4);transform:rotate(10deg)}
+  .six span{font-family:'Baloo 2';font-weight:800;font-size:180px;line-height:1;color:#ff4f9a;
+    margin-top:30px;text-shadow:5px 5px 0 #5b3cc4}
+  .name{position:absolute;top:750px;width:100%;text-align:center}
+  .name h1{font-family:'Pacifico',cursive;font-weight:400;font-size:168px;line-height:1.15;color:#fff;
+    text-shadow:0 8px 0 #ff4f9a, 0 16px 0 #5b3cc4, 0 24px 40px rgba(0,0,0,.25)}
+  .banner{position:relative;display:inline-block;margin-top:14px;padding:14px 64px;
+    background:#ffd23f;color:#3b1d8f;font-family:'Baloo 2';font-weight:800;font-size:76px;line-height:1.1;
+    border-radius:22px;transform:rotate(-2deg);box-shadow:0 10px 0 #ff7a3d, 0 20px 30px rgba(0,0,0,.25)}
+  .tag{margin-top:34px;color:#fff;font-size:40px;font-weight:600;text-shadow:0 3px 0 rgba(30,30,120,.35)}
+  .info{position:absolute;left:70px;right:70px;top:1250px;background:rgba(255,255,255,.96);
+    border-radius:44px;padding:38px 48px;box-shadow:0 24px 50px rgba(20,10,80,.35)}
+  .row{display:flex;align-items:center;gap:30px}
+  .row + .row{margin-top:24px;padding-top:24px;border-top:3px dashed #d9d3f5}
+  .ic{flex:0 0 96px;height:96px;border-radius:28px;display:flex;align-items:center;justify-content:center}
+  .ic svg{width:54px;height:54px}
+  .k{font-size:28px;font-weight:600;color:#8a7fc0;letter-spacing:3px;text-transform:uppercase}
+  .v{font-size:41px;font-weight:700;color:#2b1a6b;line-height:1.15}
+  .v sup{font-size:.55em}
+  .foot{position:absolute;bottom:48px;width:100%;text-align:center;color:#fff}
+  .foot .fun{font-size:40px;font-weight:600;letter-spacing:1px}
+  .foot .fun b{color:#ffd23f;margin:0 14px}
+  .foot .love{margin-top:14px;font-family:'Pacifico';font-size:44px;color:#fff3a8}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="burst"></div>
+
+  <!-- confetti + balloons -->
+  <svg class="confetti" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="bp" cx="35%" cy="30%"><stop offset="0" stop-color="#ffc2dc"/><stop offset=".5" stop-color="#ff4f9a"/><stop offset="1" stop-color="#d6246f"/></radialGradient>
+      <radialGradient id="by" cx="35%" cy="30%"><stop offset="0" stop-color="#fff6c2"/><stop offset=".5" stop-color="#ffd23f"/><stop offset="1" stop-color="#f2a900"/></radialGradient>
+      <radialGradient id="bo" cx="35%" cy="30%"><stop offset="0" stop-color="#ffd2b8"/><stop offset=".5" stop-color="#ff7a3d"/><stop offset="1" stop-color="#d9531a"/></radialGradient>
+      <radialGradient id="bg" cx="35%" cy="30%"><stop offset="0" stop-color="#d4ffe0"/><stop offset=".5" stop-color="#5be37d"/><stop offset="1" stop-color="#22a54a"/></radialGradient>
+      <g id="balloon"><path d="M0 0 C-60 0 -75 -70 -75 -100 C-75 -160 -40 -195 0 -195 C40 -195 75 -160 75 -100 C75 -70 60 0 0 0Z"/><path d="M-10 12 L10 12 L0 0Z"/></g>
+    </defs>
+    <!-- left balloons -->
+    <path d="M120 470 C140 560 80 640 120 760" stroke="#fff" stroke-width="3" fill="none" opacity=".8"/>
+    <use href="#balloon" x="120" y="470" fill="url(#bp)"/>
+    <path d="M230 580 C210 660 260 720 220 820" stroke="#fff" stroke-width="3" fill="none" opacity=".8"/>
+    <use href="#balloon" x="230" y="580" fill="url(#by)" transform="scale(.8) translate(57 145)"/>
+    <!-- right balloons -->
+    <path d="M960 450 C940 540 1000 620 960 740" stroke="#fff" stroke-width="3" fill="none" opacity=".8"/>
+    <use href="#balloon" x="960" y="450" fill="url(#bo)"/>
+    <path d="M860 560 C880 640 830 700 870 800" stroke="#fff" stroke-width="3" fill="none" opacity=".8"/>
+    <use href="#balloon" x="860" y="560" fill="url(#bg)" transform="scale(.8) translate(215 140)"/>
+    <!-- confetti pieces -->
+    <g opacity=".95">
+      <rect x="60" y="60" width="26" height="12" rx="4" fill="#ffd23f" transform="rotate(25 73 66)"/>
+      <rect x="980" y="90" width="26" height="12" rx="4" fill="#ff4f9a" transform="rotate(-30 993 96)"/>
+      <circle cx="170" cy="190" r="10" fill="#5be37d"/>
+      <circle cx="900" cy="230" r="12" fill="#ffd23f"/>
+      <rect x="40" y="900" width="28" height="12" rx="4" fill="#ff7a3d" transform="rotate(50 54 906)"/>
+      <rect x="1010" y="950" width="28" height="12" rx="4" fill="#ffd23f" transform="rotate(-20 1024 956)"/>
+      <circle cx="80" cy="1120" r="11" fill="#ff4f9a"/>
+      <circle cx="1000" cy="1180" r="10" fill="#5be37d"/>
+      <rect x="140" y="1240" width="24" height="11" rx="4" fill="#fff" transform="rotate(-40 152 1245)"/>
+      <rect x="920" y="1270" width="24" height="11" rx="4" fill="#fff" transform="rotate(35 932 1275)"/>
+      <circle cx="40" cy="1500" r="9" fill="#ffd23f"/>
+      <circle cx="1045" cy="1560" r="9" fill="#ff4f9a"/>
+      <path d="M300 130 l8 20 20 8 -20 8 -8 20 -8 -20 -20 -8 20 -8z" fill="#fff3a8"/>
+      <path d="M780 150 l7 17 17 7 -17 7 -7 17 -7 -17 -17 -7 17 -7z" fill="#fff"/>
+      <path d="M60 300 l7 17 17 7 -17 7 -7 17 -7 -17 -17 -7 17 -7z" fill="#fff"/>
+      <path d="M1020 330 l8 20 20 8 -20 8 -8 20 -8 -20 -20 -8 20 -8z" fill="#fff3a8"/>
+      <path d="M110 1030 l6 15 15 6 -15 6 -6 15 -6 -15 -15 -6 15 -6z" fill="#fff3a8"/>
+      <path d="M960 1060 l6 15 15 6 -15 6 -6 15 -6 -15 -15 -6 15 -6z" fill="#fff"/>
+      <path d="M120 1800 l7 17 17 7 -17 7 -7 17 -7 -17 -17 -7 17 -7z" fill="#fff3a8"/>
+      <path d="M950 1790 l7 17 17 7 -17 7 -7 17 -7 -17 -17 -7 17 -7z" fill="#fff3a8"/>
+    </g>
+  </svg>
+
+  <div class="head"><div class="small">★ YOU'RE INVITED ★</div></div>
+
+  <div class="photo-wrap">
+    <div class="ring"></div>
+    <div class="photo"></div>
+    <div class="six"><span>6</span></div>
+  </div>
+
+  <div class="name">
+    <h1>Vishaan's</h1>
+    <div class="banner">6<sup style="font-size:.5em">th</sup> BIRTHDAY BASH!</div>
+    <div class="tag">Our little cool dude is turning SIX — let's party!</div>
+  </div>
+
+  <div class="info">
+    <div class="row">
+      <div class="ic" style="background:#ffe1ee">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#ff4f9a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="3"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/><circle cx="8" cy="14" r="1" fill="#ff4f9a"/><circle cx="12" cy="14" r="1" fill="#ff4f9a"/><circle cx="16" cy="14" r="1" fill="#ff4f9a"/></svg>
+      </div>
+      <div><div class="k">Date</div><div class="v">Tuesday, 3<sup>rd</sup> November 2026</div></div>
+    </div>
+    <div class="row">
+      <div class="ic" style="background:#fff2c7">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#f2a900" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+      </div>
+      <div><div class="k">Time</div><div class="v">6:30 PM – 8:30 PM</div></div>
+    </div>
+    <div class="row">
+      <div class="ic" style="background:#e1ecff">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+      </div>
+      <div><div class="k">Venue</div><div class="v">3<sup>rd</sup> Floor, Gulshan One29 Mall, Noida</div></div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div class="fun">Games<b>•</b>Cake<b>•</b>Fun<b>•</b>Loads of Laughter</div>
+    <div class="love">Your presence is the best gift!</div>
+  </div>
+</div>
+</body>
+</html>
