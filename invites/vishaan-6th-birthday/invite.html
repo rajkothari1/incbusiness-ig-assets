@@ -60,7 +60,7 @@
   .v sup,.sub sup{font-size:.55em}
   .sub{font-size:31px;font-weight:600;color:#5a4f95;margin-top:2px}
   .foot{position:absolute;bottom:90px;width:100%;text-align:center;color:#fff}
-  .foot .fun{font-size:37px;font-weight:600;letter-spacing:1px}
+  .foot .fun{font-size:46px;font-weight:600;letter-spacing:1px}
   .foot .fun b{color:#3ad1ff;margin:0 12px}
   .foot .love{margin-top:10px;font-family:'Pacifico';font-size:42px;color:#fff3a8}
 </style>
@@ -93,7 +93,7 @@
       <use href="#st" x="70" y="760"/><use href="#st" x="1020" y="800"/><use href="#st" x="60" y="1130"/><use href="#st" x="1030" y="1110"/>
     </g>
     <g fill="#fff">
-      <use href="#st" x="100" y="460"/><use href="#st" x="990" y="520"/><use href="#st" x="130" y="1830"/><use href="#st" x="950" y="1840"/>
+      <use href="#st" x="100" y="460"/><use href="#st" x="990" y="520"/><use href="#st" x="330" y="1880"/><use href="#st" x="750" y="1700"/>
     </g>
 
     <!-- Saturn-style planet top-left -->
@@ -107,10 +107,35 @@
     <path d="M925 610 q50 -12 100 6" stroke="#ffffff" stroke-opacity=".35" stroke-width="7" fill="none"/>
     <path d="M920 650 q55 -10 110 8" stroke="#ffffff" stroke-opacity=".25" stroke-width="6" fill="none"/>
     <!-- moon left -->
-    <circle cx="80" cy="1810" r="34" fill="url(#moon)"/>
-    <circle cx="70" cy="1802" r="7" fill="#b4b4cf"/><circle cx="91" cy="1822" r="5" fill="#b4b4cf"/>
+    <circle cx="230" cy="1735" r="30" fill="url(#moon)"/>
+    <circle cx="221" cy="1728" r="6" fill="#b4b4cf"/><circle cx="240" cy="1745" r="5" fill="#b4b4cf"/>
     <!-- small pink planet -->
-    <circle cx="1005" cy="1805" r="26" fill="url(#pl3)"/>
+    <circle cx="1018" cy="905" r="30" fill="url(#pl3)"/>
+    <!-- extra planets -->
+    <defs>
+      <radialGradient id="pl4" cx="35%" cy="30%"><stop offset="0" stop-color="#d4ffe0"/><stop offset=".55" stop-color="#3fcf8e"/><stop offset="1" stop-color="#11734a"/></radialGradient>
+      <radialGradient id="pl5" cx="35%" cy="30%"><stop offset="0" stop-color="#e9d6ff"/><stop offset=".55" stop-color="#a35cff"/><stop offset="1" stop-color="#4b1d9e"/></radialGradient>
+      <radialGradient id="pl6" cx="35%" cy="30%"><stop offset="0" stop-color="#fff6c2"/><stop offset=".55" stop-color="#ffd23f"/><stop offset="1" stop-color="#c98a00"/></radialGradient>
+      <radialGradient id="earth" cx="35%" cy="30%"><stop offset="0" stop-color="#bfe9ff"/><stop offset=".55" stop-color="#2f8ff0"/><stop offset="1" stop-color="#123f8f"/></radialGradient>
+    </defs>
+    <!-- green planet left -->
+    <circle cx="70" cy="610" r="48" fill="url(#pl4)"/>
+    <circle cx="55" cy="595" r="9" fill="#2ea86f" opacity=".7"/><circle cx="85" cy="628" r="6" fill="#2ea86f" opacity=".7"/>
+    <!-- tiny yellow planet top-left -->
+    <circle cx="70" cy="175" r="24" fill="url(#pl6)"/>
+    <!-- big earth bottom-left, partly off-screen -->
+    <g>
+      <circle cx="40" cy="1890" r="130" fill="url(#earth)"/>
+      <path d="M-20 1800 q40 -20 70 10 q20 30 -10 50 q-40 10 -60 -20z" fill="#3fcf8e" opacity=".85"/>
+      <path d="M70 1880 q40 -10 60 20 q0 40 -40 40 q-30 -20 -20 -60z" fill="#3fcf8e" opacity=".85"/>
+      <circle cx="40" cy="1890" r="138" fill="none" stroke="#7fd6ff" stroke-opacity=".35" stroke-width="8"/>
+    </g>
+    <!-- ringed purple planet bottom-right -->
+    <g transform="translate(965 1820) rotate(18)">
+      <ellipse rx="140" ry="30" fill="none" stroke="#3ad1ff" stroke-width="10" opacity=".9"/>
+      <circle r="85" fill="url(#pl5)"/>
+      <path d="M-140 0 A140 30 0 0 0 140 0" fill="none" stroke="#3ad1ff" stroke-width="10"/>
+    </g>
 
     <!-- rocket top-right -->
     <g transform="translate(930 300) rotate(35)">
@@ -167,7 +192,7 @@
   </div>
 
   <div class="foot">
-    <div class="fun">Games<b>✦</b>Cake<b>✦</b>Fun<b>✦</b>Space Adventures</div>
+    <div class="fun">Games<b>✦</b>Cake<b>✦</b>Fun</div>
   </div>
 </div>
 </body>
