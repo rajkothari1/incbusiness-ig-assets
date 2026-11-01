@@ -34,3 +34,29 @@
 .fl3{animation:float 2.2s .8s ease-in-out infinite}
 .tw{animation:twinkle 1.1s ease-in-out infinite}
 .tw2{animation:twinkle 1.5s .5s ease-in-out infinite}
+
+/* ---- planet rotation & revolution ---- */
+@keyframes rock{0%,100%{transform:translateY(0) rotate(-7deg)}50%{transform:translateY(-18px) rotate(7deg)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes spinBack{to{transform:rotate(-70deg)}}
+@keyframes slide{to{transform:translateX(125px)}}
+@keyframes orbit{from{offset-distance:0%}to{offset-distance:100%}}
+@keyframes depth{0%,50%,100%{scale:1}25%{scale:1.4}75%{scale:.6}}
+.sat1,.sat2{transform-box:fill-box;transform-origin:center}
+.sat1{animation:rock 2.5s ease-in-out infinite}
+.sat2{animation:rock 3s .6s ease-in-out infinite}
+.spinG{transform-box:view-box;transform-origin:70px 610px;animation:spin 5s linear infinite}
+.spinM{transform-box:view-box;transform-origin:235px 1770px;animation:spin 4s linear infinite}
+.spinE{transform-box:view-box;transform-origin:40px 1890px;animation:spinBack 5s linear both}
+.slideB{animation:slide 2.5s linear infinite}
+.orbitM{transform-box:view-box;transform-origin:0 0;animation:spin 2.5s linear infinite}
+.orb{position:absolute;left:0;top:0;offset-rotate:0deg;offset-anchor:center;
+  offset-path:path('M 1052.1 560.3 L 1050.0 567.9 L 1046.6 575.2 L 1041.7 582.3 L 1035.5 589.0 L 1027.9 595.5 L 1019.0 601.5 L 1008.8 607.2 L 997.2 612.6 L 984.5 617.5 L 970.5 622.1 L 955.3 626.2 L 939.0 629.9 L 921.6 633.1 L 903.1 635.9 L 883.7 638.3 L 863.3 640.2 L 842.0 641.6 L 819.9 642.6 L 797.1 643.1 L 773.5 643.1 L 749.3 642.6 L 724.5 641.7 L 699.2 640.3 L 673.5 638.4 L 647.4 636.1 L 621.0 633.3 L 594.4 630.0 L 567.6 626.4 L 540.8 622.2 L 514.0 617.7 L 487.2 612.8 L 460.6 607.5 L 434.2 601.8 L 408.1 595.7 L 382.3 589.3 L 357.0 582.6 L 332.2 575.6 L 307.9 568.2 L 284.3 560.6 L 261.4 552.8 L 239.2 544.7 L 217.9 536.4 L 197.5 528.0 L 178.0 519.4 L 159.5 510.6 L 142.0 501.7 L 125.6 492.8 L 110.4 483.8 L 96.3 474.7 L 83.5 465.7 L 71.9 456.6 L 61.6 447.6 L 52.6 438.6 L 44.9 429.8 L 38.6 421.0 L 33.7 412.4 L 30.1 403.9 L 28.0 395.6 L 27.2 387.6 L 27.9 379.7 L 30.0 372.1 L 33.4 364.8 L 38.3 357.7 L 44.5 351.0 L 52.1 344.5 L 61.0 338.5 L 71.2 332.8 L 82.8 327.4 L 95.5 322.5 L 109.5 317.9 L 124.7 313.8 L 141.0 310.1 L 158.4 306.9 L 176.9 304.1 L 196.3 301.7 L 216.7 299.8 L 238.0 298.4 L 260.1 297.4 L 282.9 296.9 L 306.5 296.9 L 330.7 297.4 L 355.5 298.3 L 380.8 299.7 L 406.5 301.6 L 432.6 303.9 L 459.0 306.7 L 485.6 310.0 L 512.4 313.6 L 539.2 317.8 L 566.0 322.3 L 592.8 327.2 L 619.4 332.5 L 645.8 338.2 L 671.9 344.3 L 697.7 350.7 L 723.0 357.4 L 747.8 364.4 L 772.1 371.8 L 795.7 379.4 L 818.6 387.2 L 840.8 395.3 L 862.1 403.6 L 882.5 412.0 L 902.0 420.6 L 920.5 429.4 L 938.0 438.3 L 954.4 447.2 L 969.6 456.2 L 983.7 465.3 L 996.5 474.3 L 1008.1 483.4 L 1018.4 492.4 L 1027.4 501.4 L 1035.1 510.2 L 1041.4 519.0 L 1046.3 527.6 L 1049.9 536.1 L 1052.0 544.4 L 1052.8 552.4 Z');
+  animation:orbit 5s linear infinite}
+.ball{position:relative;border-radius:50%;animation:depth 5s linear infinite}
+.orbBpath{animation-delay:-2.5s}
+.orbA{width:72px;height:72px;background:radial-gradient(circle at 35% 30%,#fff6c2,#ffaa00 55%,#b35a00);
+  box-shadow:0 0 20px rgba(255,190,60,.6)}
+.ringA{position:absolute;left:-22px;right:-22px;top:28px;height:16px;border:5px solid #ff4f9a;border-radius:50%;transform:rotate(-15deg)}
+.orbB{width:52px;height:52px;background:radial-gradient(circle at 35% 30%,#d4fff5,#22d3b8 55%,#0b7a6a);
+  box-shadow:0 0 16px rgba(34,211,184,.6);animation-delay:-2.5s}

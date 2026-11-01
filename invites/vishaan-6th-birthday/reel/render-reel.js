@@ -5,6 +5,8 @@ const {chromium}=require('playwright');const fs=require('fs');
   const b=await chromium.launch();const p=await b.newPage({viewport:{width:1080,height:1920}});
   await p.goto('file://'+dir+'/invite.html',{waitUntil:'networkidle'});
   await p.addStyleTag({path:dir+'/reel/reel.css'});
+  const orbit=fs.readFileSync(dir+'/reel/orbit.html','utf8');
+  await p.evaluate(h=>document.querySelector('.photo-wrap').insertAdjacentHTML('beforebegin',h),orbit);
   await p.evaluate(()=>document.fonts.ready);
   await p.evaluate(()=>document.getAnimations().forEach(a=>a.pause()));
   const FPS=30,N=150;

@@ -97,18 +97,30 @@
     </g>
 
     <!-- Saturn-style planet top-left -->
-    <g class="fl1"><g transform="translate(140 370) rotate(-20)">
+    <g class="sat1"><g transform="translate(140 370) rotate(-20)">
       <ellipse rx="125" ry="28" fill="none" stroke="#ffd23f" stroke-width="10" opacity=".9"/>
       <circle r="78" fill="url(#pl1)"/>
       <path d="M-125 0 A125 28 0 0 0 125 0" fill="none" stroke="#ffd23f" stroke-width="10"/>
     </g></g>
     <!-- blue planet right -->
-    <circle class="fl3" cx="975" cy="640" r="62" fill="url(#pl2)"/>
-    <path d="M925 610 q50 -12 100 6" stroke="#ffffff" stroke-opacity=".35" stroke-width="7" fill="none"/>
-    <path d="M920 650 q55 -10 110 8" stroke="#ffffff" stroke-opacity=".25" stroke-width="6" fill="none"/>
+    <clipPath id="cB"><circle cx="975" cy="640" r="62"/></clipPath>
+    <g class="fl3">
+      <circle cx="975" cy="640" r="62" fill="url(#pl2)"/>
+      <g clip-path="url(#cB)"><g class="slideB">
+        <path d="M925 610 q50 -12 100 6" stroke="#ffffff" stroke-opacity=".35" stroke-width="7" fill="none"/>
+        <path d="M920 650 q55 -10 110 8" stroke="#ffffff" stroke-opacity=".25" stroke-width="6" fill="none"/>
+        <path d="M800 610 q50 -12 100 6" stroke="#ffffff" stroke-opacity=".35" stroke-width="7" fill="none"/>
+        <path d="M795 650 q55 -10 110 8" stroke="#ffffff" stroke-opacity=".25" stroke-width="6" fill="none"/>
+        <circle cx="950" cy="680" r="7" fill="#1563a8" opacity=".5"/><circle cx="825" cy="680" r="7" fill="#1563a8" opacity=".5"/>
+      </g></g>
+      <g transform="translate(975 640) scale(1 .4)"><g class="orbitM"><circle cx="100" cy="0" r="13" fill="url(#moon)"/></g></g>
+    </g>
     <!-- moon left -->
-    <circle cx="235" cy="1770" r="28" fill="url(#moon)"/>
-    <circle cx="226" cy="1763" r="6" fill="#b4b4cf"/><circle cx="245" cy="1780" r="5" fill="#b4b4cf"/>
+    <clipPath id="cM"><circle cx="235" cy="1770" r="28"/></clipPath>
+    <g class="fl3">
+      <circle cx="235" cy="1770" r="28" fill="url(#moon)"/>
+      <g clip-path="url(#cM)"><g class="spinM"><circle cx="226" cy="1763" r="6" fill="#b4b4cf"/><circle cx="245" cy="1780" r="5" fill="#b4b4cf"/><circle cx="238" cy="1752" r="3.5" fill="#b4b4cf"/></g></g>
+    </g>
     <!-- small pink planet -->
     <circle class="fl1" cx="1018" cy="905" r="30" fill="url(#pl3)"/>
     <!-- extra planets -->
@@ -119,19 +131,27 @@
       <radialGradient id="earth" cx="35%" cy="30%"><stop offset="0" stop-color="#bfe9ff"/><stop offset=".55" stop-color="#2f8ff0"/><stop offset="1" stop-color="#123f8f"/></radialGradient>
     </defs>
     <!-- green planet left -->
-    <circle class="fl2" cx="70" cy="610" r="48" fill="url(#pl4)"/>
-    <circle cx="55" cy="595" r="9" fill="#2ea86f" opacity=".7"/><circle cx="85" cy="628" r="6" fill="#2ea86f" opacity=".7"/>
+    <clipPath id="cG"><circle cx="70" cy="610" r="48"/></clipPath>
+    <g class="fl2">
+      <circle cx="70" cy="610" r="48" fill="url(#pl4)"/>
+      <g clip-path="url(#cG)"><g class="spinG"><circle cx="55" cy="595" r="9" fill="#2ea86f" opacity=".7"/><circle cx="85" cy="628" r="6" fill="#2ea86f" opacity=".7"/><circle cx="88" cy="588" r="5" fill="#2ea86f" opacity=".6"/><circle cx="52" cy="630" r="4" fill="#2ea86f" opacity=".6"/></g></g>
+    </g>
     <!-- tiny yellow planet top-left -->
     <circle class="fl3" cx="70" cy="175" r="24" fill="url(#pl6)"/>
     <!-- big earth bottom-left, partly off-screen -->
     <g>
+      <clipPath id="cE"><circle cx="40" cy="1890" r="130"/></clipPath>
       <circle cx="40" cy="1890" r="130" fill="url(#earth)"/>
-      <path d="M-20 1800 q40 -20 70 10 q20 30 -10 50 q-40 10 -60 -20z" fill="#3fcf8e" opacity=".85"/>
-      <path d="M70 1880 q40 -10 60 20 q0 40 -40 40 q-30 -20 -20 -60z" fill="#3fcf8e" opacity=".85"/>
+      <g clip-path="url(#cE)"><g class="spinE">
+        <path d="M-20 1800 q40 -20 70 10 q20 30 -10 50 q-40 10 -60 -20z" fill="#3fcf8e" opacity=".85"/>
+        <path d="M70 1880 q40 -10 60 20 q0 40 -40 40 q-30 -20 -20 -60z" fill="#3fcf8e" opacity=".85"/>
+        <path d="M-60 1930 q30 -20 60 0 q10 30 -20 40 q-40 0 -40 -40z" fill="#3fcf8e" opacity=".85"/>
+        <path d="M120 1790 q30 -10 40 15 q-5 25 -30 20 q-20 -15 -10 -35z" fill="#3fcf8e" opacity=".85"/>
+      </g></g>
       <circle cx="40" cy="1890" r="138" fill="none" stroke="#7fd6ff" stroke-opacity=".35" stroke-width="8"/>
     </g>
     <!-- ringed purple planet bottom-right -->
-    <g class="fl2"><g transform="translate(965 1820) rotate(18)">
+    <g class="sat2"><g transform="translate(965 1820) rotate(18)">
       <ellipse rx="140" ry="30" fill="none" stroke="#3ad1ff" stroke-width="10" opacity=".9"/>
       <circle r="85" fill="url(#pl5)"/>
       <path d="M-140 0 A140 30 0 0 0 140 0" fill="none" stroke="#3ad1ff" stroke-width="10"/>
