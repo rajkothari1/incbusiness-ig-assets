@@ -1,13 +1,17 @@
-"""Synthesizes a 5s 'Happy Birthday to You' (public-domain melody) as music-box + soft chords."""
+"""Synthesizes a 10s (full song) 'Happy Birthday to You' (public-domain melody) as music-box + soft chords."""
 import numpy as np, wave, sys
-SR=44100; DUR=5.0; BPM=170; B=60/BPM
+SR=44100; DUR=10.0; BPM=172; B=60/BPM
 def f(n):  # MIDI -> Hz
     return 440*2**((n-69)/12)
 G4,A4,B4,C5,D5=67,69,71,72,74
 # (note, start_beat, length_beats)
+E5,F5,G5=76,77,79
 mel=[(G4,0,.75),(G4,.75,.25),(A4,1,1),(G4,2,1),(C5,3,1),(B4,4,3),
-     (G4,7,.75),(G4,7.75,.25),(A4,8,1),(G4,9,1),(D5,10,1),(C5,11,3.2)]
-chords=[([48,52,55],1,3),([43,47,50,53],4,3),([43,47,50,53],8,3),([48,52,55,60],11,3.2)]
+     (G4,7,.75),(G4,7.75,.25),(A4,8,1),(G4,9,1),(D5,10,1),(C5,11,3),
+     (G4,14,.75),(G4,14.75,.25),(G5,15,1),(E5,16,1),(C5,17,1),(B4,18,1),(A4,19,2),
+     (F5,21,.75),(F5,21.75,.25),(E5,22,1),(C5,23,1),(D5,24,1),(C5,25,4)]
+chords=[([48,52,55],1,3),([43,47,50,53],4,3),([43,47,50,53],8,3),([48,52,55],11,3),
+        ([48,52,55,58],15,3),([41,45,48],18,3),([48,52,55],22,2),([43,47,50,53],24,1),([48,52,55,60],25,4)]
 out=np.zeros(int(SR*DUR)+SR)
 def bell(freq,t0,length,amp):
     n=int(SR*(length+0.6)); t=np.arange(n)/SR

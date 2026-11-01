@@ -89,3 +89,10 @@
 .rk1{animation:flyThrough 1.6s .2s linear both}
 .rk2{animation:flyThrough 1.6s 1.5s linear both}
 .rocket{animation:fly 1.3s 2.8s cubic-bezier(.2,.8,.3,1) both, bob 1.2s 4.1s ease-in-out infinite}
+
+/* ---- 10s version: more rockets in the second half ---- */
+.space{animation:drift 10s ease-out both}
+.rk3{animation:flyThrough 1.6s 5.0s linear both}
+.rk4{animation:flyThrough 1.6s 6.6s linear both}
+.rk5{animation:flyThrough 1.6s 8.2s linear both}
+/* parked rocket takes a little hop at the end */
