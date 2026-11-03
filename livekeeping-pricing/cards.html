@@ -13,7 +13,7 @@
     --muted: #7a7a7a;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Poppins', sans-serif; color: var(--text); background: #f3f5f1; width: 1500px; }
+  body { font-family: 'Poppins', sans-serif; color: var(--text); background: #f3f5f1; width: 1920px; }
   .page { padding: 70px 48px 60px; }
   h1 { text-align: center; font-size: 46px; font-weight: 800; letter-spacing: -1px; }
   h1 span { color: var(--green); }
@@ -31,8 +31,8 @@
   .off25 { font-size: 16px; font-weight: 600; color: var(--green-dark); margin-top: 2px; }
   .save.plain { background: #eef0eb; color: #666; }
 
-  .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; align-items: stretch; }
-  .card { background: #fff; border-radius: 22px; padding: 44px 38px 40px; position: relative; }
+  .grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; align-items: stretch; }
+  .card { background: #fff; border-radius: 22px; padding: 44px 34px 40px; position: relative; }
   .card.pro { box-shadow: 0 0 0 3px var(--green), 0 24px 60px rgba(46, 138, 7, .18); }
   .badge {
     position: absolute; top: -18px; left: 38px;
@@ -42,10 +42,10 @@
   .name { font-size: 46px; font-weight: 800; letter-spacing: -1px; line-height: 1.1; }
   .tag { font-size: 18px; color: #444; margin-top: 8px; }
   .price { margin-top: 30px; display: flex; align-items: baseline; gap: 4px; }
-  .price b { font-size: 54px; font-weight: 800; letter-spacing: -1.5px; }
+  .price b { font-size: 50px; font-weight: 800; letter-spacing: -1.5px; }
   .price span { font-size: 22px; color: #555; }
-  .price s { font-size: 26px; color: #9a9a9a; font-weight: 500; margin-right: 10px; }
-  .pay { font-size: 19px; color: var(--muted); margin-top: 4px; white-space: nowrap; }
+  .price s { font-size: 24px; color: #9a9a9a; font-weight: 500; margin-right: 10px; }
+  .pay { font-size: 17px; color: var(--muted); margin-top: 4px; white-space: nowrap; }
   .pay s { color: #a5a5a5; }
   .pay b { color: var(--text); font-weight: 600; }
   .pay .sv { color: var(--green-dark); font-weight: 600; }
@@ -66,6 +66,13 @@
   .growth .btn { background: #1f6f3a; }
   .pro .btn { background: linear-gradient(90deg, #3fae0f, #5fd83a); box-shadow: 0 10px 24px rgba(63,174,15,.35); }
   .plus .btn { background: #111; }
+  .ai .btn { background: linear-gradient(90deg, #5b3fd6, #9b5cf0); box-shadow: 0 10px 24px rgba(91,63,214,.3); }
+  .card.ai { background: linear-gradient(180deg, #f6f2ff 0%, #ffffff 40%); }
+  .ai .name { background: linear-gradient(90deg, #5b3fd6, #b05cf0); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .ai .hl { background: #ece6ff; }
+  .ai li::before { border-color: #6a4be0; }
+  .lim { color: var(--green-dark) !important; font-weight: 600; }
+  .ai .lim { color: #5b3fd6; }
 
   ul { list-style: none; display: flex; flex-direction: column; gap: 16px; }
   li { display: grid; grid-template-columns: 30px 1fr; font-size: 19px; line-height: 1.45; }
@@ -143,18 +150,14 @@
         <div class="price"><b>₹3,000</b><span>/year</span></div>
         <div class="pay">Billed yearly · Save 25% on 3 years</div>
       </div>
-      <div class="credits"><span class="lbl">AI Credits</span><span class="num">200 <small>/ month</small></span></div>
       <div class="btn">Buy Now</div>
       <ul>
-        <li><div>Read-only Tally Access<span class="note">Mobile &amp; Web</span></div></li>
-        <li><div><span class="hl">Share Ledger Statements</span><span class="note">On WhatsApp &amp; as PDF</span></div></li>
-        <li><div><span class="hl">Outstanding &amp; Payment Reminders</span><span class="note">Auto reminders on WhatsApp</span></div></li>
-        <li><div>Collect Online Payments</div></li>
-        <li><div>Manage Inventory / Stock</div></li>
-        <li><div>Auto Sync Companies</div></li>
-        <li><div>Weekly Data Backup<span class="note">Backup up to 7 days old</span></div></li>
-        <li><div><span class="hl">35+ Business Reports</span><span class="note ln">Sales, Purchase &amp; Stock</span><span class="note ln">Receivable &amp; Payable Ageing</span><span class="note ln">P&amp;L, Balance Sheet &amp; Cash</span><span class="note ln">Day Book &amp; Monthly Summary</span></div></li>
-        <li><div>Ask AI<span class="new">NEW</span></div></li>
+        <li><div>Read-only Tally Access<span class="note ln">Mobile &amp; Web</span></div></li>
+        <li><div>View Vouchers, Ledgers &amp; Items</div></li>
+        <li><div><span class="hl">Receivables &amp; Collection CRM</span><span class="note ln">Track dues &amp; auto WhatsApp reminders</span></div></li>
+        <li><div><span class="hl">35+ Reports &amp; AI Insights</span><span class="new">NEW</span><span class="note ln">Sales, Purchase &amp; Stock</span><span class="note ln">Ageing, P&amp;L &amp; Balance Sheet</span><span class="note ln">Monthly AI business insights</span></div></li>
+        <li><div><span class="hl">GSTR-1 Ready Data</span><span class="note ln">Straight from your sales</span></div></li>
+        <li><div>Weekly Data Backup<span class="note ln">Backup up to 7 days old</span></div></li>
         <li><div>Admin User Only</div></li>
       </ul>
     </div>
@@ -172,19 +175,18 @@
         <div class="price"><b>₹5,000</b><span>/year</span></div>
         <div class="pay">Billed yearly · Save 25% on 3 years</div>
       </div>
-      <div class="credits"><span class="lbl">AI Credits</span><span class="num">600 <small>/ month</small></span></div>
       <div class="btn">Buy Now</div>
       <ul>
         <li><div><b>Everything in GROWTH, plus</b></div></li>
-        <li><div><span class="hl">Create Tally Sales, Quotation, Receipt + 12 Voucher Types</span><span class="note">Mobile &amp; Web</span></div></li>
-        <li><div>Edit Tally Vouchers</div></li>
-        <li><div>Expenses &amp; Recurring Invoices<span class="new">NEW</span></div></li>
+        <li><div><span class="hl">Create &amp; Edit Tally Vouchers</span><span class="note ln">Sales, Quotation, Receipt + 12 more</span></div></li>
+        <li><div>Recurring Invoices<span class="new">NEW</span></div></li>
         <li><div><span class="hl">Custom Invoice Templates</span></div></li>
-        <li><div>Batch &amp; Expiry</div></li>
-        <li><div>Multiple Pricelists</div></li>
-        <li><div>Multiple Billing Addresses</div></li>
-        <li><div><span class="hl">Livekeeping AI</span><span class="new">NEW</span><span class="note ln">Bank Statement Upload</span><span class="note ln">Scan purchase bills</span></div></li>
-        <li><div><span class="hl">Daily Data Backup</span><span class="note">Backup till yesterday</span></div></li>
+        <li><div>E-way Bills<span class="note ln lim">10 per month</span></div></li>
+        <li><div>POS Billing</div></li>
+        <li><div>Scan Purchase Bills (OCR)<span class="new">NEW</span><span class="note ln lim">10 scans per month</span></div></li>
+        <li><div>Drive Storage<span class="note ln lim">1 GB</span></div></li>
+        <li><div><span class="hl">Daily Data Backup</span><span class="note ln">Backup till yesterday</span></div></li>
+        <li><div>Collect Online Payments</div></li>
         <li><div>Admin + 1 Free User</div></li>
       </ul>
     </div>
@@ -201,22 +203,39 @@
         <div class="price"><b>₹7,000</b><span>/year</span></div>
         <div class="pay">Billed yearly · Save 25% on 3 years</div>
       </div>
-      <div class="credits"><span class="lbl">AI Credits</span><span class="num">1,500 <small>/ month</small></span></div>
       <div class="btn">Buy Now</div>
       <ul>
         <li><div><b>Everything in PRO, plus</b></div></li>
-        <li><div><span class="hl">E-way Bills</span><span class="note ln">Live truck tracking</span><span class="note ln">E-way on Sales, Purchase &amp; DN/CN</span></div></li>
+        <li><div><span class="hl">Unlimited E-way Bills</span><span class="note ln">Live truck tracking</span><span class="note ln">E-way on Sales, Purchase &amp; DN/CN</span></div></li>
         <li><div><span class="hl">Instant E-invoice</span><span class="note ln">Bulk E-invoice</span><span class="note ln">E-invoice on Debit &amp; Credit Notes</span></div></li>
-        <li><div><span class="hl">GST Compliance</span><span class="new">NEW</span><span class="note ln">Auto GSTR-1 from sales</span><span class="note ln">Smart GSTR-2B reconciliation</span><span class="note ln">Instant GSTR-3B summary</span><span class="note ln">Real-time ITC mismatch alerts</span></div></li>
-        <li><div>Multiple Warehouses / Go-downs</div></li>
-        <li><div>TDS &amp; TCS Reports<span class="note">Party-wise deduction, collection &amp; payable</span></div></li>
-        <li><div><span class="hl">Daily Data Backup</span><span class="note">Backup till yesterday</span></div></li>
+        <li><div><span class="hl">GST Compliance</span><span class="new">NEW</span><span class="note ln">Smart GSTR-2B reconciliation</span><span class="note ln">Instant GSTR-3B summary</span><span class="note ln">Real-time ITC mismatch alerts</span></div></li>
+        <li><div>Scan Purchase Bills (OCR)<span class="note ln lim">20 scans per month</span></div></li>
+        <li><div>Admin + 1 Free User</div></li>
+      </ul>
+    </div>
+
+    <!-- AI -->
+    <div class="card ai">
+      <div class="name">AI</div>
+      <div class="tag">Run your business on autopilot</div>
+      <div class="price"><b>₹10,000</b><span>/month</span></div>
+      <div class="pay">Billed monthly</div>
+      <div class="btn">Buy Now</div>
+      <ul>
+        <li><div><b>Everything in PRO PLUS, plus</b></div></li>
+        <li><div><span class="hl">E-commerce Sync</span><span class="new">NEW</span></div></li>
+        <li><div><span class="hl">Unlimited OCR Scans</span></div></li>
+        <li><div>Bulk Invoicing</div></li>
+        <li><div><span class="hl">Bank Reconciliation</span><span class="note ln">With Drive document storage</span></div></li>
+        <li><div>Full-fledged CRM</div></li>
+        <li><div><span class="hl">Social Media by Dhanda AI</span><span class="new">NEW</span></div></li>
+        <li><div>AI Chatbot<span class="new">NEW</span></div></li>
         <li><div>Admin + 1 Free User</div></li>
       </ul>
     </div>
   </div>
 
-  <p class="addons"><b>ADDONS:</b> Add extra users to any plan &nbsp;·&nbsp; <b class="rc">Recharge AI credits anytime</b> &nbsp;·&nbsp; *Taxes as applicable</p>
+  <p class="addons"><b>ADDONS:</b> Add extra users to any plan &nbsp;·&nbsp; *Taxes as applicable</p>
 </div>
 <script>
   document.querySelectorAll('.toggle button').forEach(function (btn) {
