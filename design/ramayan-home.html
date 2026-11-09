@@ -1,0 +1,264 @@
+<title>Ramayan Comic Chat Home</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Mukta:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: one 390x844 phone screen on a dusk backdrop, with design notes beside it (stacked on narrow screens).
+   Deliberate single look: temple at dusk, with indigo night, saffron, sindoor red and gold leaf. */
+:root{
+  --night:#141233;      /* page ground */
+  --indigo:#1f1b4d;     /* app surface */
+  --indigo-2:#2b2566;   /* raised cards */
+  --saffron:#ff9a1f;    /* primary accent */
+  --sindoor:#d93a2b;    /* live / hot */
+  --gold:#f2c86b;       /* gold leaf detail */
+  --ink:#fff7e8;        /* text on dark */
+  --muted:#b9b2e0;      /* secondary text */
+  --line:rgba(242,200,107,.18);
+  --display:"Rozha One", "Georgia", serif;
+  --body:"Mukta", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--night);color:var(--ink);font-family:var(--body);margin:0;
+  padding-left:max(16px, env(safe-area-inset-left,0px));padding-right:max(16px, env(safe-area-inset-right,0px));padding-block:32px}
+.stage{display:flex;gap:48px;justify-content:center;align-items:flex-start;flex-wrap:wrap;max-width:1100px;margin:0 auto}
+h1.page{font-family:var(--display);font-weight:400;font-size:2rem;margin:0 0 6px;color:var(--gold);text-wrap:balance}
+.lede{color:var(--muted);margin:0 0 24px;max-width:60ch;line-height:1.55}
+
+/* ---------- phone ---------- */
+.phone{width:390px;max-width:100%;height:844px;border-radius:48px;background:var(--indigo);
+  border:10px solid #0b0a1f;box-shadow:0 30px 80px rgba(0,0,0,.55);position:relative;overflow:hidden;flex:none}
+.screen{height:100%;overflow-y:auto;padding-bottom:110px;scrollbar-width:none}
+.screen::-webkit-scrollbar{display:none}
+.status{display:flex;justify-content:space-between;padding:14px 26px 0;font-size:13px;font-weight:600}
+.top{display:flex;align-items:center;justify-content:space-between;padding:14px 20px 6px}
+.hello small{display:block;color:var(--muted);font-size:13px}
+.hello b{font-family:var(--display);font-weight:400;font-size:24px;color:var(--ink)}
+.top-actions{display:flex;gap:10px;align-items:center}
+.streak{display:flex;align-items:center;gap:4px;background:rgba(255,154,31,.14);color:var(--saffron);
+  font-weight:700;font-size:13px;padding:6px 10px;border-radius:999px}
+.iconbtn{width:38px;height:38px;border-radius:50%;background:var(--indigo-2);display:grid;place-items:center;border:1px solid var(--line)}
+.search{margin:8px 20px 4px;display:flex;align-items:center;gap:8px;background:var(--indigo-2);border:1px solid var(--line);
+  border-radius:14px;padding:11px 14px;color:var(--muted);font-size:14px}
+
+.sec{padding:18px 20px 0}
+.sec-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+.sec-h h2{font-family:var(--display);font-weight:400;font-size:19px;margin:0;color:var(--ink)}
+.sec-h a{color:var(--saffron);font-size:13px;font-weight:600;text-decoration:none}
+
+/* hero continue card */
+.hero{border-radius:22px;overflow:hidden;position:relative;height:210px;
+  background:
+    radial-gradient(circle at 78% 30%, rgba(242,200,107,.9) 0 26px, rgba(242,200,107,0) 27px),
+    radial-gradient(circle, rgba(0,0,0,.22) 1px, transparent 1.4px) 0 0/7px 7px,
+    linear-gradient(160deg,#ff9a1f 0%,#d93a2b 55%,#5a1d4f 100%)}
+.hero .hill{position:absolute;inset:auto 0 0 0;height:90px;background:#2a0f2e;clip-path:polygon(0 60%,18% 30%,34% 55%,52% 18%,70% 50%,86% 28%,100% 45%,100% 100%,0 100%)}
+.hero .figure{position:absolute;left:58%;bottom:62px;width:26px;height:58px;background:#2a0f2e;border-radius:13px 13px 4px 4px}
+.hero .bow{position:absolute;left:calc(58% + 22px);bottom:70px;width:30px;height:56px;border:4px solid #2a0f2e;border-left:none;border-radius:0 40px 40px 0}
+.hero .ov{position:absolute;inset:0;padding:14px 16px;display:flex;flex-direction:column;justify-content:space-between;
+  background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(10,6,30,.85) 100%)}
+.pill{align-self:flex-start;background:rgba(20,18,51,.6);backdrop-filter:blur(6px);color:var(--gold);font-size:11px;
+  font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:999px}
+.hero h3{font-family:var(--display);font-weight:400;font-size:22px;margin:0;line-height:1.1}
+.hero p{margin:2px 0 8px;color:#ffe9cf;font-size:13px}
+.prog{display:flex;align-items:center;gap:10px}
+.bar{flex:1;height:5px;border-radius:5px;background:rgba(255,255,255,.25);overflow:hidden}
+.bar i{display:block;height:100%;width:52%;background:var(--gold)}
+.play{width:40px;height:40px;border-radius:50%;background:var(--saffron);display:grid;place-items:center;flex:none;box-shadow:0 6px 18px rgba(255,154,31,.5)}
+.prog span{font-size:12px;color:#ffe9cf;font-variant-numeric:tabular-nums}
+
+/* characters */
+.chars{display:flex;gap:14px;overflow-x:auto;padding:2px 20px 4px;margin:0 -20px;scrollbar-width:none}
+.chars::-webkit-scrollbar{display:none}
+.ch{flex:none;width:66px;text-align:center;font-size:12px;color:var(--muted)}
+.ring{width:66px;height:66px;border-radius:50%;padding:3px;background:conic-gradient(var(--saffron),var(--sindoor),var(--gold),var(--saffron));position:relative}
+.ring.seen{background:var(--line)}
+.av{width:100%;height:100%;border-radius:50%;border:3px solid var(--indigo);display:grid;place-items:center;
+  font-family:var(--display);font-size:24px;color:#fff}
+.live{position:absolute;bottom:-2px;left:50%;transform:translateX(-50%);background:var(--sindoor);color:#fff;font-size:9px;
+  font-weight:700;padding:1px 6px;border-radius:6px;border:2px solid var(--indigo);letter-spacing:.06em}
+.ch b{display:block;color:var(--ink);font-weight:600;margin-top:6px;font-size:12.5px}
+
+/* kanda rail */
+.kandas{display:flex;gap:12px;overflow-x:auto;margin:0 -20px;padding:0 20px 4px;scrollbar-width:none}
+.kandas::-webkit-scrollbar{display:none}
+.kanda{flex:none;width:128px;height:172px;border-radius:16px;position:relative;overflow:hidden;
+  border:1px solid var(--line)}
+.kanda .art{position:absolute;inset:0}
+.kanda .cap{position:absolute;inset:auto 0 0;padding:10px;background:linear-gradient(0deg,rgba(10,6,30,.92),rgba(10,6,30,0))}
+.kanda .n{font-size:10px;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+.kanda h4{margin:0;font-family:var(--display);font-weight:400;font-size:16px;line-height:1.1}
+.kanda small{color:var(--muted);font-size:11px}
+
+/* topic chips grid */
+.topics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.tp{background:var(--indigo-2);border:1px solid var(--line);border-radius:14px;padding:10px 4px 8px;text-align:center;font-size:11.5px;font-weight:600;color:var(--ink)}
+.tp .ic{width:34px;height:34px;margin:0 auto 6px;border-radius:10px;display:grid;place-items:center}
+
+/* shloka of the day */
+.shloka{border-radius:18px;padding:16px;background:linear-gradient(135deg,#3a2a12,#2b2566);border:1px solid rgba(242,200,107,.35);position:relative}
+.shloka .dev{font-family:var(--display);font-size:20px;color:var(--gold);line-height:1.35;margin:4px 0 6px}
+.shloka p{margin:0;color:#e9e2ff;font-size:13px;line-height:1.5}
+.shloka .row{display:flex;gap:8px;margin-top:12px}
+.btn{font:600 13px var(--body);border-radius:999px;padding:8px 14px;border:none}
+.btn.p{background:var(--saffron);color:#2a1300}
+.btn.g{background:rgba(255,255,255,.08);color:var(--ink);border:1px solid var(--line)}
+
+/* trending masonry */
+.masonry{columns:2;column-gap:10px}
+.tile{break-inside:avoid;margin-bottom:10px;border-radius:14px;overflow:hidden;position:relative;border:1px solid var(--line)}
+.tile .art{width:100%}
+.tile .meta{position:absolute;inset:auto 0 0;padding:8px 10px;background:linear-gradient(0deg,rgba(10,6,30,.9),rgba(10,6,30,0));font-size:12px;font-weight:600}
+.tile .meta small{display:block;color:var(--muted);font-weight:500;font-size:10.5px}
+
+/* bottom nav */
+.nav{position:absolute;left:0;right:0;bottom:0;height:86px;background:rgba(20,18,51,.94);backdrop-filter:blur(10px);
+  border-top:1px solid var(--line);display:flex;justify-content:space-around;align-items:flex-start;padding-top:10px}
+.nv{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;color:var(--muted);width:60px}
+.nv.on{color:var(--saffron)}
+.fab{width:58px;height:58px;border-radius:50%;margin-top:-28px;background:linear-gradient(140deg,var(--saffron),var(--sindoor));
+  display:grid;place-items:center;box-shadow:0 10px 24px rgba(217,58,43,.5);border:4px solid var(--indigo)}
+
+/* art helpers: halftone comic texture */
+.ht{background-image:radial-gradient(circle, rgba(0,0,0,.25) 1px, transparent 1.5px);background-size:6px 6px}
+
+/* ---------- notes ---------- */
+.notes{flex:1 1 360px;min-width:0;max-width:560px}
+.notes ol{list-style:none;padding:0;margin:0;display:grid;gap:14px;counter-reset:s}
+.notes li{counter-increment:s;display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start}
+.notes li::before{content:counter(s);width:30px;height:30px;border-radius:50%;background:var(--indigo-2);border:1px solid var(--line);
+  color:var(--gold);display:grid;place-items:center;font-weight:700;font-size:14px}
+.notes h3{margin:3px 0 2px;font-size:16px;font-weight:700}
+.notes p{margin:0;color:var(--muted);line-height:1.55;font-size:14.5px}
+.tokens{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.sw{display:flex;align-items:center;gap:8px;background:var(--indigo);border:1px solid var(--line);border-radius:999px;padding:5px 12px 5px 5px;font-size:12px;color:var(--muted)}
+.sw i{width:22px;height:22px;border-radius:50%;display:block}
+</style>
+
+<div class="stage">
+  <div class="phone" aria-label="Home screen mockup">
+    <div class="screen">
+      <div class="status"><span>9:41</span><span>●●● ▮</span></div>
+
+      <div class="top">
+        <div class="hello"><small>Jai Shri Ram</small><b>Namaste, Raj</b></div>
+        <div class="top-actions">
+          <span class="streak" title="Daily reading streak">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1 4 5 6 5 11a5 5 0 0 1-10 0c0-2 1-3.5 2-4.5 0 2 1 3 2 3-1-3 0-6 1-9.5Z"/></svg>12 days
+          </span>
+          <span class="iconbtn" aria-label="Notifications"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff7e8" stroke-width="2" stroke-linecap="round"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 8 3 8H3s3-1 3-8"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></span>
+        </div>
+      </div>
+
+      <div class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b9b2e0" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Search 500+ panels, characters, shlokas</div>
+
+      <!-- 1. Continue -->
+      <div class="sec">
+        <div class="hero">
+          <div class="hill"></div><div class="figure"></div><div class="bow"></div>
+          <div class="ov">
+            <span class="pill">Continue reading</span>
+            <div>
+              <h3>Shiv Dhanush: The Broken Bow</h3>
+              <p>Bal Kand · Episode 6 · 3 min left</p>
+              <div class="prog"><div class="bar"><i></i></div><span>42/80</span>
+                <span class="play"><svg width="16" height="16" viewBox="0 0 24 24" fill="#2a1300"><path d="M7 4v16l13-8z"/></svg></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Characters -->
+      <div class="sec">
+        <div class="sec-h"><h2>Chat with characters</h2><a href="#">All 24</a></div>
+        <div class="chars">
+          <div class="ch"><div class="ring"><div class="av" style="background:linear-gradient(140deg,#3b6fd8,#1f3a8a)">रा</div><span class="live">LIVE</span></div><b>Ram</b>Maryada</div>
+          <div class="ch"><div class="ring"><div class="av" style="background:linear-gradient(140deg,#e46b8a,#9b2c55)">सी</div></div><b>Sita</b>Courage</div>
+          <div class="ch"><div class="ring"><div class="av" style="background:linear-gradient(140deg,#ff9a1f,#c4501a)">ह</div><span class="live">NEW</span></div><b>Hanuman</b>Bhakti</div>
+          <div class="ch"><div class="ring"><div class="av" style="background:linear-gradient(140deg,#e8b84a,#8a5a12)">ल</div></div><b>Lakshman</b>Loyalty</div>
+          <div class="ch"><div class="ring seen"><div class="av" style="background:linear-gradient(140deg,#5b3a8c,#24123f)">रा</div></div><b>Ravan</b>Ego</div>
+          <div class="ch"><div class="ring seen"><div class="av" style="background:linear-gradient(140deg,#3f8f6b,#18452f)">भ</div></div><b>Bharat</b>Duty</div>
+        </div>
+      </div>
+
+      <!-- 3. Kandas -->
+      <div class="sec">
+        <div class="sec-h"><h2>The 7 Kands</h2><a href="#">Read in order</a></div>
+        <div class="kandas">
+          <div class="kanda"><div class="art ht" style="background-color:#e9a23b;background-image:radial-gradient(circle at 50% 35%,#fff3c4 0 22px,transparent 23px),radial-gradient(circle,rgba(0,0,0,.2) 1px,transparent 1.5px);background-size:auto,6px 6px"></div><div class="cap"><span class="n">Kand 1</span><h4>Bal Kand</h4><small>12 episodes · 64%</small></div></div>
+          <div class="kanda"><div class="art" style="background:linear-gradient(170deg,#7b5cd6,#2b2566)"></div><div class="cap"><span class="n">Kand 2</span><h4>Ayodhya</h4><small>10 episodes</small></div></div>
+          <div class="kanda"><div class="art" style="background:linear-gradient(170deg,#3f8f6b,#123323)"></div><div class="cap"><span class="n">Kand 3</span><h4>Aranya</h4><small>9 episodes</small></div></div>
+          <div class="kanda"><div class="art" style="background:linear-gradient(170deg,#c9712a,#3a1a0c)"></div><div class="cap"><span class="n">Kand 4</span><h4>Kishkindha</h4><small>8 episodes</small></div></div>
+          <div class="kanda"><div class="art" style="background:linear-gradient(170deg,#ff9a1f,#d93a2b)"></div><div class="cap"><span class="n">Kand 5</span><h4>Sundar</h4><small>11 episodes</small></div></div>
+        </div>
+      </div>
+
+      <!-- 4. Topics -->
+      <div class="sec">
+        <div class="sec-h"><h2>Explore by theme</h2><a href="#">12 themes</a></div>
+        <div class="topics">
+          <div class="tp"><div class="ic" style="background:rgba(255,154,31,.16)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff9a1f" stroke-width="2"><path d="M4 20 20 4M14 4h6v6"/></svg></div>Battles</div>
+          <div class="tp"><div class="ic" style="background:rgba(242,200,107,.16)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f2c86b" stroke-width="2"><path d="M12 3v18M5 9l7-6 7 6"/></svg></div>Life lessons</div>
+          <div class="tp"><div class="ic" style="background:rgba(217,58,43,.18)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff7a6b" stroke-width="2"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10Z"/></svg></div>Bhakti</div>
+          <div class="tp"><div class="ic" style="background:rgba(123,92,214,.22)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b9a6ff" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/></svg></div>For kids</div>
+          <div class="tp"><div class="ic" style="background:rgba(63,143,107,.22)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7fd3a8" stroke-width="2"><path d="M12 3c4 4 6 7 6 10a6 6 0 0 1-12 0c0-3 2-6 6-10Z"/></svg></div>Diwali</div>
+          <div class="tp"><div class="ic" style="background:rgba(255,154,31,.16)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff9a1f" stroke-width="2"><path d="M4 5h16v12H8l-4 3z"/></svg></div>Shlokas</div>
+          <div class="tp"><div class="ic" style="background:rgba(242,200,107,.16)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f2c86b" stroke-width="2"><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>Places</div>
+          <div class="tp"><div class="ic" style="background:rgba(217,58,43,.18)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff7a6b" stroke-width="2"><path d="m12 3 2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.5 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg></div>Quiz</div>
+        </div>
+      </div>
+
+      <!-- 5. Shloka -->
+      <div class="sec">
+        <div class="shloka">
+          <span class="pill">Panel of the day</span>
+          <div class="dev">रघुकुल रीत सदा चली आई,<br>प्राण जाए पर वचन न जाई</div>
+          <p>The Raghu clan has always lived this way: give up your life before you break your word.</p>
+          <div class="row"><button class="btn p">Ask Ram why</button><button class="btn g">Share card</button></div>
+        </div>
+      </div>
+
+      <!-- 6. Trending -->
+      <div class="sec">
+        <div class="sec-h"><h2>Trending panels</h2><a href="#">See all 500</a></div>
+        <div class="masonry">
+          <div class="tile"><div class="art ht" style="height:190px;background-color:#d93a2b"></div><div class="meta">Lanka Dahan<small>Sundar Kand · 2.1k reads</small></div></div>
+          <div class="tile"><div class="art" style="height:130px;background:linear-gradient(160deg,#3b6fd8,#141233)"></div><div class="meta">Ram Setu<small>Yuddha Kand</small></div></div>
+          <div class="tile"><div class="art" style="height:140px;background:linear-gradient(160deg,#3f8f6b,#141233)"></div><div class="meta">Golden Deer<small>Aranya Kand</small></div></div>
+          <div class="tile"><div class="art ht" style="height:180px;background-color:#e9a23b"></div><div class="meta">Sanjeevani<small>Yuddha Kand · 1.4k reads</small></div></div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <div class="nv on"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3 11 12 3l9 8v10h-6v-6H9v6H3z"/></svg>Home</div>
+      <div class="nv"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Explore</div>
+      <div class="fab" aria-label="Start a chat"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M9 10h6"/></svg></div>
+      <div class="nv"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/></svg>Library</div>
+      <div class="nv"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Profile</div>
+    </nav>
+  </div>
+
+  <div class="notes">
+    <h1 class="page">Ramayan Comic Chat: Home</h1>
+    <p class="lede">The home screen should do one job: get someone reading or chatting within one tap. With 500+ panels it should not show everything. It shows six focused blocks, ordered by what a returning reader wants first.</p>
+    <ol>
+      <li><div><h3>Continue reading</h3><p>A large hero panel from the reader's current episode, with progress (42/80) and a play button. This drives retention more than any other block. New users see "Start with Bal Kand" here instead.</p></div></li>
+      <li><div><h3>Chat with characters</h3><p>Story-style rings for Ram, Sita, Hanuman and others. A coloured ring means a new message or panel, and a grey ring means seen. This is your unique feature, so it sits near the top.</p></div></li>
+      <li><div><h3>The 7 Kands</h3><p>Use the real structure of the Ramayan as the primary navigation: Bal, Ayodhya, Aranya, Kishkindha, Sundar, Yuddha and Uttar. Tall poster cards show episode count and progress.</p></div></li>
+      <li><div><h3>Explore by theme</h3><p>Your 10+ categories go here as a 4-column grid of icon tiles, such as Battles, Bhakti, For kids, Diwali, Shlokas and Quiz, with "12 themes" opening the full list.</p></div></li>
+      <li><div><h3>Panel of the day</h3><p>A daily chaupai in Devanagari with its English meaning. "Ask Ram why" opens the chat, and "Share card" exports an Instagram-ready image. It gives people a reason to open the app daily.</p></div></li>
+      <li><div><h3>Trending panels</h3><p>A 2-column masonry grid of your comic images. Mixed heights suit comic panels and make the 500-image library feel rich. It scrolls endlessly.</p></div></li>
+      <li><div><h3>Bottom nav with a Chat button</h3><p>Home, Explore, Library and Profile, with a raised saffron Chat button in the centre so the core action is always one tap away.</p></div></li>
+    </ol>
+    <div class="tokens">
+      <span class="sw"><i style="background:#1f1b4d"></i>Indigo night</span>
+      <span class="sw"><i style="background:#ff9a1f"></i>Saffron</span>
+      <span class="sw"><i style="background:#d93a2b"></i>Sindoor</span>
+      <span class="sw"><i style="background:#f2c86b"></i>Gold leaf</span>
+      <span class="sw"><i style="background:#fff7e8"></i>Parchment</span>
+    </div>
+    <p class="lede" style="margin-top:14px">Type: Rozha One for headings (it has Devanagari and English), Mukta for body text. The flat colour blocks mark where your own comic images go.</p>
+  </div>
+</div>
