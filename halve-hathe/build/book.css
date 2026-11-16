@@ -1,0 +1,10 @@
+/* Shared styles for inner pages — 140x210mm */
+@font-face{font-family:'NSG';font-weight:400;src:url('../tools/node_modules/@fontsource/noto-sans-gujarati/files/noto-sans-gujarati-gujarati-400-normal.woff2')}
+@font-face{font-family:'NSG';font-weight:700;src:url('../tools/node_modules/@fontsource/noto-sans-gujarati/files/noto-sans-gujarati-gujarati-700-normal.woff2')}
+@font-face{font-family:'NSG';font-weight:900;src:url('../tools/node_modules/@fontsource/noto-sans-gujarati/files/noto-sans-gujarati-gujarati-900-normal.woff2')}
+@font-face{font-family:'NSerG';font-weight:400;src:url('../tools/node_modules/@fontsource/noto-serif-gujarati/files/noto-serif-gujarati-gujarati-400-normal.woff2')}
+@font-face{font-family:'NSerG';font-weight:700;src:url('../tools/node_modules/@fontsource/noto-serif-gujarati/files/noto-serif-gujarati-gujarati-700-normal.woff2')}
+@page{size:140mm 210mm;margin:0}
+html,body{margin:0;padding:0;background:#fff}
+.page{width:140mm;height:210mm;position:relative;overflow:hidden;box-sizing:border-box;color:#151515;font-family:'NSG',sans-serif}
+.c{text-align:center}
