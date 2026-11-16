@@ -4,7 +4,10 @@
 @font-face{font-family:'NSG';font-weight:900;src:url('../tools/node_modules/@fontsource/noto-sans-gujarati/files/noto-sans-gujarati-gujarati-900-normal.woff2')}
 @font-face{font-family:'NSerG';font-weight:400;src:url('../tools/node_modules/@fontsource/noto-serif-gujarati/files/noto-serif-gujarati-gujarati-400-normal.woff2')}
 @font-face{font-family:'NSerG';font-weight:700;src:url('../tools/node_modules/@fontsource/noto-serif-gujarati/files/noto-serif-gujarati-gujarati-700-normal.woff2')}
+@font-face{font-family:'NS';font-weight:400;src:url('../tools/node_modules/@fontsource/noto-sans/files/noto-sans-latin-400-normal.woff2')}
+@font-face{font-family:'NS';font-weight:700;src:url('../tools/node_modules/@fontsource/noto-sans/files/noto-sans-latin-700-normal.woff2')}
 @page{size:140mm 210mm;margin:0}
 html,body{margin:0;padding:0;background:#fff}
-.page{width:140mm;height:210mm;position:relative;overflow:hidden;box-sizing:border-box;color:#151515;font-family:'NSG',sans-serif}
+.page{width:140mm;height:210mm;position:relative;overflow:hidden;box-sizing:border-box;color:#151515;font-family:'NSG','NS',sans-serif}
 .c{text-align:center}
+.pno{position:absolute;left:0;right:0;top:11mm;text-align:center;font-family:'NS';font-size:9.5pt}
