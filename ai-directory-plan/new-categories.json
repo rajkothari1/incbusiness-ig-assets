@@ -1,0 +1,842 @@
+[
+ {
+  "n": 61,
+  "slug": "short-form-video",
+  "name": "Short-Form Video",
+  "icon": "bi-phone",
+  "intro": "AI tools to make Reels, Shorts and short clips fast."
+ },
+ {
+  "n": 62,
+  "slug": "video-generation",
+  "name": "Video Generation",
+  "icon": "bi-camera-reels",
+  "intro": "AI tools that turn text or images into video."
+ },
+ {
+  "n": 63,
+  "slug": "subtitles-captions",
+  "name": "Subtitles & Captions",
+  "icon": "bi-badge-cc",
+  "intro": "AI tools to add captions and subtitles to your videos."
+ },
+ {
+  "n": 64,
+  "slug": "dubbing",
+  "name": "Video Dubbing",
+  "icon": "bi-translate",
+  "intro": "AI tools to dub videos into Hindi and other languages."
+ },
+ {
+  "n": 65,
+  "slug": "text-to-speech",
+  "name": "Text to Speech",
+  "icon": "bi-soundwave",
+  "intro": "AI voices that read your text out loud."
+ },
+ {
+  "n": 66,
+  "slug": "voice-cloning",
+  "name": "Voice Cloning",
+  "icon": "bi-mic",
+  "intro": "AI tools to clone a voice for videos, ads and calls."
+ },
+ {
+  "n": 67,
+  "slug": "audio-cleanup",
+  "name": "Audio Cleanup",
+  "icon": "bi-volume-up",
+  "intro": "AI tools to remove noise and fix bad recordings."
+ },
+ {
+  "n": 68,
+  "slug": "background-removal",
+  "name": "Background Removal",
+  "icon": "bi-eraser",
+  "intro": "AI tools to cut out photo backgrounds in one click."
+ },
+ {
+  "n": 69,
+  "slug": "product-photography",
+  "name": "Product Photography",
+  "icon": "bi-camera",
+  "intro": "AI tools to make product photos without a studio."
+ },
+ {
+  "n": 70,
+  "slug": "headshots",
+  "name": "AI Headshots",
+  "icon": "bi-person-square",
+  "intro": "AI tools to make professional profile photos."
+ },
+ {
+  "n": 71,
+  "slug": "image-upscaling",
+  "name": "Image Upscaling",
+  "icon": "bi-arrows-angle-expand",
+  "intro": "AI tools to sharpen and enlarge low-quality images."
+ },
+ {
+  "n": 72,
+  "slug": "illustration",
+  "name": "Illustration",
+  "icon": "bi-palette",
+  "intro": "AI tools to draw illustrations, icons and art."
+ },
+ {
+  "n": 73,
+  "slug": "animation",
+  "name": "Animation",
+  "icon": "bi-film",
+  "intro": "AI tools to animate characters, logos and explainers."
+ },
+ {
+  "n": 74,
+  "slug": "comics-storyboards",
+  "name": "Comics & Storyboards",
+  "icon": "bi-book",
+  "intro": "AI tools to make comics and storyboards."
+ },
+ {
+  "n": 75,
+  "slug": "blogging",
+  "name": "Blogging",
+  "icon": "bi-journal-text",
+  "intro": "AI tools to plan, write and grow a blog."
+ },
+ {
+  "n": 76,
+  "slug": "newsletters",
+  "name": "Newsletters",
+  "icon": "bi-newspaper",
+  "intro": "AI tools to write and grow an email newsletter."
+ },
+ {
+  "n": 77,
+  "slug": "linkedin",
+  "name": "LinkedIn Growth",
+  "icon": "bi-linkedin",
+  "intro": "AI tools to write posts and grow on LinkedIn."
+ },
+ {
+  "n": 78,
+  "slug": "instagram",
+  "name": "Instagram Growth",
+  "icon": "bi-instagram",
+  "intro": "AI tools to create, post and grow on Instagram."
+ },
+ {
+  "n": 79,
+  "slug": "twitter-x",
+  "name": "X (Twitter) Growth",
+  "icon": "bi-twitter-x",
+  "intro": "AI tools to write threads and grow on X."
+ },
+ {
+  "n": 80,
+  "slug": "social-listening",
+  "name": "Social Listening",
+  "icon": "bi-ear",
+  "intro": "AI tools to track what people say about your brand."
+ },
+ {
+  "n": 81,
+  "slug": "community-management",
+  "name": "Community Management",
+  "icon": "bi-people",
+  "intro": "AI tools to run and moderate online communities."
+ },
+ {
+  "n": 82,
+  "slug": "personal-branding",
+  "name": "Personal Branding",
+  "icon": "bi-person-badge",
+  "intro": "AI tools to build your name as a founder or expert."
+ },
+ {
+  "n": 83,
+  "slug": "webinars-events",
+  "name": "Webinars & Events",
+  "icon": "bi-calendar-event",
+  "intro": "AI tools to host, promote and repurpose webinars."
+ },
+ {
+  "n": 84,
+  "slug": "live-streaming",
+  "name": "Live Streaming",
+  "icon": "bi-broadcast",
+  "intro": "AI tools to go live, add overlays and clip streams."
+ },
+ {
+  "n": 85,
+  "slug": "course-creation",
+  "name": "Course Creation",
+  "icon": "bi-mortarboard",
+  "intro": "AI tools to build and sell online courses."
+ },
+ {
+  "n": 86,
+  "slug": "ebooks",
+  "name": "eBooks & Self-Publishing",
+  "icon": "bi-book-half",
+  "intro": "AI tools to write, design and publish books."
+ },
+ {
+  "n": 87,
+  "slug": "copywriting",
+  "name": "Copywriting",
+  "icon": "bi-pen",
+  "intro": "AI tools to write sales pages and copy that converts."
+ },
+ {
+  "n": 88,
+  "slug": "product-descriptions",
+  "name": "Product Descriptions",
+  "icon": "bi-tag",
+  "intro": "AI tools to write product listings that sell."
+ },
+ {
+  "n": 89,
+  "slug": "landing-pages",
+  "name": "Landing Pages",
+  "icon": "bi-window",
+  "intro": "AI tools to build landing pages that convert."
+ },
+ {
+  "n": 90,
+  "slug": "cro-ab-testing",
+  "name": "CRO & A/B Testing",
+  "icon": "bi-bar-chart-steps",
+  "intro": "AI tools to test pages and lift conversions."
+ },
+ {
+  "n": 91,
+  "slug": "web-analytics",
+  "name": "Web Analytics",
+  "icon": "bi-graph-up",
+  "intro": "AI tools to understand your website traffic."
+ },
+ {
+  "n": 92,
+  "slug": "market-research",
+  "name": "Market Research",
+  "icon": "bi-clipboard-data",
+  "intro": "AI tools to size markets and understand customers."
+ },
+ {
+  "n": 93,
+  "slug": "competitor-analysis",
+  "name": "Competitor Analysis",
+  "icon": "bi-binoculars",
+  "intro": "AI tools to track competitors' sites, ads and prices."
+ },
+ {
+  "n": 94,
+  "slug": "customer-feedback",
+  "name": "Customer Feedback",
+  "icon": "bi-chat-square-text",
+  "intro": "AI tools to collect and sort customer feedback."
+ },
+ {
+  "n": 95,
+  "slug": "personalization",
+  "name": "Personalization",
+  "icon": "bi-sliders",
+  "intro": "AI tools to show each visitor the right content."
+ },
+ {
+  "n": 96,
+  "slug": "affiliate-marketing",
+  "name": "Affiliate Marketing",
+  "icon": "bi-link-45deg",
+  "intro": "AI tools to run and grow affiliate programs."
+ },
+ {
+  "n": 97,
+  "slug": "local-seo",
+  "name": "Local SEO",
+  "icon": "bi-geo-alt",
+  "intro": "AI tools to rank on Google Maps and local search."
+ },
+ {
+  "n": 98,
+  "slug": "ai-visibility",
+  "name": "AI Search Visibility",
+  "icon": "bi-stars",
+  "intro": "AI tools to track your brand in ChatGPT and AI answers."
+ },
+ {
+  "n": 99,
+  "slug": "pr-media",
+  "name": "PR & Media Outreach",
+  "icon": "bi-megaphone-fill",
+  "intro": "AI tools to find journalists and pitch stories."
+ },
+ {
+  "n": 100,
+  "slug": "cold-email",
+  "name": "Cold Email",
+  "icon": "bi-send",
+  "intro": "AI tools to write and send cold email at scale."
+ },
+ {
+  "n": 101,
+  "slug": "sales-coaching",
+  "name": "Sales Call Coaching",
+  "icon": "bi-telephone",
+  "intro": "AI tools that record sales calls and coach your team."
+ },
+ {
+  "n": 102,
+  "slug": "proposals",
+  "name": "Proposals & Quotes",
+  "icon": "bi-file-earmark-text",
+  "intro": "AI tools to write proposals and quotes fast."
+ },
+ {
+  "n": 103,
+  "slug": "e-signatures",
+  "name": "Contracts & E-Signatures",
+  "icon": "bi-pen-fill",
+  "intro": "AI tools to draft, sign and track contracts."
+ },
+ {
+  "n": 104,
+  "slug": "customer-success",
+  "name": "Customer Success",
+  "icon": "bi-emoji-smile",
+  "intro": "AI tools to keep customers happy and renewing."
+ },
+ {
+  "n": 105,
+  "slug": "call-center-qa",
+  "name": "Call Center QA",
+  "icon": "bi-telephone-inbound",
+  "intro": "AI tools to score calls and coach support agents."
+ },
+ {
+  "n": 106,
+  "slug": "live-chat",
+  "name": "Live Chat",
+  "icon": "bi-chat-dots",
+  "intro": "AI live chat tools for your website."
+ },
+ {
+  "n": 107,
+  "slug": "knowledge-base",
+  "name": "Knowledge Base",
+  "icon": "bi-journal-bookmark",
+  "intro": "AI tools to build help centers and FAQs."
+ },
+ {
+  "n": 108,
+  "slug": "sops-documentation",
+  "name": "SOPs & Documentation",
+  "icon": "bi-file-text",
+  "intro": "AI tools to write SOPs, guides and process docs."
+ },
+ {
+  "n": 109,
+  "slug": "enterprise-search",
+  "name": "Enterprise Search",
+  "icon": "bi-search-heart",
+  "intro": "AI tools to search across all your work apps."
+ },
+ {
+  "n": 110,
+  "slug": "task-management",
+  "name": "To-Do & Task Apps",
+  "icon": "bi-check2-square",
+  "intro": "AI to-do apps that plan your day for you."
+ },
+ {
+  "n": 111,
+  "slug": "time-tracking",
+  "name": "Time Tracking",
+  "icon": "bi-stopwatch",
+  "intro": "AI tools to track time and fill timesheets."
+ },
+ {
+  "n": 112,
+  "slug": "mind-maps",
+  "name": "Mind Maps & Whiteboards",
+  "icon": "bi-diagram-3",
+  "intro": "AI tools to brainstorm on mind maps and whiteboards."
+ },
+ {
+  "n": 113,
+  "slug": "diagrams",
+  "name": "Diagrams & Flowcharts",
+  "icon": "bi-diagram-2",
+  "intro": "AI tools to draw flowcharts and diagrams from text."
+ },
+ {
+  "n": 114,
+  "slug": "browser-assistants",
+  "name": "Browser Assistants",
+  "icon": "bi-browser-chrome",
+  "intro": "AI assistants that work inside your browser."
+ },
+ {
+  "n": 115,
+  "slug": "interview-prep",
+  "name": "Interview Prep",
+  "icon": "bi-person-video3",
+  "intro": "AI tools to practise and prepare for job interviews."
+ },
+ {
+  "n": 116,
+  "slug": "employee-training",
+  "name": "Employee Training",
+  "icon": "bi-easel",
+  "intro": "AI tools to train and onboard your team."
+ },
+ {
+  "n": 117,
+  "slug": "payroll",
+  "name": "Payroll",
+  "icon": "bi-cash-stack",
+  "intro": "AI tools to run payroll and staff payments."
+ },
+ {
+  "n": 118,
+  "slug": "performance-okrs",
+  "name": "Performance & OKRs",
+  "icon": "bi-award",
+  "intro": "AI tools for goals, reviews and team feedback."
+ },
+ {
+  "n": 119,
+  "slug": "employee-engagement",
+  "name": "Employee Engagement",
+  "icon": "bi-heart",
+  "intro": "AI tools to measure and improve team morale."
+ },
+ {
+  "n": 120,
+  "slug": "invoicing",
+  "name": "Invoicing",
+  "icon": "bi-receipt",
+  "intro": "AI tools to send invoices and collect payments."
+ },
+ {
+  "n": 121,
+  "slug": "expense-management",
+  "name": "Expense Management",
+  "icon": "bi-wallet2",
+  "intro": "AI tools to track expenses and receipts."
+ },
+ {
+  "n": 122,
+  "slug": "financial-planning",
+  "name": "Financial Planning",
+  "icon": "bi-calculator",
+  "intro": "AI tools for budgets, forecasts and cash flow."
+ },
+ {
+  "n": 123,
+  "slug": "investing",
+  "name": "Investing & Stocks",
+  "icon": "bi-graph-up-arrow",
+  "intro": "AI tools to research stocks and track portfolios."
+ },
+ {
+  "n": 124,
+  "slug": "personal-finance",
+  "name": "Personal Finance",
+  "icon": "bi-piggy-bank",
+  "intro": "AI tools to manage money, budgets and savings."
+ },
+ {
+  "n": 125,
+  "slug": "fundraising",
+  "name": "Fundraising & Pitch Decks",
+  "icon": "bi-rocket",
+  "intro": "AI tools to find investors and build pitch decks."
+ },
+ {
+  "n": 126,
+  "slug": "business-plans",
+  "name": "Business Plans",
+  "icon": "bi-briefcase",
+  "intro": "AI tools to write business plans and models."
+ },
+ {
+  "n": 127,
+  "slug": "procurement",
+  "name": "Procurement",
+  "icon": "bi-cart-check",
+  "intro": "AI tools to buy smarter and manage vendors."
+ },
+ {
+  "n": 128,
+  "slug": "supply-chain",
+  "name": "Supply Chain & Logistics",
+  "icon": "bi-truck",
+  "intro": "AI tools to plan shipping, routes and stock."
+ },
+ {
+  "n": 129,
+  "slug": "marketplace-selling",
+  "name": "Marketplace Selling",
+  "icon": "bi-shop",
+  "intro": "AI tools for Amazon, Flipkart and Meesho sellers."
+ },
+ {
+  "n": 130,
+  "slug": "retail",
+  "name": "Retail Stores",
+  "icon": "bi-shop-window",
+  "intro": "AI tools for shops, billing and walk-in customers."
+ },
+ {
+  "n": 131,
+  "slug": "manufacturing",
+  "name": "Manufacturing",
+  "icon": "bi-gear-wide-connected",
+  "intro": "AI tools for factories, quality and maintenance."
+ },
+ {
+  "n": 132,
+  "slug": "construction",
+  "name": "Construction",
+  "icon": "bi-building",
+  "intro": "AI tools to plan, estimate and track building work."
+ },
+ {
+  "n": 133,
+  "slug": "architecture",
+  "name": "Architecture",
+  "icon": "bi-bricks",
+  "intro": "AI tools to design buildings and floor plans."
+ },
+ {
+  "n": 134,
+  "slug": "agriculture",
+  "name": "Agriculture",
+  "icon": "bi-flower1",
+  "intro": "AI tools for farmers, crops and agri businesses."
+ },
+ {
+  "n": 135,
+  "slug": "travel",
+  "name": "Travel Planning",
+  "icon": "bi-airplane",
+  "intro": "AI tools to plan trips and run travel businesses."
+ },
+ {
+  "n": 136,
+  "slug": "hospitality",
+  "name": "Hotels & Hospitality",
+  "icon": "bi-house-door",
+  "intro": "AI tools for hotels, homestays and guest service."
+ },
+ {
+  "n": 137,
+  "slug": "fitness",
+  "name": "Fitness & Gyms",
+  "icon": "bi-bicycle",
+  "intro": "AI tools for workouts, coaches and gym owners."
+ },
+ {
+  "n": 138,
+  "slug": "salons-spas",
+  "name": "Salons & Spas",
+  "icon": "bi-scissors",
+  "intro": "AI tools for bookings and marketing at salons."
+ },
+ {
+  "n": 139,
+  "slug": "mental-health",
+  "name": "Mental Health & Wellness",
+  "icon": "bi-heart-pulse",
+  "intro": "AI tools for wellness, journaling and calm."
+ },
+ {
+  "n": 140,
+  "slug": "teachers",
+  "name": "Teachers & Schools",
+  "icon": "bi-backpack",
+  "intro": "AI tools to plan lessons and grade work."
+ },
+ {
+  "n": 141,
+  "slug": "tutoring",
+  "name": "Homework & Tutoring",
+  "icon": "bi-pencil-square",
+  "intro": "AI tutors that explain lessons step by step."
+ },
+ {
+  "n": 142,
+  "slug": "language-learning",
+  "name": "Language Learning",
+  "icon": "bi-chat-left-text",
+  "intro": "AI tools to learn and practise a new language."
+ },
+ {
+  "n": 143,
+  "slug": "exam-prep",
+  "name": "Exam Prep",
+  "icon": "bi-journal-check",
+  "intro": "AI tools to prepare for exams and tests."
+ },
+ {
+  "n": 144,
+  "slug": "nonprofits",
+  "name": "Nonprofits & NGOs",
+  "icon": "bi-heart-fill",
+  "intro": "AI tools for fundraising, grants and volunteers."
+ },
+ {
+  "n": 145,
+  "slug": "fashion",
+  "name": "Fashion & Apparel",
+  "icon": "bi-bag-heart",
+  "intro": "AI tools to design, model and sell clothing."
+ },
+ {
+  "n": 146,
+  "slug": "automotive",
+  "name": "Automotive",
+  "icon": "bi-car-front",
+  "intro": "AI tools for car dealers and service centers."
+ },
+ {
+  "n": 147,
+  "slug": "insurance",
+  "name": "Insurance",
+  "icon": "bi-shield-check",
+  "intro": "AI tools for insurance agents and claims."
+ },
+ {
+  "n": 148,
+  "slug": "ca-firms",
+  "name": "CA & Accounting Firms",
+  "icon": "bi-briefcase-fill",
+  "intro": "AI tools for chartered accountants and their clients."
+ },
+ {
+  "n": 149,
+  "slug": "compliance",
+  "name": "Compliance & Risk",
+  "icon": "bi-shield-lock",
+  "intro": "AI tools to stay compliant and manage risk."
+ },
+ {
+  "n": 150,
+  "slug": "privacy",
+  "name": "Privacy & Data Protection",
+  "icon": "bi-incognito",
+  "intro": "AI tools to protect customer data and meet DPDP rules."
+ },
+ {
+  "n": 151,
+  "slug": "it-helpdesk",
+  "name": "IT Helpdesk",
+  "icon": "bi-pc-display",
+  "intro": "AI tools to answer IT tickets and manage devices."
+ },
+ {
+  "n": 152,
+  "slug": "devops",
+  "name": "DevOps & Cloud",
+  "icon": "bi-cloud",
+  "intro": "AI tools to deploy, monitor and fix cloud apps."
+ },
+ {
+  "n": 153,
+  "slug": "software-testing",
+  "name": "Software Testing",
+  "icon": "bi-bug",
+  "intro": "AI tools to write and run software tests."
+ },
+ {
+  "n": 154,
+  "slug": "code-review",
+  "name": "Code Review",
+  "icon": "bi-code-slash",
+  "intro": "AI tools that review pull requests and catch bugs."
+ },
+ {
+  "n": 155,
+  "slug": "sql-databases",
+  "name": "SQL & Databases",
+  "icon": "bi-database",
+  "intro": "AI tools to write SQL and query your data."
+ },
+ {
+  "n": 156,
+  "slug": "llm-apis",
+  "name": "LLM APIs & Models",
+  "icon": "bi-cpu",
+  "intro": "AI model platforms to build your own AI features."
+ },
+ {
+  "n": 157,
+  "slug": "prompt-tools",
+  "name": "Prompt Engineering",
+  "icon": "bi-terminal",
+  "intro": "AI tools to write, test and manage prompts."
+ },
+ {
+  "n": 158,
+  "slug": "custom-ai",
+  "name": "Custom AI on Your Data",
+  "icon": "bi-hdd-stack",
+  "intro": "AI tools to train a chatbot on your own documents."
+ },
+ {
+  "n": 159,
+  "slug": "local-ai",
+  "name": "Local & Open-Source AI",
+  "icon": "bi-box",
+  "intro": "AI tools to run open models on your own computer."
+ },
+ {
+  "n": 160,
+  "slug": "ml-platforms",
+  "name": "Machine Learning Platforms",
+  "icon": "bi-motherboard",
+  "intro": "AI tools to train and deploy machine learning models."
+ },
+ {
+  "n": 161,
+  "slug": "bi-dashboards",
+  "name": "BI & Dashboards",
+  "icon": "bi-speedometer2",
+  "intro": "AI tools to build dashboards from your data."
+ },
+ {
+  "n": 162,
+  "slug": "web-scraping",
+  "name": "Web Scraping",
+  "icon": "bi-globe",
+  "intro": "AI tools to pull data from websites."
+ },
+ {
+  "n": 163,
+  "slug": "document-extraction",
+  "name": "OCR & Data Extraction",
+  "icon": "bi-file-earmark-binary",
+  "intro": "AI tools to read data from invoices, forms and scans."
+ },
+ {
+  "n": 164,
+  "slug": "sms-marketing",
+  "name": "SMS & RCS Marketing",
+  "icon": "bi-chat",
+  "intro": "AI tools to send SMS and RCS campaigns."
+ },
+ {
+  "n": 165,
+  "slug": "loyalty-retention",
+  "name": "Loyalty & Retention",
+  "icon": "bi-gift",
+  "intro": "AI tools to bring customers back and reward them."
+ },
+ {
+  "n": 166,
+  "slug": "customer-data",
+  "name": "Customer Data Platforms",
+  "icon": "bi-person-lines-fill",
+  "intro": "AI tools to unify customer data in one place."
+ },
+ {
+  "n": 167,
+  "slug": "game-development",
+  "name": "Game Development",
+  "icon": "bi-controller",
+  "intro": "AI tools to make game art, code and levels."
+ },
+ {
+  "n": 168,
+  "slug": "packaging-design",
+  "name": "Packaging Design",
+  "icon": "bi-box-seam",
+  "intro": "AI tools to design labels and product packaging."
+ },
+ {
+  "n": 169,
+  "slug": "print-on-demand",
+  "name": "Print on Demand",
+  "icon": "bi-printer",
+  "intro": "AI tools to design and sell printed merchandise."
+ },
+ {
+  "n": 170,
+  "slug": "sports-coaching",
+  "name": "Sports & Coaching",
+  "icon": "bi-trophy",
+  "intro": "AI tools for athletes, coaches and sports clubs."
+ },
+ {
+  "n": 171,
+  "slug": "journalism",
+  "name": "Journalism & News",
+  "icon": "bi-newspaper",
+  "intro": "AI tools for reporters, editors and newsrooms."
+ },
+ {
+  "n": 172,
+  "slug": "academic-writing",
+  "name": "Academic Writing",
+  "icon": "bi-journal-bookmark",
+  "intro": "AI tools for papers, theses and citations."
+ },
+ {
+  "n": 173,
+  "slug": "patents-ip",
+  "name": "Patents & IP",
+  "icon": "bi-lightbulb",
+  "intro": "AI tools to search and draft patents and trademarks."
+ },
+ {
+  "n": 174,
+  "slug": "accessibility",
+  "name": "Accessibility",
+  "icon": "bi-universal-access",
+  "intro": "AI tools to make websites and content accessible."
+ },
+ {
+  "n": 175,
+  "slug": "product-demos",
+  "name": "Product Demos & Onboarding",
+  "icon": "bi-play-btn",
+  "intro": "AI tools to make product demos and walkthroughs."
+ },
+ {
+  "n": 176,
+  "slug": "screen-recording",
+  "name": "Screen Recording",
+  "icon": "bi-record-circle",
+  "intro": "AI tools to record and edit screen videos."
+ },
+ {
+  "n": 177,
+  "slug": "product-management",
+  "name": "Product Management",
+  "icon": "bi-kanban",
+  "intro": "AI tools to plan roadmaps and write specs."
+ },
+ {
+  "n": 178,
+  "slug": "user-research",
+  "name": "User Research",
+  "icon": "bi-person-check",
+  "intro": "AI tools to run and analyse user interviews."
+ },
+ {
+  "n": 179,
+  "slug": "freelancers",
+  "name": "Freelancers",
+  "icon": "bi-person-workspace",
+  "intro": "AI tools to find clients, quote and get paid."
+ },
+ {
+  "n": 180,
+  "slug": "event-planning",
+  "name": "Event Planning",
+  "icon": "bi-calendar2-heart",
+  "intro": "AI tools to plan weddings, parties and company events."
+ }
+]
