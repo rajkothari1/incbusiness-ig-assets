@@ -145,7 +145,7 @@ def fetch(slug, work, part=1):
         tools.append({'name': tname, 'icon': key, 'link': link})
     n = len(tools)
     out = {'category': slug, 'category_name': name, 'blurb': blurb, 'url': f'{SITE}/ai-tools/{slug}',
-           'title': f'AI tools for <span class=y>{html.escape(name)}</span>', 'part': f'Part {part} of {parts}' if parts > 1 else '',
+           'title': f'AI tools for <span class=y>{html.escape(name)}</span>', 'part': f'Part {part}' if parts > 1 else '',
            'part_no': part, 'parts': parts, 'start': start + 1, 'length': 16, 'tools': tools}
     (work / 'list.json').write_text(json.dumps(out, indent=1, ensure_ascii=False))
     print(json.dumps({'category': slug, 'name': name, 'part': part, 'parts': parts, 'tools': n, 'numbers': f'{start + 1}-{start + n}'}))

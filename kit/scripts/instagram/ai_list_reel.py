@@ -1,6 +1,6 @@
 """Instagram AI tools list reel: every tool of one AI Tools category, with its website, on one screen. Music only, no voice.
 
-    python3 ai_list_reel.py build WORK [--checks]   # src/<icon>.png + list.json -> out/reel.mp4, out/cover.jpg, out/check-*.jpg
+    python3 ai_list_reel.py build WORK [--checks]   # src/<icon>.png + list.json -> out/reel.mp4, out/check-*.jpg (the cover is made by cover3d/cover3d.py)
 
 WORK/list.json (made by list_reel_data.py fetch):
  {"title": "AI tools for <span class=y>Marketing</span>", "part": "Part 1 of 2", "start": 1,
@@ -64,7 +64,6 @@ def build(work):
             pg.evaluate(f'render({at})'); pg.screenshot(path=str(out / f'check-{name}.png'))
             Image.open(out / f'check-{name}.png').convert('RGB').resize((1080, 1920), Image.LANCZOS).save(out / f'check-{name}.jpg', quality=90)
             (out / f'check-{name}.png').unlink()
-        pg.evaluate('render(4.5)'); pg.screenshot(path=str(out / 'cover.png'))
         if '--checks' in sys.argv:
             br.close(); return
         w = imageio.get_writer(str(out / 'silent.mp4'), fps=FPS, codec='libx264', pixelformat='yuv420p', macro_block_size=8,
@@ -74,7 +73,6 @@ def build(work):
             w.append_data(imageio.imread(pg.screenshot(type='png'), format='png')[:, :, :3])
         w.close()
         br.close()
-    Image.open(out / 'cover.png').convert('RGB').save(out / 'cover.jpg', quality=95); (out / 'cover.png').unlink()
     subprocess.run([ffmpeg(), '-y', '-i', str(out / 'silent.mp4'), '-i', str(out / 'mix.wav'), '-c:v', 'libx264', '-crf', '19', '-preset', 'slow', '-profile:v', 'high', '-level', '5.1',
                     '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k', '-movflags', '+faststart', '-shortest', str(out / 'reel.mp4')], check=True, capture_output=True)
     (out / 'silent.mp4').unlink(); (out / 'mix.wav').unlink()

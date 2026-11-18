@@ -33,7 +33,7 @@ python3.13 -m playwright install chromium
 python3.13 $KIT/ai_list_reel.py build WORK
 ```
 
-It writes `WORK/out/reel.mp4` (16 s, 2160x3840) and check frames `WORK/out/check-bg*.jpg`. Look at every check frame: the small logo, the title ("AI tools for <Category>") and "Part X of Y" (only when there are parts) on top, all names and links readable, none cut off, nothing overlapping. If a long link is cut, it is still fine as long as it is readable; report it.
+It writes `WORK/out/reel.mp4` (16 s, 2160x3840) and check frames `WORK/out/check-bg*.jpg`. Look at every check frame: the small logo, the title ("AI tools for <Category>") and "Part X" (only when there are parts) on top, all names and links readable, none cut off, nothing overlapping. If a long link is cut, it is still fine as long as it is readable; report it.
 
 ## 4. The 3D cover
 
@@ -63,15 +63,14 @@ Look at `cover.jpg`: title fully visible and readable, number not cut, prop visi
 
 ## 6. Caption
 
-Plain English, no em dashes, names and links exactly as in `list.json`:
+Plain English, no em dashes, names and links exactly as in `list.json`. Never write "with their website links", "Part X of Y" or "Part 2 comes next":
 
 ```
-AI tools for {Category}{, Part X of Y when there are parts}, with their website links. Save this list.
+AI tools for {Category}{, Part X when there are parts}. Save this list.
 
 {start}. {Tool}: {link}
 {start+1}. {Tool}: {link}
 ...
-{only when there are parts: "Part X+1 comes next. Follow so you don't miss it." (leave this line out on the last part)}
 
 Prices and details for every tool: incbusiness.in/ai-tools/{slug} (link in bio)
 Follow @incbusiness.official for more AI tools.
