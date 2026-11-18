@@ -25,7 +25,7 @@ If `fetch` says there are too few tools, run `pick <date> <slot> 1` (then 2, 3..
 
 ## 3. The reel
 
-**Make the 3D cover first (section 4), then build the reel.** The reel opens on the cover as its hook: it cracks and shatters into the list in the first second. The builder uses `WORK/out/cover.jpg` for that, so it must exist and be the final 3D cover before you start the build. Never start the build before the cover is done.
+**Make the 3D cover first (section 4), then build the reel.** The reel opens on the cover as its hook and, in the first second, breaks into the list with one of 5 hooks (shatter, glitch, slice, punch, rip), picked by the music seed so noon and evening always differ. The builder uses `WORK/out/cover.jpg` for that, so it must exist and be the final 3D cover before you start the build. Never start the build before the cover is done.
 
 
 Add `"music_seed": <date digits><0 for noon, 1 for evening>` to `WORK/list.json` (e.g. `202611190`), so every reel has its own tune. Then:
@@ -36,7 +36,7 @@ python3.13 -m playwright install chromium
 python3.13 $KIT/ai_list_reel.py build WORK
 ```
 
-It writes `WORK/out/reel.mp4` (about 17 s, 2160x3840; it prints `"hook": true`) and check frames `WORK/out/check-bg*.jpg`, `check-hook-crack.jpg` and `check-hook-shatter.jpg`. If it prints `"hook": false`, the cover was missing: render the cover and build again. Look at every check frame: the small logo, the title ("AI tools for <Category>") and "Part X" (only when there are parts) on top, all names and links readable, none cut off, nothing overlapping. If a long link is cut, it is still fine as long as it is readable; report it.
+It writes `WORK/out/reel.mp4` (about 17 s, 2160x3840; it prints `"hook": true`) and check frames `WORK/out/check-bg*.jpg`, `check-hook-crack.jpg` and `check-hook-shatter.jpg` (the hook just before and just after it breaks). If it prints `"hook": false`, the cover was missing: render the cover and build again. Look at every check frame: the small logo, the title ("AI tools for <Category>") and "Part X" (only when there are parts) on top, all names and links readable, none cut off, nothing overlapping. If a long link is cut, it is still fine as long as it is readable; report it.
 
 ## 4. The 3D cover
 
