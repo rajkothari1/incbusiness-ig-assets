@@ -38,6 +38,14 @@ body { font-family: 'Poppins', sans-serif; color: #fff; position: relative; }
 <div id="card" class="abs"><div id="grid"></div></div>
 <div id="rule" class="abs"></div>
 
+<!-- hook: the 3D cover cracks, then shatters into glass shards that fly off and reveal the list -->
+<div id="hook" class="abs" style="inset: 0; z-index: 50; display: none; overflow: hidden">
+<div id="hookWhole" class="abs" style="inset: 0; background-size: 1080px 1920px"></div>
+<svg id="cracks" class="abs" style="inset: 0" width="1080" height="1920" viewBox="0 0 1080 1920"></svg>
+<div id="shards" class="abs" style="inset: 0"></div>
+<div id="hookFlash" class="abs" style="inset: 0; background: #fff; opacity: 0"></div>
+</div>
+
 <script>
 // Instagram AI tools "list" reel: every tool and its website on one screen, music only.
 // The list never moves; backgrounds change behind it and a soft highlight walks down the rows.
@@ -65,6 +73,7 @@ function setup(d) {
   $('grid').style.gridTemplateRows = `repeat(${rows}, 1fr)`;
   $('grid').innerHTML = d.tools.map((t, i) => `<div class="row" id="r${i}"><div class="hl"></div><div class="n">${(d.start || 1) + i}</div><img src="src/${t.icon}.png" alt=""><div class="t"><div class="nm">${t.name}</div><div class="ln">${t.link}</div></div></div>`).join('');
   $('bgs').innerHTML = LOOKS.map((L, i) => `<div class="bg" id="bg${i}" style="background:${L.base}">${L.blobs.map((c, j) => `<div class="blob" id="b${i}_${j}" style="background:${c};width:${700 + j * 120}px;height:${700 + j * 120}px"></div>`).join('')}</div>`).join('');
+  setupHook();
 }
 
 // shrink any name or link that would not fit its column (call once the fonts have loaded)
@@ -77,7 +86,78 @@ function fit() {
   });
 }
 
+// ---- hook (optional): R.hook = image path, R.hookAt = shatter time; the list's own timeline starts at hookAt ----
+const CRACK = .42;   // seconds: cracks appear
+let SH = [];
+function rnd(i) { const x = Math.sin(i * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); }
+function setupHook() {
+  if (!R.hook) return;
+  $('hook').style.display = 'block';
+  $('hookWhole').style.backgroundImage = `url(${R.hook})`;
+  const IX = 560, IY = 1000;                    // impact point: middle of the 3D number
+  // crack lines radiating from the impact point
+  let svg = '';
+  for (let k = 0; k < 13; k++) {
+    let a = k / 13 * Math.PI * 2 + rnd(k) * .4, x = IX, y = IY, d = `M${x} ${y}`;
+    const L = 380 + rnd(k + 50) * 900;
+    for (let s = 0; s < 7; s++) { a += (rnd(k * 9 + s) - .5) * .5; x += Math.cos(a) * L / 7; y += Math.sin(a) * L / 7; d += ` L${x.toFixed(0)} ${y.toFixed(0)}`; }
+    svg += `<path d="${d}" fill="none" stroke="#fff" stroke-width="${3 + rnd(k + 7) * 4}" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" style="filter:drop-shadow(0 0 6px #fff)"/>`;
+  }
+  for (let r = 0; r < 3; r++) svg += `<circle cx="${IX}" cy="${IY}" r="${60 + r * 70}" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="3" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>`;
+  $('cracks').innerHTML = svg;
+  // shards: a jittered grid split into triangles, each one a clipped copy of the cover
+  const C = 7, Rw = 12, P = [];
+  for (let j = 0; j <= Rw; j++) for (let i = 0; i <= C; i++) {
+    const edge = i === 0 || j === 0 || i === C || j === Rw;
+    P.push([i * 1080 / C + (edge ? 0 : (rnd(i * 31 + j) - .5) * 120), j * 1920 / Rw + (edge ? 0 : (rnd(i + j * 17) - .5) * 120)]);
+  }
+  const at = (i, j) => P[j * (C + 1) + i];
+  let html = ''; SH = [];
+  for (let j = 0; j < Rw; j++) for (let i = 0; i < C; i++) {
+    const q = [at(i, j), at(i + 1, j), at(i + 1, j + 1), at(i, j + 1)];
+    [[q[0], q[1], q[2]], [q[0], q[2], q[3]]].forEach(tri => {
+      const cx = (tri[0][0] + tri[1][0] + tri[2][0]) / 3, cy = (tri[0][1] + tri[1][1] + tri[2][1]) / 3;
+      const n = SH.length, dx = cx - IX, dy = cy - IY, dist = Math.hypot(dx, dy) + 1;
+      SH.push({cx, cy, ux: dx / dist, uy: dy / dist, dist, sp: 900 + rnd(n) * 1400, rot: (rnd(n + 3) - .5) * 260, delay: dist / 2600});
+      html += `<div class="abs shard" style="inset:0;background-image:url(${R.hook});background-size:1080px 1920px;clip-path:polygon(${tri.map(p => p[0].toFixed(1) + 'px ' + p[1].toFixed(1) + 'px').join(',')});transform-origin:${cx.toFixed(0)}px ${cy.toFixed(0)}px"></div>`;
+    });
+  }
+  $('shards').innerHTML = html;
+}
+function renderHook(t) {
+  if (!R.hook) return;
+  const H = R.hookAt;
+  $('hook').style.display = t < H + 1.0 ? 'block' : 'none';
+  if (t >= H + 1.0) return;
+  // slow push-in, then a hard shake when it cracks
+  const zoom = 1 + .05 * clamp(t / H, 0, 1);
+  const sh = t > CRACK && t < H ? (1 - (t - CRACK) / (H - CRACK)) * 22 : 0;
+  const ox = Math.sin(t * 90) * sh, oy = Math.cos(t * 77) * sh;
+  const cr = ease((t - CRACK) / .16);
+  [...$('cracks').children].forEach((p, k) => p.setAttribute('stroke-dashoffset', 1 - clamp(cr * 1.15 - k * .01, 0, 1)));
+  if (t < H) {
+    $('hookWhole').style.display = 'block'; $('shards').style.display = 'none';
+    $('hookWhole').style.transform = `translate(${ox}px,${oy}px) scale(${zoom})`;
+    $('cracks').style.transform = `translate(${ox}px,${oy}px) scale(${zoom})`; $('cracks').style.opacity = 1;
+    $('hookFlash').style.opacity = t > CRACK && t < CRACK + .08 ? .35 : 0;
+    return;
+  }
+  // shatter: shards fly away from the impact, spin and fade, revealing the list underneath
+  $('hookWhole').style.display = 'none'; $('shards').style.display = 'block';
+  $('cracks').style.opacity = clamp(1 - (t - H) / .12, 0, 1);
+  const shards = $('shards').children;
+  SH.forEach((s, n) => {
+    const u = clamp((t - H - s.delay * .5) / .9, 0, 1), e = u * u;
+    const d = s.sp * e + 40 * u;
+    shards[n].style.transform = `translate(${s.ux * d}px, ${s.uy * d + 700 * e * e}px) rotate(${s.rot * u}deg) scale(${zoom * (1 - .35 * u)})`;
+    shards[n].style.opacity = 1 - clamp((u - .55) / .45, 0, 1);
+  });
+  $('hookFlash').style.opacity = clamp(.55 - (t - H) / .25, 0, 1);
+}
+
 function render(t) {
+  renderHook(t);
+  if (R.hook) t = Math.max(0, t - R.hookAt);   // the list's own timeline starts at the shatter
   const n = LOOKS.length, per = R.per, x = 0.6;
   // background: crossfade between looks every `per` seconds, blobs drift
   LOOKS.forEach((L, i) => {
