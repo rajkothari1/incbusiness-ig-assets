@@ -38,8 +38,11 @@ def categories():
     return [c for c in ORDER if c in live] + [c for c in live if c not in ORDER]
 
 
+SHIFT = 1   # Marketing Part 1 went out early (19 Nov, 2:15 AM), so the rotation moved one step forward
+
+
 def index(day, slot):
-    return (datetime.date.fromisoformat(day) - START).days * 2 + SLOTS[slot]
+    return (datetime.date.fromisoformat(day) - START).days * 2 + SLOTS[slot] + SHIFT
 
 
 MAX, MIN = 12, 6
