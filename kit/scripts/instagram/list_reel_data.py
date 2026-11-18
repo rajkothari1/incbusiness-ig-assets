@@ -1,7 +1,11 @@
 """Data for the AI Tools list reel (docs/list-reel-playbook.md): which category today, and its tools from the live site.
 
-    python3 list_reel_data.py pick YYYY-MM-DD noon|evening [SKIP]   # today's category slug (2 a day, rotating); SKIP=1,2.. takes the next ones
-    python3 list_reel_data.py fetch SLUG WORK                # WORK/list.json + WORK/src/<icon>.png, all from https://incbusiness.in
+    python3 list_reel_data.py pick YYYY-MM-DD noon|evening [SKIP]   # prints "SLUG PART PARTS" for this slot (2 reels a day, rotating);
+                                                                    # SKIP=1,2.. takes the next ones in the rotation
+    python3 list_reel_data.py fetch SLUG WORK PART           # WORK/list.json + WORK/src/<icon>.png for that part, from https://incbusiness.in
+
+A reel shows at most 12 tools (6 a column) so names and links stay big. A category with more tools is split
+evenly into parts (20 tools = Part 1 and Part 2 of 10 each); categories with fewer than 6 tools are skipped.
     python3 list_reel_data.py cover YYYY-MM-DD noon|evening WORK   # WORK/cover.json: colour world, layout, number and 3D prop set;
                                                                    # you only write its "lines" (the title), see the playbook
 
@@ -38,9 +42,29 @@ def index(day, slot):
     return (datetime.date.fromisoformat(day) - START).days * 2 + SLOTS[slot]
 
 
+MAX, MIN = 12, 6
+
+
+def split(n):
+    """Number of parts and tools per part for a category of n tools."""
+    parts = -(-n // MAX)
+    return parts, -(-n // parts)
+
+
+def units():
+    """Every reel in the rotation: (category, part, parts), in category order."""
+    out = []
+    for c in categories():
+        n = len(re.findall(r'<li class="dir-row"', get(f'{SITE}/ai-tools/{c}')))
+        if n >= MIN:
+            parts = split(n)[0]
+            out += [(c, p, parts) for p in range(1, parts + 1)]
+    return out
+
+
 def pick(day, slot, skip=0):
-    cats = categories()
-    return cats[(index(day, slot) + skip) % len(cats)]
+    u = units()
+    return '%s %d %d' % u[(index(day, slot) + skip) % len(u)]
 
 
 # the 3D prop on each category's cover (cover3d/engine.html PROPS)
@@ -70,15 +94,14 @@ def cover(day, slot, work):
            'lines': [{'t': 'WRITE ME', 's': 150, 'c': P['text']}, {'t': 'WRITE ME', 's': 170, 'c': P['accent'], 'i': 1}],
            'num': str(len(L['tools'])), 'mat': P['mat'],
            'prop': {'kind': PROP.get(L['category'], 'rocket'), 'a': accent, 'b': P['prop_b']}}
-    if cfg['layout'] == 'L1':
-        cfg['extra'] = {'t': 'tools', 'c': P['text']}
+    cfg['extra'] = {'t': f"Part {L['part_no']}" if L.get('parts', 1) > 1 else 'tools', 'c': P['text']}
     (work / 'cover.json').write_text(json.dumps(cfg, indent=1, ensure_ascii=False))
     shapes = ['"Your <topic> stack" (2 lines)', 'a short question ("Still writing ads by hand?")', '"<verb> <result> faster" ("Close deals faster")',
               '"Not just <famous tool>"', '"<topic>, sorted" or "<topic>, done"', 'a promise from the blurb in 3-5 words ("Ask your docs anything")']
     print(json.dumps({'title_shape': shapes[i % len(shapes)], 'blurb': L.get('blurb', ''), 'layout': cfg['layout'], 'palette': P['name'], 'prop': cfg['prop']['kind'], 'title_colour': P['text'], 'accent_colour': P['accent']}))
 
 
-def fetch(slug, work):
+def fetch(slug, work, part=1):
     work = pathlib.Path(work); (work / 'src').mkdir(parents=True, exist_ok=True)
     page = get(f'{SITE}/ai-tools/{slug}')
     m = re.search(r'<title>Best AI (.+?) Tools', page)
@@ -86,6 +109,11 @@ def fetch(slug, work):
     b = re.search(r'</h1>\s*<p[^>]*>(.*?)</p>', page, re.S)
     blurb = html.unescape(re.sub('<[^>]+>', '', b.group(1))).strip() if b else ''
     rows = re.findall(r'<a href="(https://incbusiness\.in/ai-tool/[^"]+)">(.*?)</a>\s*</li>', page, re.S)
+    parts, size = split(len(rows))
+    if not 1 <= part <= parts:
+        sys.exit(f'{slug} has {len(rows)} tools: {parts} part(s), no part {part}.')
+    start = (part - 1) * size
+    rows = rows[start:start + size]
     tools = []
     for url, body in rows:
         nm = re.search(r'<h2>\s*\d+\.\s*(.*?)</h2>', body, re.S)
@@ -115,17 +143,14 @@ def fetch(slug, work):
                 f = ImageFont.load_default()
             d.text((32, 32), tname[0].upper(), fill='#000', font=f, anchor='mm'); im.save(dest)
         tools.append({'name': tname, 'icon': key, 'link': link})
-    tools = tools[:20]
     n = len(tools)
     out = {'category': slug, 'category_name': name, 'blurb': blurb, 'url': f'{SITE}/ai-tools/{slug}',
-           'pill': f'AI {name.upper()} TOOLS', 'title': f'{n} AI tools for <span class=y>{html.escape(name)}</span>',
-           'sub': 'With website links. <span class=y>Save this list</span>',
-           'foot': f'Prices and details: <span class=y>incbusiness.in/ai-tools/{slug}</span>',
-           'length': 16, 'tools': tools}
+           'title': f'AI tools for <span class=y>{html.escape(name)}</span>', 'part': f'Part {part} of {parts}' if parts > 1 else '',
+           'part_no': part, 'parts': parts, 'start': start + 1, 'length': 16, 'tools': tools}
     (work / 'list.json').write_text(json.dumps(out, indent=1, ensure_ascii=False))
-    print(json.dumps({'category': slug, 'name': name, 'tools': n}))
-    if n < 8:
-        sys.exit(f'Only {n} tools in {slug}: too few for a list reel (needs 8). Use the next category in the rotation.')
+    print(json.dumps({'category': slug, 'name': name, 'part': part, 'parts': parts, 'tools': n, 'numbers': f'{start + 1}-{start + n}'}))
+    if n < MIN:
+        sys.exit(f'Only {n} tools with a website link: too few for a list reel (needs {MIN}). Use the next one in the rotation.')
 
 
 if __name__ == '__main__':
@@ -133,7 +158,7 @@ if __name__ == '__main__':
         print(pick(sys.argv[2], sys.argv[3], int(sys.argv[4]) if len(sys.argv) == 5 else 0))
     elif len(sys.argv) == 5 and sys.argv[1] == 'cover':
         cover(sys.argv[2], sys.argv[3], sys.argv[4])
-    elif len(sys.argv) == 4 and sys.argv[1] == 'fetch':
-        fetch(sys.argv[2], sys.argv[3])
+    elif len(sys.argv) in (4, 5) and sys.argv[1] == 'fetch':
+        fetch(sys.argv[2], sys.argv[3], int(sys.argv[4]) if len(sys.argv) == 5 else 1)
     else:
         sys.exit(__doc__)

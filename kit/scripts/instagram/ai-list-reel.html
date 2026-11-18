@@ -10,30 +10,28 @@ body { font-family: 'Poppins', sans-serif; color: #fff; position: relative; }
 .y { color: #EDB516; }
 .bg { position: absolute; inset: -80px; opacity: 0; }
 .blob { position: absolute; border-radius: 50%; filter: blur(90px); }
-#card { left: 36px; right: 36px; top: 500px; height: 1090px; background: rgba(8,9,12,.80); border: 2px solid rgba(255,255,255,.12); border-radius: 36px; box-shadow: 0 30px 90px rgba(0,0,0,.55); backdrop-filter: blur(6px); }
+#card { left: 36px; right: 36px; top: 560px; height: 1040px; background: rgba(8,9,12,.80); border: 2px solid rgba(255,255,255,.12); border-radius: 36px; box-shadow: 0 30px 90px rgba(0,0,0,.55); backdrop-filter: blur(6px); }
 #grid { position: absolute; left: 26px; right: 26px; top: 22px; bottom: 22px; display: grid; grid-template-columns: 1fr 1fr; grid-auto-flow: column; column-gap: 24px; }
-.row { display: flex; align-items: center; gap: 16px; padding: 0 14px; border-radius: 18px; min-width: 0; position: relative; }
-.row .n { width: 34px; flex: none; font-size: 22px; font-weight: 800; color: #EDB516; text-align: right; }
-.row img { width: 50px; height: 50px; flex: none; border-radius: 12px; background: #fff; object-fit: contain; padding: 4px; box-sizing: border-box; }
+.row { display: flex; align-items: center; gap: 18px; padding: 0 12px; border-radius: 18px; min-width: 0; position: relative; }
+.row .n { width: 40px; flex: none; font-size: 28px; font-weight: 800; color: #EDB516; text-align: right; }
+.row img { width: 70px; height: 70px; flex: none; border-radius: 16px; background: #fff; object-fit: contain; padding: 4px; box-sizing: border-box; }
 .row .t { min-width: 0; flex: 1; }
 .row .nm, .row .ln { overflow: hidden; }
-.row .nm { font-size: 30px; font-weight: 700; line-height: 1.15; white-space: nowrap; }
-.row .ln { font-size: 24px; font-weight: 600; line-height: 1.25; color: #EDB516; white-space: nowrap; }
+.row .nm { font-size: 40px; font-weight: 700; line-height: 1.15; white-space: nowrap; }
+.row .ln { font-size: 30px; font-weight: 600; line-height: 1.25; color: #EDB516; white-space: nowrap; }
 .row .hl { position: absolute; inset: 0; border-radius: 18px; background: rgba(237,181,22,.16); border: 2px solid rgba(237,181,22,.7); opacity: 0; }
-#rule { left: 50%; top: 520px; width: 2px; height: 1050px; background: rgba(255,255,255,.10); }
+#rule { left: 50%; top: 585px; width: 2px; height: 990px; background: rgba(255,255,255,.10); }
 </style>
 </head>
 <body>
 <div id="bgs"></div>
-<img id="logo" class="abs" src="assets/logo-light.png" style="left: 50%; top: 170px; height: 52px; transform: translateX(-50%)" alt="">
-<div class="abs" id="head" style="left: 40px; right: 40px; top: 268px; text-align: center">
-<div id="pill" style="display: inline-block; background: #EDB516; color: #000; font-size: 26px; font-weight: 800; letter-spacing: .1em; padding: 10px 26px; border-radius: 40px"></div>
-<h1 id="title" style="margin: 14px 0 0; font-size: 74px; line-height: 1.05; font-weight: 900"></h1>
-<div id="sub" style="margin-top: 10px; font-size: 32px; font-weight: 600; color: #E6E8EE"></div>
+<div class="abs" id="head" style="left: 40px; right: 40px; top: 290px; text-align: center">
+<img id="logo" src="assets/logo-light.png" style="height: 38px; display: block; margin: 0 auto" alt="">
+<h1 id="title" style="margin: 18px 0 0; font-size: 84px; line-height: 1.02; font-weight: 900; white-space: nowrap; display: inline-block"></h1>
+<div id="part" style="margin-top: 8px; font-size: 44px; font-weight: 800; color: #EDB516"></div>
 </div>
 <div id="card" class="abs"><div id="grid"></div></div>
 <div id="rule" class="abs"></div>
-<div class="abs" id="foot" style="left: 40px; right: 40px; top: 1616px; text-align: center; font-size: 30px; font-weight: 700; color: #E6E8EE"></div>
 
 <script>
 // Instagram AI tools "list" reel: every tool and its website on one screen, music only.
@@ -55,18 +53,19 @@ const LOOKS = [
 
 function setup(d) {
   R = d; END = d.END;
-  $('pill').textContent = d.pill;
   $('title').innerHTML = d.title;
-  $('sub').innerHTML = d.sub;
-  $('foot').innerHTML = d.foot;
-  const rows = Math.ceil(d.tools.length / 2);
+  $('part').textContent = d.part || '';
+  const rows = Math.ceil(d.tools.length / 2), H = rows * 165 + 44;   // at most 6 rows a column, so names and links stay big
+  $('card').style.height = H + 'px'; $('rule').style.height = (H - 50) + 'px';
   $('grid').style.gridTemplateRows = `repeat(${rows}, 1fr)`;
-  $('grid').innerHTML = d.tools.map((t, i) => `<div class="row" id="r${i}"><div class="hl"></div><div class="n">${i + 1}</div><img src="src/${t.icon}.png" alt=""><div class="t"><div class="nm">${t.name}</div><div class="ln">${t.link}</div></div></div>`).join('');
+  $('grid').innerHTML = d.tools.map((t, i) => `<div class="row" id="r${i}"><div class="hl"></div><div class="n">${(d.start || 1) + i}</div><img src="src/${t.icon}.png" alt=""><div class="t"><div class="nm">${t.name}</div><div class="ln">${t.link}</div></div></div>`).join('');
   $('bgs').innerHTML = LOOKS.map((L, i) => `<div class="bg" id="bg${i}" style="background:${L.base}">${L.blobs.map((c, j) => `<div class="blob" id="b${i}_${j}" style="background:${c};width:${700 + j * 120}px;height:${700 + j * 120}px"></div>`).join('')}</div>`).join('');
 }
 
 // shrink any name or link that would not fit its column (call once the fonts have loaded)
 function fit() {
+  const h = $('title'); let hs = 84; h.style.fontSize = hs + 'px';
+  while (h.offsetWidth > 990 && hs > 50) { hs -= 2; h.style.fontSize = hs + 'px'; }
   document.querySelectorAll('.nm, .ln').forEach(el => {
     el.style.fontSize = ''; let fs = parseFloat(getComputedStyle(el).fontSize);
     while (el.scrollWidth > el.clientWidth + 1 && fs > 16) { fs -= 1; el.style.fontSize = fs + 'px'; }
@@ -91,11 +90,9 @@ function render(t) {
   });
   // intro: header and rows pop in during the first ~2 s, then stay put
   const hp = back((t - .05) / .5);
-  $('logo').style.opacity = clamp(t / .3, 0, 1);
   $('head').style.opacity = clamp((t - .05) * 4, 0, 1); $('head').style.transform = `scale(${.85 + .15 * hp})`;
   $('card').style.opacity = clamp((t - .25) * 4, 0, 1); $('card').style.transform = `translateY(${(1 - ease((t - .25) / .5)) * 60}px)`;
   $('rule').style.opacity = clamp((t - .4) * 4, 0, 1);
-  $('foot').style.opacity = clamp((t - 1.6) * 3, 0, 1);
   R.tools.forEach((_, i) => {
     const p = (t - (.45 + i * .07)) / .35, el = $('r' + i);
     el.style.opacity = clamp(p * 3, 0, 1); el.style.transform = `translateX(${(1 - back(p)) * (i < Math.ceil(R.tools.length / 2) ? -80 : 80)}px)`;

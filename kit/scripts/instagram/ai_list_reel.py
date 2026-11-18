@@ -2,11 +2,10 @@
 
     python3 ai_list_reel.py build WORK [--checks]   # src/<icon>.png + list.json -> out/reel.mp4, out/cover.jpg, out/check-*.jpg
 
-WORK/list.json:
- {"pill": "AI MARKETING TOOLS", "title": "20 AI tools for <span class=y>Marketing</span>",
-  "sub": "With website links. Save this list", "foot": "Prices and details: <span class=y>incbusiness.in/ai-tools/marketing</span>",
-  "length": 16, "music_seed": 3,
-  "tools": [{"name": "Jasper", "icon": "jasper.ai", "link": "jasper.ai"}, ...]}   # 8 to 20 tools, from the live category page
+WORK/list.json (made by list_reel_data.py fetch):
+ {"title": "AI tools for <span class=y>Marketing</span>", "part": "Part 1 of 2", "start": 1,
+  "length": 16, "music_seed": 202611190,
+  "tools": [{"name": "Jasper", "icon": "jasper.ai", "link": "jasper.ai"}, ...]}   # 6 to 12 tools (6 rows a column at most)
 The list never moves, so the links stay readable the whole reel; the background changes every few seconds behind it.
 """
 import json, pathlib, shutil, subprocess, sys, urllib.request, wave
@@ -22,8 +21,8 @@ KIT = pathlib.Path(__file__).parent
 def build(work):
     R = json.loads((work / 'list.json').read_text())
     T = R['tools']
-    if not 8 <= len(T) <= 20:
-        sys.exit('A list reel needs 8 to 20 tools.')
+    if not 6 <= len(T) <= 12:
+        sys.exit('A list reel needs 6 to 12 tools (split bigger categories into parts).')
     for t in T:
         if not (work / 'src' / f"{t['icon']}.png").exists():
             sys.exit(f"Missing src/{t['icon']}.png")
@@ -36,7 +35,7 @@ def build(work):
 
     END = float(R.get('length', 16)); per = 3.0
     hl_start = 2.4; hl_step = (END - 1.2 - hl_start) / len(T)
-    page = {k: R[k] for k in ('pill', 'title', 'sub', 'foot')} | {'tools': T, 'END': END, 'per': per, 'hlStart': hl_start, 'hlStep': hl_step}
+    page = {'title': R['title'], 'part': R.get('part', ''), 'start': R.get('start', 1)} | {'tools': T, 'END': END, 'per': per, 'hlStart': hl_start, 'hlStep': hl_step}
 
     # music only (no voice): one of 6 styles, fresh per reel; whoosh on each background change
     cuts = [per * k for k in range(1, int(END / per) + 1) if per * k < END - .5]

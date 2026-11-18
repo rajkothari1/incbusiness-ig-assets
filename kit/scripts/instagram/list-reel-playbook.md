@@ -1,6 +1,6 @@
 # AI Tools list reel playbook (Instagram)
 
-One run makes **one** Instagram reel for @incbusiness.official: every tool of one AI Tools category on incbusiness.in, with its website link, on a single screen. **Music only, no voice, no Higgsfield.** The list stays still for 16 seconds while the background changes behind it, so people can read and save it. Its cover is a 3D cover (big 3D number, small 3D prop, short title).
+One run makes **one** Instagram reel for @incbusiness.official: the tools of one AI Tools category on incbusiness.in (at most 12, 6 a column, big names and links), each with its website link, on a single screen. A category with more than 12 tools is split evenly into parts (20 tools = Part 1 and Part 2), each its own reel. **Music only, no voice, no Higgsfield.** The list stays still for 16 seconds while the background changes behind it, so people can read and save it. Its cover is a 3D cover (big 3D number, small 3D prop, short title).
 
 Two reels a day: **12:00 PM** and **6:00 PM IST**. The routine runs an hour before each slot.
 
@@ -17,11 +17,11 @@ Call Metricool `getScheduledPosts` (blogId 6752944) for that day. If an Instagra
 ## 2. Category and tools
 
 ```
-python3.13 $KIT/list_reel_data.py pick <date> <noon|evening>          # prints the category slug
-python3.13 $KIT/list_reel_data.py fetch <slug> WORK                     # WORK/list.json + WORK/src/*.png
+python3.13 $KIT/list_reel_data.py pick <date> <noon|evening>          # prints "<slug> <part> <parts>" (takes 1-2 minutes)
+python3.13 $KIT/list_reel_data.py fetch <slug> WORK <part>              # WORK/list.json + WORK/src/*.png
 ```
 
-If `fetch` says there are fewer than 8 tools, run `pick <date> <slot> 1` (then 2, 3...) for the next category and fetch that one. Open `WORK/list.json` and check: 8 to 20 tools, each with a name and a link that looks like the tool's own site.
+If `fetch` says there are too few tools, run `pick <date> <slot> 1` (then 2, 3...) for the next one in the rotation and fetch that. Open `WORK/list.json` and check: 6 to 12 tools, each with a name and a link that looks like the tool's own site.
 
 ## 3. The reel
 
@@ -33,7 +33,7 @@ python3.13 -m playwright install chromium
 python3.13 $KIT/ai_list_reel.py build WORK
 ```
 
-It writes `WORK/out/reel.mp4` (16 s, 2160x3840) and check frames `WORK/out/check-bg*.jpg`. Look at every check frame: all names and links readable, none cut off, nothing overlapping. If a long link is cut, it is still fine as long as it is readable; report it.
+It writes `WORK/out/reel.mp4` (16 s, 2160x3840) and check frames `WORK/out/check-bg*.jpg`. Look at every check frame: the small logo, the title ("AI tools for <Category>") and "Part X of Y" (only when there are parts) on top, all names and links readable, none cut off, nothing overlapping. If a long link is cut, it is still fine as long as it is readable; report it.
 
 ## 4. The 3D cover
 
@@ -41,7 +41,7 @@ It writes `WORK/out/reel.mp4` (16 s, 2160x3840) and check frames `WORK/out/check
 python3.13 $KIT/list_reel_data.py cover <date> <noon|evening> WORK
 ```
 
-This writes `WORK/cover.json` with the colour world, layout, 3D number (the tool count) and 3D prop already chosen, and prints `title_shape`, `blurb` (what the category's tools do, from the site) and the colours. **You only write the title**: replace the two `"WRITE ME"` lines in `cover.json`:
+This writes `WORK/cover.json` with the colour world, layout, 3D number (the tools in this reel), "Part X" under the number when there are parts, and 3D prop already chosen, and prints `title_shape`, `blurb` (what the category's tools do, from the site) and the colours. **You only write the title**: replace the two `"WRITE ME"` lines in `cover.json`:
 
 - 2 lines (line 2 in the accent colour, italic). 2 to 5 words in all. A 3rd short line is allowed.
 - **Never start with "AI"**, never "Top" or "Best", **no number** (the 3D number is the count), no emoji.
@@ -66,11 +66,12 @@ Look at `cover.jpg`: title fully visible and readable, number not cut, prop visi
 Plain English, no em dashes, names and links exactly as in `list.json`:
 
 ```
-{N} AI tools for {Category}, with their website links. Save this list.
+AI tools for {Category}{, Part X of Y when there are parts}, with their website links. Save this list.
 
-1. {Tool}: {link}
-2. {Tool}: {link}
+{start}. {Tool}: {link}
+{start+1}. {Tool}: {link}
 ...
+{only when there are parts: "Part X+1 comes next. Follow so you don't miss it." (leave this line out on the last part)}
 
 Prices and details for every tool: incbusiness.in/ai-tools/{slug} (link in bio)
 Follow @incbusiness.official for more AI tools.
@@ -89,6 +90,11 @@ The response's `media` must point to `static.metricool.com` (Metricool keeps its
 `POST $SITE_URL/api/instagram/reel/posted` and `{"name": "<the same 2126-... name>", "slugs": ["list-reel", "<slug>", "<date>", "<noon|evening>", "tools"], "scheduled_for": "<slot>", "planner_url": "<plannerUrl>"}`.
 If scheduling failed, do not call it; report the error.
 
-## 8. Report
+## 8. Email with the cover
+
+Make a small copy of the cover for the email: `python3.13 -c "from PIL import Image; Image.open('WORK/out/cover.jpg').resize((360, 640)).save('WORK/out/cover-email.jpg', quality=82)"`, then `sha256sum WORK/out/cover-email.jpg`.
+Send it with Gmail `send_message` as an **inline image** so the cover shows inside the email: `attachments: [{"filename": "cover.jpg", "mimeType": "image/jpeg", "inline": true, "content": "sha256:<hash>:<absolute path of cover-email.jpg>"}]` and an `htmlBody` that starts with `<img src="cid:att0" width="270" alt="cover">`, followed by the details as simple HTML (`<p>`, `<br>`). Also give a plain-text `body` with the same details. (If the file reference is refused, put the file's base64 in `content` instead.)
+
+## 9. Report
 
 End with: slot, category, number of tools, the cover title, reel length, the caption and the Metricool planner link. If you stopped early, say why.
