@@ -19,7 +19,12 @@ body { font-family: 'Poppins', sans-serif; color: #fff; position: relative; }
 .row .nm, .row .ln { overflow: hidden; }
 .row .nm { font-size: 40px; font-weight: 700; line-height: 1.15; white-space: nowrap; }
 .row .ln { font-size: 30px; font-weight: 600; line-height: 1.25; color: #EDB516; white-space: nowrap; }
-.row .hl { position: absolute; inset: 0; border-radius: 18px; background: rgba(237,181,22,.16); border: 2px solid rgba(237,181,22,.7); opacity: 0; }
+.row .hl { position: absolute; inset: -6px -8px; border-radius: 22px; opacity: 0; pointer-events: none;
+  background: linear-gradient(90deg, rgba(237,181,22,.34) 0%, rgba(237,181,22,.12) 70%, rgba(237,181,22,.06) 100%);
+  border: 3px solid #EDB516;
+  box-shadow: 0 0 46px rgba(237,181,22,.55), 0 0 14px rgba(237,181,22,.8), 0 18px 40px rgba(0,0,0,.6), inset 0 0 24px rgba(237,181,22,.18); }
+.row .hl::before { content: ''; position: absolute; left: -3px; top: 18%; bottom: 18%; width: 9px; border-radius: 0 8px 8px 0; background: #EDB516; box-shadow: 0 0 18px #EDB516; }
+.row > *:not(.hl) { position: relative; }
 #rule { left: 50%; top: 585px; width: 2px; height: 990px; background: rgba(255,255,255,.10); }
 </style>
 </head>
@@ -95,10 +100,13 @@ function render(t) {
   $('rule').style.opacity = clamp((t - .4) * 4, 0, 1);
   R.tools.forEach((_, i) => {
     const p = (t - (.45 + i * .07)) / .35, el = $('r' + i);
-    el.style.opacity = clamp(p * 3, 0, 1); el.style.transform = `translateX(${(1 - back(p)) * (i < Math.ceil(R.tools.length / 2) ? -80 : 80)}px)`;
+    const hv = t > R.hlStart ? clamp(1 - Math.abs((t - R.hlStart) / R.hlStep - i) * 1.2, 0, 1) : 0;   // how selected this row is
+    el.style.opacity = clamp(p * 3, 0, 1);
+    el.style.transform = `translateX(${(1 - back(p)) * (i < Math.ceil(R.tools.length / 2) ? -80 : 80)}px) scale(${1 + .06 * ease(hv)})`;
+    el.style.zIndex = hv > 0 ? 5 : 1;
     // highlight walks down the list once the rows are in
     const h = (t - R.hlStart) / R.hlStep;
-    el.querySelector('.hl').style.opacity = t > R.hlStart ? clamp(1 - Math.abs(h - i) * 1.2, 0, 1) : 0;
+    el.querySelector('.hl').style.opacity = hv;
   });
   document.body.style.opacity = 1 - ease((t - (END - .4)) / .4);
 }
