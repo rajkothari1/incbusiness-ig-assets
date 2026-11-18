@@ -14,7 +14,7 @@ import numpy as np
 
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 from news_reel import ffmpeg, SR, FPS, SCALE, LOGO
-from ai_reel import music
+from list_music import music
 
 KIT = pathlib.Path(__file__).parent
 
@@ -38,10 +38,9 @@ def build(work):
     hl_start = 2.4; hl_step = (END - 1.2 - hl_start) / len(T)
     page = {k: R[k] for k in ('pill', 'title', 'sub', 'foot')} | {'tools': T, 'END': END, 'per': per, 'hlStart': hl_start, 'hlStep': hl_step}
 
-    # music: the AI reel's tech bed, louder since there is no voice; whoosh on each background change
+    # music only (no voice): one of 6 styles, fresh per reel; whoosh on each background change
     cuts = [per * k for k in range(1, int(END / per) + 1) if per * k < END - .5]
-    pops = [.3, 1.0]
-    m, sfx, info = music(END, cuts, pops, R.get('music_seed', 1))
+    m, sfx, info = music(END, cuts, int(R.get('music_seed', 1)))   # style + tune from the seed (list_music.py)
     n = len(m); tt = np.arange(n) / SR
     mix = m * np.interp(tt, [0, END - 1.0, END], [1, 1, 0]) + sfx * .35
     mix = np.tanh(mix * 1.2) / np.tanh(1.2); mix = mix / np.abs(mix).max() * .9
