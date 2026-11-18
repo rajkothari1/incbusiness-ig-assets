@@ -1,0 +1,204 @@
+[
+ {
+  "name": "audio",
+  "bg": "radial-gradient(820px 820px at 78% 64%, #0fd1b0aa 0%, transparent 70%),radial-gradient(640px 640px at 8% 14%, #0b6b5e 0%, transparent 70%),linear-gradient(170deg, #06302d 0%, #021413 100%)",
+  "grid": "rgba(255,255,255,.06)",
+  "logo": "light",
+  "rim": "#7fffe0",
+  "text": "#fff",
+  "accent": "#5CF2C9",
+  "mat": {
+   "c": "#5CF2C9"
+  },
+  "prop_b": "#ffffff"
+ },
+ {
+  "name": "browsers",
+  "bg": "radial-gradient(820px 820px at 78% 64%, #c6ff3d55 0%, transparent 70%),radial-gradient(640px 640px at 8% 14%, #2a3a0a 0%, transparent 70%),linear-gradient(170deg, #121212 0%, #050505 100%)",
+  "grid": "rgba(255,255,255,.06)",
+  "logo": "light",
+  "rim": "#d8ff80",
+  "text": "#fff",
+  "accent": "#C6FF3D",
+  "mat": {
+   "c": "#C6FF3D"
+  },
+  "prop_b": "#ffffff"
+ },
+ {
+  "name": "interior",
+  "bg": "radial-gradient(820px 820px at 78% 64%, #f0a58a99 0%, transparent 70%),radial-gradient(640px 640px at 8% 14%, #fff6ea 0%, transparent 70%),linear-gradient(170deg, #f4e9dc 0%, #ead8c4 100%)",
+  "grid": "rgba(0,0,0,.045)",
+  "logo": "dark",
+  "rim": "#ffd9c4",
+  "text": "#2a1d14",
+  "accent": "#C8553D",
+  "mat": {
+   "c": "#C8553D"
+  },
+  "prop_b": "#73896a"
+ },
+ {
+  "name": "knowledge",
+  "bg": "radial-gradient(820px 820px at 78% 64%, #9be15d44 0%, transparent 70%),radial-gradient(640px 640px at 8% 14%, #1c4d36 0%, transparent 70%),linear-gradient(170deg, #0f3324 0%, #06170f 100%)",
+  "grid": "rgba(255,255,255,.06)",
+  "logo": "light",
+  "rim": "#d5ffb0",
+  "text": "#F3E9D2",
+  "accent": "#9BE15D",
+  "mat": {
+   "c": "#F3E9D2",
+   "k": "pearl"
+  },
+  "prop_b": "#9BE15D"
+ },
+ {
+  "name": "music",
+  "bg": "radial-gradient(820px 820px at 78% 64%, #ff5fa2cc 0%, transparent 70%),radial-gradient(640px 640px at 8% 14%, #ff2d7a 0%, transparent 70%),linear-gradient(170deg, #c4135e 0%, #5a0730 100%)",
+  "grid": "rgba(255,255,255,.06)",
+  "logo": "light",
+  "rim": "#ffc2dc",
+  "text": "#fff",
+  "accent": "#FFE14D",
+  "mat": {
+   "c": "#ffffff",
+   "k": "pearl"
+  },
+  "prop_b": "#ffffff"
+ },
+ {
+  "name": "ocr",
+  "bg": "radial-gradient(820px 820px at 78% 64%, #9db4ff88 0%, transparent 70%),radial-gradient(640px 640px at 8% 14%, #ffffff 0%, transparent 70%),linear-gradient(170deg, #f7f9fc 0%, #e8edf6 100%)",
+  "grid": "rgba(0,0,0,.045)",
+  "logo": "dark",
+  "rim": "#c9d6ff",
+  "text": "#101828",
+  "accent": "#2F5BFF",
+  "mat": {
+   "c": "#2F5BFF"
+  },
+  "prop_b": "#ffffff"
+ },
+ {
+  "name": "sales",
+  "bg": "radial-gradient(820px 820px at 78% 64%, #10b98188 0%, transparent 70%),radial-gradient(640px 640px at 8% 14%, #0a5a40 0%, transparent 70%),linear-gradient(170deg, #063a29 0%, #02150e 100%)",
+  "grid": "rgba(255,255,255,.06)",
+  "logo": "light",
+  "rim": "#9fffd6",
+  "text": "#fff",
+  "accent": "#34F5A4",
+  "mat": {
+   "c": "#FFC83A",
+   "k": "metal"
+  },
+  "prop_b": "#ffffff"
+ },
+ {
+  "name": "scheduling",
+  "bg": "radial-gradient(820px 820px at 78% 64%, #b9a6ff99 0%, transparent 70%),radial-gradient(640px 640px at 8% 14%, #ffffff 0%, transparent 70%),linear-gradient(170deg, #f1edff 0%, #e2daff 100%)",
+  "grid": "rgba(0,0,0,.045)",
+  "logo": "dark",
+  "rim": "#d9ceff",
+  "text": "#1c1530",
+  "accent": "#7B5CFF",
+  "mat": {
+   "c": "#7B5CFF"
+  },
+  "prop_b": "#ffffff"
+ },
+ {
+  "name": "social",
+  "bg": "radial-gradient(820px 820px at 78% 64%, #ff5a1fbb 0%, transparent 70%),radial-gradient(640px 640px at 8% 14%, #6a1f05 0%, transparent 70%),linear-gradient(170deg, #3a1003 0%, #120401 100%)",
+  "grid": "rgba(255,255,255,.06)",
+  "logo": "light",
+  "rim": "#ffc09e",
+  "text": "#fff",
+  "accent": "#FF8A3D",
+  "mat": {
+   "c": "#ffffff",
+   "k": "pearl"
+  },
+  "prop_b": "#ffffff"
+ },
+ {
+  "name": "lawyers",
+  "bg": "radial-gradient(820px 820px at 78% 64%, #e3b44a55 0%, transparent 70%),radial-gradient(640px 640px at 8% 14%, #1b2f5e 0%, transparent 70%),linear-gradient(170deg, #0f1d3d 0%, #060c1d 100%)",
+  "grid": "rgba(255,255,255,.06)",
+  "logo": "light",
+  "rim": "#ffe1a0",
+  "text": "#fff",
+  "accent": "#E8B84A",
+  "mat": {
+   "c": "#FFC83A",
+   "k": "metal"
+  },
+  "prop_b": "#ffffff"
+ },
+ {
+  "name": "travel",
+  "bg": "radial-gradient(820px 820px at 78% 64%, #7cc8ffaa 0%, transparent 70%),radial-gradient(640px 640px at 8% 14%, #ffffff 0%, transparent 70%),linear-gradient(170deg, #e9f6ff 0%, #cfe8ff 100%)",
+  "grid": "rgba(0,0,0,.045)",
+  "logo": "dark",
+  "rim": "#cbe9ff",
+  "text": "#0b2545",
+  "accent": "#1E88E5",
+  "mat": {
+   "c": "#FF9F1C"
+  },
+  "prop_b": "#ffffff"
+ },
+ {
+  "name": "videoedit",
+  "bg": "radial-gradient(820px 820px at 78% 64%, #ff2a2a77 0%, transparent 70%),radial-gradient(640px 640px at 8% 14%, #3a0608 0%, transparent 70%),linear-gradient(170deg, #1a0405 0%, #060101 100%)",
+  "grid": "rgba(255,255,255,.06)",
+  "logo": "light",
+  "rim": "#ffb3b3",
+  "text": "#fff",
+  "accent": "#FF4545",
+  "mat": {
+   "c": "#ffffff",
+   "k": "pearl"
+  },
+  "prop_b": "#ffffff"
+ },
+ {
+  "name": "summarizer",
+  "bg": "radial-gradient(820px 820px at 78% 64%, #fff3b0 0%, transparent 70%),radial-gradient(640px 640px at 8% 14%, #ffe680 0%, transparent 70%),linear-gradient(170deg, #ffd84a 0%, #ffc21a 100%)",
+  "grid": "rgba(0,0,0,.045)",
+  "logo": "dark",
+  "rim": "#fff4c2",
+  "text": "#141414",
+  "accent": "#3B1F8F",
+  "mat": {
+   "c": "#18181b"
+  },
+  "prop_b": "#ffffff"
+ },
+ {
+  "name": "voice",
+  "bg": "radial-gradient(820px 820px at 78% 64%, #e040fb77 0%, transparent 70%),radial-gradient(640px 640px at 8% 14%, #4a1a8a 0%, transparent 70%),linear-gradient(170deg, #2a0d52 0%, #0e0420 100%)",
+  "grid": "rgba(255,255,255,.06)",
+  "logo": "light",
+  "rim": "#f3b8ff",
+  "text": "#fff",
+  "accent": "#FFD84D",
+  "mat": {
+   "c": "#E040FB"
+  },
+  "prop_b": "#ffffff"
+ },
+ {
+  "name": "chatgpt",
+  "bg": "radial-gradient(900px 900px at 75% 62%, #3d5bff 0%, transparent 70%),radial-gradient(700px 700px at 10% 20%, #6a2cff 0%, transparent 70%),linear-gradient(170deg, #0b1460 0%, #070b33 55%, #03041a 100%)",
+  "grid": "rgba(255,255,255,.06)",
+  "logo": "light",
+  "rim": "#8fa8ff",
+  "text": "#fff",
+  "accent": "#EDB516",
+  "mat": {
+   "c": "#f4f6ff",
+   "k": "pearl"
+  },
+  "prop_b": "#ffffff"
+ }
+]
