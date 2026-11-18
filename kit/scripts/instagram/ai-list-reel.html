@@ -134,8 +134,20 @@ function setupHook() {
     // the cut runs from (0, 760) to (1080, 1240); one half each side
     html += img('clip-path:polygon(0 0,1080px 0,1080px 1240px,0 760px)') + img('clip-path:polygon(0 760px,1080px 1240px,1080px 1920px,0 1920px)');
     svg = `<line x1="-40" y1="750" x2="1120" y2="1250" stroke="#fff" stroke-width="10" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" style="filter:drop-shadow(0 0 14px #EDB516) drop-shadow(0 0 30px #EDB516)"/>`;
+  } else if (st === 'pixel') {
+    const B = 120;
+    for (let j = 0; j < 16; j++) for (let i = 0; i < 9; i++) {
+      html += img(`clip-path:inset(${j * B}px ${1080 - (i + 1) * B}px ${1920 - (j + 1) * B}px ${i * B}px);transform-origin:${i * B + 60}px ${j * B + 60}px`);
+      SH.push({i, j, delay: (15 - j) * .025 + rnd(i * 7 + j) * .18, dx: (rnd(i + j * 9) - .5) * 300, rot: (rnd(i * 3 + j) - .5) * 120});
+    }
+  } else if (st === 'doors') {
+    html += img('clip-path:inset(0 540px 0 0)') + img('clip-path:inset(0 0 0 540px)');
+    svg = `<rect x="537" y="0" width="6" height="1920" fill="#fff" style="filter:drop-shadow(0 0 16px #fff) drop-shadow(0 0 40px #EDB516)"/>`;
+  } else if (st === 'melt') {
+    const N = 36, W = 1080 / N;
+    for (let k = 0; k < N; k++) { html += img(`clip-path:inset(0 ${1080 - (k + 1) * W - .5}px 0 ${k * W}px)`); SH.push({delay: (Math.sin(k * .7) * .5 + .5) * .25 + rnd(k) * .12, sp: 1 + rnd(k + 9) * .6}); }
   }
-  // punch needs no pieces: the whole cover does the move
+  // punch, flip and fly need no pieces: the whole cover does the move
   $('cracks').innerHTML = svg;
   $('shards').innerHTML = html;
 }
@@ -200,6 +212,47 @@ function renderHook(t) {
     pieces[0].style.transform = `translate(${-e * 500}px, ${-e * 1500}px) rotate(${-e * 14}deg) scale(${zoom})`;
     pieces[1].style.transform = `translate(${e * 500}px, ${e * 1500}px) rotate(${e * 14}deg) scale(${zoom})`;
     fl.style.background = '#EDB516'; fl.style.opacity = u < .15 ? .45 * (1 - u / .15) : 0;
+  } else if (st === 'pixel') {
+    showPieces();
+    SH.forEach((b, k) => {
+      const jit = before && t > .45 && rnd(k + Math.floor(t * 20) * 5) > .8 ? (rnd(k * 3 + Math.floor(t * 20)) - .5) * 30 : 0;
+      const v = before ? 0 : clamp((t - H - b.delay) / .7, 0, 1), ve = v * v;
+      pieces[k].style.transform = `translate(${jit + b.dx * v}px, ${2300 * ve}px) rotate(${b.rot * v}deg) scale(${zoom * (1 - .2 * v)})`;
+      pieces[k].style.opacity = 1 - clamp((v - .7) / .3, 0, 1);
+    });
+  } else if (st === 'flip') {
+    // a little wobble, then the card flips away on its vertical axis
+    const wob = before ? Math.sin(t * 9) * 6 * clamp((t - .35) / .4, 0, 1) : 0;
+    const ang = before ? wob : 92 * ease(clamp((t - H) / .38, 0, 1));
+    showWhole(`perspective(1800px) rotateY(${ang}deg) scale(${before ? zoom : zoom * (1 - .15 * u)})`);
+    whole.style.transformOrigin = '50% 50%';
+    whole.style.filter = before ? 'none' : `brightness(${1 - .5 * clamp(u * 2.5, 0, 1)})`;
+    whole.style.opacity = ang > 88 ? 0 : 1;
+  } else if (st === 'doors') {
+    const glow = clamp((t - .45) / .2, 0, 1);
+    $('cracks').style.opacity = before ? glow : clamp(1 - u * 5, 0, 1);
+    if (before) { showWhole(`scale(${zoom})`); return; }
+    showPieces();
+    const v = ease(clamp(u / .7, 0, 1));
+    pieces[0].style.transform = `translateX(${-v * 600}px) scale(${zoom})`;
+    pieces[1].style.transform = `translateX(${v * 600}px) scale(${zoom})`;
+    pieces[0].style.opacity = pieces[1].style.opacity = 1 - clamp((u - .5) / .3, 0, 1);
+    fl.style.background = '#fff'; fl.style.opacity = u < .1 ? .35 : 0;
+  } else if (st === 'fly') {
+    // shrinks into a card and spins off to the top right corner
+    const v = before ? 0 : ease(clamp(u / .8, 0, 1));
+    showWhole(`translate(${v * 760}px, ${-v * 1350}px) rotate(${v * 28}deg) scale(${(before ? zoom : 1 - .82 * v)})`);
+    whole.style.borderRadius = (v * 60) + 'px';
+    whole.style.boxShadow = v > 0 ? `0 ${30 * v}px ${80 * v}px rgba(0,0,0,.6)` : 'none';
+    whole.style.opacity = 1 - clamp((v - .85) / .15, 0, 1);
+  } else if (st === 'melt') {
+    showPieces();
+    const n = SH.length;
+    SH.forEach((m, k) => {
+      const sag = before && t > .4 ? Math.pow((t - .4) / (H - .4), 2) * 40 * (Math.sin(k * .7) * .5 + .5) : 0;
+      const v = before ? 0 : clamp((t - H - m.delay) / .75, 0, 1);
+      pieces[k].style.transform = `translateY(${sag + 2400 * v * v * m.sp}px) scale(${zoom})`;
+    });
   }
 }
 

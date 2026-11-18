@@ -18,12 +18,12 @@ from list_music import music
 KIT = pathlib.Path(__file__).parent
 
 
-HOOKS = ['shatter', 'glitch', 'slice', 'punch', 'rip']
+HOOKS = ['shatter', 'glitch', 'slice', 'punch', 'rip', 'pixel', 'flip', 'doors', 'fly', 'melt']
 
 
 def hook_style(seed):
-    """Noon and evening always differ, and the order shifts every day (seed = YYYYMMDD + 0 noon / 1 evening)."""
-    return HOOKS[((seed // 10) * 2 + seed % 10) % len(HOOKS)]
+    """Noon and evening always differ, and the order shifts every day (seed = YYYYMMDD + 0 noon / 1 evening): 10 hooks over 5 days."""
+    return HOOKS[((seed // 10) * 3 + seed % 10) % len(HOOKS)]
 
 
 def hook_sfx(n, at, style='shatter', seed=7):
@@ -66,6 +66,28 @@ def hook_sfx(n, at, style='shatter', seed=7):
         zp = rng.standard_normal(len(y)) * (np.sin(2 * np.pi * 70 * y) > 0) * np.linspace(.3, 1, len(y))
         add(zp, .35, .25)
         add(hiss(.5, 7), at, .5); boom(at, .9)
+    elif style == 'pixel':
+        for k in range(16):                                                                       # 8-bit blips falling in pitch
+            y = np.arange(int(.06 * SR)) / SR; f = 1600 * 2 ** (-k / 6)
+            add(np.sign(np.sin(2 * np.pi * f * y)) * np.exp(-y * 30), at + k * .045, .14)
+        boom(at, .7, 55, 8)
+    elif style == 'flip':
+        y = np.arange(int(.4 * SR)) / SR; sw = rng.standard_normal(len(y)) * np.sin(np.pi * y / .4) ** 2
+        add(np.convolve(sw, np.ones(20) / 20, 'same'), at - .05, .5); boom(at + .3, .8, 50, 9)
+    elif style == 'doors':
+        y = np.arange(int(.3 * SR)) / SR; add(np.sin(2 * np.pi * (900 + 600 * y) * y) * (y / .3), .45, .08)   # light hum on the seam
+        y = np.arange(int(.8 * SR)) / SR; add(np.convolve(rng.standard_normal(len(y)), np.ones(60) / 60, 'same') * np.exp(-y * 3), at, 1.2)
+        boom(at, .9, 40, 5)
+    elif style == 'fly':
+        y = np.arange(int(.8 * SR)) / SR                                                         # whoosh away, pitch dropping
+        add(np.sin(2 * np.pi * (700 - 500 * y) * y) * np.exp(-y * 3) * .4 + np.convolve(rng.standard_normal(len(y)), np.ones(15) / 15, 'same') * np.sin(np.pi * y / .8), at, .35)
+        boom(at, .6, 60, 9)
+    elif style == 'melt':
+        y = np.arange(int(1.0 * SR)) / SR                                                        # descending wobble
+        add(np.sin(2 * np.pi * (520 * np.exp(-y * 1.6)) * y + 3 * np.sin(2 * np.pi * 7 * y)) * np.exp(-y * 2), at, .22)
+        for k in range(10):
+            z = np.arange(int(.12 * SR)) / SR; add(np.sin(2 * np.pi * (900 - 2500 * z) * z) * np.exp(-z * 25), at + .05 + k * .07, .12)   # drips
+        boom(at, .7)
     return out
 
 

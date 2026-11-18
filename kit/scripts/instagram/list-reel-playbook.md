@@ -25,7 +25,7 @@ If `fetch` says there are too few tools, run `pick <date> <slot> 1` (then 2, 3..
 
 ## 3. The reel
 
-**Make the 3D cover first (section 4), then build the reel.** The reel opens on the cover as its hook and, in the first second, breaks into the list with one of 5 hooks (shatter, glitch, slice, punch, rip), picked by the music seed so noon and evening always differ. The builder uses `WORK/out/cover.jpg` for that, so it must exist and be the final 3D cover before you start the build. Never start the build before the cover is done.
+**Make the 3D cover first (section 4), then build the reel.** The reel opens on the cover as its hook and, in the first second, breaks into the list with one of 10 hooks (shatter, glitch, slice, punch, rip, pixel, flip, doors, fly, melt), picked by the music seed so noon and evening always differ. The builder uses `WORK/out/cover.jpg` for that, so it must exist and be the final 3D cover before you start the build. Never start the build before the cover is done.
 
 
 Add `"music_seed": <date digits><0 for noon, 1 for evening>` to `WORK/list.json` (e.g. `202611190`), so every reel has its own tune. Then:
