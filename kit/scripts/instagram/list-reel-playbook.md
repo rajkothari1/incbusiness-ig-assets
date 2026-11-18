@@ -93,7 +93,7 @@ If scheduling failed, do not call it; report the error.
 ## 8. Email with the cover
 
 Make a small copy of the cover for the email: `python3.13 -c "from PIL import Image; Image.open('WORK/out/cover.jpg').resize((360, 640)).save('WORK/out/cover-email.jpg', quality=82)"`, then `sha256sum WORK/out/cover-email.jpg`.
-Send it with Gmail `send_message` as an **inline image** so the cover shows inside the email: `attachments: [{"filename": "cover.jpg", "mimeType": "image/jpeg", "inline": true, "content": "sha256:<hash>:<absolute path of cover-email.jpg>"}]` and an `htmlBody` that starts with `<img src="cid:att0" width="270" alt="cover">`, followed by the details as simple HTML (`<p>`, `<br>`). Also give a plain-text `body` with the same details. (If the file reference is refused, put the file's base64 in `content` instead.)
+Send it with Gmail `send_message` as an **inline image** so the cover shows inside the email: `attachments: [{"filename": "cover.jpg", "mimeType": "image/jpeg", "inline": true, "content": "sha256:<hash>:<absolute path of cover-email.jpg>"}]` and an `htmlBody` that starts with `<img src="cid:att0" width="270" alt="cover">`, followed by the details as simple HTML (`<p>`, `<br>`). Also give a plain-text `body` with the same details. The Gmail tool only accepts files from your session's scratchpad folder (`/tmp/claude-0/<project>/<session>/scratchpad`): copy `cover-email.jpg` there first and use that path and its sha256.
 
 ## 9. Report
 
